@@ -57,7 +57,8 @@ class FilesController extends Controller
                     $file_name = $file->getClientOriginalName();
                     $content = file_get_contents($file_path, true);
                     $file = Storage::disk('local')->put('files-store/'.$file_name, $content);
-                    var_dump($file);
+                    $url = Storage::url('files-store/'.$file_name);
+                    var_dump($url);
 //                    File::create([
 //                        'path' => ,
 //                        'post_id' => $post['id']
