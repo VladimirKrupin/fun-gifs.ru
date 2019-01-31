@@ -21,14 +21,6 @@ export default new Router({
       component: DefaultContainer,
       children: [
         {
-          path: '/main',
-          name: 'MainPage',
-          component: MainPage,
-          meta: {
-            requiresAuth: true
-          },
-        },
-        {
           path: 'files',
           name: 'Files',
           component: Files,
@@ -37,6 +29,13 @@ export default new Router({
           },
         },
       ]
+    },{
+      path: '/main',
+      name: 'MainPage',
+      component: MainPage,
+      meta: {
+        requiresAuth: true
+      },
     },
     {
       path: '/login',

@@ -7,7 +7,7 @@
           <b-form>
             <b-row>
               <b-col class="text-center">
-                <img src="/img/brand/logo-min.jpg" width="70px" height="70px" alt="logo" class="form__img mb-3">
+                <img src="/img/brand/logo-min.png" width="100px" height="100px" alt="logo" class="form__img mb-3">
               </b-col>
             </b-row>
             <h3 class="text-center mb-3">Войти в личный кабинет</h3>
@@ -90,7 +90,7 @@
               }else if(response.data.status === 'ok'){
                 localStorage.setItem('access_token', response.data.data.token);
 
-                this.$router.push({ name: 'MainPage' });
+                this.$router.push({ name: 'Files' });
               }
             })
             .catch(e => {

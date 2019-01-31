@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Files;
+use Illuminate\Contracts\Logging\Log;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App;
@@ -40,6 +41,8 @@ class FilesController extends Controller
                 foreach ($files as $file){
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
+                    Log::debug($file_path);
+                    Log::debug($file_name);
                 }
 
             }

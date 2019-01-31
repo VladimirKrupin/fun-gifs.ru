@@ -4,9 +4,17 @@
 
       <b-row>
         <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
-          <h1 class="h1 my-3">Заполните данные</h1>
+          <h1 class="h1 my-3">Заполните данные поста</h1>
         </b-col>
       </b-row>
+      <b-row>
+        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
+          <div class="alert alert-success alert-dismissable" v-if="success">
+            {{success}}
+          </div>
+        </b-col>
+      </b-row>
+
       <b-row>
         <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
           <h1 class="h4 my-1">Выберите файл</h1>
@@ -14,7 +22,7 @@
       </b-row>
       <b-row>
         <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 d-flex mb-4">
-          <input type="file" id="files" ref="files" class="form-control-file" v-on:change="handleFileUploads()">
+          <input language="ru" type="file" id="files" ref="files" multiple="multiple" class="form-control-file" v-on:change="handleFileUploads()">
         </b-col>
       </b-row>
       <b-row>
@@ -24,7 +32,7 @@
       </b-row>
       <b-row>
         <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6 col mb-4">
-          <input  type="text" id="comment" class="form-control">
+          <input  type="text" id="comment" class="form-control" v-model="comment">
         </b-col>
       </b-row>
       <b-row >
@@ -61,6 +69,8 @@
         return {
           errors: '',
           message: '',
+          success: '',
+          comment: '',
           disabled: false,
           loader: false,
           userFiles: [],
@@ -82,7 +92,7 @@
           let formData = new FormData();
 
           if (this.userFiles.length === 0 || this.userFiles.length > 10){
-            this.errors = ["Выберите файл для загрузки!"];
+            this.errors = ["Выберите файл для загрузки! Можно загрузить не больше 10 штук!"];
             return false
           }
 
@@ -91,10 +101,12 @@
             formData.append('files[' + i + ']', file);
           }
 
+          formData.append('comment',this.comment);
+
           this.disabled = true;
           this.loader = true;
 
-          axios.post( 'https://api.fun-gifs.ru/api/putFiles',
+          axios.post( 'http://api.fun-gifs.ru/api/putFiles',
             formData,
             {
               headers: {
@@ -111,8 +123,8 @@
             }else if(response.data.status === 'message'){
               return false;
             }else if(response.data.status === 'ok'){
-              this.$store.dispatch('common/addAlert', { message: response.data.data.message[0] });
               this.userFiles = '';
+              this.success = response.data.data.message[0];
               this.$refs.files.value = '';
               this.disabled = false;
               this.loader = false;
