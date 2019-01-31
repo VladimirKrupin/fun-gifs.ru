@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/backend/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/containers/DefaultHeaderDropdownAccnt.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/containers/DefaultHeaderDropdownAccnt.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,11 +106,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="252">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+              <folding>
+                <element signature="e#31#76#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -274,9 +273,9 @@
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
         <option value="$PROJECT_DIR$/frontend/src/containers/DefaultHeaderDropdownAccnt.vue" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
-        <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php" />
+        <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -778,12 +777,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="8494000" />
+      <workItem from="1548928460750" duration="8581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1191414000" />
+    <option name="totallyTimeSpent" value="1191501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -1127,13 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1148,6 +1140,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding>
+            <element signature="e#31#76#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

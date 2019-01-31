@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Posting\PostingController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -32,7 +33,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function()
         {
-            (new UserController())->createUser();
+            (new PostingController())->posting();
         })->everyMinute();
 
 
