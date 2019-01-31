@@ -72,12 +72,15 @@
           this.error = '';
           const options = {
             method: 'POST',
-            headers: {},
+            headers: {
+              'Access-Control-Allow-Origin':'*'
+            },
             data: {
+
               email: this.userData.email,
               password: this.userData.password,
             },
-            url: 'http://api-fun-gifs/api/login',
+            url: 'http://api.fun-gifs.ru/api/login',
           };
           axios(options)
             .then(response => {
@@ -86,7 +89,7 @@
                 return false;
               }else if(response.data.status === 'ok'){
                 localStorage.setItem('access_token', response.data.data.token);
-                this.$store.dispatch('profile/setUserData');
+
                 this.$router.push({ name: 'MainPage' });
               }
             })
