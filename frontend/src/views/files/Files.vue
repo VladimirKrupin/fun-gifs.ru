@@ -31,8 +31,8 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6 col mb-4">
-          <input  type="text" id="comment" class="form-control" v-model="comment">
+        <b-col style="position: relative;" class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6 col mb-4 d-flex justify-content-end" >
+          <input  type="text" id="comment" class="form-control" v-model="comment"><div class="count">{{this.count()}}</div>
         </b-col>
       </b-row>
       <b-row >
@@ -85,6 +85,9 @@
       mounted: function () {
       },
       methods: {
+        count: function(){
+          return 255 - this.comment.length;
+        },
         sendFiles: function () {
 
           this.errors = '';
@@ -147,6 +150,13 @@
 </script>
 
 <style>
+  .count {
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    font-size: 12px;
+  }
+
   .link-container {
     text-align: center;
     position: relative;

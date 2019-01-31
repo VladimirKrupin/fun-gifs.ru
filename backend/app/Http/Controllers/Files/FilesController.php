@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Files;
 use App\Http\Models\Post\Post;
-use Illuminate\Contracts\Logging\Log;
+use App\Http\Models\Post\File;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App;
@@ -32,25 +32,37 @@ class FilesController extends Controller
             ]);
         }
         if ($validator->fails()) {
-
             return response()->json([
                 'status' => 'error',
                 'data' => ['errors' =>$validator->errors()]
             ]);
         }else{
             $user = Auth::user();
+            $post = Post::create([
+                'user_id' => $user['id'],
+                'comment' => $request->input('comment'),
+                'status' => 0,
+            ]);
+            if ($post){
+                $post = $post->toArray();
+            }else{
+                return response()->json([
+                    'status' => 'error',
+                    'data' => ['errors' =>["Ошибка при записи поста в базу, обратитесь в поддержку"]]
+                ]);
+            }
+            $post = $post->toArray();
             foreach ($request->allFiles() as $files){
                 foreach ($files as $file){
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
                     $content = file_get_contents($file_path, true);
-                    Storage::disk('local')->put('files-store/'.$file_name, $content);
-                    $post = Post::create([
-                        'user_id' => $user['id'],
-                        'comment' => $request->input('comment'),
-                        'status' => 0,
-                    ]);
-                    var_dump($post->toArray());
+                    $file = Storage::disk('local')->put('files-store/'.$file_name, $content);
+                    var_dump($file);
+//                    File::create([
+//                        'path' => ,
+//                        'post_id' => $post['id']
+//                    ]);
                 }
 
             }
