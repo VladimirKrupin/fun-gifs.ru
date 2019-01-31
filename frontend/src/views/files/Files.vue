@@ -88,6 +88,7 @@
         sendFiles: function () {
 
           this.errors = '';
+          this.success = '';
 
           let formData = new FormData();
 

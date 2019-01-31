@@ -32,13 +32,10 @@ class FilesController extends Controller
             ]);
         }
         if ($validator->fails()) {
+
             return response()->json([
                 'status' => 'error',
-                'data' => ['errors' =>
-                    ["Ошибка загрузки файлов! <br>
-                    Убедитесь что размер одного файла не превышает <b>1мб</b> <br>
-                    Допустимые типы фалов для загрузки <b>jpeg png odt docx pdf</b>"]
-                ]
+                'data' => ['errors' =>$validator->errors()]
             ]);
         }else{
             $user = Auth::user();
