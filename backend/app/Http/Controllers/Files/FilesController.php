@@ -42,7 +42,7 @@ class FilesController extends Controller
                 foreach ($files as $file){
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
-                    $content = file_get_contents($file_path.'/'.$file_name, true);
+                    $content = file_get_contents($file_path, true);
                     Storage::disk('local')->put('files-store/'.$file_name, $content);
                 }
 
