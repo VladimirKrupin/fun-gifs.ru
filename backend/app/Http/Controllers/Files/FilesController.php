@@ -4,6 +4,7 @@ use Illuminate\Contracts\Logging\Log;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App;
+use Illuminate\Support\Facades\Storage;
 use Validator;
 
 class FilesController extends Controller
@@ -41,9 +42,8 @@ class FilesController extends Controller
                 foreach ($files as $file){
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
-
-                    var_dump($file_path);
-                    var_dump($file_name);
+                    $content = file_get_contents($file_path.'/'.$file_name, true);
+                    Storage::disk('local')->put('files-store/'.$file_name, $content);
                 }
 
             }

@@ -19,22 +19,22 @@ const mutations = {
 
 const actions = {
   setUserData(context) {
-    if (localStorage.getItem('access_token') !== null){
-      const options = {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Bearer ' + localStorage.getItem('access_token')
-        },
-        url: 'https://api.fun-gifs.ru/api/getUserData',
-      };
-      axios(options)
-        .then(response => {
-          context.commit('setUserData', { userData: response.data.data.userData });
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    }
+    // if (localStorage.getItem('access_token') !== null){
+    //   const options = {
+    //     method: 'GET',
+    //     headers: {
+    //       'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+    //     },
+    //     url: 'https://api.fun-gifs.ru/api/getUserData',
+    //   };
+    //   axios(options)
+    //     .then(response => {
+    //       context.commit('setUserData', { userData: response.data.data.userData });
+    //     })
+    //     .catch(e => {
+    //       console.log(e);
+    //     });
+    // }
   }
 };
 
