@@ -51,6 +51,7 @@ class FilesController extends Controller
                     'data' => ['errors' =>["Ошибка при записи поста в базу, обратитесь в поддержку"]]
                 ]);
             }
+
             foreach ($request->allFiles() as $files){
                 foreach ($files as $file){
                     $file_path = $file->path();
@@ -59,10 +60,10 @@ class FilesController extends Controller
                     $file = Storage::disk('local')->put('files-store/'.$file_name, $content);
                     $url = Storage::url('files-store/'.$file_name);
                     var_dump($url);
-//                    File::create([
-//                        'path' => ,
-//                        'post_id' => $post['id']
-//                    ]);
+                    File::create([
+                        'path' => $file_name,
+                        'post_id' => $post['id']
+                    ]);
                 }
 
             }
