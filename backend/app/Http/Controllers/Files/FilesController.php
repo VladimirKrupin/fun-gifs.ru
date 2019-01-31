@@ -15,7 +15,6 @@ class FilesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function putFiles(Request $request){
-        var_dump('123123');
         $validator = Validator::make($request->all(), [
             'files.*' => 'mimes:jpeg,png,odt,docx,pdf|max:1000',
             'files' => 'required|max:10',
@@ -42,8 +41,9 @@ class FilesController extends Controller
                 foreach ($files as $file){
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
-                    Log::debug($file_path);
-                    Log::debug($file_name);
+
+                    var_dump($file_path);
+                    var_dump($file_name);
                 }
 
             }
