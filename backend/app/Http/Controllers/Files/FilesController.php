@@ -11,10 +11,11 @@ class FilesController extends Controller
     /**
      * login api
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function putFiles(Request $request){
-
+        var_dump('123123');
         $validator = Validator::make($request->all(), [
             'files.*' => 'mimes:jpeg,png,odt,docx,pdf|max:1000',
             'files' => 'required|max:10',

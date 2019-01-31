@@ -73,7 +73,6 @@
           const options = {
             method: 'POST',
             headers: {
-              'Content-Type':'application/json'
             },
             data: {
               email: this.userData.email,
