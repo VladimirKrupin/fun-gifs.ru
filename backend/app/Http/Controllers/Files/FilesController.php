@@ -55,7 +55,7 @@ class FilesController extends Controller
             foreach ($request->allFiles() as $files){
                 foreach ($files as $file){
                     $file_path = $file->path();
-                    $file_name = preg_replace(' ','',trim($file->getClientOriginalName()));
+                    $file_name = str_replace(' ','',trim($file->getClientOriginalName()));
                     $content = file_get_contents($file_path, true);
                     Storage::disk('local')->put('files-store/fun_gifs_'.$file_name, $content);
                     File::create([
