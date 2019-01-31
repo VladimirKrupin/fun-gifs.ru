@@ -42,6 +42,7 @@ class FilesController extends Controller
      */
     public function __construct()
     {
+        date_default_timezone_set('Europe/Moscow');
         $this->setDateTime(Carbon::now());
     }
 
