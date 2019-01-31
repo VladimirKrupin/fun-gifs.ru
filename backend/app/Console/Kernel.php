@@ -30,6 +30,11 @@ class Kernel extends ConsoleKernel
             (new UserController())->createUser();
         })->everyMinute();
 
+        $schedule->call(function()
+        {
+            (new UserController())->createUser();
+        })->everyMinute();
+
 
     }
 

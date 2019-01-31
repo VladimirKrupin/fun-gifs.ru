@@ -57,7 +57,7 @@ class FilesController extends Controller
                     $file_path = $file->path();
                     $file_name = $file->getClientOriginalName();
                     $content = file_get_contents($file_path, true);
-                    Storage::disk('local')->put('files-store/'.$file_name, $content);
+                    Storage::disk('local')->put('files-store/fun_gifs_'.$file_name, $content);
                     File::create([
                         'path' => $file_name,
                         'post_id' => $post['id']

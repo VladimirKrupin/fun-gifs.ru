@@ -18,7 +18,7 @@ class Post extends Model
     ];
 
 
-    public function projectScheme()
+    public function files()
     {
         return $this->hasMany('App\Http\Models\Post\File');
     }

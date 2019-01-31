@@ -4,6 +4,7 @@ import Router from 'vue-router'
 const DefaultContainer = () => import('@/containers/DefaultContainer');
 
 const Files = () => import('@/views/files/Files');
+const Profile = () => import('@/views/profile/Profile');
 const Login = () => import('@/views/login/Login');
 const MainPage = () => import('@/views/mainPage/MainPage');
 
@@ -24,6 +25,14 @@ export default new Router({
           path: 'files',
           name: 'Files',
           component: Files,
+          meta: {
+            requiresAuth: true
+          },
+        },
+        {
+          path: 'profile',
+          name: 'Profile',
+          component: Profile,
           meta: {
             requiresAuth: true
           },
