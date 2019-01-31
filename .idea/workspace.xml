@@ -2,563 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/app.18d0d9c0.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/app.18d0d9c0.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/chunk-0d098b34.2d9fedff.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/chunk-0d098b34.2d9fedff.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/chunk-0deafc54.6df8d84a.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/chunk-0deafc54.6df8d84a.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/chunk-529e2e10.23a26d19.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/chunk-529e2e10.23a26d19.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/chunk-977982c0.11ed209c.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/chunk-977982c0.11ed209c.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/css/chunk-vendors.f14f6af4.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/css/chunk-vendors.f14f6af4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.0087dce4.woff" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.0087dce4.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.089ab3c1.eot" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.089ab3c1.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.1bc37648.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/CoreUI-Icons-Linear-Free.1bc37648.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.0cb0b9c5.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.0cb0b9c5.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.78f07e2c.woff" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.78f07e2c.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.d2285965.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.d2285965.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.f33df365.eot" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/Simple-Line-Icons.f33df365.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.674f50d2.eot" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.674f50d2.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.af7ae505.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.af7ae505.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.b06871f2.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.b06871f2.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.fee66e71.woff" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/fonts/fontawesome-webfont.fee66e71.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/CoreUI-Icons-Linear-Free.4b57c6a5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/CoreUI-Icons-Linear-Free.4b57c6a5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/Simple-Line-Icons.2fe2efe6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/Simple-Line-Icons.2fe2efe6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ad.4fc7c4c1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ad.4fc7c4c1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ad.c2b27649.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ad.c2b27649.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ae.7847726d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ae.7847726d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ae.9fd1fcbf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ae.9fd1fcbf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/af.26d0dcc7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/af.26d0dcc7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/af.b040d017.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/af.b040d017.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ag.53a60086.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ag.53a60086.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ag.5c33e55d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ag.5c33e55d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ai.2bb08d7d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ai.2bb08d7d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ai.7445e66f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ai.7445e66f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/al.01225beb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/al.01225beb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/al.633e8642.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/al.633e8642.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/am.06509258.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/am.06509258.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/am.c86a9e16.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/am.c86a9e16.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ao.4e70ca93.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ao.4e70ca93.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ao.8484ac5a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ao.8484ac5a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/aq.b95845ac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/aq.b95845ac.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/aq.c61dd421.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/aq.c61dd421.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ar.4d01e578.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ar.4d01e578.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ar.cab4b98a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ar.cab4b98a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/as.83064c6f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/as.83064c6f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/as.e753c5e9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/as.e753c5e9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/at.7824152b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/at.7824152b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/at.dc2457a2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/at.dc2457a2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/au.37a54427.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/au.37a54427.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/au.da96b2e8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/au.da96b2e8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/avatars/no-pick.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/avatars/no-pick.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/aw.29aeb3f9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/aw.29aeb3f9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/aw.f159ec16.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/aw.f159ec16.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ax.1aaab703.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ax.1aaab703.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ax.fdd00c43.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ax.fdd00c43.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/az.0b4258df.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/az.0b4258df.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/az.451284ce.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/az.451284ce.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ba.71010dff.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ba.71010dff.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ba.a9dbadd7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ba.a9dbadd7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bb.7bd8b0ac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bb.7bd8b0ac.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bb.e08360ac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bb.e08360ac.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bd.5102bab0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bd.5102bab0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bd.c4a1485f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bd.c4a1485f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/be.27d8ca49.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/be.27d8ca49.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/be.f1e78c8b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/be.f1e78c8b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bf.48eb94de.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bf.48eb94de.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bf.9a958401.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bf.9a958401.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bg.3d762564.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bg.3d762564.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bg.7163fe76.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bg.7163fe76.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bh.290519a3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bh.290519a3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bh.392927ca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bh.392927ca.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bi.3e29b35c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bi.3e29b35c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bi.9b802cca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bi.9b802cca.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bj.148de921.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bj.148de921.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bj.b6387659.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bj.b6387659.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bl.38e27b68.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bl.38e27b68.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bl.4d724b8e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bl.4d724b8e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bm.a523291d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bm.a523291d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bm.ca26b6f5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bm.ca26b6f5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bn.4f010489.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bn.4f010489.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bn.80c35c4c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bn.80c35c4c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bo.2c691422.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bo.2c691422.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bo.8c8792d5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bo.8c8792d5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bq.b551016f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bq.b551016f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bq.d6da2e84.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bq.d6da2e84.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/br.a82efeaf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/br.a82efeaf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/br.c834cb5b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/br.c834cb5b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/brand/logo-min.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/brand/logo-min.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/brand/logo-min.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/brand/logo-min.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/brand/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/brand/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/brand/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/brand/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bs.6fe877e1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bs.6fe877e1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bs.910d4bd0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bs.910d4bd0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bt.acfa822b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bt.acfa822b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bt.e502aa33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bt.e502aa33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bv.07434a84.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bv.07434a84.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bv.b70ab2f2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bv.b70ab2f2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bw.d1585fdf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bw.d1585fdf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bw.d9e5e45f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bw.d9e5e45f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/by.26a195de.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/by.26a195de.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/by.80b2d2dd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/by.80b2d2dd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bz.8927d4ce.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bz.8927d4ce.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/bz.e7e7013d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/bz.e7e7013d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ca.c3ae676a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ca.c3ae676a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ca.ed60113e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ca.ed60113e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cc.722f0576.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cc.722f0576.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cc.ecc0e321.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cc.ecc0e321.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cd.b43f872e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cd.b43f872e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cd.cd346cdc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cd.cd346cdc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cf.1bc217dc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cf.1bc217dc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cf.667c7a42.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cf.667c7a42.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cg.8373836c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cg.8373836c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cg.c8c05bfe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cg.c8c05bfe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ch.252c409b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ch.252c409b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ch.9c26f60a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ch.9c26f60a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ci.26a62321.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ci.26a62321.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ci.d939dcac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ci.d939dcac.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ck.bd3a061c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ck.bd3a061c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ck.d66de29c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ck.d66de29c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cl.6d63ff70.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cl.6d63ff70.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cl.7709f09f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cl.7709f09f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cm.5799ad4c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cm.5799ad4c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cm.c972441e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cm.c972441e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cn.02c229de.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cn.02c229de.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cn.a94c9394.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cn.a94c9394.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/co.3b252a1a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/co.3b252a1a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/co.41244c20.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/co.41244c20.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cr.657d7dbc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cr.657d7dbc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cr.7b4ebd50.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cr.7b4ebd50.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cu.0b42edab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cu.0b42edab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cu.ff754a33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cu.ff754a33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cv.20a8cfff.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cv.20a8cfff.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cv.b50df3fb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cv.b50df3fb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cw.6c845a30.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cw.6c845a30.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cw.a5487f56.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cw.a5487f56.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cx.6f47bd14.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cx.6f47bd14.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cx.9faec396.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cx.9faec396.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cy.1c8c0511.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cy.1c8c0511.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cy.f0e26651.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cy.f0e26651.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cz.052ec527.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cz.052ec527.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/cz.49044310.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/cz.49044310.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/de.3e726c2b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/de.3e726c2b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/de.4d7bac3b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/de.4d7bac3b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dj.0c386d22.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dj.0c386d22.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dj.3cf620d9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dj.3cf620d9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dk.d046fb5b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dk.d046fb5b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dk.eb1416e0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dk.eb1416e0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dm.2910f70a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dm.2910f70a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dm.5966a127.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dm.5966a127.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/do.06e1cfe3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/do.06e1cfe3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/do.9da88600.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/do.9da88600.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dz.7c2261f0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dz.7c2261f0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/dz.dea7ef63.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/dz.dea7ef63.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ec.a12f3b49.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ec.a12f3b49.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ec.e1ea3417.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ec.e1ea3417.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ee.6088c9ce.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ee.6088c9ce.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ee.9e932a62.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ee.9e932a62.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eg.61ed2ad6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eg.61ed2ad6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eg.960b10b7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eg.960b10b7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eh.61674b9f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eh.61674b9f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eh.7af60670.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eh.7af60670.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/er.976db2b7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/er.976db2b7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/er.c9799558.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/er.c9799558.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/es-ct.46e9ce9e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/es-ct.46e9ce9e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/es-ct.9429ea9c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/es-ct.9429ea9c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/es.cc1b41b0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/es.cc1b41b0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/es.d18de46b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/es.d18de46b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/et.2c1adbb5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/et.2c1adbb5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/et.919059a4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/et.919059a4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eu.4c73f57c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eu.4c73f57c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/eu.ee7f4712.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/eu.ee7f4712.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fi.2649533e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fi.2649533e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fi.b48413be.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fi.b48413be.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fj.49baedcc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fj.49baedcc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fj.a348e9f6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fj.a348e9f6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fk.2d1b653b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fk.2d1b653b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fk.dd7bc357.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fk.dd7bc357.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fm.2b14fecb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fm.2b14fecb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fm.3f19d612.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fm.3f19d612.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fo.329cbed5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fo.329cbed5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fo.b08620b3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fo.b08620b3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fontawesome-webfont.912ec66d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fontawesome-webfont.912ec66d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fr.b1156355.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fr.b1156355.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/fr.f8952213.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/fr.f8952213.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ga.29f203bb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ga.29f203bb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ga.33d27fe1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ga.33d27fe1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-eng.14167f77.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-eng.14167f77.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-eng.eabfeadc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-eng.eabfeadc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-nir.42b69bbd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-nir.42b69bbd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-nir.5b44fea7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-nir.5b44fea7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-sct.31ef8bcf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-sct.31ef8bcf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-sct.4c2c379f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-sct.4c2c379f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-wls.8742b3d6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-wls.8742b3d6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb-wls.ca26c224.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb-wls.ca26c224.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb.b44fc89d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb.b44fc89d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gb.bd749493.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gb.bd749493.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gd.3c05bb49.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gd.3c05bb49.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gd.b402c8c6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gd.b402c8c6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ge.16f859b5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ge.16f859b5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ge.d3665bf1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ge.d3665bf1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gf.23d8b419.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gf.23d8b419.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gf.2ab15edf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gf.2ab15edf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gg.357e1e33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gg.357e1e33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gg.98f67a6f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gg.98f67a6f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gh.77872d15.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gh.77872d15.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gh.caedb912.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gh.caedb912.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gi.6ecace18.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gi.6ecace18.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gi.e829d66e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gi.e829d66e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gl.28a07cff.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gl.28a07cff.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gl.28bf64e4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gl.28bf64e4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gm.414139d5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gm.414139d5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gm.f06a98cd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gm.f06a98cd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gn.1ce64523.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gn.1ce64523.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gn.36a3e9a3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gn.36a3e9a3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gp.c2c4da0e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gp.c2c4da0e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gp.fa4cab3e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gp.fa4cab3e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gq.0c1057b3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gq.0c1057b3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gq.385ac47e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gq.385ac47e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gr.6911d460.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gr.6911d460.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gr.db77f48c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gr.db77f48c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gs.175a61d9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gs.175a61d9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gs.1def7829.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gs.1def7829.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gt.58f35af6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gt.58f35af6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gt.7fe64e01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gt.7fe64e01.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gu.243ab68e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gu.243ab68e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gu.d0da25e7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gu.d0da25e7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gw.5ecbd93c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gw.5ecbd93c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gw.c1e88a91.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gw.c1e88a91.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gy.0653b318.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gy.0653b318.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/gy.79fcf270.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/gy.79fcf270.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hk.9502d716.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hk.9502d716.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hk.e6716915.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hk.e6716915.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hm.fc838ac0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hm.fc838ac0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hm.fe514431.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hm.fe514431.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hn.9b9bee13.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hn.9b9bee13.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hn.c94622ad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hn.c94622ad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hr.0f7986eb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hr.0f7986eb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hr.d01a1866.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hr.d01a1866.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ht.18b350ac.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ht.18b350ac.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ht.a0b173aa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ht.a0b173aa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hu.0d7409f8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hu.0d7409f8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/hu.e5e334fd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/hu.e5e334fd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/id.17b99676.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/id.17b99676.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/id.9f708fe5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/id.9f708fe5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ie.798a56e0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ie.798a56e0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ie.c68ff961.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ie.c68ff961.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/il.c36a011d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/il.c36a011d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/il.f62b32f0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/il.f62b32f0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/im.6cf57263.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/im.6cf57263.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/im.ed29d9ff.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/im.ed29d9ff.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/in.209ae8e9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/in.209ae8e9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/in.e4ab7bd0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/in.e4ab7bd0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/io.2d90626c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/io.2d90626c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/io.550553a7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/io.550553a7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/iq.30dee028.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/iq.30dee028.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/iq.e1922026.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/iq.e1922026.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ir.717422e6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ir.717422e6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ir.9023419c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ir.9023419c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/is.ae44c07e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/is.ae44c07e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/is.cff140f4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/is.cff140f4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/it.22b99ae7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/it.22b99ae7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/it.8d15de04.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/it.8d15de04.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/je.2026b139.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/je.2026b139.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/je.862cd38b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/je.862cd38b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jm.67f96b2f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jm.67f96b2f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jm.b7b13124.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jm.b7b13124.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jo.118c5546.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jo.118c5546.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jo.51302798.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jo.51302798.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jp.95c2abfe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jp.95c2abfe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/jp.ae89446a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/jp.ae89446a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ke.0bbfd051.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ke.0bbfd051.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ke.1c54a489.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ke.1c54a489.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kg.c6895000.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kg.c6895000.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kg.e588babc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kg.e588babc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kh.25b4be5d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kh.25b4be5d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kh.7f27fa73.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kh.7f27fa73.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ki.bf675826.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ki.bf675826.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ki.ca42f7e3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ki.ca42f7e3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/km.0f12d30c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/km.0f12d30c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/km.e0df62e4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/km.e0df62e4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kn.4ad12564.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kn.4ad12564.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kn.b0fd5e10.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kn.b0fd5e10.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kp.07ebeb5c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kp.07ebeb5c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kp.f08daf33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kp.f08daf33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kr.68586ef8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kr.68586ef8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kr.6d3d963f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kr.6d3d963f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kw.0d0ac54c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kw.0d0ac54c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kw.33b3292e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kw.33b3292e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ky.7a1c98fc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ky.7a1c98fc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ky.93a85a55.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ky.93a85a55.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kz.156c054b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kz.156c054b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/kz.d37cbd61.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/kz.d37cbd61.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/la.562dda74.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/la.562dda74.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/la.b61549ab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/la.b61549ab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lb.23f85946.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lb.23f85946.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lb.8e9c186c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lb.8e9c186c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lc.1c3a5554.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lc.1c3a5554.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lc.c056c2a7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lc.c056c2a7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/li.7787a5f8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/li.7787a5f8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/li.9e40c74a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/li.9e40c74a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lk.96cf4c4f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lk.96cf4c4f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lk.bf15b308.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lk.bf15b308.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lr.039251e3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lr.039251e3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lr.6656f943.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lr.6656f943.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ls.533cb320.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ls.533cb320.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ls.c0799ebf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ls.c0799ebf.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lt.70975be0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lt.70975be0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lt.c3aeac0d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lt.c3aeac0d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lu.2585715a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lu.2585715a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lu.c858787c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lu.c858787c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lv.8b293d98.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lv.8b293d98.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/lv.f3c1274d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/lv.f3c1274d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ly.8b64bcbd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ly.8b64bcbd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ly.ae438f5a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ly.ae438f5a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ma.60fbc221.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ma.60fbc221.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ma.bee9c054.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ma.bee9c054.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mc.78528abe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mc.78528abe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mc.b4f4b90d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mc.b4f4b90d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/md.63bbfb2e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/md.63bbfb2e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/md.8f2e0071.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/md.8f2e0071.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/me.8096e4aa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/me.8096e4aa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/me.a0dbae6f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/me.a0dbae6f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mf.487f7bd7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mf.487f7bd7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mf.5b9ff36c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mf.5b9ff36c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mg.67f5922d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mg.67f5922d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mg.91e10ba0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mg.91e10ba0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mh.6d60cee3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mh.6d60cee3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mh.8f1f9134.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mh.8f1f9134.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mk.2413b107.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mk.2413b107.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mk.ed091b88.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mk.ed091b88.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ml.204b0da4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ml.204b0da4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ml.e6f097f9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ml.e6f097f9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mm.8d6d26bc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mm.8d6d26bc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mm.92e9f832.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mm.92e9f832.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mn.39952937.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mn.39952937.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mn.b6529a3b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mn.b6529a3b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mo.1f249f51.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mo.1f249f51.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mo.44f9c555.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mo.44f9c555.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mp.2671eebe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mp.2671eebe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mp.aa6f2a40.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mp.aa6f2a40.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mq.a09e4865.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mq.a09e4865.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mq.bfeadb02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mq.bfeadb02.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mr.a3c31876.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mr.a3c31876.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mr.b293ed89.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mr.b293ed89.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ms.058b028b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ms.058b028b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ms.d5390a0c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ms.d5390a0c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mt.51f074ae.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mt.51f074ae.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mt.fd857604.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mt.fd857604.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mu.67c8f362.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mu.67c8f362.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mu.896330b7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mu.896330b7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mv.0fdc08c6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mv.0fdc08c6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mv.3c896bfd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mv.3c896bfd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mw.290d49f1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mw.290d49f1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mw.59519962.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mw.59519962.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mx.e2ffe71c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mx.e2ffe71c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mx.fc563797.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mx.fc563797.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/my.5991a60d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/my.5991a60d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/my.c52af28e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/my.c52af28e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mz.1044789c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mz.1044789c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/mz.e8801c33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/mz.e8801c33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/na.05f127b0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/na.05f127b0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/na.2a5f6f2b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/na.2a5f6f2b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nc.0dba674e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nc.0dba674e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nc.b6c1c6b3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nc.b6c1c6b3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ne.b7369ec7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ne.b7369ec7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ne.e56edd30.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ne.e56edd30.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nf.82cb457a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nf.82cb457a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nf.8f8df7a2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nf.8f8df7a2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ng.520463e1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ng.520463e1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ng.992459a3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ng.992459a3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ni.b828dceb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ni.b828dceb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ni.c90e4163.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ni.c90e4163.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nl.9bfd784c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nl.9bfd784c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nl.e336d50a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nl.e336d50a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/no.0b41df77.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/no.0b41df77.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/no.b7a21f54.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/no.b7a21f54.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/np.3ce0600c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/np.3ce0600c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/np.91248c05.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/np.91248c05.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nr.2ef5b7c8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nr.2ef5b7c8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nr.34ed2f24.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nr.34ed2f24.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nu.4a4641b3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nu.4a4641b3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nu.caaabfca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nu.caaabfca.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nz.668a935a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nz.668a935a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/nz.ad5d2639.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/nz.ad5d2639.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/om.397d3f2b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/om.397d3f2b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/om.7332c94c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/om.7332c94c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pa.0d16b0e8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pa.0d16b0e8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pa.beb40ab6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pa.beb40ab6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pe.3777e89e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pe.3777e89e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pe.4fb8c006.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pe.4fb8c006.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pf.47a54e95.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pf.47a54e95.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pf.8e525621.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pf.8e525621.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pg.9b228e6c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pg.9b228e6c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pg.e3c208b9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pg.e3c208b9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ph.af40dc6c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ph.af40dc6c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ph.fce49b6e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ph.fce49b6e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pk.3238f8e2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pk.3238f8e2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pk.3a126471.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pk.3a126471.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pl.3fe3bd51.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pl.3fe3bd51.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pl.562edca5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pl.562edca5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pm.1e97e8d7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pm.1e97e8d7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pm.89993b1f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pm.89993b1f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pn.2d4ce209.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pn.2d4ce209.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pn.3b9532b7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pn.3b9532b7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pr.1d278b02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pr.1d278b02.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pr.b55721a5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pr.b55721a5.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ps.07005a7f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ps.07005a7f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ps.2992f9b9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ps.2992f9b9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pt.09cd4ef9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pt.09cd4ef9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pt.c31a6c49.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pt.c31a6c49.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pw.005061a1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pw.005061a1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/pw.8207f624.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/pw.8207f624.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/py.c04d95f6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/py.c04d95f6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/py.c5bbbec1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/py.c5bbbec1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/qa.78909a6f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/qa.78909a6f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/qa.b314986b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/qa.b314986b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/re.01fea3b6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/re.01fea3b6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/re.17909e37.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/re.17909e37.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ro.22278e13.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ro.22278e13.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ro.625aca9e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ro.625aca9e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/rs.0b9d64b2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/rs.0b9d64b2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/rs.14899009.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/rs.14899009.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ru.0cacf46e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ru.0cacf46e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ru.e3ee3b09.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ru.e3ee3b09.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/rw.7fe5146b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/rw.7fe5146b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/rw.997fe41b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/rw.997fe41b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sa.01b40f18.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sa.01b40f18.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sa.02710800.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sa.02710800.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sb.c23eab6d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sb.c23eab6d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sb.d64e9848.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sb.d64e9848.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sc.30759b7a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sc.30759b7a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sc.ad1bcb4c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sc.ad1bcb4c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sd.7ab061d8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sd.7ab061d8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sd.9b0974f1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sd.9b0974f1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/se.b039bdb8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/se.b039bdb8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/se.fe725901.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/se.fe725901.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sg.45fb3666.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sg.45fb3666.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sg.ae32bb35.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sg.ae32bb35.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sh.50626aa7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sh.50626aa7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sh.73751467.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sh.73751467.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/si.8be67718.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/si.8be67718.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/si.fb87a786.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/si.fb87a786.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sj.ae547dbe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sj.ae547dbe.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sj.ecbc9e93.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sj.ecbc9e93.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sk.1da1c0ab.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sk.1da1c0ab.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sk.e7c5539e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sk.e7c5539e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sl.ddbd1d9b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sl.ddbd1d9b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sl.f6315f74.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sl.f6315f74.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sm.9591e46a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sm.9591e46a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sm.f1d07953.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sm.f1d07953.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sn.5b654e1a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sn.5b654e1a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sn.d2bec7ef.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sn.d2bec7ef.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/so.28889c60.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/so.28889c60.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/so.c1561217.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/so.c1561217.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sr.788f3e2a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sr.788f3e2a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sr.be27d1ae.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sr.be27d1ae.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ss.67001d2a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ss.67001d2a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ss.e3933b44.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ss.e3933b44.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/st.1f545eb9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/st.1f545eb9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/st.d0a56dbb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/st.d0a56dbb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sv.db9c7072.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sv.db9c7072.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sv.dd4d51ad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sv.dd4d51ad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sx.73a3a178.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sx.73a3a178.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sx.78876392.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sx.78876392.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sy.64f0d2d7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sy.64f0d2d7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sy.73690f50.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sy.73690f50.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sz.1e261ba0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sz.1e261ba0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/sz.fa1a994d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/sz.fa1a994d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tc.c3867f8d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tc.c3867f8d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tc.c61ef06a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tc.c61ef06a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/td.a0923ddc.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/td.a0923ddc.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/td.f37a395c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/td.f37a395c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tf.2e7dc1af.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tf.2e7dc1af.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tf.4ab43cc9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tf.4ab43cc9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tg.29fa137c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tg.29fa137c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tg.e602a907.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tg.e602a907.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/th.76fca72f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/th.76fca72f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/th.904dd785.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/th.904dd785.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tj.09418f13.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tj.09418f13.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tj.9853139b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tj.9853139b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tk.1959d9de.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tk.1959d9de.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tk.7aaccddb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tk.7aaccddb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tl.0616faaa.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tl.0616faaa.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tl.7942bccb.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tl.7942bccb.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tm.64aa750d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tm.64aa750d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tm.bdd29cb9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tm.bdd29cb9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tn.440d3505.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tn.440d3505.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tn.89a384a0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tn.89a384a0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/to.238ef1cd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/to.238ef1cd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/to.79354e72.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/to.79354e72.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tr.ce2e2e8e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tr.ce2e2e8e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tr.ed6d5f37.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tr.ed6d5f37.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tt.4705d420.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tt.4705d420.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tt.c3647d9b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tt.c3647d9b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tv.d78bd31e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tv.d78bd31e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tv.f4b7afec.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tv.f4b7afec.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tw.21291ae9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tw.21291ae9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tw.eb5ac137.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tw.eb5ac137.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tz.d02545a1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tz.d02545a1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/tz.d3df42da.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/tz.d3df42da.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ua.841d259d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ua.841d259d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ua.a8b13525.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ua.a8b13525.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ug.1c8fcdc4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ug.1c8fcdc4.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ug.278e456e.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ug.278e456e.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/um.05615112.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/um.05615112.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/um.3d347682.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/um.3d347682.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/un.3835716f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/un.3835716f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/un.c366cfa8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/un.c366cfa8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/us.8ec58318.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/us.8ec58318.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/us.ae656592.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/us.ae656592.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/uy.79b02850.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/uy.79b02850.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/uy.adbc4992.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/uy.adbc4992.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/uz.ca892343.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/uz.ca892343.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/uz.eb1e00b8.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/uz.eb1e00b8.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/va.0e3b3cc1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/va.0e3b3cc1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/va.56a808f7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/va.56a808f7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vc.4ac5124f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vc.4ac5124f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vc.bbb52fa0.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vc.bbb52fa0.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ve.9f23d962.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ve.9f23d962.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ve.b2cd5a9a.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ve.b2cd5a9a.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vg.68763b7f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vg.68763b7f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vg.e1c461f7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vg.e1c461f7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vi.9af6bfa6.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vi.9af6bfa6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vi.b41b18d9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vi.b41b18d9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vn.a0081482.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vn.a0081482.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vn.a62ad62f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vn.a62ad62f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vu.5c33b1e7.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vu.5c33b1e7.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/vu.9b6cbbe9.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/vu.9b6cbbe9.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/wf.05522b9f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/wf.05522b9f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/wf.e3ac728c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/wf.e3ac728c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ws.3ea6d44f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ws.3ea6d44f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ws.405a2c5f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ws.405a2c5f.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ye.b5840a84.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ye.b5840a84.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/ye.d13e1629.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/ye.d13e1629.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/yt.b6042b9c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/yt.b6042b9c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/yt.f06d254d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/yt.f06d254d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/za.67ff2e10.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/za.67ff2e10.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/za.70a290af.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/za.70a290af.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/zm.71bdc28b.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/zm.71bdc28b.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/zm.b7864d5c.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/zm.b7864d5c.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/zw.a21f533d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/zw.a21f533d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/img/zw.ad4ad36d.svg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/img/zw.ad4ad36d.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/app.e7d5a229.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/app.e7d5a229.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/app.e7d5a229.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/app.e7d5a229.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-0d098b34.2b0dc363.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-0d098b34.2b0dc363.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-0d098b34.2b0dc363.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-0d098b34.2b0dc363.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-0deafc54.cccc958a.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-0deafc54.cccc958a.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-0deafc54.cccc958a.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-0deafc54.cccc958a.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-529e2e10.687c1dfd.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-529e2e10.687c1dfd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-529e2e10.687c1dfd.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-529e2e10.687c1dfd.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-977982c0.67a4cd4e.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-977982c0.67a4cd4e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-977982c0.67a4cd4e.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-977982c0.67a4cd4e.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.068c66ba.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.068c66ba.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.068c66ba.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/dist/js/chunk-vendors.068c66ba.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/img/brand/logo-min.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/img/brand/logo-min.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/img/brand/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/img/brand/logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/mainPage/MainPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/mainPage/MainPage.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -625,20 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/views/login/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="169">
-              <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cors.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Cors.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+            <state relative-caret-position="306">
+              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -820,8 +264,8 @@
         <option value="$PROJECT_DIR$/backend/.env" />
         <option value="$PROJECT_DIR$/backend/.env.example" />
         <option value="$PROJECT_DIR$/frontend/.gitignore" />
-        <option value="$PROJECT_DIR$/frontend/src/views/login/Login.vue" />
         <option value="$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php" />
+        <option value="$PROJECT_DIR$/frontend/src/views/login/Login.vue" />
       </list>
     </option>
   </component>
@@ -1232,12 +676,12 @@
       <workItem from="1548829529414" duration="5958000" />
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
-      <workItem from="1548915258610" duration="5171000" />
+      <workItem from="1548915258610" duration="5712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1179881000" />
+    <option name="totallyTimeSpent" value="1180422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -1248,8 +692,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30522946" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.17149098" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30522946" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.17149098" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -1494,17 +938,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/views/login/Login.vue">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+        <state relative-caret-position="306">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Middleware/Cors.php">
+    <entry file="file://$PROJECT_DIR$/frontend/src/views/login/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+        <state relative-caret-position="169">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
         </state>
       </provider>
     </entry>

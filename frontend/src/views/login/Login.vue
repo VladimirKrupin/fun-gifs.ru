@@ -73,10 +73,8 @@
           const options = {
             method: 'POST',
             headers: {
-              'Access-Control-Allow-Origin':'*'
             },
             data: {
-
               email: this.userData.email,
               password: this.userData.password,
             },
