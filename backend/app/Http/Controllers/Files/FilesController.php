@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Files;
 use App\Http\Models\Post\Post;
 use App\Http\Models\Post\File;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App;
@@ -9,8 +10,41 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 
+/**
+ * Class FilesController
+ * @package App\Http\Controllers\Files
+ */
 class FilesController extends Controller
 {
+    /**
+     * @var Carbon
+     */
+    private $date_time;
+
+    /**
+     * @return Carbon
+     */
+    public function getDateTime()
+    {
+        return $this->date_time;
+    }
+
+    /**
+     * @param Carbon $date_time
+     */
+    public function setDateTime($date_time)
+    {
+        $this->date_time = $date_time;
+    }
+
+    /**
+     * FilesController constructor.
+     */
+    public function __construct()
+    {
+        $this->setDateTime(Carbon::now());
+    }
+
     /**
      * login api
      *
@@ -55,7 +89,7 @@ class FilesController extends Controller
             foreach ($request->allFiles() as $files){
                 foreach ($files as $file){
                     $file_path = $file->path();
-                    $file_name = 'fun_gifs_'.str_replace(' ','',trim($file->getClientOriginalName()));
+                    $file_name = 'fun_gifs_'.$this->getDateTime().'_'.str_replace(' ','',trim($file->getClientOriginalName()));
                     $content = file_get_contents($file_path, true);
                     Storage::disk('local')->put('files-store/'.$file_name, $content);
                     File::create([
