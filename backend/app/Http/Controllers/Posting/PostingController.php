@@ -13,6 +13,7 @@ class PostingController extends Controller
             ->with('files')
             ->first();
         if ($post){
+            $post = $post->toArray();
             var_dump($post);
         }
     }
