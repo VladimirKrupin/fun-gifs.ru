@@ -53,7 +53,7 @@ class FilesController extends Controller
                         'comment' => $request->input('comment'),
                         'status' => 0,
                     ]);
-                    var_dump($post);
+                    var_dump($post->toArray());
                 }
 
             }

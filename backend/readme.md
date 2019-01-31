@@ -22,3 +22,7 @@ start instruction
     
     
     sudo chmod 777 -R storage/ && sudo chmod 777 -R bootstrap/cache/ && chown www-data:www-data storage/oauth-*.key && chmod 600 storage/oauth-*.key && php artisan cache:clear
+    
+selects
+
+    select * from users;select * from posts;select * from files;
