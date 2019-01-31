@@ -51,7 +51,6 @@ class FilesController extends Controller
                     'data' => ['errors' =>["Ошибка при записи поста в базу, обратитесь в поддержку"]]
                 ]);
             }
-            $post = $post->toArray();
             foreach ($request->allFiles() as $files){
                 foreach ($files as $file){
                     $file_path = $file->path();
