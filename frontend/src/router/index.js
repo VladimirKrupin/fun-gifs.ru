@@ -43,7 +43,7 @@ export default new Router({
       name: 'MainPage',
       component: MainPage,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       },
     },
     {
