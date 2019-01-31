@@ -20,7 +20,7 @@ class Post extends Model
 
     public function files()
     {
-        return $this->hasMany('App\Http\Models\Post\File','id','post_id');
+        return $this->hasMany('App\Http\Models\Post\File','post_id','');
     }
 
     
