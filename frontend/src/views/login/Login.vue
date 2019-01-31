@@ -73,11 +73,13 @@
           const options = {
             method: 'POST',
             headers: {
+              'Content-Type':'application/json'
             },
             data: {
               email: this.userData.email,
               password: this.userData.password,
             },
+
             url: 'http://api.fun-gifs.ru/api/login',
           };
           axios(options)
