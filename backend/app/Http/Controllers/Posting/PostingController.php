@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Posting;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
+use CURLFile;
 use \getjump\Vk\Core as Vk;
 use App;
 //use getjump\Vk\Core;
@@ -13,11 +14,7 @@ class PostingController extends Controller
     public function posting()
     {
 
-        //https://vk.com/dev/authcode_flow_user
-
-        //https://oauth.vk.com/authorize?client_id=6842537&display=page&redirect_uri=http://api.fun-gifs.ru/oauthvk/&scope=manage,offline&response_type=code&v=5.92
-
-        //https://oauth.vk.com/authorize?client_id=6842537&display=page&redirect_uri=http://api.fun-gifs.ru/oauthvk/&group_ids=176519720&scope=messages,manage,docs,photos,stories&response_type=code&v=5.92
+        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
 
 //        $post = Post::where('status', 0)
 //            ->with('files')
@@ -26,113 +23,67 @@ class PostingController extends Controller
 //            $post = $post->toArray();
 //            var_dump($post);
 //        }
+        $access_token = 'a3dfe02790399bc1fa057bd6cfd10a6c0859b44a3a76e66369fe9254ff454a5f37fbbc9b4bee2de99e679';
+        $group_id = -176519720;
+        $version = 5.92;
 
-        // git clone https://github.com/Vastly/vkontakte-php-sdk
-
-//        $request_access_params = array(
-//            'client_id' => 6842537,
-//            'client_secret' => '6Zc4xQCYQzFOFswOsQJt',
-//            'redirect_uri' => 'http://api.fun-gifs.ru/oauthvk/',
-//            'code' => '1215cd7a29f02ecd23',
-//        );
-////        https://oauth.vk.com/authorize?=1&=&=&group_ids=1,2&=messages&=&v=5.92
-////
-//        $request_access_params = http_build_query($request_access_params);
-//        $access_tocken = file_get_contents('https://oauth.vk.com/access_token?'.$request_access_params);
-////
-//        var_dump($access_tocken);
-
-        //autorization oauth2.0 server
-//        $get_code = 'https://oauth.vk.com/authorize?client_id=6829105&redirect_uri=http://api.fun-gifs.ru/api/OAuthVk/&display=page&scope=manage,offline&response_type=code&v=5.92';
-//        $get_token = 'https://oauth.vk.com/access_token?client_id=6829105&client_secret=MM3phppJM18qS1gY8vDS&redirect_uri=https://oauth.vk.com/blank.html&code=2cf2d70970ceb7b9be';
-//
-//
-//
-        $request_params = array(
-            'owner_id' => -176519720,    // Кому отправляем
-            'message' => 'test wall',   // Что отправляем
-            'from_group' => 1,
-            'access_token' => 'a3dfe02790399bc1fa057bd6cfd10a6c0859b44a3a76e66369fe9254ff454a5f37fbbc9b4bee2de99e679',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+        $params = array(
+            'group_id' => $group_id,
+            'access_token' => $access_token,
             'v' => 5.92,
         );
-//
-        $get_params = http_build_query($request_params);
-        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
 
-        var_dump($result);
+        $file_upload_link = file_get_contents('https://api.vk.com/method/photos.getWallUploadServer?' . http_build_query($params));
 
+        //Получаем адрес для загрузки фото на сервер
+        $data=json_decode($file_upload_link);
 
-
-//        $vk = new Vk;
-//        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('ef3dee8969688d669f623a93366e6aa0c41a662ead97900f3c0d61e4b104f540e7498bc3a50686d98e089');
-//        //MESSAGES
-//        $data = $vk->request('messages.get', ['count' => 200]);
-//
-//        var_dump($data);
-//        $date = date_create_from_format('d.m.Y H:i', $_POST["date_delay"]);
-//        $date_delay = mktime (date_format($date, 'H'),date_format($date, 'i'),0,date_format($date, 'm'),date_format($date, 'd'),date_format($date, 'Y'));
-//        var_dump($date_delay);
+        $link=$data->response->upload_url;
 
 
+        $post_params = array(
+            'photo' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-01-31 16:56:44_veGd8klMMws.jpg')
+        );
+//Загружаем фото
+        $ch = curl_init($link);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
+        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params);
+        $response = curl_exec( $ch );
+        curl_close( $ch );
+        $response=json_decode($response);
 
-//        $url = 'https://api.vk.com/method/wall.post?v=$v';
-//        $params = array(
-//            'owner_id' => -6829105,    // Кому отправляем
-//            'message' => 'test wall',   // Что отправляем
+        $server=$response->server;
+        $photo=$response->photo;
+        $hash=$response->hash;
+
+        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
+        $data3 = file_get_contents($link2);
+        error_log($data3);
+//echo $data3;
+//echo"</br>";
+
+        $data3 = json_decode($data3, true);
+
+        var_dump($data3);
+
+
+
+//        $request_params = array(
+//            'owner_id' => -176519720,
+//            'message' => 'test wall',
 //            'from_group' => 1,
-////            'attachments' => $photo3.",".$pageURL,
-////            "lat" => $lat,
-////            "long" => $long,
-////            "publish_date" =>  mktime (date_format($date, 'H'),date_format($date, 'i'),0,date_format($date, 'm'),date_format($date, 'd'),date_format($date, 'Y')),
-//            'access_token' => '9f4c857308084ced1a6fa8ef2d2661a515bf2b60ee307ddc3298d1d157f710c019b432884af628b173c22',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+//            'access_token' => $access_token,  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
 //            'v' => 5.92,
 //        );
-//        $result = file_get_contents($url, false, stream_context_create(array(
-//            'http' => array(
-//                'method'  => 'POST',
-//                'header'  => 'Content-type: application/x-www-form-urlencoded',
-//                'content' => http_build_query($params)
-//            )
-//        )));
-
-
-
 //
-//        $url = 'https://oauth.vk.com/authorize?client_id=6829105&scope=offline,wall,manage&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.92&response_type=token';
-//        $result = file_get_contents($url, false, stream_context_create(array(
-//            'http' => array(
-//                'method'  => 'POST',
-//                'header'  => 'Content-type: application/x-www-form-urlencoded',
-//                'content' => 'html'
-//            )
-//        )));
+//        $get_params = http_build_query($request_params);
+//        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+//
+//        var_dump($result);
 
-
-// https://oauth.vk.com/authorize?client_id=6829105&scope=offline,wall,manage,groups&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.92&response_type=token
-        //https://oauth.vk.com/authorize?client_id=6829105&scope=manage,offline&redirect_uri=https://oauth.vk.com/blank.html&v=5.92&response_type=token
-
-//        $userMap = [];
-//        $userCache = [];
-//
-//        $user = new \getjump\Vk\Wrapper\User($vk);
-//
-//        $fetchData = function($id) use($user, &$userMap, &$userCache)
-//        {
-//            if(!isset($userMap[$id]))
-//            {
-//                $userMap[$id] = sizeof($userCache);
-//                $userCache[] = $user->get($id)->response->get();
-//            }
-//
-//            return $userCache[$userMap[$id]];
-//        };
-//
-////REQUEST WILL ISSUE JUST HERE! SINCE __get overrided
-//        $data->each(function($key, $value) use($fetchData) {
-//            $user = $fetchData($value->user_id);
-//            printf("[%s] %s <br>", $user->getName(), $value->body);
-//            return;
-//        });
 
     }
 
