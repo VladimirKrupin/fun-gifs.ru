@@ -56,10 +56,10 @@ class PostingController extends Controller
             'v' => 5.92,
         );
 //
-//        $get_params = http_build_query($request_params);
-//        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
-//
-//        var_dump($result);
+        $get_params = http_build_query($request_params);
+        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+
+        var_dump($result);
 
 
 
