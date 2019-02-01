@@ -25,28 +25,30 @@ class PostingController extends Controller
         //MESSAGES
         $data = $vk->request('messages.get', ['count' => 200]);
 
-        $userMap = [];
-        $userCache = [];
+        var_dump($data);
 
-        $user = new \getjump\Vk\Wrapper\User($vk);
-
-        $fetchData = function($id) use($user, &$userMap, &$userCache)
-        {
-            if(!isset($userMap[$id]))
-            {
-                $userMap[$id] = sizeof($userCache);
-                $userCache[] = $user->get($id)->response->get();
-            }
-
-            return $userCache[$userMap[$id]];
-        };
-
-//REQUEST WILL ISSUE JUST HERE! SINCE __get overrided
-        $data->each(function($key, $value) use($fetchData) {
-            $user = $fetchData($value->user_id);
-            printf("[%s] %s <br>", $user->getName(), $value->body);
-            return;
-        });
+//        $userMap = [];
+//        $userCache = [];
+//
+//        $user = new \getjump\Vk\Wrapper\User($vk);
+//
+//        $fetchData = function($id) use($user, &$userMap, &$userCache)
+//        {
+//            if(!isset($userMap[$id]))
+//            {
+//                $userMap[$id] = sizeof($userCache);
+//                $userCache[] = $user->get($id)->response->get();
+//            }
+//
+//            return $userCache[$userMap[$id]];
+//        };
+//
+////REQUEST WILL ISSUE JUST HERE! SINCE __get overrided
+//        $data->each(function($key, $value) use($fetchData) {
+//            $user = $fetchData($value->user_id);
+//            printf("[%s] %s <br>", $user->getName(), $value->body);
+//            return;
+//        });
 
     }
 
