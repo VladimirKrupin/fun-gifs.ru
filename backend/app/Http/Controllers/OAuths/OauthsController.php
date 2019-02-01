@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Posting;
+namespace App\Http\Controllers\OAuths;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
 use \getjump\Vk\Core as Vk;
