@@ -44,18 +44,18 @@ class PostingController extends Controller
 //
 //
 //
-//        $request_params = array(
-//            'owner_id' => -176519720,    // Кому отправляем
-//            'message' => 'test wall',   // Что отправляем
-//            'from_group' => 1,
-//            'access_token' => '008ad7cbb700fde7dd03367442cdb060c5bab35a540a620645d2f38fd6a990c0c1aef2704a340ef0f3c5c',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
-//            'v' => 5.92,
-//        );
-//
-//        $get_params = http_build_query($request_params);
-//        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
-//
-//        var_dump($result);
+        $request_params = array(
+            'owner_id' => -176519720,    // Кому отправляем
+            'message' => 'test wall',   // Что отправляем
+            'from_group' => 1,
+            'access_token' => '16ba195d9121a504c49d0c962596c71ee2d89a89a00f76181f691c5ba3b8830a870e179c9e547df0c01d9',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'v' => 5.92,
+        );
+
+        $get_params = http_build_query($request_params);
+        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+
+        var_dump($result);
 
 
 
