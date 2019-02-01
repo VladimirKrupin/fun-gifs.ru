@@ -12,6 +12,8 @@ class PostingController extends Controller
 
     public function posting()
     {
+
+        //https://vk.com/dev/authcode_flow_user
         $post = Post::where('status', 0)
             ->with('files')
             ->first();
@@ -20,18 +22,18 @@ class PostingController extends Controller
             var_dump($post);
         }
 
-        $request_access_params = array(
-            'client_id' => 6842537,    // Кому отправляем
-            'client_secret' => '6Zc4xQCYQzFOFswOsQJt',
-            'redirect_uri' => 'http://api.fun-gifs.ru/oauthvk/',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
-            'code' => 'bb717e934790621c97',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
-        );
-//        https://oauth.vk.com/authorize?=1&=&=&group_ids=1,2&=messages&=&v=5.92
-//
-        $request_access_params = http_build_query($request_access_params);
-        $access_tocken = file_get_contents('https://oauth.vk.com/access_token?'.$request_access_params);
-//
-        var_dump($access_tocken);
+//        $request_access_params = array(
+//            'client_id' => 6842537,    // Кому отправляем
+//            'client_secret' => '6Zc4xQCYQzFOFswOsQJt',
+//            'redirect_uri' => 'http://api.fun-gifs.ru/oauthvk/',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+//            'code' => 'bb717e934790621c97',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+//        );
+////        https://oauth.vk.com/authorize?=1&=&=&group_ids=1,2&=messages&=&v=5.92
+////
+//        $request_access_params = http_build_query($request_access_params);
+//        $access_tocken = file_get_contents('https://oauth.vk.com/access_token?'.$request_access_params);
+////
+//        var_dump($access_tocken);
 
         //autorization oauth2.0 server
 //        $get_code = 'https://oauth.vk.com/authorize?client_id=6829105&redirect_uri=http://api.fun-gifs.ru/api/OAuthVk/&display=page&scope=manage,offline&response_type=code&v=5.92';
@@ -39,18 +41,18 @@ class PostingController extends Controller
 //
 //
 //
-//        $request_params = array(
-//            'owner_id' => -6829105,    // Кому отправляем
-//            'message' => 'test wall',   // Что отправляем
-//            'from_group' => 1,
-//            'access_token' => '47444ed3f25ee693d641e8d6f3439e735398efee5b53017211bc808c79803add9d61a967c5cec18f7ad89',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
-//            'v' => 5.92,
-//        );
-//
-//        $get_params = http_build_query($request_params);
-//        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
-//
-//        var_dump($result);
+        $request_params = array(
+            'owner_id' => -6829105,    // Кому отправляем
+            'message' => 'test wall',   // Что отправляем
+            'from_group' => 1,
+            'access_token' => '008ad7cbb700fde7dd03367442cdb060c5bab35a540a620645d2f38fd6a990c0c1aef2704a340ef0f3c5c',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'v' => 5.92,
+        );
+
+        $get_params = http_build_query($request_params);
+        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+
+        var_dump($result);
 
 
 
