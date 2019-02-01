@@ -37,7 +37,6 @@ class PostingController extends Controller
 //
         $request_access_params = http_build_query($request_access_params);
         $access_tocken = file_get_contents('https://oauth.vk.com/access_token?'.$request_access_params);
-        $access_tocken = json_decode($access_tocken)['access_token'];
 //
         var_dump($access_tocken);
 
