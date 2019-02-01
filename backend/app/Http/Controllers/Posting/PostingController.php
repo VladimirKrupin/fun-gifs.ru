@@ -42,7 +42,7 @@ class PostingController extends Controller
 //
 //
         $request_params = array(
-            'owner_id' => -6829105,    // Кому отправляем
+            'owner_id' => -176519720,    // Кому отправляем
             'message' => 'test wall',   // Что отправляем
             'from_group' => 1,
             'access_token' => '008ad7cbb700fde7dd03367442cdb060c5bab35a540a620645d2f38fd6a990c0c1aef2704a340ef0f3c5c',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
