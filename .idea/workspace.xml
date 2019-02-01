@@ -103,11 +103,11 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="342">
               <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549021580668" expanded="true" signature="1562:2542" ph="..." />
+                <marker date="1549021821040" expanded="true" signature="1492:2472" ph="..." />
               </folding>
             </state>
           </provider>
@@ -774,12 +774,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="32253000" />
+      <workItem from="1548928460750" duration="32494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1215173000" />
+    <option name="totallyTimeSpent" value="1215414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -1199,11 +1199,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="342">
           <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549021580668" expanded="true" signature="1562:2542" ph="..." />
+            <marker date="1549021821040" expanded="true" signature="1492:2472" ph="..." />
           </folding>
         </state>
       </provider>

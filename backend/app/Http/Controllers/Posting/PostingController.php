@@ -31,7 +31,7 @@ class PostingController extends Controller
             'client_id' => 6842537,
             'client_secret' => '6Zc4xQCYQzFOFswOsQJt',
             'redirect_uri' => 'http://api.fun-gifs.ru/oauthvk/',
-            'code' => 'ae9775140d0733dc4d',
+            'code' => '1215cd7a29f02ecd23',
         );
 //        https://oauth.vk.com/authorize?=1&=&=&group_ids=1,2&=messages&=&v=5.92
 //
