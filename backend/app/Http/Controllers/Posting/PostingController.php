@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Posting;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
-//use \getjump\Vk\Core as Vk;
+use \getjump\Vk\Core as Vk;
 use App;
 //use getjump\Vk\Core;
 use Validator;
@@ -20,8 +20,8 @@ class PostingController extends Controller
             var_dump($post);
         }
 
-        $vk = new \getjump\Vk\Core;
-        $vk = $vk::getInstance()->apiVersion('5.5')->setToken('677612e294806d4a5ac4d333b7476956677f353d5a0976584d6d10b3af3cac704645b976df27c7f826d6d&expires_in=0&user_id=244842255');
+        $vk = new Vk;
+        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('677612e294806d4a5ac4d333b7476956677f353d5a0976584d6d10b3af3cac704645b976df27c7f826d6d&expires_in=0&user_id=244842255');
         //MESSAGES
         $data = $vk->request('messages.get', ['count' => 200]);
 
