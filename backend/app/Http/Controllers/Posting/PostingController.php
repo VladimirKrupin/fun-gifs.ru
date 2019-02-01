@@ -21,7 +21,7 @@ class PostingController extends Controller
         }
 
         $vk = new Vk;
-        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('677612e294806d4a5ac4d333b7476956677f353d5a0976584d6d10b3af3cac704645b976df27c7f826d6d&expires_in=0&user_id=244842255');
+        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('677612e294806d4a5ac4d333b7476956677f353d5a0976584d6d10b3af3cac704645b976df27c7f826d6d');
         //MESSAGES
         $data = $vk->request('messages.get', ['count' => 200]);
 
