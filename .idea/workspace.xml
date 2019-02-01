@@ -103,11 +103,12 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="400">
+              <caret line="54" column="116" selection-start-line="54" selection-start-column="116" selection-end-line="54" selection-end-column="116" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549021821040" expanded="true" signature="1492:2472" ph="..." />
+                <marker date="1549022554793" expanded="true" signature="711:896" ph="..." />
+                <marker date="1549022554793" expanded="true" signature="1596:2562" ph="..." />
               </folding>
             </state>
           </provider>
@@ -143,20 +144,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="File.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/Http/Models/Post/File.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>:max</find>
       <find>max</find>
       <find>ChangePassword</find>
       <find>changePasswordReturn</find>
@@ -186,6 +177,7 @@
       <find>Выйти</find>
       <find>Request</find>
       <find>handleFileUploads</find>
+      <find>postToPublic</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -592,6 +584,46 @@
             <path>
               <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
               <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="bocharsky-bw" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="bocharsky-bw" type="462c0819:PsiDirectoryNode" />
+              <item name="vkontakte-php-sdk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="bocharsky-bw" type="462c0819:PsiDirectoryNode" />
+              <item name="vkontakte-php-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="bocharsky-bw" type="462c0819:PsiDirectoryNode" />
+              <item name="vkontakte-php-sdk" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BW" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -774,12 +806,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="32494000" />
+      <workItem from="1548928460750" duration="33227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1215414000" />
+    <option name="totallyTimeSpent" value="1216147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -856,7 +888,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min123.svg" />
     <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1197,13 +1228,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/vendor/bocharsky-bw/vkontakte-php-sdk/src/BW/Vkontakte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="400">
+          <caret line="54" column="116" selection-start-line="54" selection-start-column="116" selection-end-line="54" selection-end-column="116" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549021821040" expanded="true" signature="1492:2472" ph="..." />
+            <marker date="1549022554793" expanded="true" signature="711:896" ph="..." />
+            <marker date="1549022554793" expanded="true" signature="1596:2562" ph="..." />
           </folding>
         </state>
       </provider>
