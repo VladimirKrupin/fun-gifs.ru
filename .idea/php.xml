@@ -157,6 +157,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/backend/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/backend/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/backend/vendor/getjump/vk" />
+      <path value="$PROJECT_DIR$/backend/vendor/bocharsky-bw/vkontakte-php-sdk" />
     </include_path>
   </component>
   <component name="PhpUnit">

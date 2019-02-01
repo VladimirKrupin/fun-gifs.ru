@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "bocharsky-bw/vkontakte-php-sdk": "^2.0",
         "fideloper/proxy": "^4.0",
+        "getjump/vk": "*",
         "laravel/framework": "5.4.*",
         "laravel/passport": "1.0.*",
         "laravel/tinker": "~1.0",

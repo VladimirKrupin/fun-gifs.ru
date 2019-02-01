@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/fun-gifs.ru.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fun-gifs.ru.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,19 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Carbon.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/vendor/nesbot/carbon/src/Carbon/Carbon.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="595" column="27" selection-start-line="595" selection-start-column="27" selection-end-line="595" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="324">
               <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
             </state>
           </provider>
@@ -110,13 +105,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1483">
-              <caret line="88" column="13" lean-forward="true" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state relative-caret-position="321">
+              <caret line="23" column="178" selection-start-line="23" selection-start-column="178" selection-end-line="23" selection-end-column="178" />
               <folding>
-                <element signature="e#44#74#0#PHP" expanded="true" />
+                <element signature="e#46#76#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Core.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/vendor/getjump/vk/src/getjump/Vk/Core.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <folding>
+                <element signature="e#73#95#0#PHP" />
+                <element signature="e#113#173#0#PHP" />
+                <element signature="e#205#305#0#PHP" />
+                <element signature="e#337#420#0#PHP" />
+                <element signature="e#455#525#0#PHP" />
+                <element signature="e#565#650#0#PHP" />
+                <element signature="e#692#804#0#PHP" />
+                <element signature="e#840#969#0#PHP" />
+                <element signature="e#1007#1161#0#PHP" />
+                <element signature="e#1166#1384#0#PHP" />
+                <element signature="e#1239#1316#0#PHP" />
+                <element signature="e#1390#1486#0#PHP" />
+                <element signature="e#1491#1643#0#PHP" />
+                <element signature="e#1541#1614#0#PHP" />
+                <element signature="e#1649#1774#0#PHP" />
+                <element signature="e#1779#1894#0#PHP" />
+                <element signature="e#1900#2083#0#PHP" />
+                <element signature="e#2088#2469#0#PHP" />
+                <element signature="e#2154#2220#0#PHP" />
+                <element signature="e#2475#2515#0#PHP" />
+                <element signature="e#2520#2583#0#PHP" />
+                <element signature="e#2589#2660#0#PHP" />
+                <element signature="e#2665#2908#0#PHP" />
+                <element signature="e#2731#2796#0#PHP" />
+                <element signature="e#2805#2878#0#PHP" />
+                <element signature="e#2914#3014#0#PHP" />
+                <element signature="e#3019#3135#0#PHP" />
+                <element signature="e#3141#3251#0#PHP" />
+                <element signature="e#3256#3386#0#PHP" />
+                <element signature="e#3392#3486#0#PHP" />
+                <element signature="e#3492#3594#0#PHP" />
+                <element signature="e#3599#3705#0#PHP" />
+                <element signature="e#3711#3739#0#PHP" />
+                <element signature="e#3774#3842#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -126,7 +166,7 @@
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -277,8 +317,8 @@
         <option value="$PROJECT_DIR$/frontend/.gitignore" />
         <option value="$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
       </list>
     </option>
   </component>
@@ -454,6 +494,8 @@
       <path value="$PROJECT_DIR$/backend/vendor/vlucas/phpdotenv" />
       <path value="$PROJECT_DIR$/backend/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/backend/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/backend/vendor/getjump/vk" />
+      <path value="$PROJECT_DIR$/backend/vendor/bocharsky-bw/vkontakte-php-sdk" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -780,12 +822,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="13579000" />
+      <workItem from="1548928460750" duration="16330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1196499000" />
+    <option name="totallyTimeSpent" value="1199250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -796,8 +838,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.22198506" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.17367558" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.17075774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.17367558" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -862,7 +904,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/start-project-local.sh" />
     <entry file="file://$PROJECT_DIR$/start-project-dev.sh" />
     <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min123.svg" />
     <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min.jpg">
@@ -1103,7 +1144,7 @@
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1121,6 +1162,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/views/profile/Profile.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -1132,19 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1483">
-          <caret line="88" column="13" lean-forward="true" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
-          <folding>
-            <element signature="e#44#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/views/profile/Profile.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/containers/DefaultHeaderDropdownAccnt.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1155,10 +1193,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
+    <entry file="file://$PROJECT_DIR$/backend/vendor/getjump/vk/src/getjump/Vk/Core.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        <state relative-caret-position="126">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#73#95#0#PHP" />
+            <element signature="e#113#173#0#PHP" />
+            <element signature="e#205#305#0#PHP" />
+            <element signature="e#337#420#0#PHP" />
+            <element signature="e#455#525#0#PHP" />
+            <element signature="e#565#650#0#PHP" />
+            <element signature="e#692#804#0#PHP" />
+            <element signature="e#840#969#0#PHP" />
+            <element signature="e#1007#1161#0#PHP" />
+            <element signature="e#1166#1384#0#PHP" />
+            <element signature="e#1239#1316#0#PHP" />
+            <element signature="e#1390#1486#0#PHP" />
+            <element signature="e#1491#1643#0#PHP" />
+            <element signature="e#1541#1614#0#PHP" />
+            <element signature="e#1649#1774#0#PHP" />
+            <element signature="e#1779#1894#0#PHP" />
+            <element signature="e#1900#2083#0#PHP" />
+            <element signature="e#2088#2469#0#PHP" />
+            <element signature="e#2154#2220#0#PHP" />
+            <element signature="e#2475#2515#0#PHP" />
+            <element signature="e#2520#2583#0#PHP" />
+            <element signature="e#2589#2660#0#PHP" />
+            <element signature="e#2665#2908#0#PHP" />
+            <element signature="e#2731#2796#0#PHP" />
+            <element signature="e#2805#2878#0#PHP" />
+            <element signature="e#2914#3014#0#PHP" />
+            <element signature="e#3019#3135#0#PHP" />
+            <element signature="e#3141#3251#0#PHP" />
+            <element signature="e#3256#3386#0#PHP" />
+            <element signature="e#3392#3486#0#PHP" />
+            <element signature="e#3492#3594#0#PHP" />
+            <element signature="e#3599#3705#0#PHP" />
+            <element signature="e#3711#3739#0#PHP" />
+            <element signature="e#3774#3842#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="23" column="178" selection-start-line="23" selection-start-column="178" selection-end-line="23" selection-end-column="178" />
+          <folding>
+            <element signature="e#46#76#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
