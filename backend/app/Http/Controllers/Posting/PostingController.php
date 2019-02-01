@@ -20,12 +20,90 @@ class PostingController extends Controller
             var_dump($post);
         }
 
-        $vk = new Vk;
-        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('ef3dee8969688d669f623a93366e6aa0c41a662ead97900f3c0d61e4b104f540e7498bc3a50686d98e089');
-        //MESSAGES
-        $data = $vk->request('messages.get', ['count' => 200]);
+        $request_access_params = array(
+            'client_id' => 6829105,    // Кому отправляем
+            'redirect_uri' => 'https://oauth.vk.com/blank.html',
+            'group_ids' => 6829105,  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'display' => 'page',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'scope' => 'manage',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'response_type' => 'code',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'v' => 5.92,
+        );
+//        https://oauth.vk.com/authorize?=1&=&=&group_ids=1,2&=messages&=&v=5.92
+//
+        $request_access_params = http_build_query($request_access_params);
+        $access_tocken = file_get_contents('https://oauth.vk.com/authorize?'.$request_access_params);
+//
+//        var_dump($access_tocken);
 
-        var_dump($data);
+        //autorization oauth2.0 server
+        $get_code = 'https://oauth.vk.com/authorize?client_id=6829105&redirect_uri=https://oauth.vk.com/blank.html&display=page&scope=manage,offline&response_type=code&v=5.92';
+        $get_token = 'https://oauth.vk.com/access_token?client_id=6829105&client_secret=MM3phppJM18qS1gY8vDS&redirect_uri=https://oauth.vk.com/blank.html&code=2cf2d70970ceb7b9be';
+
+
+
+        $request_params = array(
+            'owner_id' => -6829105,    // Кому отправляем
+            'message' => 'test wall',   // Что отправляем
+            'from_group' => 1,
+            'access_token' => '47444ed3f25ee693d641e8d6f3439e735398efee5b53017211bc808c79803add9d61a967c5cec18f7ad89',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+            'v' => 5.92,
+        );
+
+        $get_params = http_build_query($request_params);
+        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+
+        var_dump($result);
+
+
+
+//        $vk = new Vk;
+//        $vk = Vk::getInstance()->apiVersion('5.5')->setToken('ef3dee8969688d669f623a93366e6aa0c41a662ead97900f3c0d61e4b104f540e7498bc3a50686d98e089');
+//        //MESSAGES
+//        $data = $vk->request('messages.get', ['count' => 200]);
+//
+//        var_dump($data);
+//        $date = date_create_from_format('d.m.Y H:i', $_POST["date_delay"]);
+//        $date_delay = mktime (date_format($date, 'H'),date_format($date, 'i'),0,date_format($date, 'm'),date_format($date, 'd'),date_format($date, 'Y'));
+//        var_dump($date_delay);
+
+
+
+//        $url = 'https://api.vk.com/method/wall.post?v=$v';
+//        $params = array(
+//            'owner_id' => -6829105,    // Кому отправляем
+//            'message' => 'test wall',   // Что отправляем
+//            'from_group' => 1,
+////            'attachments' => $photo3.",".$pageURL,
+////            "lat" => $lat,
+////            "long" => $long,
+////            "publish_date" =>  mktime (date_format($date, 'H'),date_format($date, 'i'),0,date_format($date, 'm'),date_format($date, 'd'),date_format($date, 'Y')),
+//            'access_token' => '9f4c857308084ced1a6fa8ef2d2661a515bf2b60ee307ddc3298d1d157f710c019b432884af628b173c22',  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+//            'v' => 5.92,
+//        );
+//        $result = file_get_contents($url, false, stream_context_create(array(
+//            'http' => array(
+//                'method'  => 'POST',
+//                'header'  => 'Content-type: application/x-www-form-urlencoded',
+//                'content' => http_build_query($params)
+//            )
+//        )));
+
+
+
+//
+//        $url = 'https://oauth.vk.com/authorize?client_id=6829105&scope=offline,wall,manage&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.92&response_type=token';
+//        $result = file_get_contents($url, false, stream_context_create(array(
+//            'http' => array(
+//                'method'  => 'POST',
+//                'header'  => 'Content-type: application/x-www-form-urlencoded',
+//                'content' => 'html'
+//            )
+//        )));
+
+
+// https://oauth.vk.com/authorize?client_id=6829105&scope=offline,wall,manage,groups&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.92&response_type=token
+        //https://oauth.vk.com/authorize?client_id=6829105&scope=manage,offline&redirect_uri=https://oauth.vk.com/blank.html&v=5.92&response_type=token
 
 //        $userMap = [];
 //        $userCache = [];

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,7 +92,7 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="306">
               <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="50" column="13" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="50" selection-end-column="13" />
+            <state relative-caret-position="162">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
               </folding>
@@ -158,20 +158,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/app/Http/Models/Post/Post.php">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="324">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/.gitignore">
+      <file leaf-file-name="OauthsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="234">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="27" />
+              <folding>
+                <element signature="e#46#76#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,7 +192,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.loader</find>
       <find>:max</find>
       <find>max</find>
       <find>ChangePassword</find>
@@ -218,6 +220,7 @@
       <find>/favicon.ico?id=UA-118965717-3</find>
       <find>getUserData</find>
       <find>Выйти</find>
+      <find>Request</find>
       <find>handleFileUploads</find>
     </findStrings>
     <replaceStrings>
@@ -264,7 +267,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/views/resetpassword/ResetPassword.vue" />
         <option value="$PROJECT_DIR$/backend/app/Http/Models/User/User.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Models/User/UsersProperties.php" />
         <option value="$PROJECT_DIR$/backend/database/migrations/2018_10_12_100160_create_users_password_change_table.php" />
@@ -291,7 +293,6 @@
         <option value="$PROJECT_DIR$/frontend/src/_nav.js" />
         <option value="$PROJECT_DIR$/frontend/src/containers/DefaultContainer.vue" />
         <option value="$PROJECT_DIR$/backend/routes/web.php" />
-        <option value="$PROJECT_DIR$/backend/routes/api.php" />
         <option value="$PROJECT_DIR$/backend/database/migrations/2018_10_12_100180_create_users_table.php" />
         <option value="$PROJECT_DIR$/backend/app/Mail/User/ChangePassword.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/emails/change-password.blade.php" />
@@ -315,6 +316,8 @@
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php" />
+        <option value="$PROJECT_DIR$/backend/routes/api.php" />
       </list>
     </option>
   </component>
@@ -570,6 +573,15 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="OAuths" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Posting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -611,27 +623,7 @@
               <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
               <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fun-gifs.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fun-gifs.ru" type="b2602c69:ProjectViewProjectNode" />
@@ -735,11 +727,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths" />
       <recent name="$PROJECT_DIR$/backend/app/Http/Controllers/Posting" />
       <recent name="$PROJECT_DIR$/frontend/src/views" />
       <recent name="$PROJECT_DIR$/backend/app/Http/Models/Post" />
       <recent name="$PROJECT_DIR$/backend/app/Mail/Post" />
-      <recent name="$PROJECT_DIR$/backend/database/migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -818,12 +810,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="17217000" />
+      <workItem from="1548928460750" duration="25815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1200137000" />
+    <option name="totallyTimeSpent" value="1208735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -834,8 +826,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24012807" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.17367558" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24012807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13326052" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -900,7 +892,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/start-project-dev.sh" />
     <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min123.svg" />
     <entry file="file://$PROJECT_DIR$/frontend/dist/img/brand/logo-min.jpg">
       <provider selected="true" editor-type-id="images" />
@@ -1003,13 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1120,16 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#31#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1232,13 +1206,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+          <folding>
+            <element signature="e#31#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="50" column="13" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="50" selection-end-column="13" />
+        <state relative-caret-position="162">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#46#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
         </state>
       </provider>
     </entry>
