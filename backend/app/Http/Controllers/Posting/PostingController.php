@@ -37,7 +37,7 @@ class PostingController extends Controller
 //        var_dump($access_tocken);
 
         //autorization oauth2.0 server
-        $get_code = 'https://oauth.vk.com/authorize?client_id=6829105&redirect_uri=https://oauth.vk.com/blank.html&display=page&scope=manage,offline&response_type=code&v=5.92';
+        $get_code = 'https://oauth.vk.com/authorize?client_id=6829105&redirect_uri=http://api.fun-gifs.ru/api/OAuthVk/&display=page&scope=manage,offline&response_type=code&v=5.92';
         $get_token = 'https://oauth.vk.com/access_token?client_id=6829105&client_secret=MM3phppJM18qS1gY8vDS&redirect_uri=https://oauth.vk.com/blank.html&code=2cf2d70970ceb7b9be';
 
 

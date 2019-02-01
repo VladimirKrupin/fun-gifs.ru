@@ -16,4 +16,3 @@ use Illuminate\Http\Request;
 //USER CONTROLLER REQUESTS
 Route::post('/login/', 'User\UserController@login');
 Route::post('/putFiles/', 'Files\FilesController@putFiles')->middleware('auth:api');
-Route::post('/OAuthVk/', 'OAuths\OauthsController@OAuthVk');
