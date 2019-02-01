@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -113,52 +112,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Core.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/vendor/getjump/vk/src/getjump/Vk/Core.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding>
-                <element signature="e#73#95#0#PHP" />
-                <element signature="e#113#173#0#PHP" />
-                <element signature="e#205#305#0#PHP" />
-                <element signature="e#337#420#0#PHP" />
-                <element signature="e#455#525#0#PHP" />
-                <element signature="e#565#650#0#PHP" />
-                <element signature="e#692#804#0#PHP" />
-                <element signature="e#840#969#0#PHP" />
-                <element signature="e#1007#1161#0#PHP" />
-                <element signature="e#1166#1384#0#PHP" />
-                <element signature="e#1239#1316#0#PHP" />
-                <element signature="e#1390#1486#0#PHP" />
-                <element signature="e#1491#1643#0#PHP" />
-                <element signature="e#1541#1614#0#PHP" />
-                <element signature="e#1649#1774#0#PHP" />
-                <element signature="e#1779#1894#0#PHP" />
-                <element signature="e#1900#2083#0#PHP" />
-                <element signature="e#2088#2469#0#PHP" />
-                <element signature="e#2154#2220#0#PHP" />
-                <element signature="e#2475#2515#0#PHP" />
-                <element signature="e#2520#2583#0#PHP" />
-                <element signature="e#2589#2660#0#PHP" />
-                <element signature="e#2665#2908#0#PHP" />
-                <element signature="e#2731#2796#0#PHP" />
-                <element signature="e#2805#2878#0#PHP" />
-                <element signature="e#2914#3014#0#PHP" />
-                <element signature="e#3019#3135#0#PHP" />
-                <element signature="e#3141#3251#0#PHP" />
-                <element signature="e#3256#3386#0#PHP" />
-                <element signature="e#3392#3486#0#PHP" />
-                <element signature="e#3492#3594#0#PHP" />
-                <element signature="e#3599#3705#0#PHP" />
-                <element signature="e#3711#3739#0#PHP" />
-                <element signature="e#3774#3842#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -167,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OauthsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OauthsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="27" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="288">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
               </folding>
@@ -316,8 +270,8 @@
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php" />
         <option value="$PROJECT_DIR$/backend/routes/api.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php" />
       </list>
     </option>
   </component>
@@ -810,12 +764,12 @@
       <workItem from="1548852617950" duration="6317000" />
       <workItem from="1548913480068" duration="729000" />
       <workItem from="1548915258610" duration="8210000" />
-      <workItem from="1548928460750" duration="25815000" />
+      <workItem from="1548928460750" duration="26142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1208735000" />
+    <option name="totallyTimeSpent" value="1209062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
@@ -826,8 +780,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24012807" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13326052" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24012807" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13326052" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -1216,6 +1170,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1228,18 +1189,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/OAuths/OauthsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="288">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
         </state>
       </provider>
     </entry>

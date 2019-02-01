@@ -14,6 +14,7 @@ class OauthsController extends Controller
     public function OAuthVk(Request $request)
     {
 
+        echo json_encode($request->all());
 
     }
 
