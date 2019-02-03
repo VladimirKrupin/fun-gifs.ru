@@ -43,7 +43,7 @@ class PostingController extends Controller
         $link=$data->response->upload_url;
 
         $post_params = array(
-            'photo' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/padqZPNDgog.jpg')
+            'photo' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-01-31 16:30:13_fun-gifs-logo.png')
         );
 
 //Загружаем фото
