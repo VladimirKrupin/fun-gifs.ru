@@ -59,7 +59,7 @@ class PostingController extends Controller
         $hash=$response->hash;
         var_dump($hash);
 //        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
-        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?server=".$server."&hash=".$hash."&photo=".$photo."&v=".$version;
+        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo;
         $data3 = file_get_contents($link2);
 
         var_dump(json_decode($data3));
