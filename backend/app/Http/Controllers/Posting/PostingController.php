@@ -24,7 +24,7 @@ class PostingController extends Controller
 //            var_dump($post);
 //        }
         $access_token = 'a3dfe02790399bc1fa057bd6cfd10a6c0859b44a3a76e66369fe9254ff454a5f37fbbc9b4bee2de99e679';
-        $group_id = -176519720;
+        $group_id = 176519720;
         $version = 5.92;
 
         $params = array(
@@ -59,7 +59,7 @@ class PostingController extends Controller
         $hash=$response->hash;
         var_dump($hash);
 //        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
-        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo;
+        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&v=".$version;
         $data3 = file_get_contents($link2);
 
         var_dump(json_decode($data3));
