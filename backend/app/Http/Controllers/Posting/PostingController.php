@@ -57,8 +57,9 @@ class PostingController extends Controller
         $server=$response->server;
         $photo=$response->photo;
         $hash=$response->hash;
-
-        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
+        var_dump($hash);
+//        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
+        $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&v=".$version;
         $data3 = file_get_contents($link2);
 
         var_dump(json_decode($data3));
