@@ -40,7 +40,6 @@ class PostingController extends Controller
 
         $link=$data->response->upload_url;
 
-
         $post_params = array(
             'photo' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-01-31 16:56:44_veGd8klMMws.jpg')
         );
@@ -61,13 +60,8 @@ class PostingController extends Controller
 
         $link2 = "https://api.vk.com/method/photos.saveWallPhoto?access_token=".$access_token."&server=".$server."&hash=".$hash."&photo=".$photo."&group_id=".abs($group_id)."&v=".$version;
         $data3 = file_get_contents($link2);
-        error_log($data3);
-//echo $data3;
-//echo"</br>";
 
-        $data3 = json_decode($data3, true);
-
-        var_dump($data3);
+        var_dump(json_decode($data3));
 
 
 
