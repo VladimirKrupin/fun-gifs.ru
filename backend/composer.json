@@ -12,7 +12,8 @@
         "laravel/framework": "5.4.*",
         "laravel/passport": "1.0.*",
         "laravel/tinker": "~1.0",
-        "podio/podio-php": "^4.3"
+        "podio/podio-php": "^4.3",
+      "ext-json": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
