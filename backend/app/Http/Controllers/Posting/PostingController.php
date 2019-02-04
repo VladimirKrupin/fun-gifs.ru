@@ -116,7 +116,7 @@ class PostingController extends Controller
 
     public function test(){
         var_dump('123');
-        Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, '123123'));
+        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
 
     /**
