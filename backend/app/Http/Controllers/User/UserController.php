@@ -63,8 +63,8 @@ class UserController extends Controller
     public function createUser()
     {
         $input = [
-            'email' => 'vladimir.krupin133@gmail.com',
-            'password' => bcrypt('vova1234'),
+            'email' => 'Oksbolt202@gmail.com',
+            'password' => bcrypt('35453970'),
         ];
         User::create($input);
     }
