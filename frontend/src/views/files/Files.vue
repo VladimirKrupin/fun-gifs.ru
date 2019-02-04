@@ -210,9 +210,4 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
-  .emoji-picker-container textarea{
-    width: 260px !important;
-    height: 260px !important;
-  }
 </style>
