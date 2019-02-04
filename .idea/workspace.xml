@@ -55,12 +55,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="411" />
+          <entry key="php" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="411" />
+          <entry key="PHP" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -594,7 +594,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1255022000" />
+    <option name="totallyTimeSpent" value="1255229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
