@@ -10,7 +10,7 @@
 </head>
 <body>
 <pre>
-    {{json_decode($result)}}
+    {{$result}}
 </pre>
 </body>
 </html>

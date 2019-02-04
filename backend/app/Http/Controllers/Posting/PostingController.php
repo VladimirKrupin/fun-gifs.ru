@@ -158,6 +158,8 @@ class PostingController extends Controller
 
         $result = file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post);
 
+        var_dump($result);
+
         Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($result));
 
         // загрузка фото
