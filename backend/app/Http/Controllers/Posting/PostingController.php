@@ -163,7 +163,7 @@ class PostingController extends Controller
         $data = array(
             'access_token' =>  $token_fb,
             'message'      => 'Hello, world!',
-            'link'         => 'http://snipp.ru/',
+//            'link'         => 'http://snipp.ru/',
             'name'         => 'Анкор',
 //            'picture'      => 'http://snipp.ru/logo.png'
         );

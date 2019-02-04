@@ -87,11 +87,11 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
+            <state relative-caret-position="369">
+              <caret line="166" column="30" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="30" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549291074463" expanded="true" signature="6173:7260" ph="..." />
+                <marker date="1549291397019" expanded="true" signature="6175:7262" ph="..." />
               </folding>
             </state>
           </provider>
@@ -714,7 +714,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1251985000" />
+    <option name="totallyTimeSpent" value="1252308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1116,11 +1116,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
+        <state relative-caret-position="369">
+          <caret line="166" column="30" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="30" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549291074463" expanded="true" signature="6173:7260" ph="..." />
+            <marker date="1549291397019" expanded="true" signature="6175:7262" ph="..." />
           </folding>
         </state>
       </provider>
