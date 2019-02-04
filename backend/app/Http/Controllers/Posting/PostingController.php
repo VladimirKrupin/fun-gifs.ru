@@ -156,7 +156,7 @@ class PostingController extends Controller
     public function postingFb()
     {
         // https://habr.com/ru/post/329196/
-        $token_fb = 'EAAFup9Mb6rsBAGkhYW9NRytTzVfZAPRK4hJnJaP0Dd7hdgOERR72UTZCKs6pUeabSDVsQlWrqsU21dwBadnKFBwAZCsCZAmS43VqYexZCvNRvF9jAjs4yA3NDHdnNOm1IIiQ5XSBkbD1MVZCtxmkc0nBEYhNRGNU4q3kY6fMmytd122Dr9ZBwFhx4J4hGrZAQIPuXFh8E1qWaAZDZD';
+        $token_fb = 'EAAFup9Mb6rsBAIMxVHZBCdmC4ZClqqrABcHAbrWEVJPxI7B5Ly2NbfNcOB9tchH1Evhv7Q5c09NbbeRZAZBZB6na3QeEMyZArL8Nrqv7Ii39kAYVGHCVKCzi0I4dl1QxFiOEbaV8DMxX5KyzDkF7JwUwg0FUGGxYAAX0PSDZBXNbAZDZD';
 
         $page_id = 2165308223783867;
 
