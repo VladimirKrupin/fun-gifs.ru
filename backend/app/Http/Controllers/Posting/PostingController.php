@@ -165,7 +165,7 @@ class PostingController extends Controller
             'message'      => 'Hello, world!',
             'link'         => 'http://snipp.ru/',
             'name'         => 'Анкор',
-            'picture'      => 'http://snipp.ru/logo.png'
+//            'picture'      => 'http://snipp.ru/logo.png'
         );
 
         $ch = curl_init();
