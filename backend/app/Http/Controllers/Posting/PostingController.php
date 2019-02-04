@@ -161,15 +161,13 @@ class PostingController extends Controller
         $page_id = '603196956795307';
 
         $data = array(
-            'access_token' =>  $token_fb,
-            'message'      => 'Hello, world!',
-//            'link'         => 'http://snipp.ru/',
-            'name'         => 'Анкор',
-//            'picture'      => 'http://snipp.ru/logo.png'
+            'access_token' => $token_fb,
+            'caption'      => 'Hello, world!',
+            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2017:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg'
         );
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/feed');
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/photos');
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
