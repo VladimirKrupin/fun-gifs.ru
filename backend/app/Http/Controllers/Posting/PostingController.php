@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Posting;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
+use App\Mail\Posting\PostingEndedPosts;
 use App\Mail\Posting\PostingResult;
 use App\Mail\Posting\PostingResultError;
 use CURLFile;
@@ -113,6 +114,10 @@ class PostingController extends Controller
         $this->access_token = $access_token;
     }
 
+    public function test(){
+        var_dump('123');
+    }
+
     /**
      *
      */
@@ -124,12 +129,34 @@ class PostingController extends Controller
         $post = Post::where('status', 0)
             ->with('files')
             ->first();
+
         if ($post) {
             $post = $post->toArray();
-            var_dump($post);
+            $this->wallPosting($post);
+            $posts = Post::where('status', 0)
+                ->get();
+            if ($posts){
+                $posts = $posts->toArray();
+                $count = count($posts);
+                $theme = false;
+                if ($count === 5){
+                    $theme = 'Предупреждение: осталось всего 5 постов';
+                }elseif ($count === 10){
+                    $theme = 'Предупреждение: осталось всего 10 постов';
+                }else{
+                    $theme = 'Предупреждение: только что был опубликован последний пост';
+                }
+                if ($theme){
+                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                }
+            }
+        }else{
+            $theme = 'Предупреждение: закончились посты';
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
         }
 
-        $this->wallPosting($post);
 
     }
 
