@@ -153,16 +153,48 @@ class PostingController extends Controller
     /**
      *
      */
+    public function postingFb()
+    {
+        // https://habr.com/ru/post/329196/
+        $token_fb = 'EAAFup9Mb6rsBAMgsDOSY7Pllx5yx2pZBZBMiR7g2BGdhAvuyq3EhAvZAHhYZCmOfZCUpXfAhPDh8Lc7GdysNZBL8fLxWTCuiGsCkhLi8SZAT3GhloZCFk7IQGT37plricuahZBKXC1ZCcGnu5A6g35fINKGUSps1PrzhHMUIbHTyOIbWXPQ3oH4963';
+
+        $page_id = '2165308223783867';
+
+        $data = array(
+            'access_token' =>  $token_fb,
+            'message'      => 'Hello, world!',
+            'link'         => 'http://snipp.ru/',
+            'name'         => 'Анкор',
+            'picture'      => 'http://snipp.ru/logo.png'
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/feed');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $res = curl_exec($ch);
+        curl_close($ch);
+
+        $res = json_decode($res, true);
+        var_dump($res);
+    }
+
+
+    /**
+     *
+     */
     public function postingOk()
     {
         $link = 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2015:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4';
+        $link = 'http://file-store.fun-gifs.ru/';
         $ok_access_token = "tkn1AFdPniGVPADuvbDRKVGHNUL2Ftxf24E07GIPjXJ86g6IdWWg81RqvNdgJ0SSMyyJ6";//Наш вечный токен
         $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
         $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
         $params = array(
             "application_key"=>$ok_public_key,
             "method"=>"mediatopic.post",
-            "gid"=>"1275845888",//ID нашей группы
+            "gid"=>"56022813442280",//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>'{"media": [{"type": "link","url": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
             "format"=>"json"
@@ -175,6 +207,8 @@ class PostingController extends Controller
         if (isset($result['error_code']) && $result['error_code'] == 5000) {
             $this->getUrl("https://api.ok.ru/fb.do", "POST", $params);
         }
+
+        var_dump($result);
 
     }
 

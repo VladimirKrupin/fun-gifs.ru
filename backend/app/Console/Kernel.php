@@ -36,9 +36,14 @@ class Kernel extends ConsoleKernel
 //            (new PostingController())->posting();
 //        })->hourly();
 
+//        $schedule->call(function()
+//        {
+//            (new PostingController())->postingOk();
+//        })->everyMinute();
+
         $schedule->call(function()
         {
-            (new PostingController())->postingOk();
+            (new PostingController())->postingFb();
         })->everyMinute();
 
 //        $schedule->call(function()
