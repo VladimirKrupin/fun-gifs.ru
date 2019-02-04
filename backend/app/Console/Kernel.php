@@ -34,7 +34,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function()
         {
             (new PostingController())->posting();
-        })->hourly()->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->hourlyAt(14)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 //        $schedule->call(function()
 //        {
