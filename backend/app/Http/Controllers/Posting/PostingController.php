@@ -163,16 +163,16 @@ class PostingController extends Controller
         if (isset($result->error)){
             $mail_data['result']['status'] = 'error';
             $mail_data['result']['data'] = $result->error;
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
             Post::where('id',$post['id'])->update([
                 'status' => 2
             ]);
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
         }else{
             $mail_data = json_encode($result);
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
             Post::where('id',$post['id'])->update([
                 'status' => 1
             ]);
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
         }
 
         // загрузка фото
