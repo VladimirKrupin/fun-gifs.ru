@@ -9,6 +9,8 @@
     <!-- Fonts -->
 </head>
 <body>
-{{$result}}
+<pre>
+    {{json_decode($result)}}
+</pre>
 </body>
 </html>

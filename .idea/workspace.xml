@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,14 +85,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="219" column="58" selection-start-line="219" selection-start-column="58" selection-end-line="219" selection-end-column="58" />
+            <state relative-caret-position="459">
+              <caret line="160" column="81" lean-forward="true" selection-start-line="160" selection-start-column="81" selection-end-line="160" selection-end-column="81" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549267473878" expanded="true" signature="2388:2561" ph="..." />
+                <marker date="1549267705148" expanded="true" signature="2388:2561" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posting-result.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="posting-result.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="216">
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -301,8 +302,8 @@
         <option value="$PROJECT_DIR$/frontend/package.json" />
         <option value="$PROJECT_DIR$/frontend/src/views/files/Files.vue" />
         <option value="$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php" />
-        <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php" />
       </list>
     </option>
   </component>
@@ -749,7 +750,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1237713000" />
+    <option name="totallyTimeSpent" value="1237944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1112,13 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -1131,12 +1125,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="219" column="58" selection-start-line="219" selection-start-column="58" selection-end-line="219" selection-end-column="58" />
+        <state relative-caret-position="459">
+          <caret line="160" column="81" lean-forward="true" selection-start-line="160" selection-start-column="81" selection-end-line="160" selection-end-column="81" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549267473878" expanded="true" signature="2388:2561" ph="..." />
+            <marker date="1549267705148" expanded="true" signature="2388:2561" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
