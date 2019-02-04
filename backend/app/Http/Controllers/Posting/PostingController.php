@@ -262,7 +262,7 @@ class PostingController extends Controller
                     $attachments[] = $this->getPhoto($file);
                     break;
                 case 'video':
-                    $attachments[] = $this->getVideo($file);
+                    $attachments[] = $this->getVideo($post,$file);
                     break;
             }
         }
@@ -357,12 +357,12 @@ class PostingController extends Controller
      * @param $file
      * @return string
      */
-    private function getVideo($file){
+    private function getVideo($post,$file){
         // загрузка видео
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $file['comment'].' Fun_gifs.mp4',
+            'name' => $post['comment'].' Fun_gifs.mp4',
             'v' => $this->getVersion(),
         ]);
 
