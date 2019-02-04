@@ -26,7 +26,7 @@ class PostingEndedPosts extends Mailable
 
     public function build()
     {
-        return $this->view('emails.posting.posting-result-error')
+        return $this->view('emails.posting.posting-result-ended-posts')
             ->subject($this->theme.' Fun-gifs.ru '.date("Y-m-d H:i:s"));
     }
 }
