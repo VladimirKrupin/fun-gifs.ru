@@ -10,7 +10,7 @@
 </head>
 <body>
 <pre>
-    {{$result}}
+    {{print_r($result)}}
 </pre>
 </body>
 </html>

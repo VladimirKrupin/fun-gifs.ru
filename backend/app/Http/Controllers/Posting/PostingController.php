@@ -156,9 +156,21 @@ class PostingController extends Controller
             'v' => '',
         ]);
 
-        $result = file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post);
+        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post));
+        $mail_data = [];
+        if (isset($result->responce)){
+            $mail_data['result']['status'] = 'success';
+            $mail_data['result']['data'] = $result->responce;
+        }elseif (isset($result->error)){
+            $mail_data['result']['status'] = 'error';
+            $mail_data['result']['data'] = $result->error;
+        }else{
+            $mail_data = json_encode($result);
+        }
 
-        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($result));
+        var_dump($mail_data);
+
+        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
 
         // загрузка фото
     }
