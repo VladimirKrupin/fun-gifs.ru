@@ -16,13 +16,13 @@ class PostingController extends Controller
 
         //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
 
-//        $post = Post::where('status', 0)
-//            ->with('files')
-//            ->first();
-//        if ($post) {
-//            $post = $post->toArray();
-//            var_dump($post);
-//        }
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
+        if ($post) {
+            $post = $post->toArray();
+            var_dump($post);
+        }
 
         // загрузка фото
         $access_token = 'a3dfe02790399bc1fa057bd6cfd10a6c0859b44a3a76e66369fe9254ff454a5f37fbbc9b4bee2de99e679';
@@ -96,53 +96,53 @@ class PostingController extends Controller
 //        var_dump($result);
 //        // загрузка фото
 
-
-        $params = array(
-            'group_id' => $group_id,
-            'access_token' => $access_token,
-            'name' => '123.mp4',
-            'v' => 5.92,
-        );
-
-        $get_params = http_build_query($params);
-        $file_upload_link = json_decode(file_get_contents("https://api.vk.com/method/video.save?".$get_params));
-
-        $link = $file_upload_link->response->upload_url;
-
-        $post_params = array(
-            'video_file' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-03 22:34:28_video-6c1b814d0312b8b56bc66b020a05af49-V.mp4')
-        );
-
-        $ch = curl_init($link);
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
-        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params);
-        $response = curl_exec( $ch );
-        curl_close( $ch );
-        $response=json_decode($response);
-
-        var_dump($response);
-
-        $photo= $response->video_id;
-        $own= $response->owner_id;
-        $gf = "_";
-        $photo3= "video$own$gf$photo";
-
-        $request_params = array(
-            'owner_id' => -176519720,
-            'message' => 'test wall',
-            'from_group' => 1,
-            'attachments' => $photo3,
-            'access_token' => $access_token,  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
-            'v' => 5.92,
-        );
-
-        $get_params = http_build_query($request_params);
-        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
-
-        var_dump($result);
-
+          // загрузка видео
+//        $params = array(
+//            'group_id' => $group_id,
+//            'access_token' => $access_token,
+//            'name' => '123.mp4',
+//            'v' => 5.92,
+//        );
+//
+//        $get_params = http_build_query($params);
+//        $file_upload_link = json_decode(file_get_contents("https://api.vk.com/method/video.save?".$get_params));
+//
+//        $link = $file_upload_link->response->upload_url;
+//
+//        $post_params = array(
+//            'video_file' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-03 22:34:28_video-6c1b814d0312b8b56bc66b020a05af49-V.mp4')
+//        );
+//
+//        $ch = curl_init($link);
+//        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+//        curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
+//        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params);
+//        $response = curl_exec( $ch );
+//        curl_close( $ch );
+//        $response=json_decode($response);
+//
+//        var_dump($response);
+//
+//        $photo= $response->video_id;
+//        $own= $response->owner_id;
+//        $gf = "_";
+//        $photo3= "video$own$gf$photo";
+//
+//        $request_params = array(
+//            'owner_id' => -176519720,
+//            'message' => 'test wall',
+//            'from_group' => 1,
+//            'attachments' => $photo3,
+//            'access_token' => $access_token,  // access_token можно вбить хардкодом, если работа будет идти из под одного юзера
+//            'v' => 5.92,
+//        );
+//
+//        $get_params = http_build_query($request_params);
+//        $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $get_params));
+//
+//        var_dump($result);
+          // загрузка видео
     }
 
 }

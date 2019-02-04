@@ -31,8 +31,10 @@
         </b-col>
       </b-row>
       <b-row>
-        <b-col style="position: relative;" class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6 col mb-4 d-flex justify-content-end" >
-          <input  type="text" id="comment" class="form-control" v-model="comment"><div class="count">{{this.count()}}</div>
+        <b-col style="position: relative;" class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6 col mb-4 d-flex justify-content-start" >
+          <!--<input  >-->
+          <VueEmoji width="260" height="260" ref="emoji" @input="onInput" />
+          <div class="count">{{this.count()}}</div>
         </b-col>
       </b-row>
       <b-row >
@@ -63,6 +65,7 @@
 <script>
     import axios from 'axios';
     import { mapGetters } from 'vuex';
+    import VueEmoji from 'emoji-vue';
 
     export default {
       data() {
@@ -78,6 +81,9 @@
           test: {},
           test2: [],
         };
+      },
+      components: {
+        VueEmoji
       },
       computed: {
       },
@@ -145,15 +151,25 @@
         handleFileUploads: function (e) {
           this.userFiles = this.$refs.files.files;
         },
+        onInput(event) {
+          this.comment = event.data;
+          //event.data contains the value of the textarea
+        },
+        clearTextarea(){
+          this.$refs.emoji.clear()
+        },
       }
     }
 </script>
 
 <style>
+  .emoji-textarea {
+    width: 250px;
+  }
   .count {
     position: absolute;
-    right: 20px;
-    top: 35px;
+    left: 252px;
+    top: 264px;
     font-size: 12px;
   }
 
@@ -193,5 +209,10 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .emoji-picker-container textarea{
+    width: 260px !important;
+    height: 260px !important;
   }
 </style>
