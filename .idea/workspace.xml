@@ -88,10 +88,10 @@
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="165" column="136" selection-start-line="165" selection-start-column="136" selection-end-line="165" selection-end-column="136" />
+              <caret line="165" column="134" selection-start-line="165" selection-start-column="134" selection-end-line="165" selection-end-column="134" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549291642363" expanded="true" signature="6164:7251" ph="..." />
+                <marker date="1549291811741" expanded="true" signature="6162:7249" ph="..." />
               </folding>
             </state>
           </provider>
@@ -714,7 +714,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1252553000" />
+    <option name="totallyTimeSpent" value="1252723000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1117,10 +1117,10 @@
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="165" column="136" selection-start-line="165" selection-start-column="136" selection-end-line="165" selection-end-column="136" />
+          <caret line="165" column="134" selection-start-line="165" selection-start-column="134" selection-end-line="165" selection-end-column="134" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549291642363" expanded="true" signature="6164:7251" ph="..." />
+            <marker date="1549291811741" expanded="true" signature="6162:7249" ph="..." />
           </folding>
         </state>
       </provider>

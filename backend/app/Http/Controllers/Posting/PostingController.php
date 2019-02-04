@@ -163,11 +163,11 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $token_fb,
             'caption'      => 'Hello, world!',
-            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2017:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg'
+            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04 15:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4'
         );
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/photos');
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
