@@ -31,10 +31,10 @@ class Kernel extends ConsoleKernel
 //            (new UserController())->createUser();
 //        })->everyMinute();
 
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->posting();
-//        })->hourly();
+        $schedule->call(function()
+        {
+            (new PostingController())->posting();
+        })->dailyAt('6:00')->timezone('Europe/Moscow');
 
 //        $schedule->call(function()
 //        {
