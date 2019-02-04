@@ -153,12 +153,10 @@ class PostingController extends Controller
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
             'access_token' => $this->getAccessToken(),
-            'v' => $this->getVersion(),
+            'v' => '',
         ]);
 
         $result = file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post);
-
-        var_dump($result);
 
         Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($result));
 
