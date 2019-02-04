@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="" />
+    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,12 +87,30 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="126" column="28" lean-forward="true" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+            <state relative-caret-position="288">
+              <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549268583083" expanded="true" signature="2388:2561" ph="..." />
+                <marker date="1549269437595" expanded="true" signature="2430:2603" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posting-result-error.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result-error.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostingResultError.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResultError.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -250,8 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/app/Http/Models/User/UsersPasswordChange.php" />
-        <option value="$PROJECT_DIR$/frontend/src/views/resetpassword/ChangePassword.vue" />
         <option value="$PROJECT_DIR$/backend/app/Http/Models/User/OauthAccessToken.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/emails/user/change-password.blade.php" />
         <option value="$PROJECT_DIR$/autorun/conf/agate-local.conf" />
@@ -300,6 +318,8 @@
         <option value="$PROJECT_DIR$/frontend/src/views/files/Files.vue" />
         <option value="$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php" />
         <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result.blade.php" />
+        <option value="$PROJECT_DIR$/backend/app/Mail/Posting/PostingResultError.php" />
+        <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result-error.blade.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
       </list>
     </option>
@@ -747,7 +767,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1239121000" />
+    <option name="totallyTimeSpent" value="1239677000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,8 +787,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -840,12 +860,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/routes/channels.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/routes/console.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -1127,13 +1141,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResultError.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result-error.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="126" column="28" lean-forward="true" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+        <state relative-caret-position="288">
+          <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549268583083" expanded="true" signature="2388:2561" ph="..." />
+            <marker date="1549269437595" expanded="true" signature="2430:2603" ph="..." />
           </folding>
         </state>
       </provider>

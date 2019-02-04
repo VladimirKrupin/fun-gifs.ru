@@ -3,10 +3,12 @@ namespace App\Http\Controllers\Posting;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
 use App\Mail\Posting\PostingResult;
+use App\Mail\Posting\PostingResultError;
 use CURLFile;
 use \getjump\Vk\Core as Vk;
 use App;
-use getjump\Vk\Core;use Carbon\Carbon;
+use getjump\Vk\Core;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 
@@ -158,19 +160,20 @@ class PostingController extends Controller
 
         $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post));
         $mail_data = [];
-        if (stristr($result,'success')){
-            $mail_data['result']['status'] = 'success';
-            $mail_data['result']['data'] = $result->responce;
-        }elseif (isset($result->error)){
+        if (isset($result->error)){
             $mail_data['result']['status'] = 'error';
             $mail_data['result']['data'] = $result->error;
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
+            Post::where('id',$post['id'])->update([
+                'status' => 2
+            ]);
         }else{
             $mail_data = json_encode($result);
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
+            Post::where('id',$post['id'])->update([
+                'status' => 1
+            ]);
         }
-
-        var_dump($mail_data);
-
-        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
 
         // загрузка фото
     }
