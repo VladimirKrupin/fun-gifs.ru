@@ -158,7 +158,7 @@ class PostingController extends Controller
 
         $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post));
         $mail_data = [];
-        if (isset($result->responce)){
+        if (stristr($result,'success')){
             $mail_data['result']['status'] = 'success';
             $mail_data['result']['data'] = $result->responce;
         }elseif (isset($result->error)){
