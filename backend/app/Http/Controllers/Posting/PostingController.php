@@ -158,7 +158,7 @@ class PostingController extends Controller
         // https://habr.com/ru/post/329196/
         $token_fb = 'EAAFup9Mb6rsBAIMxVHZBCdmC4ZClqqrABcHAbrWEVJPxI7B5Ly2NbfNcOB9tchH1Evhv7Q5c09NbbeRZAZBZB6na3QeEMyZArL8Nrqv7Ii39kAYVGHCVKCzi0I4dl1QxFiOEbaV8DMxX5KyzDkF7JwUwg0FUGGxYAAX0PSDZBXNbAZDZD';
 
-        $page_id = 2165308223783867;
+        $page_id = 603196956795307;
 
         $data = array(
             'access_token' =>  $token_fb,

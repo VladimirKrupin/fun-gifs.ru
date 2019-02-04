@@ -87,11 +87,11 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="158" column="199" selection-start-line="158" selection-start-column="199" selection-end-line="158" selection-end-column="199" />
+            <state relative-caret-position="261">
+              <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549290596749" expanded="true" signature="6133:7220" ph="..." />
+                <marker date="1549290780847" expanded="true" signature="6132:7219" ph="..." />
               </folding>
             </state>
           </provider>
@@ -714,7 +714,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1251508000" />
+    <option name="totallyTimeSpent" value="1251692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,8 +734,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -1116,11 +1116,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="158" column="199" selection-start-line="158" selection-start-column="199" selection-end-line="158" selection-end-column="199" />
+        <state relative-caret-position="261">
+          <caret line="160" column="34" selection-start-line="160" selection-start-column="34" selection-end-line="160" selection-end-column="34" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549290596749" expanded="true" signature="6133:7220" ph="..." />
+            <marker date="1549290780847" expanded="true" signature="6132:7219" ph="..." />
           </folding>
         </state>
       </provider>
