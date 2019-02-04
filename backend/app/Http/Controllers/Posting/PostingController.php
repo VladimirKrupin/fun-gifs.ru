@@ -153,7 +153,7 @@ class PostingController extends Controller
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
             'access_token' => $this->getAccessToken(),
-            'v' => '',
+            'v' => $this->getVersion(),
         ]);
 
         $result = json_decode(file_get_contents('https://api.vk.com/method/wall.post?'. $params_wall_post));
