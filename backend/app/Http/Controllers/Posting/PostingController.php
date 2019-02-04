@@ -362,7 +362,7 @@ class PostingController extends Controller
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => 'fun_gifs_'.$this->getCurrentTime().'.mp4',
+            'name' => $file['comment'].' Fun_gifs.mp4',
             'v' => $this->getVersion(),
         ]);
 
