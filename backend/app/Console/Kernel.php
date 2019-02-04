@@ -31,10 +31,15 @@ class Kernel extends ConsoleKernel
 //            (new UserController())->createUser();
 //        })->everyMinute();
 
+//        $schedule->call(function()
+//        {
+//            (new PostingController())->posting();
+//        })->hourly();
+
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-        })->hourly();
+            (new PostingController())->postingOk();
+        })->everyMinute();
 
 //        $schedule->call(function()
 //        {

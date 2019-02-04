@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
     </list>
@@ -85,26 +86,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="152" column="89" selection-start-line="152" selection-start-column="89" selection-end-line="152" selection-end-column="89" />
+            <state relative-caret-position="280">
+              <caret line="166" column="69" selection-start-line="166" selection-start-column="69" selection-end-line="166" selection-end-column="69" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549278532324" expanded="true" signature="2599:3686" ph="..." />
+                <marker date="1549286139837" expanded="true" signature="5039:6126" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="334">
+              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
+                <marker date="1549285405814" expanded="true" signature="773:888" ph="..." />
               </folding>
             </state>
           </provider>
@@ -113,7 +115,7 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
+            <state relative-caret-position="597">
               <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
             </state>
           </provider>
@@ -259,8 +261,8 @@
         <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result-ended-posts.blade.php" />
         <option value="$PROJECT_DIR$/backend/app/Mail/Posting/PostingEndedPosts.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
         <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
       </list>
     </option>
   </component>
@@ -714,7 +716,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1245092000" />
+    <option name="totallyTimeSpent" value="1248037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,8 +736,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20597652" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.13489896" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
@@ -1078,13 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1103,23 +1098,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="152" column="89" selection-start-line="152" selection-start-column="89" selection-end-line="152" selection-end-column="89" />
-          <folding>
-            <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549278532324" expanded="true" signature="2599:3686" ph="..." />
-          </folding>
+        <state relative-caret-position="597">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="334">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
+            <marker date="1549285405814" expanded="true" signature="773:888" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="166" column="69" selection-start-line="166" selection-start-column="69" selection-end-line="166" selection-end-column="69" />
+          <folding>
+            <element signature="e#46#76#0#PHP" expanded="true" />
+            <marker date="1549286139837" expanded="true" signature="5039:6126" ph="..." />
           </folding>
         </state>
       </provider>

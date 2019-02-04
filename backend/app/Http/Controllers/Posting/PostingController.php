@@ -118,9 +118,66 @@ class PostingController extends Controller
 //        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
 
+    function getUrl($url, $type="GET", $params=array(), $timeout=30) {
+        if ($ch = curl_init()) {
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+            if ($type == "POST") {
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, urldecode(http_build_query($params)));
+            }
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP Bot (http://bazarbratsk.ru)');
+            $data = curl_exec($ch);
+            curl_close($ch);
+            return $data;
+        } else {
+            return "{}";
+        }
+    }
+
+    function arInStr($array) {
+        ksort($array);
+        $string = "";
+        foreach($array as $key=>$val) {
+            if (is_array($val)) {
+                $string .= $key."=".arInStr($val);
+            } else {
+                $string .= $key."=".$val;
+            }
+        }
+        return $string;
+    }
+
     /**
      *
      */
+    public function postingOk()
+    {
+        $link = 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2015:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4';
+        $ok_access_token = "tkn1AFdPniGVPADuvbDRKVGHNUL2Ftxf24E07GIPjXJ86g6IdWWg81RqvNdgJ0SSMyyJ6";//Наш вечный токен
+        $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
+        $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
+        $params = array(
+            "application_key"=>$ok_public_key,
+            "method"=>"mediatopic.post",
+            "gid"=>"1275845888",//ID нашей группы
+            "type"=>"GROUP_THEME",
+            "attachment"=>'{"media": [{"type": "link","url": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
+            "format"=>"json"
+        );
+        $sig = md5($this->arInStr($params).md5("{$ok_access_token}{$ok_private_key}"));
+        $params["access_token"]=$ok_access_token;
+        $params["sig"]=$sig;
+        $result = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
+        //Если парсер не смог открыть нашу ссылку (иногда он это делает со второй попытки), то отправляем ещё раз
+        if (isset($result['error_code']) && $result['error_code'] == 5000) {
+            $this->getUrl("https://api.ok.ru/fb.do", "POST", $params);
+        }
+
+    }
+
     public function posting()
     {
 
