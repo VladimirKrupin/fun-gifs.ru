@@ -117,39 +117,6 @@ class PostingController extends Controller
     public function test(){
 //        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
-
-    function getUrl($url, $type="GET", $params=array(), $timeout=30) {
-        if ($ch = curl_init()) {
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_HEADER, false);
-            if ($type == "POST") {
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, urldecode(http_build_query($params)));
-            }
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP Bot (http://bazarbratsk.ru)');
-            $data = curl_exec($ch);
-            curl_close($ch);
-            return $data;
-        } else {
-            return "{}";
-        }
-    }
-
-    function arInStr($array) {
-        ksort($array);
-        $string = "";
-        foreach($array as $key=>$val) {
-            if (is_array($val)) {
-                $string .= $key."=".arInStr($val);
-            } else {
-                $string .= $key."=".$val;
-            }
-        }
-        return $string;
-    }
-
     /**
      *
      */
@@ -180,6 +147,72 @@ class PostingController extends Controller
     }
 
 
+    // Запрос
+    public function getUrl($url, $type = "GET", $params = array(), $timeout = 30, $image = false, $decode = true)
+    {
+        if ($ch = curl_init())
+        {
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_HEADER, false);
+
+            if ($type == "POST")
+            {
+                curl_setopt($ch, CURLOPT_POST, true);
+
+                // Картинка
+                if ($image) {
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+                }
+                // Обычный запрос
+                elseif($decode) {
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, urldecode(http_build_query($params)));
+                }
+                // Текст
+                else {
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+                }
+            }
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+            curl_setopt($ch, CURLOPT_USERAGENT, 'PHP Bot');
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+            $data = curl_exec($ch);
+
+            curl_close($ch);
+
+            // Еще разок, если API завис
+            if (isset($data['error_code']) && $data['error_code'] == 5000) {
+                $data = getUrl($url, $type, $params, $timeout, $image, $decode);
+            }
+
+            return $data;
+
+        }
+        else {
+            return "{}";
+        }
+    }
+
+    // Массив аргументов в строку
+    public function arInStr($array)
+    {
+        ksort($array);
+
+        $string = "";
+
+        foreach($array as $key => $val) {
+            if (is_array($val)) {
+                $string .= $key."=".arInStr($val);
+            } else {
+                $string .= $key."=".$val;
+            }
+        }
+
+        return $string;
+    }
     /**
      *
      */
@@ -187,10 +220,12 @@ class PostingController extends Controller
     {
         $link = 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2015:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4';
         $link = 'http://file-store.fun-gifs.ru/';
+
         $ok_access_token = "tkn1YaPmlptYnlEdZoMnCduvcoTO4Tb0dHKD106DB8nHZuBCTPtbnfTrvBv2SY2U3TA3e0";//Наш вечный токен
         $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
         $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
         $ok_group_id = "56022813442280";
+
 
         // 1. Получим адрес для загрузки 1 фото
         $params = array(
@@ -219,6 +254,11 @@ class PostingController extends Controller
 
         // Идентификатор для загрузки фото
         $photo_id = $step1['photo_ids'][0];
+
+        // Предполагается, что картинка располагается в каталоге со скриптом
+        $params = array(
+            "pic1" => "/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-04 17:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg",
+        );
 
         // Отправляем картинку на сервер, подписывать не нужно
         $step2 = json_decode( getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
