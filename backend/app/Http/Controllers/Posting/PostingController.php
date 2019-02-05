@@ -245,11 +245,13 @@ class PostingController extends Controller
         // Выполним
         $step1 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
 
+        var_dump($step1);
+        die;
         // Если ошибка
         if (isset($step1['error_code'])) {
             // Обработка ошибки
             var_dump($step1);
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1));
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1));
             exit();
         }
 
@@ -258,7 +260,7 @@ class PostingController extends Controller
 
         // Предполагается, что картинка располагается в каталоге со скриптом
         $params = array(
-            "pic1" => "/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-04 17:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg",
+            "pic1" => "/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-04\ 13\:51\:55_IMG_20190203_145530_186.jpg",
         );
 
         // Отправляем картинку на сервер, подписывать не нужно
@@ -268,7 +270,7 @@ class PostingController extends Controller
         if (isset($step2['error_code'])) {
             // Обработка ошибки
             var_dump($step2);
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2));
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2));
             exit();
         }
 
@@ -316,7 +318,7 @@ class PostingController extends Controller
         if (isset($step3['error_code'])) {
             // Обработка ошибки
             var_dump($step3);
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step3));
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step3));
             exit();
         }
 
