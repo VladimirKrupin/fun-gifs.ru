@@ -267,9 +267,11 @@ class PostingController extends Controller
             }
         }
 
+        $hashtags = "\n\r〰️〰️〰️〰️〰️〰\n\r️🔹️\n\r🔹️\n\r🔹️\n\r🔹️\n\r🔹️\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
+
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
-            'message' => $post['comment'],
+            'message' => $post['comment'].$hashtags,
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
             'access_token' => $this->getAccessToken(),
