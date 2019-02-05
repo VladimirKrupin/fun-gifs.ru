@@ -363,16 +363,18 @@ class PostingController extends Controller
     }
 
     /**
+     * @param $post
      * @param $file
      * @return string
      */
     private function getVideo($post,$file){
         // загрузка видео
+        $eng_comment = $this->translate('ru','en',$post['comment']);
         $hashtags_video = "#fun#gif#funny#video#fungifs#gifs#смешные#видео#видосики#гиф#гифки#веселые#ржачные#крутые";
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $post['comment'].' Fun_gifs'.$hashtags_video.'.mp4',
+            'name' => $post['comment'].' '.$eng_comment.' Fun_gifs'.$hashtags_video.'.mp4',
             'v' => $this->getVersion(),
         ]);
 
