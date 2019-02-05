@@ -190,24 +190,98 @@ class PostingController extends Controller
         $ok_access_token = "tkn1YaPmlptYnlEdZoMnCduvcoTO4Tb0dHKD106DB8nHZuBCTPtbnfTrvBv2SY2U3TA3e0";//Наш вечный токен
         $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
         $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
+        $ok_group_id = "56022813442280";
+
+        // 1. Получим адрес для загрузки 1 фото
+        $params = array(
+            "application_key"   =>  $ok_public_key,
+            "method"            => "photosV2.getUploadUrl",
+            "count"             => 1,  // количество фото для загрузки
+            "gid"               => $ok_group_id,
+            "format"            =>  "json"
+        );
+
+        // Подпишем запрос
+        $sig = md5( arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
+
+        $params['access_token'] = $ok_access_token;
+        $params['sig']          = $sig;
+
+        // Выполним
+        $step1 = json_decode(getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
+
+        // Если ошибка
+        if (isset($step1['error_code'])) {
+            // Обработка ошибки
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1['error_code']));
+            exit();
+        }
+
+        // Идентификатор для загрузки фото
+        $photo_id = $step1['photo_ids'][0];
+
+        // Отправляем картинку на сервер, подписывать не нужно
+        $step2 = json_decode( getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
+
+        // Если ошибка
+        if (isset($step2['error_code'])) {
+            // Обработка ошибки
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1['error_code']));
+            exit();
+        }
+
+        // Токен загруженной фотки
+        $token = $step2['photos'][$photo_id]['token'];
+
+        // Заменим переносы строк, чтоб не вываливалась ошибка аттача
+        $message_json = str_replace("\n", "\\n", "test message");
+
+        // 3. Запостим в группу
+        $attachment = '{
+                    "media": [
+                        {
+                            "type": "text",
+                            "text": "'.$message_json.'"
+                        },
+                        {
+                            "type": "photo",
+                            "list": [
+                                {
+                                    "id": "'.$token.'"
+                                }
+                            ]
+                        }
+                    ]
+                }';
+
         $params = array(
             "application_key"=>$ok_public_key,
             "method"=>"mediatopic.post",
-            "gid"=>"578434590952",//ID нашей группы
+            "gid"=>$ok_group_id,//ID нашей группы
             "type"=>"GROUP_THEME",
-            "attachment"=>'{"media": [{"type": "text","text": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
+            "attachment"=>$attachment,
             "format"=>"json"
         );
-        $sig = md5($this->arInStr($params).md5("{$ok_access_token}{$ok_private_key}"));
-        $params["access_token"]=$ok_access_token;
-        $params["sig"]=$sig;
-        $result = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
-        //Если парсер не смог открыть нашу ссылку (иногда он это делает со второй попытки), то отправляем ещё раз
-        if (isset($result['error_code']) && $result['error_code'] == 5000) {
-            $this->getUrl("https://api.ok.ru/fb.do", "POST", $params);
+        // Подпишем
+        $sig = md5( arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
+
+        $params['access_token'] = $ok_access_token;
+        $params['sig']          = $sig;
+
+        $step3 = json_decode( getUrl("https://api.ok.ru/fb.do", "POST", $params, 30, false, false ), true);
+
+// Если ошибка
+        if (isset($step3['error_code'])) {
+            // Обработка ошибки
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1['error_code']));
+            exit();
         }
 
-        var_dump($result);
+// Успешно
+        echo 'OK';
+
+
+        var_dump($step3);
 
     }
 
