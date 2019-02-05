@@ -20,23 +20,79 @@ use Validator;
 class PostingController extends Controller
 {
 
-    /**
-     * @var
-     */
     private $access_token;
-    /**
-     * @var
-     */
     private $group_id;
-    /**
-     * @var
-     */
     private $version;
+    private $current_time;
+
+    private $ok_access_token;
+    private $ok_private_key;
+    private $ok_public_key;
+    private $ok_group_id;
 
     /**
-     * @var
+     * @return mixed
      */
-    private $current_time;
+    public function getOkGroupId()
+    {
+        return $this->ok_group_id;
+    }
+
+    /**
+     * @param mixed $ok_group_id
+     */
+    public function setOkGroupId($ok_group_id)
+    {
+        $this->ok_group_id = $ok_group_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOkPublicKey()
+    {
+        return $this->ok_public_key;
+    }
+
+    /**
+     * @param mixed $ok_public_key
+     */
+    public function setOkPublicKey($ok_public_key)
+    {
+        $this->ok_public_key = $ok_public_key;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOkPrivateKey()
+    {
+        return $this->ok_private_key;
+    }
+
+    /**
+     * @param mixed $ok_private_key
+     */
+    public function setOkPrivateKey($ok_private_key)
+    {
+        $this->ok_private_key = $ok_private_key;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOkAccessToken()
+    {
+        return $this->ok_access_token;
+    }
+
+    /**
+     * @param mixed $ok_access_token
+     */
+    public function setOkAccessToken($ok_access_token)
+    {
+        $this->ok_access_token = $ok_access_token;
+    }
 
     /**
      * @return mixed
@@ -64,6 +120,12 @@ class PostingController extends Controller
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
+
+
+        $this->setOkAccessToken("tkn1krkjugX5mDsFM4Gd38g4k8bR6Rjmh6E60cvYsX7tSwwBzvGQeUFKPkfl4231bHMH9");//Наш вечный токен
+        $this->setOkPrivateKey("BB0E30802A51BBD73A969742");//Секретный ключ приложения
+        $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
+        $this->setOkGroupId("56022813442280");
     }
 
     /**
@@ -218,64 +280,40 @@ class PostingController extends Controller
      */
     public function postingOk()
     {
-        $link = 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2015:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4';
-        $link = 'http://file-store.fun-gifs.ru/';
 
-        $ok_access_token = "tkn1YaPmlptYnlEdZoMnCduvcoTO4Tb0dHKD106DB8nHZuBCTPtbnfTrvBv2SY2U3TA3e0";//Наш вечный токен
-        $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
-        $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
-        $ok_group_id = "56022813442280";
+        $post = Post::where('id', 3)
+            ->with('files')
+            ->first();
 
-
-        // 1. Получим адрес для загрузки 1 фото
-        $params = array(
-            "application_key"   =>  $ok_public_key,
-            "method"            => "photosV2.getUploadUrl",
-            "count"             => 1,  // количество фото для загрузки
-            "gid"               => $ok_group_id,
-            "format"            =>  "json"
-        );
-
-        // Подпишем запрос
-        $sig = md5( $this->arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
-
-        $params['access_token'] = $ok_access_token;
-        $params['sig']          = $sig;
-
-        // Выполним
-        $step1 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
-
-        var_dump($step1);
-        die;
-        // Если ошибка
-        if (isset($step1['error_code'])) {
-            // Обработка ошибки
-            var_dump($step1);
-//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1));
-            exit();
+        $attachments = [];
+        foreach ($post['files'] as $file){
+            switch ($this->checkTypeFile($file)){
+                case 'photo':
+                    $attachment['photo'][] = $this->getPhotoOk($file);
+                    break;
+                case 'video':
+//                    $attachments[] = $this->getVideoOk($post,$file);
+                    break;
+            }
+        }
+        foreach ($post['files'] as $file){
+            switch ($this->checkTypeFile($file)){
+                case 'photo':
+                    $attachment['photo'][] = $this->getPhotoOk($file);
+                    break;
+                case 'video':
+//                    $attachments[] = $this->getVideoOk($post,$file);
+                    break;
+            }
         }
 
-        // Идентификатор для загрузки фото
-        $photo_id = $step1['photo_ids'][0];
 
-        // Предполагается, что картинка располагается в каталоге со скриптом
-        $params = array(
-            "pic1" => "/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-04\ 13\:51\:55_IMG_20190203_145530_186.jpg",
-        );
 
-        // Отправляем картинку на сервер, подписывать не нужно
-        $step2 = json_decode( $this->getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
-
-        // Если ошибка
-        if (isset($step2['error_code'])) {
-            // Обработка ошибки
-            var_dump($step2);
-//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2));
-            exit();
+        if (isset($attachment['photo'])){
+            $photos = implode(',',$attachment['photo']);
         }
 
-        // Токен загруженной фотки
-        $token = $step2['photos'][$photo_id]['token'];
+        var_dump($photos);
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", "test message");
@@ -290,26 +328,26 @@ class PostingController extends Controller
                         {
                             "type": "photo",
                             "list": [
-                                {
-                                    "id": "'.$token.'"
-                                }
+                                '.$photos.'
                             ]
                         }
                     ]
                 }';
 
+
+
         $params = array(
-            "application_key"=>$ok_public_key,
+            "application_key"=>$this->getOkPublicKey(),
             "method"=>"mediatopic.post",
-            "gid"=>$ok_group_id,//ID нашей группы
+            "gid"=>$this->getOkGroupId(),//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>$attachment,
             "format"=>"json"
         );
         // Подпишем
-        $sig = md5( $this->arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
+        $sig = md5( $this->arInStr($params) . md5("{$this->getOkAccessToken()}{$this->getOkPrivateKey()}") );
 
-        $params['access_token'] = $ok_access_token;
+        $params['access_token'] = $this->getOkAccessToken();
         $params['sig']          = $sig;
 
         $step3 = json_decode( $this->getUrl("https://api.ok.ru/fb.do", "POST", $params, 30, false, false ), true);
@@ -532,6 +570,66 @@ class PostingController extends Controller
                 return 'photo';
                 break;
         }
+    }
+
+    private function getPhotoOk($file)
+    {
+
+        // 1. Получим адрес для загрузки 1 фото
+        $params = array(
+            "application_key"   =>  $this->getOkPublicKey(),
+            "method"            => "photosV2.getUploadUrl",
+            "count"             => 1,  // количество фото для загрузки
+            "gid"               => $this->getOkGroupId(),
+            "format"            =>  "json"
+        );
+
+        // Подпишем запрос
+        $sig = md5( $this->arInStr($params) . md5("{$this->getOkAccessToken()}{$this->getOkPrivateKey()}") );
+
+        $params['access_token'] = $this->getOkAccessToken();
+        $params['sig']          = $sig;
+
+        // Выполним
+        $step1 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
+
+        // Если ошибка
+        if (isset($step1['error_code'])) {
+            // Обработка ошибки
+            var_dump($step1);
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1));
+            exit();
+        }
+
+        // Идентификатор для загрузки фото
+        $photo_id = $step1['photo_ids'][0];
+
+        $img_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-01-31 16:56:44_giphy.gif');
+        $curl_file = curl_file_create($img_real_path,'image/jpeg','test_name.gif');
+
+        // Предполагается, что картинка располагается в каталоге со скриптом
+        $params = array(
+            "pic1" => $curl_file,
+        );
+
+        var_dump('3.3');
+        // Отправляем картинку на сервер, подписывать не нужно
+        $step2 = json_decode( $this->getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
+
+        var_dump('3.4');
+        // Если ошибка
+        if (isset($step2['error_code'])) {
+            // Обработка ошибки
+            var_dump($step2);
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2));
+            exit();
+        }
+
+        // Токен загруженной фотки
+        $token = $step2['photos'][$photo_id]['token'];
+
+        var_dump('4');
+        return '{"id": "'.$token.'"}';
     }
 
 }
