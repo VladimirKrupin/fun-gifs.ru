@@ -88,11 +88,11 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="358" column="114" selection-start-line="358" selection-start-column="114" selection-end-line="358" selection-end-column="114" />
+            <state relative-caret-position="330">
+              <caret line="358" column="103" selection-start-line="358" selection-start-column="103" selection-end-line="358" selection-end-column="103" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549352632902" expanded="true" signature="6272:7359" ph="..." />
+                <marker date="1549352970000" expanded="true" signature="6272:7359" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,11 +110,11 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
+            <state relative-caret-position="424">
               <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
-                <marker date="1549352293631" expanded="true" signature="940:942" ph="..." />
+                <marker date="1549352815094" expanded="true" signature="940:942" ph="..." />
               </folding>
             </state>
           </provider>
@@ -724,12 +724,12 @@
       <workItem from="1549193711906" duration="6120000" />
       <workItem from="1549218726179" duration="3790000" />
       <workItem from="1549346480156" duration="2557000" />
-      <workItem from="1549351922243" duration="711000" />
+      <workItem from="1549351922243" duration="1047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1258456000" />
+    <option name="totallyTimeSpent" value="1258792000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1070,13 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1087,24 +1080,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
+        <state relative-caret-position="424">
           <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
-            <marker date="1549352293631" expanded="true" signature="940:942" ph="..." />
+            <marker date="1549352815094" expanded="true" signature="940:942" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="358" column="114" selection-start-line="358" selection-start-column="114" selection-end-line="358" selection-end-column="114" />
+        <state relative-caret-position="330">
+          <caret line="358" column="103" selection-start-line="358" selection-start-column="103" selection-end-line="358" selection-end-column="103" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549352632902" expanded="true" signature="6272:7359" ph="..." />
+            <marker date="1549352970000" expanded="true" signature="6272:7359" ph="..." />
           </folding>
         </state>
       </provider>
