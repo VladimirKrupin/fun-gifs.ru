@@ -187,7 +187,7 @@ class PostingController extends Controller
     {
         $link = 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04%2015:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4';
         $link = 'http://file-store.fun-gifs.ru/';
-        $ok_access_token = "tkn1AFdPniGVPADuvbDRKVGHNUL2Ftxf24E07GIPjXJ86g6IdWWg81RqvNdgJ0SSMyyJ6";//Наш вечный токен
+        $ok_access_token = "tkn1YaPmlptYnlEdZoMnCduvcoTO4Tb0dHKD106DB8nHZuBCTPtbnfTrvBv2SY2U3TA3e0";//Наш вечный токен
         $ok_private_key = "BB0E30802A51BBD73A969742";//Секретный ключ приложения
         $ok_public_key = "CBAONMANEBABABABA";//Публичный ключ приложения
         $params = array(
