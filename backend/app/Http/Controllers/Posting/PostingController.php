@@ -185,7 +185,7 @@ class PostingController extends Controller
 
             // Еще разок, если API завис
             if (isset($data['error_code']) && $data['error_code'] == 5000) {
-                $data = getUrl($url, $type, $params, $timeout, $image, $decode);
+                $data = $this->getUrl($url, $type, $params, $timeout, $image, $decode);
             }
 
             return $data;
@@ -205,7 +205,7 @@ class PostingController extends Controller
 
         foreach($array as $key => $val) {
             if (is_array($val)) {
-                $string .= $key."=".arInStr($val);
+                $string .= $key."=".$this->arInStr($val);
             } else {
                 $string .= $key."=".$val;
             }
@@ -237,13 +237,13 @@ class PostingController extends Controller
         );
 
         // Подпишем запрос
-        $sig = md5( arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
+        $sig = md5( $this->arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
 
         $params['access_token'] = $ok_access_token;
         $params['sig']          = $sig;
 
         // Выполним
-        $step1 = json_decode(getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
+        $step1 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
 
         // Если ошибка
         if (isset($step1['error_code'])) {
@@ -261,7 +261,7 @@ class PostingController extends Controller
         );
 
         // Отправляем картинку на сервер, подписывать не нужно
-        $step2 = json_decode( getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
+        $step2 = json_decode( $this->getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
 
         // Если ошибка
         if (isset($step2['error_code'])) {
@@ -303,12 +303,12 @@ class PostingController extends Controller
             "format"=>"json"
         );
         // Подпишем
-        $sig = md5( arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
+        $sig = md5( $this->arInStr($params) . md5("{$ok_access_token}{$ok_private_key}") );
 
         $params['access_token'] = $ok_access_token;
         $params['sig']          = $sig;
 
-        $step3 = json_decode( getUrl("https://api.ok.ru/fb.do", "POST", $params, 30, false, false ), true);
+        $step3 = json_decode( $this->getUrl("https://api.ok.ru/fb.do", "POST", $params, 30, false, false ), true);
 
 // Если ошибка
         if (isset($step3['error_code'])) {

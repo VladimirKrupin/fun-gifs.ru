@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
-    </list>
+    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -725,12 +723,12 @@
       <workItem from="1549218726179" duration="3790000" />
       <workItem from="1549346480156" duration="2557000" />
       <workItem from="1549351922243" duration="1358000" />
-      <workItem from="1549360423529" duration="6069000" />
+      <workItem from="1549360423529" duration="6324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1265172000" />
+    <option name="totallyTimeSpent" value="1265427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -743,7 +741,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1960" y="-11" width="1881" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.18296014" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
