@@ -267,7 +267,7 @@ class PostingController extends Controller
             }
         }
 
-        $hashtags = "\n\r〰️〰️〰️〰️〰️〰\n\r️🔹️\n\r🔹️\n\r🔹️\n\r🔹️\n\r🔹️\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
+        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
@@ -361,10 +361,11 @@ class PostingController extends Controller
      */
     private function getVideo($post,$file){
         // загрузка видео
+        $hashtags_video = "#fun#gif#funny#video#fungifs#gifs#смешные#видео#видосики#гиф#гифки#веселые#ржачные#крутые";
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $post['comment'].' Fun_gifs.mp4',
+            'name' => $post['comment'].' Fun_gifs'.$hashtags_video.'.mp4',
             'v' => $this->getVersion(),
         ]);
 
