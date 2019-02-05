@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,11 +89,11 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="270" column="55" selection-start-line="270" selection-start-column="55" selection-end-line="270" selection-end-column="55" />
+            <state relative-caret-position="361">
+              <caret line="375" column="113" selection-start-line="375" selection-start-column="113" selection-end-line="375" selection-end-column="113" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549353280963" expanded="true" signature="6272:7359" ph="..." />
+                <marker date="1549363691062" expanded="true" signature="6272:7359" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,11 +111,10 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
+            <state relative-caret-position="594">
               <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
-                <marker date="1549352994239" expanded="true" signature="940:942" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,7 +134,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="486">
-                <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="64" />
+                <caret line="27" column="64" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="64" />
               </first_editor>
               <second_editor />
             </state>
@@ -451,10 +451,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1961" />
-    <option name="y" value="-4" />
-    <option name="width" value="1879" />
-    <option name="height" value="1084" />
+    <option name="x" value="1960" />
+    <option name="y" value="-11" />
+    <option name="width" value="1881" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -462,7 +462,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -622,6 +621,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -725,11 +725,12 @@
       <workItem from="1549218726179" duration="3790000" />
       <workItem from="1549346480156" duration="2557000" />
       <workItem from="1549351922243" duration="1358000" />
+      <workItem from="1549360423529" duration="1314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1259103000" />
+    <option name="totallyTimeSpent" value="1260417000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,22 +742,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1961" y="-4" width="1879" height="1084" extended-state="6" />
+    <frame x="1960" y="-11" width="1881" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.18296014" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27427962" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49652296" visible="true" weight="0.18077554" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32977587" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.50347704" side_tool="true" weight="0.21463682" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.27427962" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" sideWeight="0.50347704" side_tool="true" weight="0.21463682" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -765,6 +765,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32977587" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1074,7 +1075,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="486">
-            <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="64" />
+            <caret line="27" column="64" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="64" />
           </first_editor>
           <second_editor />
         </state>
@@ -1089,22 +1090,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="594">
           <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
-            <marker date="1549352994239" expanded="true" signature="940:942" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="270" column="55" selection-start-line="270" selection-start-column="55" selection-end-line="270" selection-end-column="55" />
+        <state relative-caret-position="361">
+          <caret line="375" column="113" selection-start-line="375" selection-start-column="113" selection-end-line="375" selection-end-column="113" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549353280963" expanded="true" signature="6272:7359" ph="..." />
+            <marker date="1549363691062" expanded="true" signature="6272:7359" ph="..." />
           </folding>
         </state>
       </provider>

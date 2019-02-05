@@ -272,7 +272,7 @@ class PostingController extends Controller
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
-            'message' => $post['comment'].$hashtags,
+            'message' => $post['comment'],
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
             'access_token' => $this->getAccessToken(),
@@ -373,7 +373,7 @@ class PostingController extends Controller
         // загрузка видео
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags_video = "#fun#gif#funny#video#fungifs#gifs#смешные#видео#видосики#гиф#гифки#веселые#ржачные#крутые";
+        $hashtags_video = " #fun #gif #funny #video #gifs #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
