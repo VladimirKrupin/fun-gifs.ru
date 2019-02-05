@@ -195,7 +195,7 @@ class PostingController extends Controller
             "method"=>"mediatopic.post",
             "gid"=>"56022813442280",//ID нашей группы
             "type"=>"GROUP_THEME",
-            "attachment"=>'{"media": [{"type": "link","url": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
+            "attachment"=>'{"media": [{"type": "text","text": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
             "format"=>"json"
         );
         $sig = md5($this->arInStr($params).md5("{$ok_access_token}{$ok_private_key}"));
