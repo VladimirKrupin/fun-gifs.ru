@@ -315,6 +315,7 @@ class PostingController extends Controller
 
         var_dump($photos);
 
+
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", "test message");
 
