@@ -266,8 +266,8 @@ class PostingController extends Controller
                     break;
             }
         }
-
-        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
+        $eng_comment = $this->translate('ru','en',$post['comment']);
+        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r".$eng_comment."\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
@@ -353,6 +353,13 @@ class PostingController extends Controller
         $id= $save_photo_data->response[0]->id;
         $owner_id= $save_photo_data->response[0]->owner_id;
         return "photo".$owner_id."_".$id;
+    }
+
+    function translate($from_lan, $to_lan, $text){
+        $json = json_decode(file_get_contents('https://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=' . urlencode($text) . '&langpair=' . $from_lan . '|' . $to_lan));
+        $translated_text = $json->responseData->translatedText;
+
+        return $translated_text;
     }
 
     /**
