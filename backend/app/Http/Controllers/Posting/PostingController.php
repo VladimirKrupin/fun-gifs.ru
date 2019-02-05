@@ -266,7 +266,7 @@ class PostingController extends Controller
         // Если ошибка
         if (isset($step2['error_code'])) {
             // Обработка ошибки
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1['error_code']));
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2['error_code']));
             exit();
         }
 
@@ -313,7 +313,7 @@ class PostingController extends Controller
 // Если ошибка
         if (isset($step3['error_code'])) {
             // Обработка ошибки
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1['error_code']));
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step3['error_code']));
             exit();
         }
 
