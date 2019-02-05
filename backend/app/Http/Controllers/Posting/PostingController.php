@@ -356,7 +356,7 @@ class PostingController extends Controller
     }
 
     function translate($from_lan, $to_lan, $text){
-        $json = json_decode(file_get_contents('https://ajax.googleapis.com/ajax/services/language/translate/v=2.0?q=' . urlencode($text) . '&target='.$to_lan.'&source='.$from_lan ));
+        $json = json_decode(file_get_contents('https://ajax.googleapis.com/ajax/services/language/translate/v2?q=' . urlencode($text) . '&target='.$to_lan.'&source='.$from_lan ));
         var_dump($json);
         $translated_text = $json->responseData->translatedText;
 
