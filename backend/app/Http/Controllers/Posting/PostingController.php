@@ -290,7 +290,7 @@ class PostingController extends Controller
             Post::where('id',$post['id'])->update([
                 'status' => 1
             ]);
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
         }
 
         // загрузка фото
