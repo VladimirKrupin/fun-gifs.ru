@@ -36,10 +36,10 @@ class Kernel extends ConsoleKernel
             (new PostingController())->posting();
         })->hourlyAt(5)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->postingOk();
-//        })->everyMinute();
+        $schedule->call(function()
+        {
+            (new PostingController())->postingOk();
+        })->everyMinute();
 
 //        $schedule->call(function()
 //        {
