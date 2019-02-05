@@ -193,7 +193,7 @@ class PostingController extends Controller
         $params = array(
             "application_key"=>$ok_public_key,
             "method"=>"mediatopic.post",
-            "gid"=>"56022813442280",//ID нашей группы
+            "gid"=>"578434590952",//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>'{"media": [{"type": "text","text": "'.$link.'"}]}',//Вместо https://www.google.com естественно надо подставить нашу ссылку
             "format"=>"json"
