@@ -266,8 +266,9 @@ class PostingController extends Controller
                     break;
             }
         }
-        $eng_comment = $this->translate('ru','en',$post['comment']);
-        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r".$eng_comment."\n\r#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
+//        $eng_comment = $this->translate('ru','en',$post['comment']);
+        $eng_comment = '';
+        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r".$eng_comment."#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
@@ -356,7 +357,7 @@ class PostingController extends Controller
     }
 
     function translate($from_lan, $to_lan, $text){
-        $json = json_decode(file_get_contents('https://translation.googleapis.com/language/translate/v2?q=' . urlencode($text) . '&target='.$to_lan.'&source='.$from_lan ));
+        $json = json_decode(file_get_contents('https://translation.googleapis.com/language/translate/v2?q='.$text.'&target='.$to_lan.'&source='.$from_lan));
         var_dump($json);
         $translated_text = $json->responseData->translatedText;
 
@@ -370,12 +371,13 @@ class PostingController extends Controller
      */
     private function getVideo($post,$file){
         // загрузка видео
-        $eng_comment = $this->translate('ru','en',$post['comment']);
+//        $eng_comment = $this->translate('ru','en',$post['comment']);
+        $eng_comment = '';
         $hashtags_video = "#fun#gif#funny#video#fungifs#gifs#смешные#видео#видосики#гиф#гифки#веселые#ржачные#крутые";
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $post['comment'].' '.$eng_comment.' Fun_gifs'.$hashtags_video.'.mp4',
+            'name' => $post['comment'].$eng_comment.' Fun_gifs'.$hashtags_video.'.mp4',
             'v' => $this->getVersion(),
         ]);
 
