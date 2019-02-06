@@ -76,7 +76,7 @@ class FilesController extends Controller
             $post = Post::create([
                 'user_id' => $user['id'],
                 'comment' => $request->input('comment'),
-                'status' => 0,
+                'status' => 3,
             ]);
             if ($post){
                 $post = $post->toArray();
@@ -87,19 +87,29 @@ class FilesController extends Controller
                 ]);
             }
 
-            foreach ($request->allFiles() as $files){
-                foreach ($files as $file){
-                    $file_path = $file->path();
-                    $file_name = 'fun_gifs_'.$this->getDateTime().'_'.str_replace(' ','',trim($file->getClientOriginalName()));
-                    $content = file_get_contents($file_path, true);
-                    Storage::disk('local')->put('files-store/'.$file_name, $content);
-                    File::create([
-                        'path' => $file_name,
-                        'post_id' => $post['id']
-                    ]);
-                }
+            try{
+                foreach ($request->allFiles() as $files){
+                    foreach ($files as $file){
+                        $file_path = $file->path();
+                        $file_name = 'fun_gifs_'.$this->getDateTime().'_'.str_replace(' ','',trim($file->getClientOriginalName()));
+                        $content = file_get_contents($file_path, true);
+                        $result = Storage::disk('local')->put('files-store/'.$file_name, $content);
 
+                        File::create([
+                            'path' => $file_name,
+                            'post_id' => $post['id']
+                        ]);
+                    }
+
+                }
+            }catch (\Throwable $e){
+                Post::where('id',$post['id'])->delete();
+                return response()->json([
+                    'status' => 'error',
+                    'data' => ['errors' =>["Ошибка при сохранении файлов"]]
+                ]);
             }
+
 
             return response()->json([
                 'status' => 'ok',
