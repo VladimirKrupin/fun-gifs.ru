@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="" />
+    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,11 +89,10 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="316" column="8" selection-start-line="316" selection-start-column="8" selection-end-line="316" selection-end-column="8" />
+            <state relative-caret-position="257">
+              <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
-                <marker date="1549379997700" expanded="true" signature="9807:10894" ph="..." />
               </folding>
             </state>
           </provider>
@@ -108,11 +110,10 @@
       <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="684">
               <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="41" selection-end-column="28" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
-                <marker date="1549379871207" expanded="true" signature="967:1073" ph="..." />
               </folding>
             </state>
           </provider>
@@ -694,11 +695,13 @@
       <workItem from="1549346480156" duration="2557000" />
       <workItem from="1549351922243" duration="1358000" />
       <workItem from="1549360423529" duration="11872000" />
+      <workItem from="1549431971583" duration="603000" />
+      <workItem from="1549441008272" duration="398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1270975000" />
+    <option name="totallyTimeSpent" value="1271976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,18 +716,18 @@
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.18296014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.18732932" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32977587" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" weight="0.12452212" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28922093" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28886554" />
       <window_info id="Favorites" order="2" sideWeight="0.5046604" side_tool="true" weight="0.18296014" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1058,22 +1061,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="684">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="41" selection-end-column="28" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
-            <marker date="1549379871207" expanded="true" signature="967:1073" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="316" column="8" selection-start-line="316" selection-start-column="8" selection-end-line="316" selection-end-column="8" />
+        <state relative-caret-position="257">
+          <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
-            <marker date="1549379997700" expanded="true" signature="9807:10894" ph="..." />
           </folding>
         </state>
       </provider>

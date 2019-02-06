@@ -531,11 +531,12 @@ class PostingController extends Controller
         // загрузка видео
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags_video = " #fun #gif #funny #video #gifs #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
+        $hashtags_video = " fun-gifs.ru fun gif funny video gifs смешные видео видосики гиф гифки веселые ржачные крутые смешное угары топ веселое";
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $post['comment'].$eng_comment.' Fun_gifs'.$hashtags_video.'.mp4',
+            'name' => $post['comment'].$eng_comment.' Fun_gifs.mp4',
+            'description' => $hashtags_video,
             'v' => $this->getVersion(),
         ]);
 
