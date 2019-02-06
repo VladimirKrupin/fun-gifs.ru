@@ -106,7 +106,7 @@ class FilesController extends Controller
                 Post::where('id',$post['id'])->delete();
                 return response()->json([
                     'status' => 'error',
-                    'data' => ['errors' =>["Ошибка при сохранении файлов"]]
+                    'data' => ['errors' =>["Ошибка при сохранении файлов, обратитесь в поддержку"]]
                 ]);
             }
 
