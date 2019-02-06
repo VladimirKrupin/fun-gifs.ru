@@ -76,7 +76,7 @@ class FilesController extends Controller
             $post = Post::create([
                 'user_id' => $user['id'],
                 'comment' => $request->input('comment'),
-                'status' => 3,
+                'status' => 0,
             ]);
             if ($post){
                 $post = $post->toArray();
