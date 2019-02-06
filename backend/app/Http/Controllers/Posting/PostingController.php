@@ -122,7 +122,7 @@ class PostingController extends Controller
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
 
 
-        $this->setOkAccessToken("tkn1krkjugX5mDsFM4Gd38g4k8bR6Rjmh6E60cvYsX7tSwwBzvGQeUFKPkfl4231bHMH9");//Наш вечный токен
+        $this->setOkAccessToken("tkn1ce3LbLBhQmompbntGdPpbvpqe6d9mgSbumqnQ3H0FgjdF8FP75wjqgkisckqNHPD8");//Наш вечный токен
         $this->setOkPrivateKey("BB0E30802A51BBD73A969742");//Секретный ключ приложения
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
@@ -264,7 +264,6 @@ class PostingController extends Controller
         ksort($array);
 
         $string = "";
-
         foreach($array as $key => $val) {
             if (is_array($val)) {
                 $string .= $key."=".$this->arInStr($val);
@@ -281,7 +280,7 @@ class PostingController extends Controller
     public function postingOk()
     {
 
-        $post = Post::where('id', 3)
+        $post = Post::where('id', 63)
             ->with('files')
             ->first();
 
@@ -289,53 +288,53 @@ class PostingController extends Controller
         foreach ($post['files'] as $file){
             switch ($this->checkTypeFile($file)){
                 case 'photo':
-                    $attachment['photo'][] = $this->getPhotoOk($file);
+                    $attachments['photo'][] = $this->getPhotoOk($post,$file);
                     break;
                 case 'video':
-//                    $attachments[] = $this->getVideoOk($post,$file);
+                    $attachments['video'][] = $this->getVideoOk($post,$file);
                     break;
             }
         }
-        foreach ($post['files'] as $file){
-            switch ($this->checkTypeFile($file)){
-                case 'photo':
-                    $attachment['photo'][] = $this->getPhotoOk($file);
-                    break;
-                case 'video':
-//                    $attachments[] = $this->getVideoOk($post,$file);
-                    break;
-            }
-        }
-
-
-
-        if (isset($attachment['photo'])){
-            $photos = implode(',',$attachment['photo']);
-        }
-
-        var_dump($photos);
 
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
-        $message_json = str_replace("\n", "\\n", "test message");
+        $message_json = str_replace("\n", "\\n", $post['comment']);
+
+        $attachment['media'][] = ['type'=>'text','text'=>$message_json];
+
+//        if (isset($photos)){
+        if (isset($attachments['photo'])){
+//            $attachment['media'][] = ['type'=>'photo','list'=>$photos];
+            $attachment['media'][] = ['type'=>'photo','list'=>$attachments['photo']];
+        }
+        if (isset($attachments['video'])){
+            $attachment['media'][] = ['type'=>'movie','list'=>$attachments['video']];
+        }
+
+//        var_dump($attachment);
 
         // 3. Запостим в группу
-        $attachment = '{
-                    "media": [
-                        {
-                            "type": "text",
-                            "text": "'.$message_json.'"
-                        },
-                        {
-                            "type": "photo",
-                            "list": [
-                                '.$photos.'
-                            ]
-                        }
-                    ]
-                }';
+//        $attachment = '{
+//                    "media": [
+//                        {
+//                            "type": "text",
+//                            "text": "'.$message_json.'"
+//                        },
+//                        {
+//                            "type": "photo",
+//                            "list": [
+//                                '.$photos.'
+//                            ]
+//                        }
+//                    ]
+//                }';
+//        [{"media":{"type":"text","text":"test message"}}]
 
 
+//        die;
+
+        //сделаем json
+        $attachment = json_encode($attachment);
 
         $params = array(
             "application_key"=>$this->getOkPublicKey(),
@@ -574,7 +573,93 @@ class PostingController extends Controller
         }
     }
 
-    private function getPhotoOk($file)
+    private function getVideoOk($post,$file)
+    {
+        // 1. Получим адрес для загрузки 1 фото
+        $params = array(
+            "application_key"   =>  $this->getOkPublicKey(),
+            "method"            => "video.getUploadUrl",
+            "file_name"         => "video1",
+            "file_size"         => 0,
+            "count"             => 1,  // количество видео для загрузки
+            "gid"               => $this->getOkGroupId(),
+            "format"            =>  "json",
+//            "post_form"            =>  'false'
+        );
+
+        // Подпишем запрос
+        $sig = md5( $this->arInStr($params) . md5("{$this->getOkAccessToken()}{$this->getOkPrivateKey()}") );
+//
+        $params['access_token'] = $this->getOkAccessToken();
+        $params['sig']          = $sig;
+
+        // Выполним
+        $step1 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params), true);
+
+        // Если ошибка
+        if (isset($step1['error_code'])) {
+            // Обработка ошибки
+            var_dump('step1');
+            var_dump($step1);
+            exit();
+        }
+
+        // Идентификатор для загрузки фото
+        $video_id = intval($step1['video_id']);
+
+        $video_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path']);
+        $curl_file = curl_file_create($video_real_path,'video/mp4',$post['comment'].' Fun Gifs.mp4');
+
+        // Предполагается, что картинка располагается в каталоге со скриптом
+        $params2 = array(
+            "video_file" => $curl_file,
+        );
+
+        // Отправляем картинку на сервер, подписывать не нужно
+        $step2 = json_decode( $this->getUrl( $step1['upload_url'], "POST", $params2, 30, true), true);
+
+        // Если ошибка
+        if (isset($step2['error_code'])) {
+            // Обработка ошибки
+            var_dump('step2');
+            var_dump($step2);
+            exit();
+        }
+
+
+        // 3.Загрузка видео
+        $params3 = array(
+            "application_key"   =>  $this->getOkPublicKey(),
+            "method"            => "video.update",
+            "vid"         => $video_id,
+//            "title"         => $post['comment'].' Fun gifs.mp4',
+//            "gid"               => $this->getOkGroupId(),
+            "format"            =>  "json"
+        );
+
+
+        // Подпишем запрос
+        $sig3 = md5( $this->arInStr($params3) . md5("{$this->getOkAccessToken()}{$this->getOkPrivateKey()}") );
+        $params3['access_token'] = $this->getOkAccessToken();
+
+        $params3['sig'] = $sig3;
+
+        // Выполним
+        $step3 = json_decode($this->getUrl("https://api.ok.ru/fb.do", "POST", $params3), true);
+
+        // Если ошибка
+        if (isset($step3['error_code'])) {
+            var_dump('step3');
+            var_dump($step3);
+            // Обработка ошибки
+            exit();
+        }
+
+        return ['id' => $video_id];
+
+    }
+
+    private function getPhotoOk($post,$file)
     {
 
         // 1. Получим адрес для загрузки 1 фото
@@ -606,19 +691,19 @@ class PostingController extends Controller
         // Идентификатор для загрузки фото
         $photo_id = $step1['photo_ids'][0];
 
-        $img_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-01-31 16:56:44_giphy.gif');
-        $curl_file = curl_file_create($img_real_path,'image/jpeg','test_name.gif');
+        $img_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path']);
+        $extension = explode('.',$file['path']);
+        $extension = end($extension);
+        $curl_file = curl_file_create($img_real_path,'image/jpeg',$post['comment'].'.'.$extension);
 
         // Предполагается, что картинка располагается в каталоге со скриптом
         $params = array(
             "pic1" => $curl_file,
         );
 
-        var_dump('3.3');
         // Отправляем картинку на сервер, подписывать не нужно
         $step2 = json_decode( $this->getUrl( $step1['upload_url'], "POST", $params, 30, true), true);
 
-        var_dump('3.4');
         // Если ошибка
         if (isset($step2['error_code'])) {
             // Обработка ошибки
@@ -630,8 +715,8 @@ class PostingController extends Controller
         // Токен загруженной фотки
         $token = $step2['photos'][$photo_id]['token'];
 
-        var_dump('4');
-        return '{"id": "'.$token.'"}';
+//        return '{"id": "'.$token.'"}';
+        return ['id' => $token];
     }
 
 }

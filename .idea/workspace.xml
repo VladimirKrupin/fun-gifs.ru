@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,8 +89,8 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9684">
-              <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
+            <state relative-caret-position="78">
+              <caret line="282" column="36" selection-start-line="282" selection-start-column="36" selection-end-line="282" selection-end-column="36" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
               </folding>
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="90" column="7" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="72" column="29" lean-forward="true" selection-start-line="72" selection-start-column="29" selection-end-line="75" selection-end-column="28" />
               <folding>
                 <element signature="e#31#76#0#PHP" expanded="true" />
               </folding>
@@ -119,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
+            <state relative-caret-position="18">
+              <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="87" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -153,8 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logo-min.jpg</find>
-      <find>agatefund</find>
       <find>Agate</find>
       <find>fund</find>
       <find>Access-Control-Allow-Origin</find>
@@ -183,6 +181,8 @@
       <find>картинка р</find>
       <find>id = $step1['photo_id</find>
       <find>$photo_id</find>
+      <find>file_put_contents(</find>
+      <find>Fun</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -276,9 +276,9 @@
         <option value="$PROJECT_DIR$/backend/resources/views/emails/posting/posting-result-ended-posts.blade.php" />
         <option value="$PROJECT_DIR$/backend/app/Mail/Posting/PostingEndedPosts.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
         <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
       </list>
     </option>
   </component>
@@ -706,12 +706,12 @@
       <workItem from="1549360423529" duration="11872000" />
       <workItem from="1549431971583" duration="603000" />
       <workItem from="1549441008272" duration="1634000" />
-      <workItem from="1549451305233" duration="609000" />
+      <workItem from="1549451305233" duration="11075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1273821000" />
+    <option name="totallyTimeSpent" value="1284287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,7 +726,7 @@
     <frame x="41" y="-4" width="1879" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.18951392" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.18951392" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32977587" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -735,7 +735,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28886554" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.19957983" />
       <window_info id="Favorites" order="2" sideWeight="0.5046604" side_tool="true" weight="0.18296014" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -1055,6 +1055,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="74" column="12" lean-forward="true" selection-start-line="74" selection-start-column="12" selection-end-line="87" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Mail/Posting/PostingResult.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1064,8 +1071,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9684">
-          <caret line="538" column="24" selection-start-line="538" selection-start-column="24" selection-end-line="538" selection-end-column="24" />
+        <state relative-caret-position="78">
+          <caret line="282" column="36" selection-start-line="282" selection-start-column="36" selection-end-line="282" selection-end-column="36" />
           <folding>
             <element signature="e#46#76#0#PHP" expanded="true" />
           </folding>
@@ -1074,18 +1081,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="90" column="7" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+        <state relative-caret-position="195">
+          <caret line="72" column="29" lean-forward="true" selection-start-line="72" selection-start-column="29" selection-end-line="75" selection-end-column="28" />
           <folding>
             <element signature="e#31#76#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="105" column="55" selection-start-line="105" selection-start-column="55" selection-end-line="105" selection-end-column="55" />
         </state>
       </provider>
     </entry>
