@@ -312,7 +312,7 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $attachments['video'][] = $this->getVideoOk($post,$file);
-                    die;
+//                    die;
                     break;
             }
         }
@@ -360,7 +360,8 @@ class PostingController extends Controller
         $params = array(
             "application_key"=>$this->getOkPublicKey(),
             "method"=>"mediatopic.post",
-            "gid"=>$this->getOkGroupId(),//ID нашей группы
+//            "gid"=>$this->getOkGroupId(),//ID нашей группы
+            "uid"=>$this->getOkGroupId(),//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>$attachment,
             "format"=>"json"
@@ -660,6 +661,7 @@ class PostingController extends Controller
             "vid"         => $video_id,
             "title"         => $post['comment'].' | Fun gifs.mp4',
             "tags"         => $this->getKeyWords(),
+            "description"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json"
         );
