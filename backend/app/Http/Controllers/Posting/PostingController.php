@@ -610,7 +610,7 @@ class PostingController extends Controller
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
 //            "gid"               => $this->getOkGroupId(),
-            "uid"               => '578434590952',
+//            "uid"               => '578434590952',
             "format"            =>  "json",
 //            "post_form"            =>  'false'
         );
