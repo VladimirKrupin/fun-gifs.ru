@@ -35,14 +35,14 @@ class Kernel extends ConsoleKernel
         {
             (new PostingController())->posting();
             (new PostingController())->postingOk();
-        })->twiceDaily(6, 7)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(7, 8)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
             (new PostingController())->posting();
             (new PostingController())->postingOk();
-        })->twiceDaily(8, 9)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(9, 10)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
@@ -63,19 +63,13 @@ class Kernel extends ConsoleKernel
         {
             (new PostingController())->posting();
             (new PostingController())->postingOk();
-        })->twiceDaily(19, 20)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(19, 21)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
         $schedule->call(function()
         {
             (new PostingController())->posting();
             (new PostingController())->postingOk();
-        })->twiceDaily(21, 22)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-        })->twiceDaily(0, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 //        $schedule->call(function()
 //        {
