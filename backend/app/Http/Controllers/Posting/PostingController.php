@@ -299,8 +299,8 @@ class PostingController extends Controller
      */
     public function postingOk()
     {
-
-        $post = Post::where('id', 63)
+        $video_content = false;
+        $post = Post::where('status', 0)
             ->with('files')
             ->first();
 
@@ -312,11 +312,17 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $attachments['video'][] = $this->getVideoOk($post,$file);
-                    die;
+                    $video_content = true;
                     break;
             }
         }
 
+        if ($video_content){
+            Post::where('id',$post['id'])->update([
+                'status' => 1
+            ]);
+            die;
+        }
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", $post['comment']);
@@ -473,9 +479,7 @@ class PostingController extends Controller
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
         }else{
             $mail_data = json_encode($result);
-            Post::where('id',$post['id'])->update([
-                'status' => 1
-            ]);
+
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
         }
 
@@ -660,7 +664,7 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment']." | Fun gifs \n\r ".$this->getKeyWords(),
+            "title"         => $post['comment']." | Fun-gifs.ru \n\r ".$this->getKeyWords(),
             "tags"         => $this->getKeyWords(),
             "description"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
