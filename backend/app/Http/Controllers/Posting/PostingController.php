@@ -30,6 +30,24 @@ class PostingController extends Controller
     private $ok_public_key;
     private $ok_group_id;
 
+    private $key_words;
+
+    /**
+     * @return mixed
+     */
+    public function getKeyWords()
+    {
+        return $this->key_words;
+    }
+
+    /**
+     * @param mixed $key_words
+     */
+    public function setKeyWords($key_words)
+    {
+        $this->key_words = $key_words;
+    }
+
     /**
      * @return mixed
      */
@@ -126,6 +144,8 @@ class PostingController extends Controller
         $this->setOkPrivateKey("BB0E30802A51BBD73A969742");//Секретный ключ приложения
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
+
+        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль 2019 интересно смех веселая 2018');
     }
 
     /**
@@ -292,6 +312,7 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $attachments['video'][] = $this->getVideoOk($post,$file);
+                    die;
                     break;
             }
         }
@@ -539,7 +560,7 @@ class PostingController extends Controller
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $key_words.' | Fun Gifs .mp4',
+            'name' => $this->getKeyWords().' | Fun Gifs .mp4',
             'description' => $hashtags_video,
             'v' => $this->getVersion(),
         ]);
@@ -584,7 +605,7 @@ class PostingController extends Controller
         $params = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.getUploadUrl",
-            "file_name"         => "video1",
+            "file_name"         => $post['comment'],
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
             "gid"               => $this->getOkGroupId(),
@@ -637,7 +658,8 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-//            "title"         => $post['comment'].' Fun gifs.mp4',
+            "title"         => $post['comment'].' | Fun gifs.mp4',
+            "tags"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json"
         );
