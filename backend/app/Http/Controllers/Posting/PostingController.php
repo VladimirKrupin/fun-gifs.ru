@@ -377,6 +377,10 @@ class PostingController extends Controller
             ->with('files')
             ->first();
 
+        $post = Post::where('id', 82)
+            ->with('files')
+            ->first();
+
         if ($post) {
             $post = $post->toArray();
             $this->wallPosting($post);
