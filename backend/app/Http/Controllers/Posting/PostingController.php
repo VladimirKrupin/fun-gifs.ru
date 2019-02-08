@@ -329,7 +329,7 @@ class PostingController extends Controller
             $attachment['media'][] = ['type'=>'photo','list'=>$attachments['photo']];
         }
         if (isset($attachments['video'])){
-            $attachment['media'][] = ['type'=>'movie-reshare','list'=>$attachments['video'][0]];
+            $attachment['media'][] = ['type'=>'movie-reshare','movieId'=>$attachments['video'][0]['movieId']];
         }
 
 //        var_dump($attachment);
