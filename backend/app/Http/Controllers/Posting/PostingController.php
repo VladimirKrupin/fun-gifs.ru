@@ -360,8 +360,8 @@ class PostingController extends Controller
         $params = array(
             "application_key"=>$this->getOkPublicKey(),
             "method"=>"mediatopic.post",
-//            "gid"=>$this->getOkGroupId(),//ID нашей группы
-            "uid"=>$this->getOkGroupId(),//ID нашей группы
+            "gid"=>$this->getOkGroupId(),//ID нашей группы
+//            "uid"=>$this->getOkGroupId(),//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>$attachment,
             "format"=>"json"
