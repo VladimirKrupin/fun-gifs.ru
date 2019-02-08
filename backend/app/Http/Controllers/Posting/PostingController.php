@@ -145,7 +145,7 @@ class PostingController extends Controller
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
 
-        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль 2019 интересно смех веселая 2018');
+        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль интересно смех веселая 2019 2018');
     }
 
     /**
@@ -609,7 +609,7 @@ class PostingController extends Controller
             "file_name"         => $post['comment'],
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
-//            "gid"               => $this->getOkGroupId(),
+            "gid"               => $this->getOkGroupId(),
 //            "uid"               => '578434590952',
             "format"            =>  "json",
 //            "post_form"            =>  'false'
