@@ -329,7 +329,7 @@ class PostingController extends Controller
             $attachment['media'][] = ['type'=>'photo','list'=>$attachments['photo']];
         }
         if (isset($attachments['video'])){
-            $attachment['media'][] = ['type'=>'movie','list'=>$attachments['video']];
+            $attachment['media'][] = ['type'=>'movie-reshare','list'=>$attachments['video'][0]];
         }
 
 //        var_dump($attachment);
@@ -609,7 +609,7 @@ class PostingController extends Controller
             "file_name"         => $post['comment'],
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
-            "gid"               => $this->getOkGroupId(),
+//            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json",
 //            "post_form"            =>  'false'
         );
@@ -684,7 +684,7 @@ class PostingController extends Controller
             exit();
         }
 
-        return ['id' => $video_id];
+        return ['movieId' => $video_id];
 
     }
 
