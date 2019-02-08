@@ -312,7 +312,7 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $attachments['video'][] = $this->getVideoOk($post,$file);
-//                    die;
+                    die;
                     break;
             }
         }
@@ -609,7 +609,7 @@ class PostingController extends Controller
             "file_name"         => $post['comment'],
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
-//            "gid"               => $this->getOkGroupId(),
+            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json",
 //            "post_form"            =>  'false'
         );
