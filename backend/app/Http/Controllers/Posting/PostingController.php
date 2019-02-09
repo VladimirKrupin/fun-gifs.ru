@@ -212,12 +212,20 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $token_fb,
             'message'      => 'Hello, world!',
-//            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4',
-            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
+            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
+//            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
         );
 
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        $res = curl_exec($ch);
+//        curl_close($ch);
+
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/photos');
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
