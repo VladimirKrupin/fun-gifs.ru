@@ -342,6 +342,7 @@ class PostingController extends Controller
         $res = curl_exec($ch);
         curl_close($ch);
         $res = json_decode($res);
+        var_dump($res);
         if ($res->error){
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
         }
