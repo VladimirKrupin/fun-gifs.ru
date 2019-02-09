@@ -262,14 +262,14 @@ class PostingController extends Controller
             }
         }
 
-        $data = array(
-            'access_token' => $token_fb,
-            'message'      => 'Hello, world!',
-            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
-            'name_tags'    => $this->getKeyWords(),
-            'name'    => $this->getKeyWords(),
-//            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
-        );
+//        $data = array(
+//            'access_token' => $token_fb,
+//            'message'      => 'Hello, world!',
+//            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
+//            'name_tags'    => $this->getKeyWords(),
+//            'name'    => $this->getKeyWords(),
+////            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
+//        );
 
 
 //        $ch = curl_init();
@@ -281,8 +281,8 @@ class PostingController extends Controller
 //        curl_close($ch);
 
 
-        $res = json_decode($res, true);
-        var_dump($res);
+//        $res = json_decode($res, true);
+//        var_dump($res);
     }
 
 
