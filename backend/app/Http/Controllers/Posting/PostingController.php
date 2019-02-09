@@ -198,7 +198,7 @@ class PostingController extends Controller
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
 
-        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
+        $this->setKeyWords(' Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
 
         $this->setFbToken('EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm');
         $this->setFbGroupId('603196956795307');
@@ -322,25 +322,14 @@ class PostingController extends Controller
 
         $no_hash_tags = str_replace('#','',$this->getHashTags());
 
-//        $data = array(
-//            'access_token' => $this->getFbToken(),
-//            'description'      => $post['comment'].' '.$no_hash_tags,
-//            'title'      => $no_hash_tags,
-//            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
-//        );
-
         $data = array(
             'access_token' => $this->getFbToken(),
             //тут в название между \n\r------\n\r <- находятся спецсимволы
-            'description'      => $this->getHashTags()."\n\r".'🔹🔸🔹'."\n\r\n\r\n\r".$post['comment'],
+            'description'      => $this->getHashTags()."\n\r".'🔹'."\n\r\n\r".$post['comment'],
             'title'      => substr($no_hash_tags,0,254),
-//            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
             'source'    => 'true',
-//            'name'    => $this->getKeyWords(),
             'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
         );
-
-        var_dump($data);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
@@ -349,29 +338,10 @@ class PostingController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $res = curl_exec($ch);
         curl_close($ch);
-        var_dump(json_decode($res));
-
-//        $data = array(
-//            'access_token' => $this->getFbToken(),
-//            'title'      => $post['comment'],
-//            'tags'    => $this->getKeyWords(),
-//            'description'    => $this->getKeyWords(),
-//            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
-//        );
-//
-//
-//        $ch = curl_init();
-//        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
-//        curl_setopt($ch, CURLOPT_POST, 1);
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//        $res = curl_exec($ch);
-//        curl_close($ch);
-//        $res = json_decode($res);
-//        var_dump($res);
-//        if ($res->error){
-//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
-//        }
+        $res = json_decode($res);
+        if ($res->error){
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+        }
         die;
     }
 
