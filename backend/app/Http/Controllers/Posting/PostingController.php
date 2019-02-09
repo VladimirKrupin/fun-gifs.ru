@@ -262,19 +262,22 @@ class PostingController extends Controller
     }
 
     public function wallAllPosting(){
-        $post = Post::where('status', 0)
+//        $post = Post::where('status', 0)
+//            ->with('files')
+//            ->first();
+        $post = Post::where('id', 93)
             ->with('files')
             ->first();
 
-        Post::where('id',$post['id'])->update([
-            'status' => 1
-        ]);
+//        Post::where('id',$post['id'])->update([
+//            'status' => 1
+//        ]);
 
         if ($post) {
             $post = $post->toArray();
 
-            $this->wallPosting($post);
-            $this->postingOk($post);
+//            $this->wallPosting($post);
+//            $this->postingOk($post);
             $this->postingFb($post);
 
             $posts = Post::where('status', 0)->get();
@@ -342,9 +345,6 @@ class PostingController extends Controller
         if ($res->error){
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
         }
-        Post::where('id',$post['id'])->update([
-            'status' => 1
-        ]);
     }
 
 
@@ -373,6 +373,7 @@ class PostingController extends Controller
         $res = curl_exec($ch);
         curl_close($ch);
         $res = json_decode($res);
+        var_dump($res);
         if (isset($res->error)){
             var_dump($res);
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
