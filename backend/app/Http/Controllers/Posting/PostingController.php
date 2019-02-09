@@ -328,9 +328,9 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $this->getFbToken(),
             //тут в название между \n\r------\n\r <- находятся спецсимволы
-            'description'      => $post['comment'],
-//            'description'      => $this->getHashTags()."\n\r".'🔹'."\n\r\n\r".$post['comment'],
-            'title'      => substr($no_hash_tags,0,220),
+//            'description'      => $post['comment'],
+            'description'      => $this->getHashTags()."\n\r".'🔹'."\n\r\n\r".$post['comment'],
+            'title'      => substr($no_hash_tags,0,224),
             'source'    => 'true',
             'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
         );
