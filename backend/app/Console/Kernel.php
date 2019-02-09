@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Posting\PostingController;
+use App\Http\Models\Post\Post;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
