@@ -33,60 +33,35 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(7, 8)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(9, 10)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(12, 14)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(16, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(19, 21)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
         })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
-
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->posting();
-//        })->everyMinute();
 
         $schedule->call(function()
         {
-//            (new PostingController())->posting();
-//            (new PostingController())->postingOk();
-            (new PostingController())->postingFb();
+            (new PostingController())->wallAllPosting();
         })->everyMinute();
 
 //        $schedule->call(function()

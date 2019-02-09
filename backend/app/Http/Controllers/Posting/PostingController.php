@@ -260,31 +260,63 @@ class PostingController extends Controller
     public function test(){
 //        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
-    /**
-     *
-     */
-    public function postingFb()
-    {
-        // https://habr.com/ru/post/329196/
 
+    public function wallAllPosting(){
         $post = Post::where('status', 0)
             ->with('files')
             ->first();
-        if ($post){
+
+//        Post::where('id',$post['id'])->update([
+//            'status' => 1
+//        ]);
+
+        if ($post) {
             $post = $post->toArray();
-        }
 
-        foreach ($post['files'] as $file){
-            switch ($this->checkTypeFile($file)){
-                case 'photo':
-                    $attachments['photo'][] = $this->getPhotoFb($post,$file);
-                    break;
-                case 'video':
-                    $attachments['video'][] = $this->getVideoFb($post,$file);
-                    break;
+//            $this->wallPosting($post);
+//            $this->postingOk($post);
+            $this->postingFb($post);
+
+            $posts = Post::where('status', 0)->get();
+            if ($posts){
+                $posts = $posts->toArray();
+                $count = count($posts);
+                $theme = false;
+                if ($count === 5){
+                    $theme = 'Предупреждение: осталось всего 5 постов';
+                }elseif ($count === 10){
+                    $theme = 'Предупреждение: осталось всего 10 постов';
+                }
+                if ($theme){
+                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                }
+            }else{
+                $theme = 'Предупреждение: только что был опубликован последний пост';
+                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
+        }else{
+            $theme = 'Предупреждение: закончились посты';
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
         }
 
+    }
+
+    /**
+     * @param $post
+     */
+    public function postingFb($post)
+    {
+        // https://habr.com/ru/post/329196/
+        switch ($this->checkTypeFile($post['files'][0])){
+            case 'photo':
+                $this->getPhotoFb($post,$post['files'][0]);
+                break;
+            case 'video':
+                 $this->getVideoFb($post,$post['files'][0]);
+                break;
+        }
     }
 
     /**
@@ -313,7 +345,6 @@ class PostingController extends Controller
         Post::where('id',$post['id'])->update([
             'status' => 1
         ]);
-        die;
     }
 
 
@@ -328,14 +359,11 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $this->getFbToken(),
             //тут в название между \n\r------\n\r <- находятся спецсимволы
-//            'description'      => $post['comment'],
             'description'      => $this->getHashTags()."\n\r".'🔹'."\n\r\n\r".$post['comment'],
             'title'      => substr($no_hash_tags,0,224),
             'source'    => 'true',
             'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
         );
-
-        var_dump($data);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
@@ -345,14 +373,9 @@ class PostingController extends Controller
         $res = curl_exec($ch);
         curl_close($ch);
         $res = json_decode($res);
-        var_dump($res);
-//        if ($res->error){
-//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
-//        }
-//        Post::where('id',$post['id'])->update([
-//            'status' => 1
-//        ]);
-        die;
+        if ($res->error){
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+        }
     }
 
 
@@ -425,12 +448,9 @@ class PostingController extends Controller
     /**
      *
      */
-    public function postingOk()
+    public function postingOk($post)
     {
         $video_content = false;
-        $post = Post::where('status', 0)
-            ->with('files')
-            ->first();
 
         $attachments = [];
         foreach ($post['files'] as $file){
@@ -524,49 +544,49 @@ class PostingController extends Controller
 
     }
 
-    public function posting()
-    {
-
-        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
-
-        $post = Post::where('status', 0)
-            ->with('files')
-            ->first();
-
-//        $post = Post::where('id', 82)
+//    public function posting()
+//    {
+//
+//        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
+//
+//        $post = Post::where('status', 0)
 //            ->with('files')
 //            ->first();
-
-        if ($post) {
-            $post = $post->toArray();
-            $this->wallPosting($post);
-            $posts = Post::where('status', 0)
-                ->get();
-            if ($posts){
-                $posts = $posts->toArray();
-                $count = count($posts);
-                $theme = false;
-                if ($count === 5){
-                    $theme = 'Предупреждение: осталось всего 5 постов';
-                }elseif ($count === 10){
-                    $theme = 'Предупреждение: осталось всего 10 постов';
-                }
-                if ($theme){
-                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-                }
-            }else{
-                $theme = 'Предупреждение: только что был опубликован последний пост';
-                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-            }
-        }else{
-            $theme = 'Предупреждение: закончились посты';
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-        }
-
-
-    }
+//
+////        $post = Post::where('id', 82)
+////            ->with('files')
+////            ->first();
+//
+//        if ($post) {
+//            $post = $post->toArray();
+//            $this->wallPosting($post);
+//            $posts = Post::where('status', 0)
+//                ->get();
+//            if ($posts){
+//                $posts = $posts->toArray();
+//                $count = count($posts);
+//                $theme = false;
+//                if ($count === 5){
+//                    $theme = 'Предупреждение: осталось всего 5 постов';
+//                }elseif ($count === 10){
+//                    $theme = 'Предупреждение: осталось всего 10 постов';
+//                }
+//                if ($theme){
+//                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                }
+//            }else{
+//                $theme = 'Предупреждение: только что был опубликован последний пост';
+//                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//            }
+//        }else{
+//            $theme = 'Предупреждение: закончились посты';
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//        }
+//
+//
+//    }
 
     /**
      * @param $post
