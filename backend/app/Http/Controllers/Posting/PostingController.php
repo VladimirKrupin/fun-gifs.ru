@@ -297,6 +297,7 @@ class PostingController extends Controller
             'url'          => 'http://file-store.fun-gifs.ru/'.$file['name'],
             'name_tags'    => $this->getKeyWords(),
             'name'    => $this->getKeyWords(),
+            'page_id'    => $this->getFbGroupId(),
 //            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
         );
 
