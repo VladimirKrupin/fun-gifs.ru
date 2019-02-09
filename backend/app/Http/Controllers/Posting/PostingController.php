@@ -341,14 +341,14 @@ class PostingController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $res = curl_exec($ch);
         curl_close($ch);
-        $res = json_decode($res);
+//        $res = json_decode($res);
         var_dump($res);
-        if ($res->error){
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
-        }
-        Post::where('id',$post['id'])->update([
-            'status' => 1
-        ]);
+//        if ($res->error){
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+//        }
+//        Post::where('id',$post['id'])->update([
+//            'status' => 1
+//        ]);
         die;
     }
 
