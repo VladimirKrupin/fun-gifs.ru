@@ -310,6 +310,9 @@ class PostingController extends Controller
         if ($res->error){
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
         }
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
         die;
     }
 
@@ -342,6 +345,9 @@ class PostingController extends Controller
         if ($res->error){
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
         }
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
         die;
     }
 
