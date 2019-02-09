@@ -61,12 +61,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="php" value="1647" />
+          <entry key="php" value="1649" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1647" />
+          <entry key="PHP" value="1649" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
@@ -627,12 +627,12 @@
       <workItem from="1549539362355" duration="2195000" />
       <workItem from="1549706466823" duration="4516000" />
       <workItem from="1549711983484" duration="9687000" />
-      <workItem from="1549727348709" duration="4802000" />
+      <workItem from="1549727348709" duration="4911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1316752000" />
+    <option name="totallyTimeSpent" value="1316861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
