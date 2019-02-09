@@ -212,8 +212,8 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $token_fb,
             'message'      => 'Hello, world!',
-//            'url'          => 'fun_gifs_2019-02-04 17:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg ',
-            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04 15:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4'
+            'url'          => 'fun_gifs_2019-02-04 17:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg ',
+//            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04 15:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4'
         );
 
         $ch = curl_init();
