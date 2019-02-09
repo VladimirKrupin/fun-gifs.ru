@@ -300,6 +300,8 @@ class PostingController extends Controller
 //            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
         );
 
+        var_dump($data);
+
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/photos');

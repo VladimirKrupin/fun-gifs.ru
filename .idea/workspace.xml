@@ -57,12 +57,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="728" />
+          <entry key="php" value="733" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="728" />
+          <entry key="PHP" value="733" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -90,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="311" column="23" selection-start-line="311" selection-start-column="23" selection-end-line="311" selection-end-column="23" />
+              <caret line="302" column="24" selection-start-line="302" selection-start-column="24" selection-end-line="302" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -602,12 +602,12 @@
       <workItem from="1549524386623" duration="1271000" />
       <workItem from="1549525871934" duration="634000" />
       <workItem from="1549539362355" duration="2195000" />
-      <workItem from="1549706466823" duration="3792000" />
+      <workItem from="1549706466823" duration="3879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1301539000" />
+    <option name="totallyTimeSpent" value="1301626000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -978,7 +978,7 @@
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="311" column="23" selection-start-line="311" selection-start-column="23" selection-end-line="311" selection-end-column="23" />
+          <caret line="302" column="24" selection-start-line="302" selection-start-column="24" selection-end-line="302" selection-end-column="24" />
         </state>
       </provider>
     </entry>
