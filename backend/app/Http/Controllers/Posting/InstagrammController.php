@@ -131,7 +131,7 @@ class InstagrammController extends Controller
 
     public function sendInstagramm()
     {
-        $filename = '/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-09%2023:48:27_IMG_20190202_194106_580.jpg';
+        $filename = '/var/www/fun-gifs.ru/backend/storage/app/files-store/fun_gifs_2019-02-09 23:48:27_IMG_20190202_194106_580.jpg';
         $caption = 'test';
 
         $username = $this->getLogin();
