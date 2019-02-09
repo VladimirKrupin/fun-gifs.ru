@@ -30,6 +30,41 @@ class PostingController extends Controller
     private $ok_public_key;
     private $ok_group_id;
 
+    private $fb_token;
+    private $fb_group_id;
+
+    /**
+     * @return mixed
+     */
+    public function getFbGroupId()
+    {
+        return $this->fb_group_id;
+    }
+
+    /**
+     * @param mixed $fb_group_id
+     */
+    public function setFbGroupId($fb_group_id)
+    {
+        $this->fb_group_id = $fb_group_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFbToken()
+    {
+        return $this->fb_token;
+    }
+
+    /**
+     * @param mixed $fb_token
+     */
+    public function setFbToken($fb_token)
+    {
+        $this->fb_token = $fb_token;
+    }
+
     private $key_words;
 
     /**
@@ -146,6 +181,9 @@ class PostingController extends Controller
         $this->setOkGroupId("56022813442280");
 
         $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль интересно смех веселая 2019 2018');
+
+        $this->setFbToken('EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm');
+        $this->setFbGroupId('603196956795307');
     }
 
     /**
@@ -205,16 +243,34 @@ class PostingController extends Controller
     public function postingFb()
     {
         // https://habr.com/ru/post/329196/
-        $token_fb = 'EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm';
+//        $post = Post::where('status', 0)
+//            ->with('files')
+//            ->first();
 
-        $page_id = '603196956795307';
+        $post = Post::where('id', 66)
+            ->with('files')
+            ->first();
+
+        foreach ($post['files'] as $file){
+            switch ($this->checkTypeFile($file)){
+                case 'photo':
+                    $attachments['photo'][] = $this->getPhotoFb($post,$file);
+                    break;
+                case 'video':
+                    $attachments['video'][] = $this->getVideoFb($post,$file);
+                    break;
+            }
+        }
 
         $data = array(
             'access_token' => $token_fb,
             'message'      => 'Hello, world!',
             'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
+            'name_tags'    => $this->getKeyWords(),
+            'name'    => $this->getKeyWords(),
 //            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
         );
+
 
 //        $ch = curl_init();
 //        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
@@ -224,6 +280,27 @@ class PostingController extends Controller
 //        $res = curl_exec($ch);
 //        curl_close($ch);
 
+
+        $res = json_decode($res, true);
+        var_dump($res);
+    }
+
+
+    /**
+     * @param $file
+     * @return string
+     */
+    private function getPhotoFb($post,$file){
+        $data = array(
+            'access_token' => $this->getFbToken(),
+            'message'      => $post['comment'],
+            'url'          => 'http://file-store.fun-gifs.ru/'.$file['name'],
+            'name_tags'    => $this->getKeyWords(),
+            'name'    => $this->getKeyWords(),
+//            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
+        );
+
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/photos');
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -231,9 +308,6 @@ class PostingController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $res = curl_exec($ch);
         curl_close($ch);
-
-        $res = json_decode($res, true);
-        var_dump($res);
     }
 
 
