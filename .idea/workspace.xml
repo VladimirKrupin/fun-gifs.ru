@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/InstagrammController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/InstagrammController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="70" column="51" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+              <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
               <folding>
                 <element signature="e#31#85#0#PHP" expanded="true" />
               </folding>
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/InstagrammController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="133" column="74" selection-start-line="133" selection-start-column="74" selection-end-line="133" selection-end-column="74" />
+            <state relative-caret-position="113">
+              <caret line="133" column="132" selection-start-line="133" selection-start-column="132" selection-end-line="133" selection-end-column="132" />
             </state>
           </provider>
         </entry>
@@ -647,12 +647,12 @@
       <workItem from="1549706466823" duration="4516000" />
       <workItem from="1549711983484" duration="9687000" />
       <workItem from="1549727348709" duration="5182000" />
-      <workItem from="1549744564799" duration="981000" />
+      <workItem from="1549744564799" duration="1233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1318113000" />
+    <option name="totallyTimeSpent" value="1318365000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,7 +667,7 @@
     <frame x="39" y="25" width="1327" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.19437939" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.19437939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5046604" side_tool="true" weight="0.18296014" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -679,7 +679,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32977587" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.23817292" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.23817292" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28175026" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32977587" />
@@ -1017,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="70" column="51" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
+          <caret line="70" column="46" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
           <folding>
             <element signature="e#31#85#0#PHP" expanded="true" />
           </folding>
@@ -1026,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/InstagrammController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="133" column="74" selection-start-line="133" selection-start-column="74" selection-end-line="133" selection-end-column="74" />
+        <state relative-caret-position="113">
+          <caret line="133" column="132" selection-start-line="133" selection-start-column="132" selection-end-line="133" selection-end-column="132" />
         </state>
       </provider>
     </entry>
