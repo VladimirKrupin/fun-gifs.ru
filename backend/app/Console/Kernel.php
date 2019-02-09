@@ -18,6 +18,37 @@ class Kernel extends ConsoleKernel
         //
     ];
 
+    private $post;
+
+    /**
+     * @return mixed
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * @param mixed $post
+     */
+    public function setPost($post)
+    {
+        $this->post = $post;
+    }
+
+    public function __construct()
+    {
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
+
+        $this->setPost($post);
+
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
+    }
+
     /**
      * Define the application's command schedule.
      *
@@ -33,42 +64,48 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->twiceDaily(7, 8)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->twiceDaily(9, 10)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->twiceDaily(12, 14)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
         })->twiceDaily(16, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->twiceDaily(19, 21)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-            (new PostingController())->postingOk();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 //        $schedule->call(function()
@@ -78,7 +115,9 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function()
         {
-            (new PostingController())->postingFb();
+            (new PostingController())->posting($this->getPost());
+            (new PostingController())->postingOk($this->getPost());
+            (new PostingController())->postingFb($this->getPost());
         })->everyMinute();
 
 //        $schedule->call(function()
