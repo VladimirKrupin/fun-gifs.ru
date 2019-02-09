@@ -263,10 +263,16 @@ class PostingController extends Controller
     /**
      *
      */
-    public function postingFb($post)
+    public function postingFb()
     {
         // https://habr.com/ru/post/329196/
 
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
+        if ($post){
+            $post = $post->toArray();
+        }
 
         foreach ($post['files'] as $file){
             switch ($this->checkTypeFile($file)){
@@ -409,12 +415,12 @@ class PostingController extends Controller
     /**
      *
      */
-    public function postingOk($post)
+    public function postingOk()
     {
         $video_content = false;
-//        $post = Post::where('status', 0)
-//            ->with('files')
-//            ->first();
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
 
         $attachments = [];
         foreach ($post['files'] as $file){
@@ -508,14 +514,14 @@ class PostingController extends Controller
 
     }
 
-    public function posting($post)
+    public function posting()
     {
 
         //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
 
-//        $post = Post::where('status', 0)
-//            ->with('files')
-//            ->first();
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
 
 //        $post = Post::where('id', 82)
 //            ->with('files')
