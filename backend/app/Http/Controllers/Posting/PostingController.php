@@ -33,6 +33,25 @@ class PostingController extends Controller
     private $fb_token;
     private $fb_group_id;
 
+    private $key_words;
+    private $hash_tags;
+
+    /**
+     * @return mixed
+     */
+    public function getHashTags()
+    {
+        return $this->hash_tags;
+    }
+
+    /**
+     * @param mixed $hash_tags
+     */
+    public function setHashTags($hash_tags)
+    {
+        $this->hash_tags = $hash_tags;
+    }
+
     /**
      * @return mixed
      */
@@ -65,7 +84,6 @@ class PostingController extends Controller
         $this->fb_token = $fb_token;
     }
 
-    private $key_words;
 
     /**
      * @return mixed
@@ -180,10 +198,15 @@ class PostingController extends Controller
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
 
-        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль интересно смех веселая 2019 2018');
+        $this->setKeyWords('Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
 
         $this->setFbToken('EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm');
         $this->setFbGroupId('603196956795307');
+
+        $russian_hash_tags = explode(' ',$this->getKeyWords());
+        $russian_hash_tags = implode(' #',$russian_hash_tags);
+        $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
+        $this->setHashTags($hashtags);
     }
 
     /**
@@ -247,7 +270,7 @@ class PostingController extends Controller
 //            ->with('files')
 //            ->first();
 
-        $post = Post::where('id', 98)
+        $post = Post::where('id', 96)
             ->with('files')
             ->first();
 
@@ -257,34 +280,12 @@ class PostingController extends Controller
                     $attachments['photo'][] = $this->getPhotoFb($post,$file);
                     break;
                 case 'video':
-//                    $attachments['video'][] = $this->getVideoFb($post,$file);
+                    $attachments['video'][] = $this->getVideoFb($post,$file);
                     break;
             }
         }
 
-//        $data = array(
-//            'access_token' => $token_fb,
-//            'message'      => 'Hello, world!',
-//            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
-//            'name_tags'    => $this->getKeyWords(),
-//            'name'    => $this->getKeyWords(),
-////            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
-//        );
-
-
-//        $ch = curl_init();
-//        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
-//        curl_setopt($ch, CURLOPT_POST, 1);
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//        $res = curl_exec($ch);
-//        curl_close($ch);
-
-
-//        $res = json_decode($res, true);
-//        var_dump($res);
     }
-
 
     /**
      * @param $file
@@ -294,15 +295,10 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $this->getFbToken(),
             'message'      => $post['comment'],
-            'url'          => 'http://file-store.fun-gifs.ru/'.$file['path'],
+            'url'          => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path']),
             'name_tags'    => $this->getKeyWords(),
             'name'    => $post['comment'],
-//            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
         );
-
-        var_dump($data);
-
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/photos');
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -311,8 +307,74 @@ class PostingController extends Controller
         $res = curl_exec($ch);
         curl_close($ch);
         $res = json_decode($res);
-        var_dump($res);
+        if ($res->error){
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+        }
+        die;
     }
+
+
+    /**
+     * @param $file
+     * @return string
+     */
+    private function getVideoFb($post,$file){
+
+        $no_hash_tags = str_replace('#','',$this->getHashTags());
+
+//        $data = array(
+//            'access_token' => $this->getFbToken(),
+//            'description'      => $post['comment'].' '.$no_hash_tags,
+//            'title'      => $no_hash_tags,
+//            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
+//        );
+
+        $data = array(
+            'access_token' => $this->getFbToken(),
+            //тут в название между \n\r------\n\r <- находятся спецсимволы
+            'description'      => $this->getHashTags()."\n\r".'🔹🔸🔹'."\n\r\n\r\n\r".$post['comment'],
+            'title'      => substr($no_hash_tags,0,254),
+//            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-06%2016:36:25_20190206_093248.jpg',
+            'source'    => 'true',
+//            'name'    => $this->getKeyWords(),
+            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
+        );
+
+        var_dump($data);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $res = curl_exec($ch);
+        curl_close($ch);
+        var_dump(json_decode($res));
+
+//        $data = array(
+//            'access_token' => $this->getFbToken(),
+//            'title'      => $post['comment'],
+//            'tags'    => $this->getKeyWords(),
+//            'description'    => $this->getKeyWords(),
+//            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
+//        );
+//
+//
+//        $ch = curl_init();
+//        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//        $res = curl_exec($ch);
+//        curl_close($ch);
+//        $res = json_decode($res);
+//        var_dump($res);
+//        if ($res->error){
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+//        }
+        die;
+    }
+
 
 
     // Запрос
@@ -543,7 +605,6 @@ class PostingController extends Controller
         }
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r".$eng_comment."#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,

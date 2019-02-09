@@ -17,16 +17,24 @@ class PostingResultError extends Mailable
 
     public $result;
     public $post;
+    public $resource;
 
-    public function __construct($result,$post)
+    public function __construct($result,$post,$resource = 'vk')
     {
         $this->result = $result;
         $this->post = $post;
+        $this->resource = $resource;
     }
 
     public function build()
     {
+        $theme = '';
+        if ($this->resource === 'vk'){
+            $theme = 'Vkontakte';
+        }elseif ($this->resource === 'fb'){
+            $theme = 'Face Book';
+        }
         return $this->view('emails.posting.posting-result-error')
-            ->subject('Ошибка автопостинга Fun-gifs.ru '.date("Y-m-d H:i:s"));
+            ->subject('Ошибка автопостинга Fun-gifs.ru '.$theme.' '.date("Y-m-d H:i:s"));
     }
 }
