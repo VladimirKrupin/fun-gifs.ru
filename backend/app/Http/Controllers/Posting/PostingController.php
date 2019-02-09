@@ -294,7 +294,7 @@ class PostingController extends Controller
         $data = array(
             'access_token' => $this->getFbToken(),
             'message'      => $post['comment'],
-            'url'          => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-09 14:01:08_Ev4IKOxGCXA.jpg',
+            'url'          => 'http://file-store.fun-gifs.ru/'.$file['path'],
             'name_tags'    => $this->getKeyWords(),
             'name'    => $this->getKeyWords(),
 //            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-07%2020:45:40_WaterMark1549561478419.mp4'
