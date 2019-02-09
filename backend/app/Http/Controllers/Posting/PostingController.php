@@ -334,6 +334,8 @@ class PostingController extends Controller
             'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
         );
 
+        var_dump($data);
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
         curl_setopt($ch, CURLOPT_POST, 1);
