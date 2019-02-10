@@ -277,8 +277,11 @@ class PostingController extends Controller
             $post = $post->toArray();
 
             $this->wallPosting($post);
+            var_dump('Vk');
             $this->postingOk($post);
+            var_dump('Ok');
             $this->postingFb($post);
+            var_dump('Fb');
 
             $posts = Post::where('status', 0)->get();
             if ($posts){
