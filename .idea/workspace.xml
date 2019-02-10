@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
-    </list>
+    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,16 +100,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="818" column="64" selection-start-line="818" selection-start-column="64" selection-end-line="818" selection-end-column="64" />
+            <state relative-caret-position="138">
+              <caret line="280" column="19" selection-start-line="280" selection-start-column="19" selection-end-line="280" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -128,15 +126,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_9.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
-              <caret line="220" column="9" selection-start-line="220" selection-start-column="9" selection-end-line="220" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -649,12 +638,12 @@
       <workItem from="1549711983484" duration="9687000" />
       <workItem from="1549727348709" duration="5182000" />
       <workItem from="1549744564799" duration="4278000" />
-      <workItem from="1549785231415" duration="1849000" />
+      <workItem from="1549785231415" duration="2485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1323259000" />
+    <option name="totallyTimeSpent" value="1323895000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1016,6 +1005,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="280" column="19" selection-start-line="280" selection-start-column="19" selection-end-line="280" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1023,13 +1019,6 @@
           <folding>
             <element signature="e#31#85#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="818" column="64" selection-start-line="818" selection-start-column="64" selection-end-line="818" selection-end-column="64" />
         </state>
       </provider>
     </entry>
