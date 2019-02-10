@@ -467,7 +467,7 @@
       <path value="$PROJECT_DIR$/backend/vendor/bocharsky-bw/vkontakte-php-sdk" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="41" />
     <option name="y" value="-4" />
     <option name="width" value="1879" />
