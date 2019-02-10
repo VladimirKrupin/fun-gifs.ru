@@ -265,7 +265,7 @@ class PostingController extends Controller
 //        $post = Post::where('status', 0)
 //            ->with('files')
 //            ->first();
-        $post = Post::where('id', 100)
+        $post = Post::where('id', 101)
             ->with('files')
             ->first();
 
