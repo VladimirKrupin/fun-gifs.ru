@@ -816,7 +816,7 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment']." | Fun-gifs.ru \n\r ".$this->getKeyWords(),
+            "title"         => $post['comment']." | Fun-gifs.ru",
             "tags"         => $this->getKeyWords(),
             "description"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
