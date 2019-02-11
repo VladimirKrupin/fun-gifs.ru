@@ -24,6 +24,7 @@
     color: #007bff;
   }
 
+
   .link {
     color: #007bff;
   }

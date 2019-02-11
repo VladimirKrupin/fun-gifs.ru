@@ -17,7 +17,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/main',
+      redirect: '/Files',
       name: 'Home',
       component: DefaultContainer,
       children: [
@@ -41,6 +41,7 @@ export default new Router({
     },{
       path: '/main',
       name: 'MainPage',
+      redirect: '/Files',
       component: MainPage,
       meta: {
         requiresAuth: false
