@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\Posting\InstagrammController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Posting\PostingController;
 use Illuminate\Console\Scheduling\Schedule;
@@ -33,51 +34,42 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-        })->twiceDaily(6, 7)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(7, 8)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-        })->twiceDaily(8, 9)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(9, 10)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
+            (new PostingController())->wallAllPosting();
         })->twiceDaily(12, 14)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
+            (new PostingController())->wallAllPosting();
         })->twiceDaily(16, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-        })->twiceDaily(19, 20)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(19, 21)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
         $schedule->call(function()
         {
-            (new PostingController())->posting();
-        })->twiceDaily(21, 22)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->posting();
-        })->twiceDaily(0, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 //        $schedule->call(function()
 //        {
-//            (new PostingController())->posting();
-//        })->everyMinute();
-
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->postingOk();
+//            (new PostingController())->wallAllPosting();
+////            (new InstagrammController())->sendInstagramm();
 //        })->everyMinute();
 
 //        $schedule->call(function()

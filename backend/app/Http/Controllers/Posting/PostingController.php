@@ -30,6 +30,77 @@ class PostingController extends Controller
     private $ok_public_key;
     private $ok_group_id;
 
+    private $fb_token;
+    private $fb_group_id;
+
+    private $key_words;
+    private $hash_tags;
+
+    /**
+     * @return mixed
+     */
+    public function getHashTags()
+    {
+        return $this->hash_tags;
+    }
+
+    /**
+     * @param mixed $hash_tags
+     */
+    public function setHashTags($hash_tags)
+    {
+        $this->hash_tags = $hash_tags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFbGroupId()
+    {
+        return $this->fb_group_id;
+    }
+
+    /**
+     * @param mixed $fb_group_id
+     */
+    public function setFbGroupId($fb_group_id)
+    {
+        $this->fb_group_id = $fb_group_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFbToken()
+    {
+        return $this->fb_token;
+    }
+
+    /**
+     * @param mixed $fb_token
+     */
+    public function setFbToken($fb_token)
+    {
+        $this->fb_token = $fb_token;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getKeyWords()
+    {
+        return $this->key_words;
+    }
+
+    /**
+     * @param mixed $key_words
+     */
+    public function setKeyWords($key_words)
+    {
+        $this->key_words = $key_words;
+    }
+
     /**
      * @return mixed
      */
@@ -126,6 +197,16 @@ class PostingController extends Controller
         $this->setOkPrivateKey("BB0E30802A51BBD73A969742");//Секретный ключ приложения
         $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
         $this->setOkGroupId("56022813442280");
+
+        $this->setKeyWords(' Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
+
+        $this->setFbToken('EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm');
+        $this->setFbGroupId('603196956795307');
+
+        $russian_hash_tags = explode(' ',$this->getKeyWords());
+        $russian_hash_tags = implode(' #',$russian_hash_tags);
+        $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
+        $this->setHashTags($hashtags);
     }
 
     /**
@@ -179,34 +260,129 @@ class PostingController extends Controller
     public function test(){
 //        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
+
+    public function wallAllPosting(){
+        $post = Post::where('status', 0)
+            ->with('files')
+            ->first();
+//        $post = Post::where('id', 102)
+//            ->with('files')
+//            ->first();
+
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
+
+        if ($post) {
+            $post = $post->toArray();
+
+            $this->wallPosting($post);
+            var_dump('Vk');
+            $this->postingOk($post);
+            var_dump('Ok');
+            $this->postingFb($post);
+            var_dump('Fb');
+
+            $posts = Post::where('status', 0)->get();
+            if ($posts){
+                $posts = $posts->toArray();
+                $count = count($posts);
+                $theme = false;
+                if ($count === 5){
+                    $theme = 'Предупреждение: осталось всего 5 постов';
+                }elseif ($count === 10){
+                    $theme = 'Предупреждение: осталось всего 10 постов';
+                }
+                if ($theme){
+                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+                }
+            }else{
+                $theme = 'Предупреждение: только что был опубликован последний пост';
+                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+            }
+        }else{
+            $theme = 'Предупреждение: закончились посты';
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+        }
+
+    }
+
     /**
-     *
+     * @param $post
      */
-    public function postingFb()
+    public function postingFb($post)
     {
         // https://habr.com/ru/post/329196/
-        $token_fb = 'EAAFup9Mb6rsBAPplQKdOnyKfUOGj2tAAE5ychZB0KZC9I8dY3ZAbyblCaf7c2BzTYddeAIIS2MB6NkBhZCf20nFkvRzFg54MIiZBjrEcoGxZCR4DLZCya2oj4tOp57Ri7eUnjzKXvZBODGGFD0egYzOMaQTZBKOz0ZC8O2ZCbwjubYP1YD2VFWPGG2coZAchDJwENCuyIaJnOW0FwQZDZD';
+        switch ($this->checkTypeFile($post['files'][0])){
+            case 'photo':
+                $this->getPhotoFb($post,$post['files'][0]);
+                break;
+            case 'video':
+                 $this->getVideoFb($post,$post['files'][0]);
+                break;
+        }
+    }
 
-        $page_id = '603196956795307';
-
+    /**
+     * @param $file
+     * @return string
+     */
+    private function getPhotoFb($post,$file){
         $data = array(
-            'access_token' => $token_fb,
-            'message'      => 'Hello, world!',
-//            'url'          => 'fun_gifs_2019-02-04 17:46:26_376418_yaponiya_sakura_art_1680x1050_www.jpg ',
-            'file_url'     => 'http://file-store.fun-gifs.ru/fun_gifs_2019-02-04 15:24:57_video-10e00016f16965099ed09713b5215fa0-V.mp4'
+            'access_token' => $this->getFbToken(),
+            'message'      => $post['comment'],
+            'url'          => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path']),
+            'name_tags'    => $this->getKeyWords(),
+            'name'    => $post['comment'],
         );
-
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $page_id . '/videos');
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/photos');
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $res = curl_exec($ch);
         curl_close($ch);
-
-        $res = json_decode($res, true);
-        var_dump($res);
+        $res = json_decode($res);
+        if ($res->error){
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+        }
     }
+
+
+    /**
+     * @param $file
+     * @return string
+     */
+    private function getVideoFb($post,$file){
+
+        $no_hash_tags = str_replace('#','',$this->getHashTags());
+
+        $data = array(
+            'access_token' => $this->getFbToken(),
+            //тут в название между \n\r------\n\r <- находятся спецсимволы
+            'description'      => $post['comment']."\n\r\n\r".'🔹'."\n\r\n\r".$this->getHashTags(),
+            'title'      => substr($no_hash_tags,0,224),
+            'source'    => 'true',
+            'file_url'     => 'http://file-store.fun-gifs.ru/'.str_replace(' ','%20',$file['path'])
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/' . $this->getFbGroupId() . '/videos');
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $res = curl_exec($ch);
+        curl_close($ch);
+        $res = json_decode($res);
+        var_dump($res);
+        if (isset($res->error)){
+            var_dump($res);
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($res,$post,'fb'));
+        }
+    }
+
 
 
     // Запрос
@@ -277,12 +453,9 @@ class PostingController extends Controller
     /**
      *
      */
-    public function postingOk()
+    public function postingOk($post)
     {
-
-        $post = Post::where('id', 63)
-            ->with('files')
-            ->first();
+        $video_content = false;
 
         $attachments = [];
         foreach ($post['files'] as $file){
@@ -292,10 +465,17 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $attachments['video'][] = $this->getVideoOk($post,$file);
+                    $video_content = true;
                     break;
             }
         }
 
+        if ($video_content){
+//            Post::where('id',$post['id'])->update([
+//                'status' => 1
+//            ]);
+            return true;
+        }
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", $post['comment']);
@@ -308,7 +488,7 @@ class PostingController extends Controller
             $attachment['media'][] = ['type'=>'photo','list'=>$attachments['photo']];
         }
         if (isset($attachments['video'])){
-            $attachment['media'][] = ['type'=>'movie','list'=>$attachments['video']];
+            $attachment['media'][] = ['type'=>'movie-reshare','movieId'=>$attachments['video'][0]['movieId']];
         }
 
 //        var_dump($attachment);
@@ -340,6 +520,7 @@ class PostingController extends Controller
             "application_key"=>$this->getOkPublicKey(),
             "method"=>"mediatopic.post",
             "gid"=>$this->getOkGroupId(),//ID нашей группы
+//            "uid"=>$this->getOkGroupId(),//ID нашей группы
             "type"=>"GROUP_THEME",
             "attachment"=>$attachment,
             "format"=>"json"
@@ -368,49 +549,49 @@ class PostingController extends Controller
 
     }
 
-    public function posting()
-    {
-
-        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
-
-        $post = Post::where('status', 0)
-            ->with('files')
-            ->first();
-
-//        $post = Post::where('id', 82)
+//    public function posting()
+//    {
+//
+//        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
+//
+//        $post = Post::where('status', 0)
 //            ->with('files')
 //            ->first();
-
-        if ($post) {
-            $post = $post->toArray();
-            $this->wallPosting($post);
-            $posts = Post::where('status', 0)
-                ->get();
-            if ($posts){
-                $posts = $posts->toArray();
-                $count = count($posts);
-                $theme = false;
-                if ($count === 5){
-                    $theme = 'Предупреждение: осталось всего 5 постов';
-                }elseif ($count === 10){
-                    $theme = 'Предупреждение: осталось всего 10 постов';
-                }
-                if ($theme){
-                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-                }
-            }else{
-                $theme = 'Предупреждение: только что был опубликован последний пост';
-                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-            }
-        }else{
-            $theme = 'Предупреждение: закончились посты';
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
-        }
-
-
-    }
+//
+////        $post = Post::where('id', 82)
+////            ->with('files')
+////            ->first();
+//
+//        if ($post) {
+//            $post = $post->toArray();
+//            $this->wallPosting($post);
+//            $posts = Post::where('status', 0)
+//                ->get();
+//            if ($posts){
+//                $posts = $posts->toArray();
+//                $count = count($posts);
+//                $theme = false;
+//                if ($count === 5){
+//                    $theme = 'Предупреждение: осталось всего 5 постов';
+//                }elseif ($count === 10){
+//                    $theme = 'Предупреждение: осталось всего 10 постов';
+//                }
+//                if ($theme){
+//                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                }
+//            }else{
+//                $theme = 'Предупреждение: только что был опубликован последний пост';
+//                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//            }
+//        }else{
+//            $theme = 'Предупреждение: закончились посты';
+//            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//        }
+//
+//
+//    }
 
     /**
      * @param $post
@@ -429,7 +610,6 @@ class PostingController extends Controller
         }
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags = "\n\r〰️〰️〰️〰️〰️\n\r".$eng_comment."#fun #gif #funny #funnyvideos #video #fungifs #gifs #people #смешные #видео #видосики #гиф #гифки #веселые #ржачные #крутые";
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
@@ -451,9 +631,7 @@ class PostingController extends Controller
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
         }else{
             $mail_data = json_encode($result);
-            Post::where('id',$post['id'])->update([
-                'status' => 1
-            ]);
+
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
         }
 
@@ -539,7 +717,7 @@ class PostingController extends Controller
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $key_words.' | Fun Gifs .mp4',
+            'name' => $this->getKeyWords().' | Fun Gifs .mp4',
             'description' => $hashtags_video,
             'v' => $this->getVersion(),
         ]);
@@ -584,10 +762,11 @@ class PostingController extends Controller
         $params = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.getUploadUrl",
-            "file_name"         => "video1",
+            "file_name"         => $post['comment'],
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
             "gid"               => $this->getOkGroupId(),
+//            "uid"               => '578434590952',
             "format"            =>  "json",
 //            "post_form"            =>  'false'
         );
@@ -637,7 +816,9 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-//            "title"         => $post['comment'].' Fun gifs.mp4',
+            "title"         => $post['comment']." | Fun-gifs.ru",
+            "tags"         => $this->getKeyWords(),
+            "description"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json"
         );
@@ -660,7 +841,7 @@ class PostingController extends Controller
             exit();
         }
 
-        return ['id' => $video_id];
+        return ['movieId' => $video_id];
 
     }
 
