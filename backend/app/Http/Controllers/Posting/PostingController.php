@@ -280,8 +280,8 @@ class PostingController extends Controller
             var_dump('Vk');
             $this->postingOk($post);
             var_dump('Ok');
-            $this->postingFb($post);
-            var_dump('Fb');
+//            $this->postingFb($post);
+//            var_dump('Fb');
 
             $posts = Post::where('status', 0)->get();
             if ($posts){
