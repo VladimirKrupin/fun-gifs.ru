@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="" />
+    <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,20 +84,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="733" column="43" selection-start-line="733" selection-start-column="43" selection-end-line="733" selection-end-column="43" />
+            <state relative-caret-position="278">
+              <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+            <state relative-caret-position="168">
+              <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="72" selection-end-column="28" />
               <folding>
                 <element signature="e#31#85#0#PHP" expanded="true" />
               </folding>
@@ -249,7 +251,6 @@
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/User/UserController.php" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
         <option value="$PROJECT_DIR$/frontend/.gitignore" />
-        <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/admin-front/src/views/mainPage/MainPage.vue" />
         <option value="$PROJECT_DIR$/front/src/layout/starter/StarterHeader.vue" />
         <option value="$PROJECT_DIR$/front/public/index.html" />
@@ -263,6 +264,7 @@
         <option value="$PROJECT_DIR$/admin-front/src/router/index.js" />
         <option value="$PROJECT_DIR$/front/.gitignore" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
+        <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
       </list>
     </option>
   </component>
@@ -582,7 +584,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1304927000" />
+    <option name="totallyTimeSpent" value="1305061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,6 +597,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="25" width="1327" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49533954" visible="true" weight="0.19984387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -939,20 +942,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding>
-            <element signature="e#31#85#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="278">
+          <caret line="280" lean-forward="true" selection-start-line="280" selection-end-line="280" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="733" column="43" selection-start-line="733" selection-start-column="43" selection-end-line="733" selection-end-column="43" />
+        <state relative-caret-position="168">
+          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="72" selection-end-column="28" />
+          <folding>
+            <element signature="e#31#85#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
