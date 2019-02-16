@@ -724,6 +724,8 @@ class PostingController extends Controller
 
         $file_upload_link = json_decode(file_get_contents("https://api.vk.com/method/video.save?".$params_video_save));
 
+        var_dump($file_upload_link);
+
         $link = $file_upload_link->response->upload_url;
 
         $post_params = [
