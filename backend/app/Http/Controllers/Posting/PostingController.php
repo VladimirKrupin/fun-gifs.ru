@@ -268,16 +268,16 @@ class PostingController extends Controller
     }
 
     public function wallAllPosting(){
-//        $post = Post::where('status', 0)
-//            ->with('files')
-//            ->first();
-        $post = Post::where('id', 167)
+        $post = Post::where('status', 0)
             ->with('files')
             ->first();
-
-//        Post::where('id',$post['id'])->update([
-//            'status' => 1
-//        ]);
+//        $post = Post::where('id', 167)
+//            ->with('files')
+//            ->first();
+//
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
 
         if ($post) {
             $post = $post->toArray();
