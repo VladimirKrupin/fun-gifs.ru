@@ -55,12 +55,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="422" />
+          <entry key="php" value="506" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="422" />
+          <entry key="PHP" value="506" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -87,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="189" column="116" selection-start-line="189" selection-start-column="116" selection-end-line="189" selection-end-column="116" />
+            <state relative-caret-position="158">
+              <caret line="733" column="43" selection-start-line="733" selection-start-column="43" selection-end-line="733" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -139,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$eng_comment</find>
       <find>arInStr</find>
       <find>getUrl</find>
       <find>@picture</find>
@@ -169,6 +168,7 @@
       <find>Смотреть</find>
       <find>смотреть</find>
       <find>section section-lg section-nucleo-icons pb-250</find>
+      <find>Mail:</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -584,7 +584,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1304134000" />
+    <option name="totallyTimeSpent" value="1304684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,8 +954,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="189" column="116" selection-start-line="189" selection-start-column="116" selection-end-line="189" selection-end-column="116" />
+        <state relative-caret-position="158">
+          <caret line="733" column="43" selection-start-line="733" selection-start-column="43" selection-end-line="733" selection-end-column="43" />
         </state>
       </provider>
     </entry>

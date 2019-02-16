@@ -261,6 +261,12 @@ class PostingController extends Controller
 //        Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, '123123'));
     }
 
+    public function returnPostStatus($post){
+        Post::where('id',$post['id'])->update([
+            'status' => 0
+        ]);
+    }
+
     public function wallAllPosting(){
 //        $post = Post::where('status', 0)
 //            ->with('files')
@@ -724,7 +730,11 @@ class PostingController extends Controller
 
         $file_upload_link = json_decode(file_get_contents("https://api.vk.com/method/video.save?".$params_video_save));
 
-        var_dump($file_upload_link);
+        if (isset($file_upload_link->error)){
+            $this->returnPostStatus($post);
+            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($file_upload_link,$post,'vk'));
+            var_dump($file_upload_link);
+        }
 
         $link = $file_upload_link->response->upload_url;
 
