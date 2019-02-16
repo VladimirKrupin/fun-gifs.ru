@@ -187,7 +187,7 @@ class PostingController extends Controller
     public function __construct()
     {
         // загрузка фото
-        $this->setAccessToken('a3dfe02790399bc1fa057bd6cfd10a6c0859b44a3a76e66369fe9254ff454a5f37fbbc9b4bee2de99e679');
+        $this->setAccessToken('cfca7da0f5bb9b5fae529e42a69069fd040dd74e98f8ae065bf2af8999b1b868bbf4cb1f857aec03b58c4');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
@@ -552,7 +552,7 @@ class PostingController extends Controller
 //    public function posting()
 //    {
 //
-//        //https://oauth.vk.com/authorize?client_id=3544010&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
+//        //https://oauth.vk.com/authorize?client_id=6842675&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
 //
 //        $post = Post::where('status', 0)
 //            ->with('files')
