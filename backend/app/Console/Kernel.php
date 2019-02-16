@@ -66,11 +66,11 @@ class Kernel extends ConsoleKernel
             (new PostingController())->wallAllPosting();
         })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->wallAllPosting();
-////            (new InstagrammController())->sendInstagramm();
-//        })->everyMinute();
+        $schedule->call(function()
+        {
+            (new PostingController())->wallAllPosting();
+//            (new InstagrammController())->sendInstagramm();
+        })->everyMinute();
 
 //        $schedule->call(function()
 //        {
