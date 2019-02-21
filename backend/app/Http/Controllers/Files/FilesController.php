@@ -51,12 +51,13 @@ class FilesController extends Controller
      *
      * @param Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function putFiles(Request $request){
         $validator = Validator::make($request->all(), [
-            'files.*' => 'mimes:jpeg,png,mp4,gif|max:10000',
-            'files' => 'required|max:10',
-            'comment' => 'required|string|max:255',
+            'files.*' => 'mimes:jpeg,png,mp4,gif|max:30000',
+            'files' => 'required|max:6',
+            'comment' => 'required|string|max:1000',
         ]);
         if($validator->errors()->first('files')){
             return response()->json([
