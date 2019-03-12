@@ -80,7 +80,7 @@
             <tbody class=""><!---->
             <tr v-for="(item, index) in posts" :key="index" aria-rowindex="1" class="">
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
-              <td aria-colindex="4" class="text-right">{{ item.comment }}</td>
+              <td aria-colindex="4" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="5" class="text-right">{{ item.created_at }}</td>
             </tr>
             </tbody>
