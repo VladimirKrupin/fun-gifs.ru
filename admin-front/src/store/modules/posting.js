@@ -26,7 +26,12 @@ const actions = {
       };
       axios(options)
         .then(response => {
-          context.commit('setPosts', { posts: response.data.posts });
+          console.log(response);
+          if (response.data.status === 'ok'){
+            context.commit('setPosts', { posts: response.data.data.posts });
+          }else if (response.data.status === 'error') {
+            console.log(response.data.data.error);
+          }
         })
         .catch(e => {
           console.log(e);

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,7 +90,7 @@
       <file leaf-file-name="PostingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5004">
+            <state relative-caret-position="621">
               <caret line="289" column="29" selection-start-line="289" selection-start-column="29" selection-end-line="289" selection-end-column="29" />
               <folding>
                 <element signature="e#46#76#0#PHP" expanded="true" />
@@ -98,11 +99,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="126" column="43" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
+            <state relative-caret-position="315">
+              <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posting.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin-front/src/store/modules/posting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -119,8 +129,8 @@
       <file leaf-file-name="Files.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin-front/src/views/files/Files.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+            <state relative-caret-position="396">
+              <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
               <folding>
                 <element signature="e#2508#2534#0" expanded="true" />
               </folding>
@@ -158,16 +168,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posting.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-front/src/store/modules/posting.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -306,11 +307,11 @@
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" />
         <option value="$PROJECT_DIR$/backend/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/admin-front/src/store/index.js" />
-        <option value="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" />
         <option value="$PROJECT_DIR$/admin-front/src/main.js" />
-        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
-        <option value="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" />
         <option value="$PROJECT_DIR$/backend/routes/api.php" />
+        <option value="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" />
+        <option value="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" />
+        <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
       </list>
     </option>
   </component>
@@ -714,12 +715,12 @@
       <workItem from="1550040888065" duration="36000" />
       <workItem from="1551163960509" duration="526000" />
       <workItem from="1551249183635" duration="751000" />
-      <workItem from="1552311957523" duration="2248000" />
+      <workItem from="1552311957523" duration="2704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1309229000" />
+    <option name="totallyTimeSpent" value="1309685000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1031,16 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5004">
-          <caret line="289" column="29" selection-start-line="289" selection-start-column="29" selection-end-line="289" selection-end-column="29" />
-          <folding>
-            <element signature="e#46#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1058,24 +1049,10 @@
     <entry file="file://$PROJECT_DIR$/admin-front/src/store/modules/profile.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-front/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin-front/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="126" column="43" selection-start-line="126" selection-start-column="43" selection-end-line="126" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -1089,10 +1066,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin-front/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="289" column="29" selection-start-line="289" selection-start-column="29" selection-end-line="289" selection-end-column="29" />
+          <folding>
+            <element signature="e#46#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin-front/src/views/files/Files.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+        <state relative-caret-position="396">
+          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
           <folding>
             <element signature="e#2508#2534#0" expanded="true" />
           </folding>
@@ -1101,8 +1095,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin-front/src/store/modules/posting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        <state relative-caret-position="549">
+          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1110,6 +1104,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="125" column="40" selection-start-line="125" selection-start-column="40" selection-end-line="125" selection-end-column="40" />
         </state>
       </provider>
     </entry>

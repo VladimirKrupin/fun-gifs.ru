@@ -66,6 +66,14 @@
         </b-col>
       </b-row>
 
+      <b-row v-if="posts === ''">
+        <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6">
+          <b-alert variant="danger" class="mb-4">
+            Посты закончились
+          </b-alert>
+        </b-col>
+      </b-row>
+
     </div>
   </div>
 </template>

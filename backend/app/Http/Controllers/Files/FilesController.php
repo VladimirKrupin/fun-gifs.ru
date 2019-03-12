@@ -122,10 +122,19 @@ class FilesController extends Controller
     }
 
     public function getPosts(){
-        return response()->json([
-            'status' => 'ok',
-            'data' => ['posts' =>[1,2,3,4,5]]
-        ]);
+        $posts = Post::where('status',0)->get();
+        $posts = Post::where('status',44)->get();
+        if (isset($posts[0])){
+            return response()->json([
+                'status' => 'ok',
+                'data' => ['posts' =>[1,2,3,4,5]]
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'error',
+                'data' => ['error' => 'Посты закончились']
+            ]);
+        }
     }
 
 }
