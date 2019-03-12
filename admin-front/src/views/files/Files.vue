@@ -60,15 +60,11 @@
 
       <b-row>
         <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
-          <h1 class="h1 my-3">Неопубликованные посты</h1>
+          <h1 class="h1 my-3">Неопубликовано</h1>
         </b-col>
       </b-row>
       <b-row v-if="!postsError">
         <b-col class="offset-md-1 col-md-8 col-lg-8 offset-lg-1 col-sm-12">
-          <!--<b-alert v-for="(item, index) in posts" show :key="index" variant="warning" class="mb-4">-->
-            <!--{{ item }}-->
-          <!--</b-alert>-->
-
           <table aria-busy="false" aria-colcount="3" aria-rowcount="25" class="table b-table table-sm">
             <thead class="col-md-8 col-lg-8 col-sm-8">
             <tr>
