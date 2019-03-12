@@ -58,6 +58,11 @@
         </b-col>
       </b-row>
 
+      <b-row>
+        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
+          <h1 class="h1 my-3">Неопубликованные посты</h1>
+        </b-col>
+      </b-row>
       <b-row v-if="!postsError">
         <b-col class="offset-md-1 col-md-8 col-lg-8 offset-lg-1 col-sm-12">
           <!--<b-alert v-for="(item, index) in posts" show :key="index" variant="warning" class="mb-4">-->
@@ -70,15 +75,13 @@
               <th aria-colindex="1" class="">Номер</th>
               <th aria-colindex="4" class="">Комментарий</th>
               <th aria-colindex="5" class="">Дата создания</th>
-              <th aria-colindex="6" class="">Статус</th>
             </tr>
             </thead><!---->
             <tbody class=""><!---->
             <tr v-for="(item, index) in posts" :key="index" aria-rowindex="1" class="">
-              <td aria-colindex="1" class="text-center">{{ index }}</td>
+              <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="4" class="text-right">{{ item.comment }}</td>
               <td aria-colindex="5" class="text-right">{{ item.created_at }}</td>
-              <td aria-colindex="6" class=""><span class="badge badge-success">Не опубликовано</span></td>
             </tr>
             </tbody>
           </table>
