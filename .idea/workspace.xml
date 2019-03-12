@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -97,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
@@ -124,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Files.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Files.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin-front/src/views/files/Files.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="387">
+              <caret line="77" column="72" selection-start-line="77" selection-start-column="72" selection-end-line="77" selection-end-column="72" />
               <folding>
                 <element signature="e#2508#2534#0" expanded="true" />
               </folding>
@@ -167,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@picture</find>
       <find>картинка р</find>
       <find>id = $step1['photo_id</find>
       <find>$photo_id</find>
@@ -197,6 +197,7 @@
       <find>Mail:</find>
       <find>profile/setUserData</find>
       <find>profile/</find>
+      <find>Card with label</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -291,8 +292,8 @@
         <option value="$PROJECT_DIR$/admin-front/src/main.js" />
         <option value="$PROJECT_DIR$/backend/routes/api.php" />
         <option value="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" />
-        <option value="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" />
         <option value="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" />
+        <option value="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" />
       </list>
     </option>
   </component>
@@ -696,12 +697,12 @@
       <workItem from="1550040888065" duration="36000" />
       <workItem from="1551163960509" duration="526000" />
       <workItem from="1551249183635" duration="751000" />
-      <workItem from="1552311957523" duration="3273000" />
+      <workItem from="1552311957523" duration="5507000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1310254000" />
+    <option name="totallyTimeSpent" value="1312488000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1071,16 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-front/src/views/files/Files.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#2508#2534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin-front/src/store/modules/posting.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -1092,6 +1083,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-front/src/views/files/Files.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="77" column="72" selection-start-line="77" selection-start-column="72" selection-end-line="77" selection-end-column="72" />
+          <folding>
+            <element signature="e#2508#2534#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

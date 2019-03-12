@@ -59,10 +59,29 @@
       </b-row>
 
       <b-row v-if="!postsError">
-        <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6">
-          <b-alert v-for="(item, index) in posts" show :key="index" variant="success" class="mb-4">
-            {{ item }}
-          </b-alert>
+        <b-col class="offset-md-1 col-md-8 col-lg-8 offset-lg-1 col-sm-12">
+          <!--<b-alert v-for="(item, index) in posts" show :key="index" variant="warning" class="mb-4">-->
+            <!--{{ item }}-->
+          <!--</b-alert>-->
+
+          <table aria-busy="false" aria-colcount="6" aria-rowcount="25" class="table b-table table-sm">
+            <thead class="col-md-8 col-lg-8 col-sm-8">
+            <tr>
+              <th aria-colindex="1" class="">Номер</th>
+              <th aria-colindex="4" class="">Комментарий</th>
+              <th aria-colindex="5" class="">Дата создания</th>
+              <th aria-colindex="6" class="">Статус</th>
+            </tr>
+            </thead><!---->
+            <tbody class=""><!---->
+            <tr v-for="(item, index) in posts" :key="index" aria-rowindex="1" class="">
+              <td aria-colindex="1" class="text-center">{{ index }}</td>
+              <td aria-colindex="4" class="text-right">{{ item.comment }}</td>
+              <td aria-colindex="5" class="text-right">{{ item.created_at }}</td>
+              <td aria-colindex="6" class=""><span class="badge badge-success">Не опубликовано</span></td>
+            </tr>
+            </tbody>
+          </table>
         </b-col>
       </b-row>
 
