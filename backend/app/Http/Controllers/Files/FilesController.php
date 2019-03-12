@@ -126,7 +126,7 @@ class FilesController extends Controller
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',
-                'data' => ['posts' =>[1,2,3,4,5]]
+                'data' => ['posts' =>$posts]
             ]);
         }else{
             return response()->json([

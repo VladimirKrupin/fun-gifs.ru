@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a65526-455d-4ed2-8fb7-346ae524907e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-front/src/store/modules/posting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-front/src/views/files/Files.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,8 +100,8 @@
       <file leaf-file-name="FilesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="124" column="48" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
+            <state relative-caret-position="369">
+              <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -698,12 +696,12 @@
       <workItem from="1550040888065" duration="36000" />
       <workItem from="1551163960509" duration="526000" />
       <workItem from="1551249183635" duration="751000" />
-      <workItem from="1552311957523" duration="3238000" />
+      <workItem from="1552311957523" duration="3273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1310219000" />
+    <option name="totallyTimeSpent" value="1310254000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1092,8 +1090,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Files/FilesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="124" column="48" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
+        <state relative-caret-position="369">
+          <caret line="128" column="43" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
         </state>
       </provider>
     </entry>
