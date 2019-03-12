@@ -58,6 +58,14 @@
         </b-col>
       </b-row>
 
+      <b-row v-if="posts !== ''">
+        <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6">
+          <b-alert v-for="(item, index) in posts" show :key="index" variant="success" class="mb-4">
+            {{ item }}
+          </b-alert>
+        </b-col>
+      </b-row>
+
     </div>
   </div>
 </template>
@@ -86,6 +94,9 @@
         VueEmoji
       },
       computed: {
+        ...mapGetters('posting', {
+          posts: 'posts',
+        })
       },
       name: 'Files',
       mounted: function () {

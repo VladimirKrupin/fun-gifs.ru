@@ -17,7 +17,7 @@ Vue.use(VueRouter);
 
 require('./config/guards');
 
-store.dispatch('profile/setUserData');
+store.dispatch('posting/setPosts');
 
 new Vue({
   el: '#app',
