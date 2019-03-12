@@ -22,7 +22,7 @@ const actions = {
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('access_token')
         },
-        url: 'https://api.fun-gifs.ru/api/getPosts',
+        url: 'http://api.fun-gifs.ru/api/getPosts/',
       };
       axios(options)
         .then(response => {
