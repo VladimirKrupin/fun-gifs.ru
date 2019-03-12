@@ -69,19 +69,19 @@
             <!--{{ item }}-->
           <!--</b-alert>-->
 
-          <table aria-busy="false" aria-colcount="6" aria-rowcount="25" class="table b-table table-sm">
+          <table aria-busy="false" aria-colcount="3" aria-rowcount="25" class="table b-table table-sm">
             <thead class="col-md-8 col-lg-8 col-sm-8">
             <tr>
-              <th aria-colindex="1" class="">Номер</th>
-              <th aria-colindex="4" class="">Комментарий</th>
-              <th aria-colindex="5" class="">Дата создания</th>
+              <th aria-colindex="1" class="text-center">Номер</th>
+              <th aria-colindex="2" class="text-center">Комментарий</th>
+              <th aria-colindex="3" class="text-right">Загружено</th>
             </tr>
             </thead><!---->
             <tbody class=""><!---->
-            <tr v-for="(item, index) in posts" :key="index" aria-rowindex="1" class="">
+            <tr v-for="(item, index) in posts" :key="index" :aria-rowindex="index" class="">
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
-              <td aria-colindex="4" class="text-center">{{ item.comment }}</td>
-              <td aria-colindex="5" class="text-right">{{ item.created_at }}</td>
+              <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
+              <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
             </tr>
             </tbody>
           </table>
