@@ -123,7 +123,6 @@ class FilesController extends Controller
 
     public function getPosts(){
         $posts = Post::where('status',0)->get();
-        $posts = Post::where('status',44)->get();
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',

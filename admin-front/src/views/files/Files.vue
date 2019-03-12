@@ -58,7 +58,7 @@
         </b-col>
       </b-row>
 
-      <b-row v-if="posts !== ''">
+      <b-row v-if="!postsError">
         <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6">
           <b-alert v-for="(item, index) in posts" show :key="index" variant="success" class="mb-4">
             {{ item }}
@@ -66,10 +66,10 @@
         </b-col>
       </b-row>
 
-      <b-row v-if="posts === ''">
+      <b-row v-if="postsError">
         <b-col class="offset-md-1 col-md-5 col-lg-5 offset-lg-1 col-sm-6">
-          <b-alert variant="danger" class="mb-4">
-            Посты закончились
+          <b-alert show variant="danger" class="mb-4">
+            {{ postsError }}
           </b-alert>
         </b-col>
       </b-row>
@@ -104,6 +104,7 @@
       computed: {
         ...mapGetters('posting', {
           posts: 'posts',
+          postsError: 'postsError',
         })
       },
       name: 'Files',

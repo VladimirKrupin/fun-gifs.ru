@@ -2,15 +2,20 @@ import axios from 'axios';
 
 const state = {
   posts: [],
+  postsError: '',
 };
 
 const getters = {
   posts: state => state.posts,
+  postsError: state => state.postsError,
 };
 
 const mutations = {
   setPosts(state, payload) {
     state.posts = payload.posts;
+  },
+  setPostsError(state, payload) {
+    state.postsError = payload.postsError;
   },
 };
 
@@ -30,7 +35,8 @@ const actions = {
           if (response.data.status === 'ok'){
             context.commit('setPosts', { posts: response.data.data.posts });
           }else if (response.data.status === 'error') {
-            console.log(response.data.data.error);
+            context.commit('setPostsError', { postsError: response.data.data.error });
+            console.log(response.data);
           }
         })
         .catch(e => {
