@@ -55,7 +55,7 @@ class FilesController extends Controller
      */
     public function putFiles(Request $request){
         $validator = Validator::make($request->all(), [
-            'files.*' => 'mimes:jpeg,png,mp4,gif|max:30000',
+            'files.*' => 'mimes:jpeg,png,mp4,gif,mov,ogg|max:100000',
             'files' => 'required|max:6',
             'comment' => 'required|string|max:1000',
         ]);
