@@ -35,25 +35,25 @@ class Kernel extends ConsoleKernel
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(7, 8)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(6, 7)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(9, 10)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(8, 11)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(12, 14)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(12, 13)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(16, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(17, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
 
         $schedule->call(function()
