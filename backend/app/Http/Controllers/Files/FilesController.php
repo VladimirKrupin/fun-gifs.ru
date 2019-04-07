@@ -51,12 +51,13 @@ class FilesController extends Controller
      *
      * @param Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function putFiles(Request $request){
         $validator = Validator::make($request->all(), [
-            'files.*' => 'mimes:jpeg,png,mp4,gif|max:10000',
-            'files' => 'required|max:10',
-            'comment' => 'required|string|max:255',
+            'files.*' => 'mimes:jpeg,png,mp4,gif,mov,ogg|max:100000',
+            'files' => 'required|max:6',
+            'comment' => 'required|string|max:1000',
         ]);
         if($validator->errors()->first('files')){
             return response()->json([
@@ -116,6 +117,21 @@ class FilesController extends Controller
                 'data' => ['message' =>
                     ["Файлы успешно загружены на сервер!"]
                 ]
+            ]);
+        }
+    }
+
+    public function getPosts(){
+        $posts = Post::where('status',0)->get();
+        if (isset($posts[0])){
+            return response()->json([
+                'status' => 'ok',
+                'data' => ['posts' =>$posts]
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'error',
+                'data' => ['error' => 'Посты закончились']
             ]);
         }
     }
