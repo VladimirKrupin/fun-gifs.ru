@@ -62,7 +62,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="320">
               <caret line="191" column="116" selection-start-line="191" selection-start-column="116" selection-end-line="191" selection-end-column="116" />
             </state>
           </provider>
@@ -194,12 +194,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554623029688</updated>
       <workItem from="1554623034935" duration="402000" />
-      <workItem from="1554832665879" duration="3137000" />
+      <workItem from="1554832665879" duration="3273000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3539000" />
+    <option name="totallyTimeSpent" value="3675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -254,7 +254,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="320">
           <caret line="191" column="116" selection-start-line="191" selection-start-column="116" selection-end-line="191" selection-end-column="116" />
         </state>
       </provider>
