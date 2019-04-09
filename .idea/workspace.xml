@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3125c3b-1903-406a-b002-2b67133cf075" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+              <caret line="73" column="17" selection-start-line="69" selection-start-column="13" selection-end-line="73" selection-end-column="17" />
               <folding>
                 <element signature="e#31#85#0#PHP" expanded="true" />
               </folding>
@@ -61,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -196,12 +194,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554623029688</updated>
       <workItem from="1554623034935" duration="402000" />
-      <workItem from="1554832665879" duration="801000" />
+      <workItem from="1554832665879" duration="875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1203000" />
+    <option name="totallyTimeSpent" value="1277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -216,7 +214,7 @@
     <frame x="39" y="25" width="1327" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19437939" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19437939" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -229,7 +227,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18760195" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38009787" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -244,20 +242,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
-          <folding>
-            <element signature="e#31#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/app/Http/Controllers/Posting/PostingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="189" column="116" selection-start-line="189" selection-start-column="116" selection-end-line="189" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app/Console/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="73" column="17" selection-start-line="69" selection-start-column="13" selection-end-line="73" selection-end-column="17" />
+          <folding>
+            <element signature="e#31#85#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
