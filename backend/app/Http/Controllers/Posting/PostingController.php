@@ -187,7 +187,7 @@ class PostingController extends Controller
     public function __construct()
     {
         // загрузка фото
-        $this->setAccessToken('cfca7da0f5bb9b5fae529e42a69069fd040dd74e98f8ae065bf2af8999b1b868bbf4cb1f857aec03b58c4');
+        $this->setAccessToken('3433b5ca42a47b390ae55a16d0308269e139a5f438cbfeb4e498b4b22b9fcff89d2dedd37735c66e7ee12');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
