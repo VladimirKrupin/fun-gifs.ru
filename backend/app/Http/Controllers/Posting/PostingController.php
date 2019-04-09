@@ -186,10 +186,10 @@ class PostingController extends Controller
      */
     public function __construct()
     {
-        //https://oauth.vk.com/blank.html#access_token=ba40089fc376691569c75f6c59ae5c95bb21005896bde370f1826cb35a4c11da618bda4c587225e4e745e&expires_in=0&user_id=244842255
-        //https://oauth.vk.com/authorize?client_id=6842537&display=page&redirect_uri=https://oauth.vk.com/blank.html%20&scope=wall,offline&response_type=token
+        //https://oauth.vk.com/blank.html#access_token=00a513ea13d012c80d1719aec01d214cb22cc38c3543c942cea55b7b1d241bd6f4a9bae2e658c2e160a2a&expires_in=0&user_id=244842255
+        //https://oauth.vk.com/authorize?client_id=6842537&display=popup&redirect_uri=https://oauth.vk.com/blank.html%20&scope=wall,offline,groups&response_type=token
         // загрузка фото
-        $this->setAccessToken('ba40089fc376691569c75f6c59ae5c95bb21005896bde370f1826cb35a4c11da618bda4c587225e4e745e');
+        $this->setAccessToken('00a513ea13d012c80d1719aec01d214cb22cc38c3543c942cea55b7b1d241bd6f4a9bae2e658c2e160a2a');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
