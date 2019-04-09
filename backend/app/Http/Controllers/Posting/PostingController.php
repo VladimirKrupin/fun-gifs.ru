@@ -275,9 +275,7 @@ class PostingController extends Controller
 //            ->with('files')
 //            ->first();
 //
-        Post::where('id',$post['id'])->update([
-            'status' => 1
-        ]);
+
 
         if ($post) {
             $post = $post->toArray();
@@ -307,6 +305,9 @@ class PostingController extends Controller
                 $theme = 'Предупреждение: только что был опубликован последний пост';
                 Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
+            Post::where('id',$post['id'])->update([
+                'status' => 1
+            ]);
         }else{
             $theme = 'Предупреждение: закончились посты';
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
