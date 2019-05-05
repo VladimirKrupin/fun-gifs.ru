@@ -290,6 +290,11 @@ class PostingController extends Controller
 //            var_dump('Fb');
 
             $posts = Post::where('status', 0)->get();
+
+            Post::where('id',$post['id'])->update([
+                'status' => 1
+            ]);
+
             if ($posts){
                 $posts = $posts->toArray();
                 $count = count($posts);
@@ -307,9 +312,6 @@ class PostingController extends Controller
                 $theme = 'Предупреждение: только что был опубликован последний пост';
                 Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
-            Post::where('id',$post['id'])->update([
-                'status' => 1
-            ]);
         }else{
             $theme = 'Предупреждение: закончились посты';
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
