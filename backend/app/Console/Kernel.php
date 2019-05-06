@@ -49,6 +49,10 @@ class Kernel extends ConsoleKernel
             (new PostingController())->wallAllPosting();
         })->twiceDaily(12, 13)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
+        $schedule->call(function()
+        {
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(15, 16)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
 
         $schedule->call(function()
         {
