@@ -281,11 +281,15 @@ class PostingController extends Controller
 
         if ($post) {
             $post = $post->toArray();
-
             $this->wallPosting($post);
             var_dump('Vk');
-            $this->postingOk($post);
-            var_dump('Ok');
+            $status_ok = $this->postingOk($post);
+            if (!$status_ok){
+                var_dump('Error posting OK');
+                var_dump($post);
+            }else{
+                var_dump('Ok');
+            }
 //            $this->postingFb($post);
 //            var_dump('Fb');
 
@@ -485,7 +489,7 @@ class PostingController extends Controller
 //            Post::where('id',$post['id'])->update([
 //                'status' => 1
 //            ]);
-            return true;
+            return false;
         }
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
@@ -549,7 +553,7 @@ class PostingController extends Controller
             // Обработка ошибки
             var_dump($step3);
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step3));
-            exit();
+            return false;
         }
 
 // Успешно
@@ -802,7 +806,7 @@ class PostingController extends Controller
             // Обработка ошибки
             var_dump('step1');
             var_dump($step1);
-            exit();
+            return false;
         }
 
         // Идентификатор для загрузки фото
@@ -824,7 +828,7 @@ class PostingController extends Controller
             // Обработка ошибки
             var_dump('step2');
             var_dump($step2);
-            exit();
+            return false;
         }
 
 
@@ -855,7 +859,7 @@ class PostingController extends Controller
             var_dump('step3');
             var_dump($step3);
             // Обработка ошибки
-            exit();
+            return false;
         }
 
         return ['movieId' => $video_id];
@@ -888,7 +892,7 @@ class PostingController extends Controller
             // Обработка ошибки
             var_dump($step1);
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step1));
-            exit();
+            return false;
         }
 
         // Идентификатор для загрузки фото
@@ -912,7 +916,7 @@ class PostingController extends Controller
             // Обработка ошибки
             var_dump($step2);
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $step2));
-            exit();
+            return false;
         }
 
         // Токен загруженной фотки
