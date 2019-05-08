@@ -35,40 +35,45 @@ class Kernel extends ConsoleKernel
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(6, 7)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(5, 6)->timezone('Europe/Moscow');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(8, 11)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(7, 8)->timezone('Europe/Moscow');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(12, 13)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(9, 10)->timezone('Europe/Moscow');
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(15, 16)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(11, 12)->timezone('Europe/Moscow');
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(17, 18)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(14, 16)->timezone('Europe/Moscow');
+
+        $schedule->call(function()
+        {
+            (new PostingController())->wallAllPosting();
+        })->twiceDaily(17, 18)->timezone('Europe/Moscow');
 
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(19, 21)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(19, 21)->timezone('Europe/Moscow');
 
         $schedule->call(function()
         {
             (new PostingController())->wallAllPosting();
-        })->twiceDaily(22, 23)->timezone('Europe/Moscow')->unlessBetween('2:00', '6:00');
+        })->twiceDaily(22, 23)->timezone('Europe/Moscow');
 
 
 //        $schedule->call(function()
