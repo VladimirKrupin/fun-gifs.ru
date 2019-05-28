@@ -189,7 +189,7 @@ class PostingController extends Controller
         //https://oauth.vk.com/blank.html#access_token=3c87b740126b62504931e3764ce5d972be58b5534f301c2b1a5dec069ecad0d4d461f52edbb7494e37045&expires_in=0&user_id=244842255&email=vladimir.krupin133@mail.ru
         //hhttps://oauth.vk.com/authorize?client_id=6842537&display=popup&redirect_uri=https://oauth.vk.com/blank.html%20&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
         // загрузка фото
-        $this->setAccessToken('79ea7dd95e543ce11ba256858f5c9855674d8c240399e5ab7093820fc70f54d9e3df5bd79e5ef3a6d7597');
+        $this->setAccessToken('8947b4740ced6df53887fac25133478368b332f4f286147490412c07b7ce6f2f0e555850287e274489f2b');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
