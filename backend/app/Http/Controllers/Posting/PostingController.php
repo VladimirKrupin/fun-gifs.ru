@@ -187,6 +187,8 @@ class PostingController extends Controller
     public function __construct()
     {
         //https://oauth.vk.com/authorize?client_id=6842537&display=popup&redirect_uri=https://oauth.vk.com/blank.html%20&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
+        //Если разлогинился, то регай новое приложение и его айдишник вставляй в строку выше и получай новый токен
+
         // загрузка фото
         $this->setAccessToken('2386de62eb2a3d2115d302dcbbd34908f26ed3de52dbfed04be199776b44c2394f1f60e48c34668d0e74b');
         $this->setGroupId(176519720);
