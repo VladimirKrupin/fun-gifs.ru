@@ -620,6 +620,7 @@ class PostingController extends Controller
 
     /**
      * @param $post
+     * @return array
      */
     private function wallPosting($post){
         $attachments = [];
@@ -630,7 +631,7 @@ class PostingController extends Controller
                     break;
                 case 'video':
                     $video = $this->getVideo($post,$file);
-                    if ($video['status'] === 'error'){
+                    if (isset($video['status']) && $video['status'] === 'error'){
                         return $video;
                     }
                     $attachments[] = $video;
@@ -660,6 +661,8 @@ class PostingController extends Controller
             Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError($mail_data,$post));
         }else{
             $mail_data = json_encode($result);
+
+            return ['status'=>'ok','message'=>'Видео получено'];
 
 //            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResult($mail_data));
         }
