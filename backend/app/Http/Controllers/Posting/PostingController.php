@@ -281,12 +281,12 @@ class PostingController extends Controller
         if ($post) {
             $post = $post->toArray();
             $status_vk = $this->wallPosting($post);
-            var_dump('Error posting VK');
-            var_dump($status_vk);
             if ($status_vk['status'] === 'error'){
+                var_dump('Error posting VK');
+                var_dump($status_vk);
                 Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
-//                $this->updatePostDone($post);
-                return false;
+            }else{
+                var_dump('VK posting done');
             }
             $status_ok = $this->postingOk($post);
             if (!$status_ok){
@@ -301,7 +301,6 @@ class PostingController extends Controller
             $this->updatePostDone($post);
 
             $posts = Post::where('status', 0)->get();
-
 
             if ($posts){
                 $posts = $posts->toArray();
