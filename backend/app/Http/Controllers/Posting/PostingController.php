@@ -281,6 +281,7 @@ class PostingController extends Controller
         if ($post) {
             $post = $post->toArray();
             $status_vk = $this->wallPosting($post);
+            var_dump('Error posting VK');
             var_dump($status_vk);
             if ($status_vk['status'] === 'error'){
                 Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
