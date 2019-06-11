@@ -282,8 +282,12 @@ class PostingController extends Controller
 
         if ($post) {
             $post = $post->toArray();
-            $this->wallPosting($post);
-            var_dump('Vk');
+            $status_vk = $this->wallPosting($post);
+            if ($status_vk['status'] === 'error'){
+                Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
+                $this->updatePostDone($post);
+                return false;
+            }
             $status_ok = $this->postingOk($post);
             if (!$status_ok){
                 var_dump('Error posting OK');
@@ -294,11 +298,10 @@ class PostingController extends Controller
 //            $this->postingFb($post);
 //            var_dump('Fb');
 
+            $this->updatePostDone($post);
+
             $posts = Post::where('status', 0)->get();
 
-            Post::where('id',$post['id'])->update([
-                'status' => 1
-            ]);
 
             if ($posts){
                 $posts = $posts->toArray();
@@ -323,6 +326,12 @@ class PostingController extends Controller
             Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
         }
 
+    }
+
+    public function updatePostDone($post){
+        Post::where('id',$post['id'])->update([
+            'status' => 1
+        ]);
     }
 
     /**
@@ -620,7 +629,11 @@ class PostingController extends Controller
                     $attachments[] = $this->getPhoto($file);
                     break;
                 case 'video':
-                    $attachments[] = $this->getVideo($post,$file);
+                    $video = $this->getVideo($post,$file);
+                    if ($video['status'] === 'error'){
+                        return $video;
+                    }
+                    $attachments[] = $video;
                     break;
             }
         }
@@ -722,7 +735,7 @@ class PostingController extends Controller
     /**
      * @param $post
      * @param $file
-     * @return string
+     * @return array
      */
     private function getVideo($post,$file){
         // загрузка видео
@@ -754,7 +767,9 @@ class PostingController extends Controller
 
         $response = $this->getCurlResponse($link, $post_params);
 
-        var_dump($response);
+        if (isset($response->error)){
+            return ['status'=>'error','message'=>$response->error];
+        }
 
         $video_id= $response->video_id;
         $owner_id= $response->owner_id;
