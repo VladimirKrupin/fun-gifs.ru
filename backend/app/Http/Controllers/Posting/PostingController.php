@@ -278,12 +278,11 @@ class PostingController extends Controller
 //            ->with('files')
 //            ->first();
 //
-
-
         if ($post) {
             $post = $post->toArray();
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
+                var_dump($status_vk);
                 Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
                 $this->updatePostDone($post);
                 return false;
