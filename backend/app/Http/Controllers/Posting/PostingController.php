@@ -279,8 +279,8 @@ class PostingController extends Controller
 //            ->first();
 //
         if ($post) {
-            var_dump($post);
             $post = $post->toArray();
+            var_dump($post);
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
                 var_dump('Error posting VK');
