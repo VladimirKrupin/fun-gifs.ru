@@ -754,6 +754,8 @@ class PostingController extends Controller
 
         $response = $this->getCurlResponse($link, $post_params);
 
+        var_dump($response);
+
         $video_id= $response->video_id;
         $owner_id= $response->owner_id;
 
