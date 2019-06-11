@@ -279,6 +279,7 @@ class PostingController extends Controller
 //            ->first();
 //
         if ($post) {
+            var_dump($post);
             $post = $post->toArray();
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
@@ -291,7 +292,6 @@ class PostingController extends Controller
             $status_ok = $this->postingOk($post);
             if (!$status_ok){
                 var_dump('Error posting OK');
-                var_dump($post);
             }else{
                 var_dump('Ok');
             }
