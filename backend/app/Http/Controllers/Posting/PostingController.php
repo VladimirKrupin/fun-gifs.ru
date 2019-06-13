@@ -724,7 +724,7 @@ class PostingController extends Controller
             'hash' => $response->hash,
         ]);
         $save_photo_data = json_decode(file_get_contents("https://api.vk.com/method/photos.saveWallPhoto?".$params_save_photo));
-        if (!isset($save_photo_data->response[0]->id)){
+        if (isset($save_photo_data->response[0]->id)){
             $id= $save_photo_data->response[0]->id;
             $owner_id= $save_photo_data->response[0]->owner_id;
             return "photo".$owner_id."_".$id;
