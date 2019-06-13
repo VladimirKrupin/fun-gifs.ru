@@ -190,7 +190,7 @@ class PostingController extends Controller
         //Если разлогинился, то регай новое приложение и его айдишник вставляй в строку выше и получай новый токен
 
         // загрузка фото
-        $this->setAccessToken('2386de62eb2a3d2115d302dcbbd34908f26ed3de52dbfed04be199776b44c2394f1f60e48c34668d0e74b');
+        $this->setAccessToken('524c1fb69f33e57c37fe6faca5ad0126b26e2d9af46c9d11846ad0ae4f5308cd5fa495271122837053aec');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
