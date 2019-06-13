@@ -729,7 +729,7 @@ class PostingController extends Controller
             $owner_id= $save_photo_data->response[0]->owner_id;
             return "photo".$owner_id."_".$id;
         }else{
-            return ['status'=>'error','message'=>"Code ".$save_photo_data['error']['error_msg']."\r\nmessage".$save_photo_data['error']['error_msg']];
+            return ['status'=>'error','message'=>"Code ".$save_photo_data->error->error_code."\r\nmessage".$save_photo_data->error->error_msg];
         }
     }
 
