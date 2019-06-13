@@ -795,13 +795,10 @@ class PostingController extends Controller
     private function checkTypeFile($file){
         $name_array = explode('.',$file['path']);
         $last_ellement_name = end($name_array);
-        switch ($last_ellement_name){
-            case 'mp4':
-                return 'video';
-                break;
-            default:
-                return 'photo';
-                break;
+        if ($last_ellement_name === 'mp4' || $last_ellement_name === 'MP4'){
+            return 'video';
+        }else{
+            return 'photo';
         }
     }
 
