@@ -286,6 +286,7 @@ class PostingController extends Controller
                 var_dump('Error posting VK');
                 var_dump($status_vk);
                 Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
+                die;
             }else{
                 var_dump('VK posting done');
             }
