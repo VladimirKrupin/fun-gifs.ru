@@ -626,7 +626,10 @@ class PostingController extends Controller
         foreach ($post['files'] as $file){
             switch ($this->checkTypeFile($file)){
                 case 'photo':
-                    $attachments[] = $this->getPhoto($file);
+                    $photo_status = $attachments[] = $this->getPhoto($file);
+                    if (isset($photo_status['status']) && $photo_status['status'] === 'error'){
+                        return $photo_status;
+                    }
                     break;
                 case 'video':
                     $video = $this->getVideo($post,$file);
@@ -692,7 +695,7 @@ class PostingController extends Controller
 
     /**
      * @param $file
-     * @return string
+     * @return string|array
      */
     private function getPhoto($file){
         $params_upload_photo = http_build_query([
@@ -721,11 +724,13 @@ class PostingController extends Controller
             'hash' => $response->hash,
         ]);
         $save_photo_data = json_decode(file_get_contents("https://api.vk.com/method/photos.saveWallPhoto?".$params_save_photo));
-        var_dump($params_save_photo);
-        var_dump($save_photo_data);
-        $id= $save_photo_data->response[0]->id;
-        $owner_id= $save_photo_data->response[0]->owner_id;
-        return "photo".$owner_id."_".$id;
+        if (!isset($save_photo_data->response[0]->id)){
+            $id= $save_photo_data->response[0]->id;
+            $owner_id= $save_photo_data->response[0]->owner_id;
+            return "photo".$owner_id."_".$id;
+        }else{
+            return ['status'=>'error','message'=>"Code ".$save_photo_data['error']['error_msg']."\r\nmessage".$save_photo_data['error']['error_msg']];
+        }
     }
 
     function translate($from_lan, $to_lan, $text){
