@@ -186,11 +186,11 @@ class PostingController extends Controller
      */
     public function __construct()
     {
-        //https://oauth.vk.com/authorize?client_id=6842537&display=popup&redirect_uri=https://oauth.vk.com/blank.html%20&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
+        //https://oauth.vk.com/authorize?client_id=7019297&display=popup&redirect_uri=https://oauth.vk.com/blank.html%20&scope=photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,email,notifications,stats,ads,offline,docs,pages,stats,notifications&response_type=token
         //Если разлогинился, то регай новое приложение и его айдишник вставляй в строку выше и получай новый токен
 
         // загрузка фото
-        $this->setAccessToken('524c1fb69f33e57c37fe6faca5ad0126b26e2d9af46c9d11846ad0ae4f5308cd5fa495271122837053aec');
+        $this->setAccessToken('8664d7072e1b324ec4d2a71c901c92292a535282faf90d706a1a3fe30e82afb8218e80dd20d67c323f16d');
         $this->setGroupId(176519720);
         $this->setVersion(5.92);
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
