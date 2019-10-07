@@ -32,49 +32,18 @@ class Kernel extends ConsoleKernel
 //            (new UserController())->createUser();
 //        })->everyMinute();
 
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(5, 6)->timezone('Europe/Moscow');
-
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(7, 8)->timezone('Europe/Moscow');
-
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(9, 10)->timezone('Europe/Moscow');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(11, 12)->timezone('Europe/Moscow');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(14, 16)->timezone('Europe/Moscow');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(17, 18)->timezone('Europe/Moscow');
-
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(19, 21)->timezone('Europe/Moscow');
-
-        $schedule->call(function()
-        {
-            (new PostingController())->wallAllPosting();
-        })->twiceDaily(22, 23)->timezone('Europe/Moscow');
-
+        $times = [
+            '7:00','7:15','7:30',
+            '10:00','10:15','10:30',
+            '16:00','16:15','16:30',
+            '20:00','20:15','20:30',
+        ];
+        foreach ($times as $time){
+            $schedule->call(function()
+            {
+                (new PostingController())->wallAllPosting();
+            })->dailyAt($time)->timezone('Europe/Moscow');
+        }
 
 //        $schedule->call(function()
 //        {
@@ -87,10 +56,6 @@ class Kernel extends ConsoleKernel
 //            (new PostingController())->postingFb();
 //        })->everyMinute();
 
-//        $schedule->call(function()
-//        {
-//            (new PostingController())->test();
-//        })->everyMinute();
 
 
     }
