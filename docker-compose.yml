@@ -1,0 +1,65 @@
+#local project
+version: '2'
+services:
+  docker_web:
+    build:
+      context: ./
+      dockerfile: Docker/web_dockerfile
+    volumes:
+      - ./backend:/backend
+      - ./Autorun/conf:/Autorun/conf
+    ports:
+      - "9091:80"
+    links:
+      - docker_php
+    restart: always
+  docker_php:
+    build:
+      context: ./
+      dockerfile: Docker/php_dockerfile
+    volumes:
+    - ./backend:/backend
+    depends_on:
+    - docker_mysql
+    restart: always
+  docker_mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+    - "9093:3306"
+    volumes:
+    - ./mysql:/var/lib/mysql
+    restart: always
+  docker_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+    - docker_mysql
+    environment:
+      PMA_HOST: docker_mysql
+      PMA_PORT: 3306
+    ports:
+    - '9094:80'
+    restart: always
+  docker_nodejs:
+    build:
+      context: ./
+      dockerfile: Docker/node_dockerfile
+    volumes:
+      - ./admin-front:/usr/src/app
+      - ./front:/usr/src/front
+      - ./Node:/usr/src/node
+      - ./Autorun/scripts:/usr/src/scripts
+    ports:
+      - "9092:8080"
+  docker_composer:
+    build:
+      context: ./
+      dockerfile: Docker/composer_dockerfile
+    command: php -S localhost:8085
+    volumes:
+      - ./backend:/app
+    restart: always

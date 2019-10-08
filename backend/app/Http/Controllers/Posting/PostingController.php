@@ -190,21 +190,21 @@ class PostingController extends Controller
         //Если разлогинился, то регай новое приложение и его айдишник вставляй в строку выше и получай новый токен
 
         // загрузка фото
-        $this->setAccessToken('8664d7072e1b324ec4d2a71c901c92292a535282faf90d706a1a3fe30e82afb8218e80dd20d67c323f16d');
-        $this->setGroupId(176519720);
-        $this->setVersion(5.92);
+        $this->setAccessToken(env('VK_ACCESS_TOKEN'));
+        $this->setGroupId(env('VK_GROUP_ID'));
+        $this->setVersion(env('VK_API_V'));
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
 
 
-        $this->setOkAccessToken("tkn1ce3LbLBhQmompbntGdPpbvpqe6d9mgSbumqnQ3H0FgjdF8FP75wjqgkisckqNHPD8");//Наш вечный токен
-        $this->setOkPrivateKey("BB0E30802A51BBD73A969742");//Секретный ключ приложения
-        $this->setOkPublicKey("CBAONMANEBABABABA");//Публичный ключ приложения
-        $this->setOkGroupId("56022813442280");
+        $this->setOkAccessToken(env('OK_ACCESS_TOKEN'));//Наш вечный токен
+        $this->setOkPrivateKey(env('OK_PRIVATE_KEY'));//Секретный ключ приложения
+        $this->setOkPublicKey(env('OK_PUBLIC_KEY'));//Публичный ключ приложения
+        $this->setOkGroupId(env('OK_GROUP_ID'));
 
         $this->setKeyWords(' Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
 
-        $this->setFbToken('EAAFup9Mb6rsBAPoYF3wtI8rBxdbZCGG65mMPzyUSVa4AlSEZClkBQZCbg9uI8w286hSrDJE6OAC6uzO18IPSGl9CyctY0jGGOZAxzqK7OhfLXGNMnOBnnh8v1mnKFDHhSjCUMB7ZBurniKyZCHdcw2chS0A7r3ZA9YZAZAWrQ4ujZC9u7Y8unagtXm');
-        $this->setFbGroupId('603196956795307');
+        $this->setFbToken(env('FB_ACCESS_TOKEN'));
+        $this->setFbGroupId(env('FB_GROUP_ID'));
 
         $russian_hash_tags = explode(' ',$this->getKeyWords());
         $russian_hash_tags = implode(' #',$russian_hash_tags);

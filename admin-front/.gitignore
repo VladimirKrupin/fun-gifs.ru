@@ -2,6 +2,7 @@
 node_modules
 package-lock.json
 /coverage
+dist
 
 backend/storage/app/files-store/
 backend/storage/app/files-store/*
