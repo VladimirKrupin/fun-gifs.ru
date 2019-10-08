@@ -715,6 +715,8 @@ class PostingController extends Controller
         ];
         $response = $this->getCurlResponse($link,$post_params);
 
+        var_dump($response);
+
         //сохраняем фото для стены
         $params_save_photo = http_build_query([
             'access_token' => $this->getAccessToken(),
