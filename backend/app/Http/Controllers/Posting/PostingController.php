@@ -680,18 +680,25 @@ class PostingController extends Controller
      */
     private function getCurlResponse($link, $post_params){
         //Загружаем фото
-        $ch = curl_init($link);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            "Content-Type:multipart/form-data"
-        ));
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
-        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $link);
+        curl_setopt($ch, CURLOPT_POST, 1 );
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params);
-        $response = curl_exec( $ch );
-        curl_close( $ch );
-        return json_decode($response);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $postResult = curl_exec($ch);
+
+        var_dump($postResult);
+        var_dump(curl_errno($ch));
+        var_dump(curl_error($ch));
+        var_dump($post_params);
+        if (curl_errno($ch)) {
+            print curl_error($ch);
+        }
+        curl_close($ch);
+
+        return json_decode($postResult);
     }
 
     /**
@@ -711,11 +718,16 @@ class PostingController extends Controller
 
         //составляем данные и загружаем фото на сервер по ссылке которую дали из предыдущего запроса
         $post_params = [
-            'photo' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path'])
+            'photo' => new CURLFile('/backend/storage/app/files-store/'.$file['path'])
         ];
-        $response = $this->getCurlResponse($link,$post_params);
+        try{
+            $response = $this->getCurlResponse($link,$post_params);
+        }catch (\Error $exception){
+            var_dump($exception);
+        }catch (\Exception $exception){
+            var_dump($exception);
+        }
 
-        var_dump($response);
 
         //сохраняем фото для стены
         $params_save_photo = http_build_query([
@@ -774,7 +786,7 @@ class PostingController extends Controller
         $link = $file_upload_link->response->upload_url;
 
         $post_params = [
-            'video_file' => new CURLFile('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path'])
+            'video_file' => new CURLFile('/backend/storage/app/files-store/'.$file['path'])
         ];
 
         $response = $this->getCurlResponse($link, $post_params);
@@ -839,7 +851,7 @@ class PostingController extends Controller
         // Идентификатор для загрузки фото
         $video_id = intval($step1['video_id']);
 
-        $video_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path']);
+        $video_real_path = realpath('/backend/storage/app/files-store/'.$file['path']);
         $curl_file = curl_file_create($video_real_path,'video/mp4',$post['comment'].' Fun Gifs.mp4');
 
         // Предполагается, что картинка располагается в каталоге со скриптом
@@ -925,7 +937,7 @@ class PostingController extends Controller
         // Идентификатор для загрузки фото
         $photo_id = $step1['photo_ids'][0];
 
-        $img_real_path = realpath('/var/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path']);
+        $img_real_path = realpath('/backend/storage/app/files-store/'.$file['path']);
         $extension = explode('.',$file['path']);
         $extension = end($extension);
         $curl_file = curl_file_create($img_real_path,'image/jpeg',$post['comment'].'.'.$extension);
