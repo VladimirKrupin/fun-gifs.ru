@@ -205,7 +205,7 @@ class PostingController extends Controller
         $date = explode('-',date('Y-m-d'));
         $month = $this->getMonthNameByDate(date('Y-m-d'));
         $this->group_description = "GIFKAWOOD $month $date[0]";
-        $this->setKeyWords("$this->group_description | Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики");
+        $this->setKeyWords("$this->group_description | Лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         $this->setFbToken(env('FB_ACCESS_TOKEN'));
         $this->setFbGroupId(env('FB_GROUP_ID'));
