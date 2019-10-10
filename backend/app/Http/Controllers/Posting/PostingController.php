@@ -204,8 +204,8 @@ class PostingController extends Controller
 
         $date = explode('-',date('Y-m-d'));
         $month = $this->getMonthNameByDate(date('Y-m-d'));
-        $this->group_description = "GIFKAWOOD $month $date[0]";
-        $this->setKeyWords("$this->group_description | Лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
+        $this->group_description = "GIFKAWOOD | $month $date[0]";
+        $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         $this->setFbToken(env('FB_ACCESS_TOKEN'));
         $this->setFbGroupId(env('FB_GROUP_ID'));
@@ -812,7 +812,7 @@ class PostingController extends Controller
         // загрузка видео
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags_video = "$this->group_description | смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
+        $hashtags_video = "$this->group_description смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
         $key_words = 'Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль 2019 интересно смех веселая 2018';
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
