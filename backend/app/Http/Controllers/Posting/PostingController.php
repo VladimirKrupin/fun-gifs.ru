@@ -35,6 +35,7 @@ class PostingController extends Controller
 
     private $key_words;
     private $hash_tags;
+    public $group_description;
 
     /**
      * @return mixed
@@ -201,7 +202,10 @@ class PostingController extends Controller
         $this->setOkPublicKey(env('OK_PUBLIC_KEY'));//Публичный ключ приложения
         $this->setOkGroupId(env('OK_GROUP_ID'));
 
-        $this->setKeyWords(' Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики 2019');
+        $date = explode('-',date('Y-m-d'));
+        $month = $this->getMonthNameByDate($date);
+        $this->group_description = "GIFKAWOOD $month $date[0]";
+        $this->setKeyWords("$this->group_description | Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики");
 
         $this->setFbToken(env('FB_ACCESS_TOKEN'));
         $this->setFbGroupId(env('FB_GROUP_ID'));
@@ -211,6 +215,52 @@ class PostingController extends Controller
         $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
         $this->setHashTags($hashtags);
     }
+
+    /**
+     * @param $date
+     * @return string
+     * get Russian month name, by date from format Y-m-d.
+     */
+    public function getMonthNameByDate($date,$declension = false){
+        $explode_date = explode('-',$date);
+        if (isset($explode_date[1])){
+            $month_number = $explode_date[1];
+        }else{
+            return false;
+        }
+        $month_normal = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',];
+        $month_declension = ['Января','Февраля','Марта','Апреля','Майя','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря',];
+        $month = ($declension)?$month_declension:$month_normal;
+        switch ($month_number){
+            case '01':
+                return $month[0];
+            case '02':
+                return $month[1];
+            case '03':
+                return $month[2];
+            case '04':
+                return $month[3];
+            case '05':
+                return $month[4];
+            case '06':
+                return $month[5];
+            case '07':
+                return $month[6];
+            case '08':
+                return $month[7];
+            case '09':
+                return $month[8];
+            case '10':
+                return $month[9];
+            case '11':
+                return $month[10];
+            case '12':
+                return $month[11];
+            default:
+                return false;
+        }
+    }
+
 
     /**
      * @return mixed
@@ -762,12 +812,12 @@ class PostingController extends Controller
         // загрузка видео
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
-        $hashtags_video = " Fun-gifs.ru | смешные лучшие видео приколы 2019 гиф веселые ржачные крутые смешное угары топ веселое fun gif funny video gifs";
+        $hashtags_video = "$this->group_description | смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
         $key_words = 'Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль 2019 интересно смех веселая 2018';
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
-            'name' => $this->getKeyWords().' | Fun Gifs .mp4',
+            'name' => $this->getKeyWords(),
             'description' => $hashtags_video,
             'v' => $this->getVersion(),
         ]);
