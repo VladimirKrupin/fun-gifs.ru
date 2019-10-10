@@ -203,7 +203,7 @@ class PostingController extends Controller
         $this->setOkGroupId(env('OK_GROUP_ID'));
 
         $date = explode('-',date('Y-m-d'));
-        $month = $this->getMonthNameByDate($date);
+        $month = $this->getMonthNameByDate(date('Y-m-d'));
         $this->group_description = "GIFKAWOOD $month $date[0]";
         $this->setKeyWords("$this->group_description | Лучшие видео приколы смешные свежие подборка новинки самые топ смотреть интересно смех веселая животные котики");
 
