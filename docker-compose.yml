@@ -19,6 +19,7 @@ services:
       dockerfile: Docker/php_dockerfile
     volumes:
     - ./backend:/backend
+    - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     depends_on:
     - docker_mysql
     restart: always
