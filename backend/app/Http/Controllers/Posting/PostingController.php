@@ -321,9 +321,6 @@ class PostingController extends Controller
                 Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
         }else{
-            $theme = 'Предупреждение: закончились посты';
-            Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-            Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
         }
 
     }
