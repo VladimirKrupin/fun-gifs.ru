@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Posting;
+use App\Http\Exceptions\PostingException;
 use App\Http\Models\Post\File;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
@@ -332,24 +333,23 @@ class PostingController extends Controller
                 ->with('files')
                 ->first();
         }
+        $posting_status = '';
 
         if ($post) {
             $post = $post->toArray();
-            var_dump($post);
+            $posting_status .= $post."\r\n";
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
-                var_dump('Error posting VK');
-                var_dump($status_vk);
                 Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
-                die;
+                $posting_status .= "Error posting VK\r\n".$status_vk."\r\n";
             }else{
-                var_dump('VK posting done');
+                $posting_status .= "VK posting done\r\n";
             }
             $status_ok = $this->postingOk($post);
             if (!$status_ok){
-                var_dump('Error posting OK');
+                $posting_status .= "Error posting OK\r\n";
             }else{
-                var_dump('Ok');
+                $posting_status .= "Ok posting done\r\n";
             }
 //            $this->postingFb($post);
 //            var_dump('Fb');
@@ -375,21 +375,29 @@ class PostingController extends Controller
                 $theme = 'Предупреждение: только что был опубликован последний пост';
                 Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
+
+            $posting_status .= ($theme)?$theme."\r\n":'';
         }else{
+            $posting_status .= 'Пост не найден';
         }
+
+        return $posting_status;
 
     }
 
     public function postingPost(Request $request){
-        var_dump($request->all());
+        $post = $request->input('item');
+        $result = $this->wallAllPosting($post['id']);
+        return response()->json([
+            'status' => 'ok',
+            'data' => ['message' =>
+                [$result]
+            ]
+        ]);
     }
 
     public function removePost(Request $request){
         $post = $request->input('item');
-        return response()->json([
-            'status' => 'error',
-            'data' => ['errors' =>['ошибка']]
-        ]);
         if ($request->input('item')){
             try{
                 Post::where('id',$post['id'])->delete();

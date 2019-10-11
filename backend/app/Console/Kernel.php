@@ -42,7 +42,8 @@ class Kernel extends ConsoleKernel
         foreach ($times as $time){
             $schedule->call(function()
             {
-                (new PostingController())->wallAllPosting();
+                $result = (new PostingController())->wallAllPosting();
+                var_dump($result);
             })->dailyAt($time)->timezone('Europe/Moscow');
         }
 

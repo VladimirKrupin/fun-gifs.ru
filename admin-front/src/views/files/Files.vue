@@ -225,6 +225,7 @@
               this.$refs.files.value = '';
               this.disabled = false;
               this.loader = false;
+              this.$store.dispatch('posting/setPosts');
             }
           })
             .catch(e => {
@@ -266,6 +267,7 @@
           }
         },
         closePopup(){
+          console.log(123);
           this.modal = {
             show: false,
               type: false,
@@ -289,14 +291,17 @@
             .then(response => {
               if (response.data.status === 'error'){
                 this.errors = response.data.data.errors;
+                this.closePopup();
                 return false;
               }else if(response.data.status === 'ok'){
                 this.success = response.data.data.message[0];
                 this.$store.dispatch('posting/setPosts');
+                this.closePopup();
               }
             })
             .catch(e => {
               console.log(e);
+              this.closePopup();
             });
         },
         postingPost(item){
@@ -315,14 +320,17 @@
             .then(response => {
               if (response.data.status === 'error'){
                 this.errors = response.data.data.errors;
+                this.closePopup();
                 return false;
               }else if(response.data.status === 'ok'){
                 this.success = response.data.data.message[0];
                 this.$store.dispatch('posting/setPosts');
+                this.closePopup();
               }
             })
             .catch(e => {
               console.log(e);
+              this.closePopup();
             });
         }
       }
