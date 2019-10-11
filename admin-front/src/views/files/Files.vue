@@ -71,8 +71,7 @@
               <th aria-colindex="1" class="text-center">Номер</th>
               <th aria-colindex="2" class="text-center">Комментарий</th>
               <th aria-colindex="3" class="text-center">Загружено</th>
-              <th aria-colindex="4" class="text-right">Видео</th>
-              <th aria-colindex="5" class="text-right">Действия</th>
+              <th aria-colindex="4" class="text-right">Действия</th>
             </tr>
             </thead><!---->
             <tbody class=""><!---->
@@ -81,16 +80,18 @@
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
               <td aria-colindex="4" class="text-right">
-                <video width="300" height="200" controls>
-                  <source :src="'http://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
-                  Your browser does not support the video tag.
-                </video>
-              </td>
-              <td aria-colindex="5" class="text-right">
                 <div class="cell-posting">
                   <div class="remove-post" v-on:click="removePost(item.id)">delete</div>
                   <div class="posting-post" v-on:click="postingPost(item.id)">post</div>
                 </div>
+              </td>
+            </tr>
+            <tr v-for="(item, index) in posts" :key="index+1000" :aria-rowindex="index">
+              <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
+                <video width="300" height="200" controls>
+                  <source :src="'http://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
+                  Your browser does not support the video tag.
+                </video>
               </td>
             </tr>
             </tbody>
@@ -297,7 +298,7 @@
   }
   .cell-posting {
     position: relative;
-    height: 200px;
+    height: 100px;
   }
   .remove-post {
     position: absolute;
@@ -309,7 +310,7 @@
   .posting-post {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 5px;
     background: #15c90c;
     color: white;
     border-radius: 10px;
@@ -325,5 +326,8 @@
     width: 100%;
     height: 100vh;
     z-index: 10000;
+  }
+  .main .container-fluid {
+    padding: 0 10px;
   }
 </style>
