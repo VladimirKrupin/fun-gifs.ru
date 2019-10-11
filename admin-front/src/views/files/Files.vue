@@ -70,14 +70,28 @@
             <tr>
               <th aria-colindex="1" class="text-center">Номер</th>
               <th aria-colindex="2" class="text-center">Комментарий</th>
-              <th aria-colindex="3" class="text-right">Загружено</th>
+              <th aria-colindex="3" class="text-center">Загружено</th>
+              <th aria-colindex="4" class="text-right">Видео</th>
+              <th aria-colindex="5" class="text-right">Действия</th>
             </tr>
             </thead><!---->
             <tbody class=""><!---->
-            <tr v-for="(item, index) in posts" :key="index" :aria-rowindex="index" class="">
+            <tr v-for="(item, index) in posts" :key="index" :aria-rowindex="index">
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
+              <td aria-colindex="4" class="text-right">
+                <video width="300" height="200" controls>
+                  <source :src="'http://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
+                  Your browser does not support the video tag.
+                </video>
+              </td>
+              <td aria-colindex="5" class="text-right">
+                <div class="cell-posting">
+                  <div class="remove-post" v-on:click="removePost(item.id)">delete</div>
+                  <div class="posting-post" v-on:click="postingPost(item.id)">post</div>
+                </div>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -93,6 +107,30 @@
       </b-row>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal-wrapper" style="display: none">
+      <div class="modal mt-5" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Предупреждение</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Вы уверены?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -196,6 +234,15 @@
         clearTextarea(){
           this.$refs.emoji.clear()
         },
+        getFileType(item){
+          let str = item.files[0].path;
+          return 'video/' + str.slice(-(str.length - str.indexOf('.'))+1,str.length);
+        },
+        removePost(){
+        },
+        postingPost(){
+
+        }
       }
     }
 </script>
@@ -247,5 +294,36 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+  .cell-posting {
+    position: relative;
+    height: 200px;
+  }
+  .remove-post {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    color: red;
+    text-decoration: underline;
+  }
+  .posting-post {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    background: #15c90c;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+  }
+
+  .modal-wrapper {
+    background: rgba(0,0,0,.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
   }
 </style>
