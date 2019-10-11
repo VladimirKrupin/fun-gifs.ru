@@ -74,8 +74,8 @@
               <th aria-colindex="4" class="text-right">Действия</th>
             </tr>
             </thead><!---->
-            <tbody class=""><!---->
-            <tr v-for="(item, index) in posts" :key="index" :aria-rowindex="index">
+            <tbody v-for="(item, index) in posts" :key="index+1000" :aria-rowindex="index">
+            <tr>
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
@@ -86,7 +86,7 @@
                 </div>
               </td>
             </tr>
-            <tr v-for="(item, index) in posts" :key="index+1000" :aria-rowindex="index">
+            <tr>
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 <video width="300" height="200" controls>
                   <source :src="'http://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
