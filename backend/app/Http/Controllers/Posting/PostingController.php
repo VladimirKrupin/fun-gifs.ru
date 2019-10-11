@@ -778,10 +778,6 @@ class PostingController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $postResult = curl_exec($ch);
 
-        var_dump($postResult);
-        var_dump(curl_errno($ch));
-        var_dump(curl_error($ch));
-        var_dump($post_params);
         if (curl_errno($ch)) {
             print curl_error($ch);
         }

@@ -290,13 +290,13 @@
           axios(options)
             .then(response => {
               if (response.data.status === 'error'){
-                this.errors = response.data.data.errors;
                 this.closePopup();
+                this.errors = response.data.data.errors;
                 return false;
               }else if(response.data.status === 'ok'){
+                this.closePopup();
                 this.success = response.data.data.message[0];
                 this.$store.dispatch('posting/setPosts');
-                this.closePopup();
               }
             })
             .catch(e => {
@@ -319,13 +319,13 @@
           axios(options)
             .then(response => {
               if (response.data.status === 'error'){
-                this.errors = response.data.data.errors;
                 this.closePopup();
+                this.errors = response.data.data.errors;
                 return false;
               }else if(response.data.status === 'ok'){
+                this.closePopup();
                 this.success = response.data.data.message[0];
                 this.$store.dispatch('posting/setPosts');
-                this.closePopup();
               }
             })
             .catch(e => {
