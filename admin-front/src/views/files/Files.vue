@@ -74,7 +74,7 @@
               <th aria-colindex="4" class="text-right">Действия</th>
             </tr>
             </thead><!---->
-            <tbody v-for="(item, index) in posts" :key="index+1000" :aria-rowindex="index">
+            <tbody v-for="(item, index) in posts" :key="index" :aria-rowindex="index">
             <tr>
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
@@ -116,7 +116,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Предупреждение</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" v-on:click="closePopup()" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -124,11 +124,11 @@
               <p>{{modal.text}}</p>
             </div>
             <div v-if="modal.type === 'delete'" class="modal-footer">
-              <button type="button" class="btn btn-secondary" v-on:click="removePost(modal.postId)">Delete</button>
+              <button type="button" class="btn btn-secondary" v-on:click="removePost(modal.item)">Delete</button>
               <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
             <div v-if="modal.type === 'post'" class="modal-footer">
-              <button type="button" class="btn btn-secondary" v-on:click="postingPost(modal.postId)">Posting</button>
+              <button type="button" class="btn btn-secondary" v-on:click="postingPost(modal.item)">Posting</button>
               <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
           </div>
@@ -280,7 +280,7 @@
               'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
             },
             data: {
-              item: item,
+              item
             },
 
             url: 'http://api.fun-gifs.ru/api/removePost',
@@ -291,7 +291,7 @@
                 this.errors = response.data.data.errors;
                 return false;
               }else if(response.data.status === 'ok'){
-
+                this.success = response.data.data.message[0];
               }
             })
             .catch(e => {
@@ -299,13 +299,14 @@
             });
         },
         postingPost(item){
+          console.log(item);
           const options = {
             method: 'POST',
             headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
             },
             data: {
-              item: item,
+              item
             },
             url: 'http://api.fun-gifs.ru/api/postingPost',
           };

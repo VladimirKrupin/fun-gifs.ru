@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Posting;
+use App\Http\Models\Post\File;
 use App\Http\Models\Post\Post;
 use App\Http\Controllers\Controller;
 use App\Mail\Posting\PostingEndedPosts;
@@ -384,7 +385,25 @@ class PostingController extends Controller
     }
 
     public function removePost(Request $request){
-        var_dump($request->all());
+        $post = $request->input('item');
+        $error = null;
+        if ($request->input('item')){
+            try{
+                Post::where('id',$post['id'])->delete();
+                File::where('post_id',$post['id'])->delete();
+                return response()->json([
+                    'status' => 'ok',
+                    'data' => ['message' =>
+                        ["Пост удален!"]
+                    ]
+                ]);
+            }catch (\Exception $exception){
+                return response()->json([
+                    'status' => 'error',
+                    'data' => ['errors' =>[$exception->getMessage()]]
+                ]);
+            }
+        }
     }
 
     public function updatePostDone($post){

@@ -124,6 +124,9 @@ class FilesController extends Controller
         $posts = Post::where('status',0)
             ->with('files')
             ->get();
+        foreach ($posts as $post){
+            $post->processed = false;
+        }
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',
