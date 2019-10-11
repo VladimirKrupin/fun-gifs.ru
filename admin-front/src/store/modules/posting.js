@@ -17,6 +17,10 @@ const mutations = {
   setPostsError(state, payload) {
     state.postsError = payload.postsError;
   },
+  setPostsProcessed(state, payload) {
+    console.log(payload);
+    state.posts[payload.id].processed = !state.posts[payload.id].processed;
+  },
 };
 
 const actions = {
@@ -43,7 +47,10 @@ const actions = {
           console.log(e);
         });
     }
-  }
+  },
+  setPostsProcessed(state, payload) {
+    context.commit('setPostsError', payload);
+  },
 };
 
 export default {

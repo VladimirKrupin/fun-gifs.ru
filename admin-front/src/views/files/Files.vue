@@ -75,7 +75,12 @@
             </tr>
             </thead><!---->
             <tbody v-for="(item, index) in posts" :key="index" :aria-rowindex="index">
-            <tr>
+            <tr v-if="posts.processed">
+              <td colspan="4" aria-colindex="1">
+                <div class="loader loader-post-process"></div>
+              </td>
+            </tr>
+            <tr v-if="!posts.processed">
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
@@ -274,6 +279,7 @@
           }
         },
         removePost(item){
+          this.$store.dispatch('posting/setPosts',item);
           const options = {
             method: 'POST',
             headers: {
@@ -369,6 +375,11 @@
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
+  }
+
+  .loader-post-process {
+    width: 100px;
+    height: 100px;
   }
 
   @keyframes spin {
