@@ -380,11 +380,11 @@ class PostingController extends Controller
     }
 
     public function postingPost(Request $request){
-        var_dump($request->input('item'));
+        var_dump($request->all());
     }
 
     public function removePost(Request $request){
-        var_dump($request->input('item'));
+        var_dump($request->all());
     }
 
     public function updatePostDone($post){

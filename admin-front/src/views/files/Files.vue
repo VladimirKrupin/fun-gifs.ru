@@ -277,6 +277,7 @@
           const options = {
             method: 'POST',
             headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
             },
             data: {
               item: item,
@@ -301,11 +302,11 @@
           const options = {
             method: 'POST',
             headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
             },
             data: {
               item: item,
             },
-
             url: 'http://api.fun-gifs.ru/api/postingPost',
           };
           axios(options)

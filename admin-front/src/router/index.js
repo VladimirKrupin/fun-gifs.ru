@@ -44,7 +44,7 @@ export default new Router({
       redirect: '/Files',
       component: MainPage,
       meta: {
-        requiresAuth: false
+        requiresAuth: true
       },
     },
     {
