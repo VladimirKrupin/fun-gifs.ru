@@ -386,11 +386,14 @@ class PostingController extends Controller
 
     public function removePost(Request $request){
         $post = $request->input('item');
-        $error = null;
+        return response()->json([
+            'status' => 'error',
+            'data' => ['errors' =>['ошибка']]
+        ]);
         if ($request->input('item')){
             try{
-//                Post::where('id',$post['id'])->delete();
-//                File::where('post_id',$post['id'])->delete();
+                Post::where('id',$post['id'])->delete();
+                File::where('post_id',$post['id'])->delete();
                 return response()->json([
                     'status' => 'ok',
                     'data' => ['message' =>

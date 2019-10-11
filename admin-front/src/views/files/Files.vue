@@ -75,12 +75,7 @@
             </tr>
             </thead><!---->
             <tbody v-for="(item, index) in posts" :key="index" :aria-rowindex="index">
-            <tr v-if="posts.processed">
-              <td colspan="4" aria-colindex="1">
-                <div class="loader loader-post-process"></div>
-              </td>
-            </tr>
-            <tr v-if="!posts.processed">
+            <tr>
               <td aria-colindex="1" class="text-center">{{ index+1 }}</td>
               <td aria-colindex="2" class="text-center">{{ item.comment }}</td>
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
@@ -91,7 +86,7 @@
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr >
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 <video width="300" height="200" controls>
                   <source :src="'http://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
@@ -279,7 +274,6 @@
           }
         },
         removePost(item){
-          this.$store.dispatch('posting/setPosts',item);
           const options = {
             method: 'POST',
             headers: {
@@ -298,6 +292,7 @@
                 return false;
               }else if(response.data.status === 'ok'){
                 this.success = response.data.data.message[0];
+                this.$store.dispatch('posting/setPosts');
               }
             })
             .catch(e => {
@@ -322,7 +317,8 @@
                 this.errors = response.data.data.errors;
                 return false;
               }else if(response.data.status === 'ok'){
-
+                this.success = response.data.data.message[0];
+                this.$store.dispatch('posting/setPosts');
               }
             })
             .catch(e => {
