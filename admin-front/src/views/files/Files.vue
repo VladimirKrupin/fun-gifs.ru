@@ -220,12 +220,12 @@
             }else if(response.data.status === 'message'){
               return false;
             }else if(response.data.status === 'ok'){
+              this.$store.dispatch('posting/setPosts');
               this.userFiles = '';
               this.success = response.data.data.message[0];
               this.$refs.files.value = '';
               this.disabled = false;
               this.loader = false;
-              this.$store.dispatch('posting/setPosts');
             }
           })
             .catch(e => {
@@ -300,8 +300,8 @@
               }
             })
             .catch(e => {
-              console.log(e);
               this.closePopup();
+              console.log(e);
             });
         },
         postingPost(item){
@@ -329,8 +329,8 @@
               }
             })
             .catch(e => {
-              console.log(e);
               this.closePopup();
+              console.log(e);
             });
         }
       }
@@ -338,6 +338,9 @@
 </script>
 
 <style>
+  .alert-success {
+    white-space: pre-line;
+  }
   .emoji-textarea {
     width: 250px;
   }
