@@ -10,6 +10,7 @@ use \getjump\Vk\Core as Vk;
 use App;
 use getjump\Vk\Core;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 
@@ -320,14 +321,17 @@ class PostingController extends Controller
         ]);
     }
 
-    public function wallAllPosting(){
-        $post = Post::where('status', 0)
-            ->with('files')
-            ->first();
-//        $post = Post::where('id', 167)
-//            ->with('files')
-//            ->first();
-//
+    public function wallAllPosting($post_id = null){
+        if (is_null($post_id)){
+            $post = Post::where('status', 0)
+                ->with('files')
+                ->first();
+        }else{
+            $post = Post::where('id', $post_id)
+                ->with('files')
+                ->first();
+        }
+
         if ($post) {
             $post = $post->toArray();
             var_dump($post);
@@ -373,6 +377,14 @@ class PostingController extends Controller
         }else{
         }
 
+    }
+
+    public function postingPost(Request $request){
+        var_dump($request->input('item'));
+    }
+
+    public function removePost(Request $request){
+        var_dump($request->input('item'));
     }
 
     public function updatePostDone($post){

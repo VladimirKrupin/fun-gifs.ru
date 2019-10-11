@@ -81,8 +81,8 @@
               <td aria-colindex="3" class="text-right">{{ item.created_at }}</td>
               <td aria-colindex="4" class="text-right">
                 <div class="cell-posting">
-                  <div class="remove-post" v-on:click="removePost(item.id)">delete</div>
-                  <div class="posting-post" v-on:click="postingPost(item.id)">post</div>
+                  <div class="remove-post" v-on:click="modalRemovePost(item)">delete</div>
+                  <div class="posting-post" v-on:click="modalPostingPost(item)">post</div>
                 </div>
               </td>
             </tr>
@@ -110,8 +110,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal-wrapper" style="display: none">
-      <div class="modal mt-5" tabindex="-1" role="dialog">
+    <div class="modal-wrapper" v-if="modal.show">
+      <div class="modal mt-5" v-if="modal.show" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -121,11 +121,15 @@
               </button>
             </div>
             <div class="modal-body">
-              <p>Вы уверены?</p>
+              <p>{{modal.text}}</p>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div v-if="modal.type === 'delete'" class="modal-footer">
+              <button type="button" class="btn btn-secondary" v-on:click="removePost(modal.postId)">Delete</button>
+              <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
+            </div>
+            <div v-if="modal.type === 'post'" class="modal-footer">
+              <button type="button" class="btn btn-secondary" v-on:click="postingPost(modal.postId)">Posting</button>
+              <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -153,6 +157,12 @@
           uploadFiles: [],
           test: {},
           test2: [],
+          modal:{
+            show: false,
+            type: false,
+            text: '',
+            postId: '',
+          }
         };
       },
       components: {
@@ -239,10 +249,77 @@
           let str = item.files[0].path;
           return 'video/' + str.slice(-(str.length - str.indexOf('.'))+1,str.length);
         },
-        removePost(){
+        modalRemovePost(item){
+          this.modal = {
+            show: true,
+            type: 'delete',
+            text: 'Уверены что хотите удалить пост?',
+            item: item,
+          }
         },
-        postingPost(){
+        modalPostingPost(item){
+          this.modal = {
+            show: true,
+            type: 'post',
+            text: 'Хотите запостить сейчас?',
+            item: item,
+          }
+        },
+        closePopup(){
+          this.modal = {
+            show: false,
+              type: false,
+              text: '',
+              postId: '',
+          }
+        },
+        removePost(item){
+          const options = {
+            method: 'POST',
+            headers: {
+            },
+            data: {
+              item: item,
+            },
 
+            url: 'http://api.fun-gifs.ru/api/removePost',
+          };
+          axios(options)
+            .then(response => {
+              if (response.data.status === 'error'){
+                this.errors = response.data.data.errors;
+                return false;
+              }else if(response.data.status === 'ok'){
+
+              }
+            })
+            .catch(e => {
+              console.log(e);
+            });
+        },
+        postingPost(item){
+          const options = {
+            method: 'POST',
+            headers: {
+            },
+            data: {
+              item: item,
+            },
+
+            url: 'http://api.fun-gifs.ru/api/postingPost',
+          };
+          axios(options)
+            .then(response => {
+              if (response.data.status === 'error'){
+                this.errors = response.data.data.errors;
+                return false;
+              }else if(response.data.status === 'ok'){
+
+              }
+            })
+            .catch(e => {
+              console.log(e);
+            });
         }
       }
     }
@@ -307,6 +384,9 @@
     color: red;
     text-decoration: underline;
   }
+  .remove-post:hover {
+    cursor: pointer;
+  }
   .posting-post {
     position: absolute;
     right: 0;
@@ -316,6 +396,10 @@
     border-radius: 10px;
     padding: 10px;
     box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+    cursor: pointer;
+  }
+  .posting-post:hover {
+    cursor: pointer;
   }
 
   .modal-wrapper {
@@ -329,5 +413,8 @@
   }
   .main .container-fluid {
     padding: 0 10px;
+  }
+  .modal {
+    display: block;
   }
 </style>
