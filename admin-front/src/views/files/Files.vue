@@ -128,7 +128,7 @@
               <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
             <div v-if="modal.type === 'post'" class="modal-footer">
-              <button type="button" class="btn btn-secondary" v-on:click="postingPost(modal.item)">Posting</button>
+              <button type="button" class="btn btn-secondary" :disabled="disabledModal" v-on:click="postingPost(modal.item)">Posting</button>
               <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
             <div v-if="loaderModal" class="loader"></div>
