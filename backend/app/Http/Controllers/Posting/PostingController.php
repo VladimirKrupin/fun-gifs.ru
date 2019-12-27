@@ -871,7 +871,7 @@ class PostingController extends Controller
         $link = $file_upload_link->response->upload_url;
 
         $post_params = [
-            'video_file' => new CURLFile('/backend/storage/app/files-store/'.$file['path'])
+            'video_file' => new CURLFile('/var/www/www-root/data/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path'])
         ];
 
         $response = $this->getCurlResponse($link, $post_params);
