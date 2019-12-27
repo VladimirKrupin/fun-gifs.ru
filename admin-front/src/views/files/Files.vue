@@ -131,6 +131,7 @@
               <button type="button" class="btn btn-secondary" v-on:click="postingPost(modal.item)">Posting</button>
               <button type="button" class="btn btn-primary" v-on:click="closePopup()" data-dismiss="modal">Close</button>
             </div>
+            <div v-if="loaderModal" class="loader"></div>
           </div>
         </div>
       </div>
@@ -152,7 +153,9 @@
           success: '',
           comment: '',
           disabled: false,
+          disabledModal: false,
           loader: false,
+          loaderModal: false,
           userFiles: [],
           uploadFiles: [],
           test: {},
@@ -267,7 +270,6 @@
           }
         },
         closePopup(){
-          console.log(123);
           this.modal = {
             show: false,
               type: false,
@@ -305,7 +307,8 @@
             });
         },
         postingPost(item){
-          console.log(item);
+          this.disabledModal = true;
+          this.loaderModal = true;
           const options = {
             method: 'POST',
             headers: {
@@ -321,15 +324,21 @@
               if (response.data.status === 'error'){
                 this.closePopup();
                 this.errors = response.data.data.errors;
+                this.disabledModal = false;
+                this.loaderModal = false;
                 return false;
               }else if(response.data.status === 'ok'){
                 this.closePopup();
                 this.success = response.data.data.message[0];
                 this.$store.dispatch('posting/setPosts');
+                this.disabledModal = false;
+                this.loaderModal = false;
               }
             })
             .catch(e => {
               this.closePopup();
+              this.disabledModal = false;
+              this.loaderModal = false;
               console.log(e);
             });
         }
