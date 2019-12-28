@@ -25,7 +25,7 @@ const actions = {
     //     headers: {
     //       'Authorization': 'Bearer ' + localStorage.getItem('access_token')
     //     },
-    //     url: 'https://api.fun-gifs.ru/api/getUserData',
+    //     url: 'http://api.gifkawood.ru/api/getUserData',
     //   };
     //   axios(options)
     //     .then(response => {

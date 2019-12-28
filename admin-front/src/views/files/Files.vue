@@ -206,7 +206,7 @@
           this.disabled = true;
           this.loader = true;
 
-          axios.post( 'http://api.fun-gifs.ru/api/putFiles',
+          axios.post( 'http://api.gifkawood.ru/api/putFiles',
             formData,
             {
               headers: {
@@ -287,7 +287,7 @@
               item
             },
 
-            url: 'http://api.fun-gifs.ru/api/removePost',
+            url: 'http://api.gifkawood.ru/api/removePost',
           };
           axios(options)
             .then(response => {
@@ -317,7 +317,7 @@
             data: {
               item
             },
-            url: 'http://api.fun-gifs.ru/api/postingPost',
+            url: 'http://api.gifkawood.ru/api/postingPost',
           };
           axios(options)
             .then(response => {

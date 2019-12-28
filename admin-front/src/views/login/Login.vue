@@ -79,7 +79,7 @@
               password: this.userData.password,
             },
 
-            url: 'http://api.fun-gifs.ru/api/login',
+            url: 'http://api.gifkawood.ru/api/login',
           };
           axios(options)
             .then(response => {
