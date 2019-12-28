@@ -15,4 +15,8 @@ class MainPageController extends Controller
     {
         return view('front.demo');
     }
+    public function siteMap()
+    {
+
+    }
 }
