@@ -33,7 +33,7 @@
                 @foreach ($posts as $post)
                     <div class="video-flex d-flex flex-fill">
                         <div class="video-container mb-5">
-                            <h4 class="h4">{{$post['comment']}}</h4>
+                            <a href="/post/{{$post['id']}}"><h4 class="h4">{{$post['comment']}}</h4></a>
                             <video width="300" height="200" controls="controls">
                                 <source src="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}" type="video/mp4">
                                 Извините, ваш браузер не поддерживает встроенные видео,

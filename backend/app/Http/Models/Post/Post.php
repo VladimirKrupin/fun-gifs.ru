@@ -3,6 +3,7 @@
 namespace App\Http\Models\Post;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -12,9 +13,10 @@ class Post extends Model
      *
      * @var array
      */
+    protected $appends = ['link'];
 
     protected $fillable = [
-        'user_id', 'file_id', 'comment', 'status'
+        'user_id', 'file_id', 'comment', 'status','slug'
     ];
 
 
@@ -23,5 +25,17 @@ class Post extends Model
         return $this->hasMany('App\Http\Models\Post\File');
     }
 
-    
+//    public function getSlugAttribute()
+//    {
+////        var_dump(Str::slug($this->attributes['comment'], '-'));
+////        $this->attributes['slug'] = Str::slug($this->attributes['comment'], '-');
+//        return Str::slug($this->attributes['comment'], '-');
+//    }
+
+    public function getLinkAttribute()
+    {
+        return route('front.post', $this->slug);
+    }
+
+
 }

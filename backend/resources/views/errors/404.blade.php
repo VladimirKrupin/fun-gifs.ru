@@ -1,5 +1,5 @@
 @extends('layouts.layout_index')
-@section('title', '404 страница не найдена')
+@section('title', 'ошибка 404 страница не найдена')
 @section('header_text', 'ошибка 404')
 @section('header_description', 'запрашиваемая страница не найдена')
 @section('content')

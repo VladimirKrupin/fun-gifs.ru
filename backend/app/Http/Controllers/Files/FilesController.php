@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Validator;
 
 /**
@@ -73,9 +74,21 @@ class FilesController extends Controller
             ]);
         }else{
             $user = Auth::user();
+
+            $slug = Str::slug($request->input('comment'), '-');
+            $isset_slug = Post::where('slug','LIKE', $slug."%")->orderBy('id','desc')->first();
+            $explode = explode('-',$isset_slug['slug']);
+            if (((integer) end($explode)) >= 1){
+                $explode[count($explode)-1] = ((integer) end($explode)) +1;
+                $res = implode('-',$explode);
+            }else{
+                $res = "$slug-1";
+            }
+
             $post = Post::create([
                 'user_id' => $user['id'],
                 'comment' => $request->input('comment'),
+                'slug' => $res,
                 'status' => 0,
             ]);
             if ($post){
