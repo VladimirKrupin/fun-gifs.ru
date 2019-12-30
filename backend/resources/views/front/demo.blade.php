@@ -72,7 +72,7 @@
         </div>
     </div>
 </nav>
-<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('./assets/img/bg2.jpg');">
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('/assets/img/bg2.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
@@ -1153,7 +1153,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="./assets/img/bg2.jpg" alt="First slide">
+                                    <img class="d-block w-100" src="/assets/img/bg2.jpg" alt="First slide">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h4>
                                             <i class="material-icons">location_on</i> Yellowstone National Park, United States
