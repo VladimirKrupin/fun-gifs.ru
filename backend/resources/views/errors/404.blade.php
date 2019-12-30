@@ -1,7 +1,11 @@
 @extends('layouts.layout_index')
 @section('title', 'ошибка 404 страница не найдена')
-@section('header_text', 'ошибка 404')
-@section('header_description', 'запрашиваемая страница не найдена')
+@section('header_text')
+<h1>ошибка 404</h1>
+@stop
+@section('header_description')
+<h3>запрашиваемая страница не найдена</h3>
+@stop
 @section('content')
     <div class="main main-raised" id="download">
         <div class="section section-basic">

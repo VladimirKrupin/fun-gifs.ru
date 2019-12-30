@@ -1,8 +1,12 @@
 @extends('layouts.layout_index')
-@section('title', ' GIFKAWOOD '.date('Y').' | скачать смотреть лучшие новинки гиф и видео приколы бесплатно. Download watch gifs and video jokes for free.')
+@section('title', env('SITE_NAME'). ' ' .date('Y').' | '. env('KEY_WORDS'))
 @section('description', 'лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики')
-@section('header_text', 'GIFKAWOOD')
-@section('header_description', 'Смотри и скачивай лучшие видосы и гифки')
+@section('header_text')
+<h1>GIFKAWOOD</h1>
+@stop
+@section('header_description')
+<h3>Смотри и скачивай лучшие видосы и гифки</h3>
+@stop
 @section('content')
     <div class="main main-raised" id="download">
         <div class="section section-basic">
@@ -29,21 +33,21 @@
                         </div>
                     </div>
                 </div>
-
-                @foreach ($posts as $post)
-                    <div class="video-flex d-flex flex-fill">
-                        <div class="video-container mb-5">
-                            <a href="/post/{{$post['id']}}"><h4 class="h4">{{$post['comment']}}</h4></a>
-                            <video width="300" height="200" controls="controls">
-                                <source src="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}" type="video/mp4">
-                                Извините, ваш браузер не поддерживает встроенные видео,
-                                но не волнуйтесь, вы можете <a href="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}">скачайте его</a>
-                                и смотреть его с вашим любимым видеоплеером!
-                            </video>
+                <div class="pt-4 col-sm-12 col-md-6">
+                    @foreach ($posts as $post)
+                        <div style="box-shadow: 1px 2px 5px rgba(0,0,0,.2);border-radius: 10px;padding: 10px;" class="mb-5 video-flex d-flex flex-fill">
+                            <div class="video-container mb-5">
+                                <a href="/post/{{$post['slug']}}"><h4 style="text-decoration: underline" class="h4 m-0"><span style="text-align: left">{{$post['comment']}}</span></h4></a>
+                                <video width="100%" height="100%" controls="controls">
+                                    <source src="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}" type="video/mp4">
+                                    Извините, ваш браузер не поддерживает встроенные видео,
+                                    но не волнуйтесь, вы можете <a href="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}">скачайте его</a>
+                                    и смотреть его с вашим любимым видеоплеером!
+                                </video>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

@@ -13,6 +13,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts">
+                        <i class="material-icons">list_alt</i> Список видео
+                    </a>
+                </li>
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Категории
@@ -48,8 +53,8 @@
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
                 <div class="brand">
-                    <h1>@yield('header_text')</h1>
-                    <h3>@yield('header_description')</h3>
+                    @yield('header_text')
+                    @yield('header_description')
                 </div>
             </div>
         </div>

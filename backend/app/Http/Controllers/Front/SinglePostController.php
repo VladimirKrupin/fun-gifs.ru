@@ -7,17 +7,9 @@ use Illuminate\Http\Request;
 
 class SinglePostController extends Controller
 {
-    public function index($id)
+    public function index($slug)
     {
-//        route('post.show', ['post' => 10500]);
-//        return view('front.post',['post'=>Post::where('status', 1)->with('files')->take(10)->orderBy('created_at', 'desc')->get()->toArray()]);
-        $post = Post::where('id',$id)->get()->toArray();
-        var_dump($post);
-
-//        return view('front.post',[
-//            'title' => $id,
-//
-//        ]);
+        $post = Post::where('slug',$slug)->with('files')->first()->toArray();
 
         return view('front.post', compact(['post']));
     }
