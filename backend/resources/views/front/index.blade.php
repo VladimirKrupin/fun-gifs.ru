@@ -15,7 +15,7 @@
                     <h2>Наши видео</h2>
                 </div>
                 <!--  buttons -->
-                <div id="buttons" class="cd-section">
+                <div id="buttons" class="cd-section mb-5 ">
                     <div class="title">
                         <h3>
                             <small> По категориям (в разработке...)</small>
@@ -33,7 +33,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-4 col-sm-12 col-md-6">
+                {{$posts->links()}}
+                <div class="pt-2 col-sm-12 col-md-6">
                     @foreach ($posts as $post)
                         <div style="box-shadow: 1px 2px 5px rgba(0,0,0,.2);border-radius: 10px;padding: 10px;" class="mb-5 video-flex d-flex flex-fill">
                             <div class="video-container mb-5">
@@ -48,6 +49,7 @@
                         </div>
                     @endforeach
                 </div>
+                {{$posts->links()}}
             </div>
         </div>
     </div>
