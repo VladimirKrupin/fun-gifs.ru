@@ -1,10 +1,10 @@
 <!--   Core JS Files   -->
-<script src="/assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="/assets/js/core/new-jquery.min.js" type="text/javascript"></script>
 <script src="/assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-<script src="/assets/js/plugins/moment.min.js"></script>
+<script src="/assets/js/plugins/new-moment.min.js"></script>
 <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-<script src="/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<script src="/assets/js/plugins/new-bootstrap-datetimepicker.js" type="text/javascript"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 <script src="/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!--  Google Maps Plugin    -->
