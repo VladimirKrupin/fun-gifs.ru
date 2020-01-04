@@ -2,6 +2,7 @@
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <meta name="yandex-verification" content="e98a489976c88bde" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>@yield('title')</title>
     {{--<meta name="description" content="лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики"/>--}}
