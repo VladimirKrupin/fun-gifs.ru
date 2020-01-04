@@ -9,6 +9,7 @@
         <div class="section section-basic">
             <div class="container p-0">
                 @foreach($posts as $post)
+                    @if(isset($post['files'][0]))
                     <div style="display: none;" itemscope itemtype="http://schema.org/VideoObject" >
                         <!--Указание типа объекта-->
                         <a itemprop="url" href="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}">
@@ -23,6 +24,7 @@
                                     <meta itemprop="height" content="120">
                                 </span>
                     </div>
+                    @endif
                     <a href="{{$post['link']}}">{{$post['link']}}</a><br>
                 @endforeach
             </div>
