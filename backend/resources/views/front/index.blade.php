@@ -45,6 +45,11 @@
                             <meta itemprop="duration" content="PT6M58S">
                             <meta itemprop="isFamilyFriendly" content="true">
                             <p>Дата загрузки:<span itemprop="uploadDate">{{$post['created_at']}}</span></p>
+                            <span itemprop="thumbnail" itemscope itemtype="{{env('APP_URL')}}/assets/img/video-preview.png">
+                                <img itemprop="contentUrl" src="https://www.mysite.com/images/preview/img1.jpg">
+                                <meta itemprop="width" content="250">
+                                <meta itemprop="height" content="120">
+                            </span>
                         </div>
                         <div style="box-shadow: 1px 2px 5px rgba(0,0,0,.2);border-radius: 10px;padding: 10px;" class="mb-5 video-flex d-flex flex-fill">
                             <div class="video-container mb-5">
