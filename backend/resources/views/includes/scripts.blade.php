@@ -28,7 +28,6 @@
     }
 
     function yandexGoal(counter,id) {
-        console.log(counter + ' - ' + id);
         ym(counter, 'reachGoal', id);
         return true;
     }
