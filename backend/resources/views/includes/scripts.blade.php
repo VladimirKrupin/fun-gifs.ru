@@ -28,7 +28,8 @@
     }
 
     function yandexGoal(counter,id) {
-        ym(64713739, 'reachGoal', 'HEADER_VK_LINK');
+        console.log(counter + ' - ' + id);
+        ym(counter, 'reachGoal', id);
         return true;
     }
 
