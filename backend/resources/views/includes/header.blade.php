@@ -40,10 +40,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <input type="button">
-                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');" class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
+                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');window.open('https://vk.com/fun_gifs_video_prikoly', '_blank'); " class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
                         <i class="fa fa-vk"></i>
-                        <!-- window.open('https://vk.com/fun_gifs_video_prikoly', '_blank'); -->
                     </a>
                 </li>
             </ul>
