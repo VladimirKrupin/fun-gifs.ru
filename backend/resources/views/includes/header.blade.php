@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="yandexGoal(56860381,'HEAD_DOWNLOAD');scrollToDownload();">
+                    <a class="nav-link" href="#" onclick="yandexGoal(56860381,'HEAD_DOWNLOAD');scrollToDownload();">
                         <i class="material-icons">cloud_download</i> Download
                     </a>
                 </li>
