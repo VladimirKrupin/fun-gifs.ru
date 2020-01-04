@@ -22,11 +22,9 @@
 
 
     function scrollToDownload() {
-        if ($('.section-download').length != 0) {
-            $("html, body").animate({
-                scrollTop: $('#download').offset().top
-            }, 200);
-        }
+        $("html, body").animate({
+            scrollTop: $('.download').offset().top
+        }, 200);
     }
 
 </script>

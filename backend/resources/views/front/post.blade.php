@@ -12,15 +12,15 @@
                     <a class="text-underline" href="/">назад</a>
                     <div class="video-flex d-flex flex-fill mt-3">
                         <div class="video-container mb-5">
-                            {{--<div style="display: none;" itemscope itemtype="http://schema.org/VideoObject" >--}}
-                                {{--<!--Указание типа объекта-->--}}
-                                {{--<a itemprop="url" href="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}">--}}
-                                    {{--<h1 itemprop="name">{{$post['comment']}}</h1></a>--}}
-                                {{--<p itemprop="description">{{env('SITE_NAME').' '.env('KEY_WORDS_POST').' '.$post['comment'] . ' ' .env('KEY_WORDS_POST_END')}}</p>--}}
-                                {{--<meta itemprop="duration" content="PT6M58S">--}}
-                                {{--<meta itemprop="isFamilyFriendly" content="true">--}}
-                                {{--<p>Дата загрузки:<span itemprop="uploadDate">{{$post['created_at']}}</span></p>--}}
-                            {{--</div>--}}
+                            <div style="display: none;" itemscope itemtype="http://schema.org/VideoObject" >
+                                <!--Указание типа объекта-->
+                                <a itemprop="url" href="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}">
+                                    <h1 itemprop="name">{{$post['comment']}} {{env('VK_NAME')}} {{env('KEY_WORDS_POST')}} {{env('KEY_WORDS_VK')}}</h1></a>
+                                <p itemprop="description">{{env('SITE_URL').' '.env('KEY_WORDS_POST').' '.$post['comment'] . ' ' .env('KEY_WORDS_POST_END')}}</p>
+                                <meta itemprop="duration" content="PT6M58S">
+                                <meta itemprop="isFamilyFriendly" content="true">
+                                <p>Дата загрузки:<span itemprop="uploadDate">{{$post['created_at']}}</span></p>
+                            </div>
                                 <video width="100%" height="100%" controls="controls">
                                     <source src="{{env('FILE_STORAGE')}}{{$post['files'][0]['path']}}" type="video/mp4">
                                     Извините, ваш браузер не поддерживает встроенные видео,
