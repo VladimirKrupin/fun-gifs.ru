@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li class="dropdown nav-item">
-                    <a onclick="yandexGoal(56860381,'HEAD_DROPDOWN');" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <a onclick="yandexGoal(56860381,'HEAD_DROPDOWN');" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Категории
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');window.open('https://vk.com/fun_gifs_video_prikoly', '_blank'); " class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
+                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');" target="_blank" href="https://vk.com/fun_gifs_video_prikoly" class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
                         <i class="fa fa-vk"></i>
                     </a>
                 </li>
