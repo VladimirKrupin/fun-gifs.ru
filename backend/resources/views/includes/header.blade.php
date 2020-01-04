@@ -14,12 +14,12 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/posts">
+                    <a onclick="yandexGoal(56860381,'HEAD_POSTS');" class="nav-link" href="/posts">
                         <i class="material-icons">list_alt</i> Список видео
                     </a>
                 </li>
                 <li class="dropdown nav-item">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <a onclick="yandexGoal(56860381,'HEAD_DROPDOWN');" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Категории
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
@@ -35,7 +35,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                    <a class="nav-link" onclick="yandexGoal(56860381,'HEAD_DOWNLOAD');scrollToDownload();">
                         <i class="material-icons">cloud_download</i> Download
                     </a>
                 </li>

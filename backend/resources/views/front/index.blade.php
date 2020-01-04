@@ -6,14 +6,14 @@
 @stop
 @section('header_description')
 <h3>Смотри и скачивай лучшие видосы и гифки</h3>
-<h4>Подпишись на группу VK <a target="_blank" class="text-white" style="text-decoration: underline;" href="{{env('VK_LINK')}}">GIFKAWOOD</a></h4>
+<h4>Подпишись на группу VK <a class="text-white" style="text-decoration: underline;" onclick="yandexGoal(56860381,'HEADER_DESCRIPTION_LINK');window.open('https://vk.com/fun_gifs_video_prikoly', '_blank');">GIFKAWOOD</a></h4>
 @stop
 @section('content')
     <div class="main main-raised download">
         <div class="section section-basic">
             <div class="container">
                 <div class="title">
-                    <h2>Наши видео VK <a target="_blank" style="text-decoration: underline;" href="{{env('VK_LINK')}}">GIFKAWOOD</a></h2>
+                    <h2>Наши видео VK <a onclick="yandexGoal(56860381,'CONTENT_VK_LINK');window.open('https://vk.com/fun_gifs_video_prikoly', '_blank');" style="text-decoration: underline;">GIFKAWOOD</a></h2>
                 </div>
                 <!--  buttons -->
                 <div id="buttons" class="cd-section mb-5 ">
