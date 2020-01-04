@@ -27,6 +27,11 @@
         }, 200);
     }
 
+    function yandexGoal(counter,id) {
+        ym(64713739, 'reachGoal', 'HEADER_VK_LINK');
+        return true;
+    }
+
 </script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
