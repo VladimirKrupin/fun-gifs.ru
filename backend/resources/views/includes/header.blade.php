@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="ym(64713739, 'reachGoal', 'HEADER_VK_LINK'); return true;" class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://vk.com/fun_gifs_video_prikoly" target="_blank" data-original-title="Подпишись на группу">
+                    <a onclick="ym(64713739, 'reachGoal', 'HEADER_VK_LINK');window.open('https://vk.com/fun_gifs_video_prikoly', '_blank'); return true;" class="nav-link" rel="tooltip" title="" data-placement="bottom" href="javascript:void(0)" target="_blank" data-original-title="Подпишись на группу">
                         <i class="fa fa-vk"></i>
                     </a>
                 </li>
