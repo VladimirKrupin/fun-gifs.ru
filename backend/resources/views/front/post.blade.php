@@ -20,8 +20,8 @@
                                 <meta itemprop="duration" content="PT6M58S">
                                 <meta itemprop="isFamilyFriendly" content="true">
                                 <p>Дата загрузки:<span itemprop="uploadDate">{{$post['created_at']}}</span></p>
-                                <span itemprop="thumbnail" itemscope itemtype="{{env('APP_URL')}}/assets/img/video-preview.png">
-                                    <img itemprop="contentUrl" src="https://www.mysite.com/images/preview/img1.jpg">
+                                <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+                                    <img itemprop="contentUrl" src="{{env('APP_URL')}}/assets/img/video-preview.png">
                                     <meta itemprop="width" content="250">
                                     <meta itemprop="height" content="120">
                                 </span>
