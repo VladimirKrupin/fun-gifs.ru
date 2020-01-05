@@ -25,17 +25,14 @@ class Post extends Model
         return $this->hasMany('App\Http\Models\Post\File');
     }
 
-//    public function getSlugAttribute()
-//    {
-////        var_dump(Str::slug($this->attributes['comment'], '-'));
-////        $this->attributes['slug'] = Str::slug($this->attributes['comment'], '-');
-//        return Str::slug($this->attributes['comment'], '-');
-//    }
 
     public function getLinkAttribute()
     {
         return route('front.post', $this->slug);
     }
 
+    public function PostTag(){
+        return $this->hasMany('App\Http\Models\Post\PostsTag');
+    }
 
 }
