@@ -735,7 +735,7 @@ class PostingController extends Controller
 
         $params_wall_post = http_build_query([
             'owner_id' => $this->getGroupId()*-1,
-            'message' => $post['comment'],
+            'message' => $post['comment'] . "\r\n\r\n скачать видео: " . $post['link'],
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
             'access_token' => $this->getAccessToken(),
