@@ -179,6 +179,13 @@
       },
       name: 'Files',
       mounted: function () {
+        axios.get( 'http://api.gifkawood.ru/api/tags',
+        ).then(response => {
+          console.log(response.data);
+        })
+          .catch(e => {
+            console.log(e);
+          });
       },
       methods: {
         count: function(){
