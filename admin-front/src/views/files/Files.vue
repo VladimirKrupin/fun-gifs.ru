@@ -25,6 +25,25 @@
           <input language="ru" type="file" id="files" ref="files" multiple="multiple" class="form-control-file" v-on:change="handleFileUploads()">
         </b-col>
       </b-row>
+
+      <b-row>
+        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
+          <h1 class="h4 my-1">Выберите тэги</h1>
+        </b-col>
+      </b-row>
+
+      <b-row>
+        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 d-flex mb-4">
+          <b-form-select id="basicSelect"
+                         class="h-100"
+                         :plain="true"
+                         :options="tags"
+                         value="смешное"
+          >
+          </b-form-select>
+        </b-col>
+      </b-row>
+
       <b-row>
         <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-5">
           <h1 class="h4 my-1">Напишите комментарий</h1>
@@ -165,7 +184,8 @@
             type: false,
             text: '',
             postId: '',
-          }
+          },
+          tags: [1,2,3,4,5]
         };
       },
       components: {
@@ -179,9 +199,14 @@
       },
       name: 'Files',
       mounted: function () {
-        axios.get( 'https://api.gifkawood.ru/api/tags',
+        axios.get( 'http://api.gifkawood.ru/api/tags',
         ).then(response => {
+          console.log();
+          // this.tags = response.data
           console.log(response.data);
+          Object.keys(response.data).forEach(function (key,val) {
+            console.log(key, val);
+          });
         })
           .catch(e => {
             console.log(e);
