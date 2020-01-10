@@ -14,6 +14,8 @@ class PostsTag extends Model
      * @var array
      */
 
+    protected $appends = ['tags'];
+
     protected $fillable = [
         'post_id', 'tag_id'
     ];
@@ -26,4 +28,9 @@ class PostsTag extends Model
         return $this->belongsTo('App\Http\Models\Post\Post');
     }
 
+    public function getTagsAttribute($value)
+    {
+        var_dump($value);
+        return 'test';
+    }
 }
