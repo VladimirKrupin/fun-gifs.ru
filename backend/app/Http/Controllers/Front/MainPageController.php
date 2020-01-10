@@ -14,7 +14,7 @@ class MainPageController extends Controller
         return view('front.index',[
             'posts'=>Post::where('status', 1)->with('files')->orderBy('created_at', 'desc')->paginate(10),
             'tags'=>Tag::all()->toArray(),
-            'colors'=>['','primary','info','success','warning','danger','rose'],
+            'colors'=>['','primary','info','success','warning','danger','rose','dark','secondary'],
             'counter'=>0,
         ]);
     }

@@ -3,7 +3,7 @@
 @section('description',  (isset($tag))?' категория видео ' .$tag . ' ' . env('SITE_NAME'):'лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики')
 @section('keyword', env('KEY_WORDS_POST').' '.env('KEY_WORDS_VK'))
 @section('header_text')
-<h1>GIFKAWOOD</h1>
+<h1>{{isset($tag)?'Категория '.$tag:'GIFKAWOOD'}}</h1>
 @stop
 @section('header_description')
 <h3>Смотри и скачивай лучшие видосы и гифки</h3>
