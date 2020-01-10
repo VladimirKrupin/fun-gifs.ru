@@ -18,11 +18,13 @@
                         <i class="material-icons">apps</i> Категории
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
-                        @foreach ($tags as $key => $tag)
-                            <a href="/tags/{{$tag['slug']}}" class="dropdown-item">
-                                <i class="material-icons">layers</i> {{$tag['name']}}
-                            </a>
-                        @endforeach
+                        @if (isset($tags))
+                            @foreach ($tags as $key => $tag)
+                                <a href="/tags/{{$tag['slug']}}" class="dropdown-item">
+                                    <i class="material-icons">layers</i> {{$tag['name']}}
+                                </a>
+                            @endforeach
+                        @endif
                     </div>
                 </li>
                 <li class="nav-item">
