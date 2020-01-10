@@ -2,6 +2,7 @@
 
 namespace App\Http\Models\Post;
 
+use App\Http\Models\Tag\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -36,10 +37,28 @@ class Post extends Model
     }
 
     public function tags(){
-        foreach ($this->hasMany('App\Http\Models\Post\PostsTag')->with('tag')->get()->toArray() as $tag){
-            var_dump($tag['tag']['name']);
+        $tags = [];
+        $ids = [];
+        foreach ($this->hasMany('App\Http\Models\Post\PostsTag')->with('tag')->get()->toArray() as $post_tag){
+            $ids[] = $post_tag['tag']['id'];
         }
-        return $this->hasMany('App\Http\Models\Post\PostsTag');
+        foreach (Tag::where('id','>',0)->get()->toArray() as $tag){
+            if (in_array($tag['id'], $ids)){
+                $tags[] = [
+                    'id'=>$tag['id'],
+                    'name'=>$tag['name'],
+                    'value'=>true,
+                ];
+            }else{
+                $tags[] = [
+                    'id'=>$tag['id'],
+                    'name'=>$tag['name'],
+                    'value'=>false,
+                ];
+            }
+        }
+
+        return $tags;
     }
 
 }
