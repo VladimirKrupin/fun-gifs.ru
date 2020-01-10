@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Files;
 use App\Http\Models\Post\Post;
 use App\Http\Models\Post\File;
+use App\Http\Models\Post\PostsTag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -55,6 +56,8 @@ class FilesController extends Controller
      * @throws \Exception
      */
     public function putFiles(Request $request){
+        var_dump($request->input('tags'));
+        die;
         $validator = Validator::make($request->all(), [
             'files.*' => 'mimes:jpeg,png,mp4,gif,mov,ogg',
             'files' => 'required|max:100',
@@ -93,6 +96,12 @@ class FilesController extends Controller
                 'slug' => $res,
                 'status' => 0,
             ]);
+
+            foreach (implode(',',$request->input('tags')) as $tag){
+                PostsTag::create([
+
+                ]);
+            }
             if ($post){
                 $post = $post->toArray();
             }else{
