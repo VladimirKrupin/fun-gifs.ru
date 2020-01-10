@@ -165,10 +165,10 @@ class FilesController extends Controller
             ->get()->toArray();
 
         $tags = Tag::where('id','>',1)->get()->toArray();
-        var_dump($tags);
+        print_r($tags);
         foreach ($posts as $post){
             foreach ($post['post_tag'] as $post_tag){
-                var_dump($post_tag['tag']);
+                print_r($post_tag['tag']);
             }
         }
         if (isset($posts[0])){
