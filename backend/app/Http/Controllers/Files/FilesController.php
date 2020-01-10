@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Files;
 use App\Http\Models\Post\Post;
 use App\Http\Models\Post\File;
 use App\Http\Models\Post\PostsTag;
+use App\Http\Models\Tag\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -163,6 +164,8 @@ class FilesController extends Controller
             ->orderBy('id', 'desc')
             ->get()->toArray();
 
+        $tags = Tag::where('id','>',1)->get()->toArray();
+        var_dump($tags);
         foreach ($posts as $post){
             foreach ($post['post_tag'] as $post_tag){
                 var_dump($post_tag['tag']);
