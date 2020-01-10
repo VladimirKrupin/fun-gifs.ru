@@ -57,6 +57,11 @@ class FilesController extends Controller
      */
     public function putFiles(Request $request){
         var_dump($request->input('tags'));
+        if (isset($request->input('tags')[1])){
+            var_dump(implode(',',$request->input('tags')));
+        }else{
+            var_dump((integer) $request->input('tags'));
+        }
         die;
         $validator = Validator::make($request->all(), [
             'files.*' => 'mimes:jpeg,png,mp4,gif,mov,ogg',
@@ -97,11 +102,16 @@ class FilesController extends Controller
                 'status' => 0,
             ]);
 
-            foreach (implode(',',$request->input('tags')) as $tag){
-                PostsTag::create([
+            if (isset($request->input('tags')[1])){
+                foreach (implode(',',$request->input('tags')) as $tag){
+//                    PostsTag::create([
+//
+//                    ]);
+                }
+            }else{
 
-                ]);
             }
+
             if ($post){
                 $post = $post->toArray();
             }else{
