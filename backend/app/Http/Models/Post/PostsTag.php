@@ -19,7 +19,7 @@ class PostsTag extends Model
     ];
 
     public function tag(){
-        return $this->hasOne('App\Http\Models\Tag\Tag','id','post_id');
+        return $this->hasOne('App\Http\Models\Tag\Tag','id','tag_id');
     }
 
     public function post(){
