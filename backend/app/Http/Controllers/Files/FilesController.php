@@ -154,7 +154,8 @@ class FilesController extends Controller
     }
 
     public function getPosts(){
-        $posts = Post::where('status',0)
+        $posts = Post::where('status',1)
+            ->take(30)
             ->with('files')
             ->get();
         if (isset($posts[0])){
