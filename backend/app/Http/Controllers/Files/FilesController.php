@@ -164,7 +164,7 @@ class FilesController extends Controller
             ->orderBy('id', 'desc')
             ->get()->toArray();
 
-        $tags = Tag::where('id','>',1)->get()->toArray();
+        $tags = Tag::where('id','>=',1)->get()->toArray();
 
         $tag_ids = [];
         $post_tags = [];
