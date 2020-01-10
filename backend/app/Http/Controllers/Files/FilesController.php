@@ -162,6 +162,10 @@ class FilesController extends Controller
             }])
             ->orderBy('id', 'desc')
             ->get();
+
+        foreach ($posts as $post){
+            var_dump($post);
+        }
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',
