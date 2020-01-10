@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Http\Models\Post\Post;
 use App\Http\Models\Post\PostsTag;
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 
 class ImportTag extends Command
 {
