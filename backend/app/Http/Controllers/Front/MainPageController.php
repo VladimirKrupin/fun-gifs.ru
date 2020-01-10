@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 
 class MainPageController extends Controller
 {
+    public $tags_colors = ['','primary','info','success','warning','danger','rose','dark','secondary'];
     public function index()
     {
         return view('front.index',[
             'posts'=>Post::where('status', 1)->with('files')->orderBy('created_at', 'desc')->paginate(10),
             'tags'=>Tag::all()->toArray(),
-            'colors'=>['','primary','info','success','warning','danger','rose','dark','secondary'],
+            'colors'=>$this->tags_colors,
             'counter'=>0,
         ]);
     }
@@ -32,7 +33,7 @@ class MainPageController extends Controller
         return view('front.index',[
             'posts'=>$posts,
             'tags'=>Tag::all()->toArray(),
-            'colors'=>['','primary','info','success','warning','danger','rose'],
+            'colors'=>$this->tags_colors,
             'counter'=>0,
             'tag'=>$tag['name'],
         ]);
