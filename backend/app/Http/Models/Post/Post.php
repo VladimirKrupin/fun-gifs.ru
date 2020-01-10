@@ -36,6 +36,7 @@ class Post extends Model
     }
 
     public function tags(){
+        var_dump($this->hasMany('App\Http\Models\Post\PostsTag')->with('tag')->get()->toArray());
         return $this->hasMany('App\Http\Models\Post\PostsTag');
     }
 
