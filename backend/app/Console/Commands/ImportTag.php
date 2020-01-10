@@ -41,10 +41,12 @@ class ImportTag extends Command
     {
         $posts = Post::all()->toArray();
         foreach ($posts as $post){
-            PostsTag::create([
-                'post_id' => $post['id'],
-                'tag_id' => 1
-            ]);
+            if (!PostsTag::where('post_id',$post['id'])->where('tag_id',1)->first()){
+                PostsTag::create([
+                    'post_id' => $post['id'],
+                    'tag_id' => 1
+                ]);
+            }
         }
     }
 }
