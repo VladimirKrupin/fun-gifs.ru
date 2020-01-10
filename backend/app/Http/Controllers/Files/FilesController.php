@@ -157,7 +157,6 @@ class FilesController extends Controller
         $posts = Post::where('status',1)
             ->take(30)
             ->with('files')
-            ->with('tags')
             ->with(['postTag'=>function($query){
                 $query->with('tag');
             }])
