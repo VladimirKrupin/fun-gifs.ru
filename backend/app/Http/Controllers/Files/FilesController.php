@@ -58,7 +58,7 @@ class FilesController extends Controller
     public function putFiles(Request $request){
         var_dump($request->input('tags'));
         if (isset($request->input('tags')[1])){
-            var_dump(implode(',',$request->input('tags')));
+            var_dump(explode(',',$request->input('tags')));
         }else{
             var_dump((integer) $request->input('tags'));
         }
