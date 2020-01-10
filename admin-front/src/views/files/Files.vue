@@ -117,7 +117,7 @@
             <tr >
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 <video width="300" height="200" controls>
-                  <source :src="'https://file-store.fun-gifs.ru/'+item.files[0].path" :type="getFileType(item)">
+                  <source :src="'https://file-store.gifkawood.ru/'+item.files[0].path" :type="getFileType(item)">
                   Your browser does not support the video tag.
                 </video>
               </td>

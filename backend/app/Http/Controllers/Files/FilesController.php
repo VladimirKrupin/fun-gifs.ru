@@ -157,6 +157,7 @@ class FilesController extends Controller
         $posts = Post::where('status',1)
             ->take(30)
             ->with('files')
+            ->orderBy('id')
             ->get();
         if (isset($posts[0])){
             return response()->json([
