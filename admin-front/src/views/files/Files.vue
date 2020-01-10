@@ -40,7 +40,7 @@
             :label-cols="0"
           >
             <b-form-checkbox-group stacked id="basicCustomCheckboxes">
-              <div class="custom-control custom-checkbox mb-2" v-for="(tag,key) in tags" :key="key">
+              <div class="custom-control custom-checkbox mb-2" v-if="tags !== []" v-for="(tag,key) in tags" :key="key">
                 <input type="checkbox"
                        class="custom-control-input"
                        v-model="tags[key].value"
@@ -125,7 +125,7 @@
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 тэги
                 <b-form-checkbox-group stacked id="basicCustomCheckboxes">
-                  <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in item.tags" :key="key">
+                  <span class="custom-control custom-checkbox mb-2 inline" v-if="tags !== []" v-for="(tag,key) in item.tags" :key="key">
                     <input v-on:change="changePostTag(tag)"
                            type="checkbox"
                            class="custom-control-input"
