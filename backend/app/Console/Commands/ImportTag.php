@@ -46,6 +46,7 @@ class ImportTag extends Command
                     'post_id' => $post['id'],
                     'tag_id' => 1
                 ]);
+                var_dump($post['id'].' '.$post['comment']);
             }
         }
     }
