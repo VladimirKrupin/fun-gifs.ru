@@ -58,7 +58,7 @@ class Post extends Model
             }
         }
 
-        return $tags;
+        return (object) $tags;
     }
 
 }
