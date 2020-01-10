@@ -31,7 +31,7 @@ class Post extends Model
         return route('front.post', $this->slug);
     }
 
-    public function tags(){
+    public function PostTag(){
         return $this->hasMany('App\Http\Models\Post\PostsTag');
     }
 

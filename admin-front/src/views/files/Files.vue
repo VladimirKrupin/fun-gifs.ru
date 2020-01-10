@@ -125,6 +125,27 @@
             <tr >
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 тэги
+                <b-form-checkbox-group stacked id="basicCustomCheckboxes">
+                  <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in tags" :key="key">
+                    <input v-on:change="checkCheckBox"
+                           type="checkbox"
+                           class="custom-control-input"
+                           v-model="tags[key].value"
+                           :id="key">
+                    <label class="custom-control-label" :for="key">{{tag.name}}</label>
+                  </span>
+                </b-form-checkbox-group>
+
+                <b-form-checkbox-group stacked id="basicCustomCheckboxes">
+                  <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in item.tags" :key="key">
+                    <input v-on:change="checkCheckBox"
+                           type="checkbox"
+                           class="custom-control-input"
+                           v-model="tags[key].value"
+                           :id="key">
+                    <label class="custom-control-label" :for="key">{{tag.name}}</label>
+                  </span>
+                </b-form-checkbox-group>
               </td>
             </tr>
             </tbody>
