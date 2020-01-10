@@ -56,11 +56,11 @@ class FilesController extends Controller
      */
     public function putFiles(Request $request){
         var_dump($request->input('tags'));
-        die;
         $validator = Validator::make($request->all(), [
             'files.*' => 'mimes:jpeg,png,mp4,gif,mov,ogg',
             'files' => 'required|max:100',
             'comment' => 'required|string|min:2|max:10000',
+            'tags' => 'required|string',
         ]);
         if($validator->errors()->first('files')){
             return response()->json([

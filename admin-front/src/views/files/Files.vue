@@ -242,7 +242,14 @@
           }
 
           formData.append('comment',this.comment);
-          formData.append('tags',this.tags);
+          let tags = this.tags;
+          let tagsValues = [];
+          Object.keys(tags).forEach(function (key) {
+            if (tags[key].value){
+              tagsValues.push(tags[key].id)
+            }
+          });
+          formData.append('tags',tagsValues);
 
           this.disabled = true;
           this.loader = true;
