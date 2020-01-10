@@ -46,7 +46,7 @@ class MainPageController extends Controller
     public function siteMap()
     {
         $posts = Post::where('status', 1)->with('files')->orderBy('created_at', 'desc')->get();
-        $tags = Tag::all();
+        $tags = Tag::where('id','>',0)->get();
         return view('sitemap')->with(compact(['posts','tags']));
     }
 }
