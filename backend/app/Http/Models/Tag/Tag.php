@@ -16,4 +16,11 @@ class Tag extends Model
         'name','slug'
     ];
 
+    protected $appends = ['link'];
+
+    public function getLinkAttribute()
+    {
+        return route('front.tag', $this->slug);
+    }
+
 }

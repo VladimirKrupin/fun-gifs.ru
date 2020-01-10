@@ -7,71 +7,15 @@
         <changefreq>monthly</changefreq>
         <priority>1</priority>
     </url>
-    <url>
-        <loc>https://gifkawood.ru/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/smeshnoe-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/kotiki-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/devushki-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/ne-lovko-vishlo-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/shokiruyushchie-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/zalipatel'no-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/avto-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://gifkawood.ru/tags/interesnoe-video-prikoly</loc>
-        <changefreq>monthly</changefreq>
-        <priority>1</priority>
-    </url>
+
+    @foreach ($tags as $tag)
+        <url>
+            <loc>{{ url($tag->link) }}</loc>
+            <lastmod>{{ $tag->updated_at->tz('GMT')->toAtomString() }}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>1</priority>
+        </url>
+    @endforeach
 
     @foreach ($posts as $post)
         <url>
