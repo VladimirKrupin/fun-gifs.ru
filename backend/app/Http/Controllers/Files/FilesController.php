@@ -165,14 +165,28 @@ class FilesController extends Controller
             ->get()->toArray();
 
         $tags = Tag::where('id','>',1)->get()->toArray();
-        echo '<pre>';
-        print_r($tags);
-        echo '</pre>';
-        foreach ($posts as $post){
-            foreach ($post['post_tag'] as $post_tag){
-                print_r($post_tag['tag']);
+
+        $tag_ids = [];
+        $post_tags = [];
+        foreach ($posts as &$post){
+
+            foreach ($tags as $tag){
+                $tag_ids[] = $tag['id'];
+                $post_tags[$tag['id']] = [
+                  'id'=>$tag['id'],
+                  'name'=>$tag['name'],
+                  'value'=>false,
+                ];
             }
+            foreach ($post['post_tag'] as $post_tag){
+                if (in_array($post_tag['tag']['id'],$tag_ids)){
+                    $post_tags[$post_tag['tag']['id']]['value'] = true;
+                }
+            }
+
+            $post['tags'] = $post_tags;
         }
+
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',
