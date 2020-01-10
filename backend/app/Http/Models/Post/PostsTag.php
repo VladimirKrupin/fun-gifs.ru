@@ -22,4 +22,8 @@ class PostsTag extends Model
         return $this->hasOne('App\Http\Models\Tag\Tag');
     }
 
+    public function post(){
+        return $this->belongsTo('App\Http\Models\Post\Post');
+    }
+
 }

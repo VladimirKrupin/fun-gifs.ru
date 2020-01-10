@@ -18,15 +18,11 @@
                         <i class="material-icons">apps</i> Категории
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
-                        <a href="/" class="dropdown-item">
-                            <i class="material-icons">layers</i> приколы
-                        </a>
-                        <a href="/" class="dropdown-item">
-                            <i class="material-icons">content_paste</i> животные
-                        </a>
-                        <a href="/" class="dropdown-item">
-                            <i class="material-icons">content_paste</i> не ловко вышло
-                        </a>
+                        @foreach ($tags as $key => $tag)
+                            <a href="/tags/{{$tag['slug']}}" class="dropdown-item">
+                                <i class="material-icons">layers</i> {{$tag['name']}}
+                            </a>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item">

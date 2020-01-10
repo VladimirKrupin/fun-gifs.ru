@@ -4,6 +4,7 @@ use App\Http\Models\Post\Post;
 
 Route::get('/oauthvk/', 'OAuths\OauthsController@OAuthVk');
 Route::get('/', 'Front\MainPageController@index');
+Route::get('/tags/{slug}', 'Front\MainPageController@tag')->name('front.tag');
 Route::get('/demo', 'Front\MainPageController@demo');
 Route::get('/post/{slug}', 'Front\SinglePostController@index')->name('front.post');
 

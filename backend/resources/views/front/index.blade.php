@@ -1,6 +1,6 @@
 @extends('layouts.layout_index')
-@section('title', env('SITE_NAME'). ' ' .date('Y').' | '. env('KEY_WORDS'))
-@section('description', 'лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики')
+@section('title',  (isset($tag))?' категория видео '.$tag. ' ' .env('SITE_NAME'). ' ' .date('Y') : env('SITE_NAME'). ' ' .date('Y').' | '. env('KEY_WORDS'))
+@section('description',  (isset($tag))?' категория видео ' .$tag . ' ' . env('SITE_NAME'):'лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики')
 @section('keyword', env('KEY_WORDS_POST').' '.env('KEY_WORDS_VK'))
 @section('header_text')
 <h1>GIFKAWOOD</h1>
@@ -18,20 +18,11 @@
                 </div>
                 <!--  buttons -->
                 <div id="buttons" class="cd-section mb-5 ">
-                    <div class="title">
-                        <h3>
-                            <small> По категориям (в разработке...)</small>
-                        </h3>
-                    </div>
                     <div class="row">
                         <div class="col-md-10">
-                            <button class="btn">Смешное</button>
-                            <button class="btn btn-primary">Кошки</button>
-                            <button class="btn btn-info">Девушки</button>
-                            <button class="btn btn-success">Неловковышло</button>
-                            <button class="btn btn-warning">Шокирующие</button>
-                            <button class="btn btn-danger">Красота</button>
-                            <button class="btn btn-rose">Лайфхак</button>
+                            @foreach ($tags as $key => $tag)
+                                <a href="/tags/{{$tag['slug']}}" class="btn btn-{{$colors[$key]}}">{{$tag['name']}}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -50,8 +41,12 @@
                                     </video>
                                 </div>
                             </div>
+                        <div style="display: none">{{$counter++}}</div>
                         @endif
                     @endforeach
+                    @if($counter === 0)
+                        <h2>В категории {{$tag['name']}} не найдено видео. вернуться на <a style="color: #0a6ebd;text-decoration: underline" href="/">Главную</a></h2>
+                    @endif
                 </div>
                 {{$posts->links()}}
             </div>
