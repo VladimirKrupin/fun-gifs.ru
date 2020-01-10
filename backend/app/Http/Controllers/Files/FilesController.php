@@ -161,10 +161,12 @@ class FilesController extends Controller
                 $query->with('tag');
             }])
             ->orderBy('id', 'desc')
-            ->get();
+            ->get()->toArray();
 
         foreach ($posts as $post){
-            var_dump($post);
+            foreach ($post['post_tag'] as $post_tag){
+                var_dump($post_tag['tag']);
+            }
         }
         if (isset($posts[0])){
             return response()->json([
