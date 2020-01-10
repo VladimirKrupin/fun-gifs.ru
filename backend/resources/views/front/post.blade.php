@@ -22,10 +22,7 @@
                                         <p itemprop="description">{{env('SITE_URL').' '.env('KEY_WORDS_POST').' '.$post['comment'] . ' ' .env('KEY_WORDS_POST_END')}}</p>
                                         <meta itemprop="duration" content="PT6M58S">
                                         <meta itemprop="isFamilyFriendly" content="true">
-                                        <!-- google -->
                                         <link itemprop="thumbnailUrl" href="{{env('APP_URL')}}/assets/img/video-preview.png"/>
-                                        <meta itemprop="isFamilyFriendly" content="true"/>
-                                        <!-- /google -->
                                         <p>Дата загрузки:<span itemprop="uploadDate">{{$post['created_at']}}</span></p>
                                         <span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
                                             <img itemprop="contentUrl" src="{{env('APP_URL')}}/assets/img/video-preview.png" alt="{{$post['comment']}}">
