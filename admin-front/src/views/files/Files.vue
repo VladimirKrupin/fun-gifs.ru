@@ -33,14 +33,23 @@
       </b-row>
 
       <b-row>
-        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-10 col-lg-10 d-flex mb-4">
-          <b-form-select id="basicSelect"
-                         class="h-100"
-                         :plain="true"
-                         :options="tags"
-                         value="смешное"
+        <b-col class="col-sm-12 col-12 offset-md-1 offset-lg-1 col-md-5 col-lg-2">
+          <b-form-group
+            label=""
+            label-for="basicCustomCheckboxes"
+            :label-cols="0"
           >
-          </b-form-select>
+            <b-form-checkbox-group stacked id="basicCustomCheckboxes">
+              <div class="custom-control custom-checkbox mb-2" v-for="(tag,key) in tags" :key="key">
+                <input v-on:change="checkCheckBox"
+                       type="checkbox"
+                       class="custom-control-input"
+                       v-model="tags[key].value"
+                       :id="key">
+                <label class="custom-control-label" :for="key">{{tag.name}}</label>
+              </div>
+            </b-form-checkbox-group>
+          </b-form-group>
         </b-col>
       </b-row>
 
@@ -185,7 +194,7 @@
             text: '',
             postId: '',
           },
-          tags: [1,2,3,4,5]
+          tags: [],
         };
       },
       components: {
@@ -201,11 +210,10 @@
       mounted: function () {
         axios.get( 'http://api.gifkawood.ru/api/tags',
         ).then(response => {
-          console.log();
-          // this.tags = response.data
-          console.log(response.data);
-          Object.keys(response.data).forEach(function (key,val) {
-            console.log(key, val);
+          let tag = response.data;
+          let tags = this.tags;
+          Object.keys(tag).forEach(function (key) {
+            tags.push({id:tag[key].id,name:tag[key].name,value:false});
           });
         })
           .catch(e => {
@@ -234,6 +242,7 @@
           }
 
           formData.append('comment',this.comment);
+          formData.append('tags',this.tags);
 
           this.disabled = true;
           this.loader = true;
@@ -373,6 +382,12 @@
               this.loaderModal = false;
               console.log(e);
             });
+        },
+        checkCheckBox: function (val) {
+          console.log(val);
+          console.log(val.target.checked);
+          console.log(val.target.id);
+          console.log(this.tags);
         }
       }
     }
