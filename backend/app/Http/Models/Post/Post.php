@@ -35,9 +35,13 @@ class Post extends Model
         return $this->hasMany('App\Http\Models\Post\PostsTag');
     }
 
+    public function tags(){
+        return $this->tags;
+    }
+
     public function getTagsAttribute()
     {
-        var_dump($this->hasMany('App\Http\Models\Post\PostsTag')->with('tag'));
+        var_dump($this->hasMany('App\Http\Models\Post\PostsTag'));
         return 'test';
     }
 }
