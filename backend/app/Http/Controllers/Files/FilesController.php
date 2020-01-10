@@ -157,6 +157,7 @@ class FilesController extends Controller
         $posts = Post::where('status',1)
             ->take(30)
             ->with('files')
+            ->with('tags')
             ->orderBy('id', 'desc')
             ->get();
         if (isset($posts[0])){

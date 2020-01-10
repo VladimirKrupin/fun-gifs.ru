@@ -122,6 +122,11 @@
                 </video>
               </td>
             </tr>
+            <tr >
+              <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
+                тэги
+              </td>
+            </tr>
             </tbody>
           </table>
         </b-col>
