@@ -41,8 +41,7 @@
           >
             <b-form-checkbox-group stacked id="basicCustomCheckboxes">
               <div class="custom-control custom-checkbox mb-2" v-for="(tag,key) in tags" :key="key">
-                <input v-on:change="checkCheckBox"
-                       type="checkbox"
+                <input type="checkbox"
                        class="custom-control-input"
                        v-model="tags[key].value"
                        :id="key">
@@ -126,24 +125,13 @@
               <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
                 тэги
                 <b-form-checkbox-group stacked id="basicCustomCheckboxes">
-                  <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in tags" :key="key">
-                    <input v-on:change="checkCheckBox"
-                           type="checkbox"
-                           class="custom-control-input"
-                           v-model="tags[key].value"
-                           :id="key">
-                    <label class="custom-control-label" :for="key">{{tag.name}}</label>
-                  </span>
-                </b-form-checkbox-group>
-
-                <b-form-checkbox-group stacked id="basicCustomCheckboxes">
                   <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in item.tags" :key="key">
-                    <input v-on:change="checkCheckBox"
+                    <input v-on:change="changePostTag(tag)"
                            type="checkbox"
                            class="custom-control-input"
-                           v-model="tags[key].value"
-                           :id="key">
-                    <label class="custom-control-label" :for="key">{{tag.name}}</label>
+                           v-model="tag.value"
+                           :id="'post_'+key">
+                    <label class="custom-control-label" :for="'post_'+key">{{tag.name}}</label>
                   </span>
                 </b-form-checkbox-group>
               </td>
@@ -416,11 +404,8 @@
               console.log(e);
             });
         },
-        checkCheckBox: function (val) {
-          console.log(val);
-          console.log(val.target.checked);
-          console.log(val.target.id);
-          console.log(this.tags);
+        changePostTag: function (tag) {
+          console.log(tag);
         }
       }
     }
