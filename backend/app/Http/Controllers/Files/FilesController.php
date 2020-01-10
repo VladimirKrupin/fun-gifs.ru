@@ -165,7 +165,9 @@ class FilesController extends Controller
             ->get()->toArray();
 
         $tags = Tag::where('id','>',1)->get()->toArray();
+        echo '<pre>';
         print_r($tags);
+        echo '</pre>';
         foreach ($posts as $post){
             foreach ($post['post_tag'] as $post_tag){
                 print_r($post_tag['tag']);
