@@ -13,7 +13,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $appends = ['link'];
+    protected $appends = ['link','tags'];
 
     protected $fillable = [
         'user_id', 'file_id', 'comment', 'status','slug'
@@ -35,4 +35,9 @@ class Post extends Model
         return $this->hasMany('App\Http\Models\Post\PostsTag');
     }
 
+    public function getTagsAttribute()
+    {
+        var_dump($this->hasMany('App\Http\Models\Post\PostsTag')->with('tag'));
+        return 'test';
+    }
 }
