@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class MainPageController extends Controller
 {
-    public $tags_colors = ['dark','primary','info','success','warning','danger','rose','warning'];
+    public $tags_colors = ['dark','primary','info','success','warning','danger','rose','warning','dark','primary','info','success','danger','rose'];
     public function index()
     {
         return view('front.index',[
