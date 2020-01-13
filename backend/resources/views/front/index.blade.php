@@ -45,7 +45,8 @@
                         @endif
                     @endforeach
                     @if($counter === 0)
-                        <h2>В категории {{$tag['name']}} не найдено видео. вернуться на <a style="color: #0a6ebd;text-decoration: underline" href="/">Главную</a></h2>
+                        {{var_dump($tag)}}
+{{--                        <h2>В категории {{$tag['name']}} не найдено видео. вернуться на <a style="color: #0a6ebd;text-decoration: underline" href="/">Главную</a></h2>--}}
                     @endif
                 </div>
                 {{$posts->links()}}
