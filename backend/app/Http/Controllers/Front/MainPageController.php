@@ -30,13 +30,12 @@ class MainPageController extends Controller
         }
         $posts = Post::where('status', 1)->whereIn('id',$ids)->with('files')->orderBy('created_at', 'desc')->paginate(10);
 
-        var_dump($tag);
         return view('front.index',[
             'posts'=>$posts,
             'tags'=>Tag::all()->toArray(),
             'colors'=>$this->tags_colors,
             'counter'=>0,
-            'tag'=>$tag,
+            'tag'=>$tag['name'],
         ]);
     }
 
