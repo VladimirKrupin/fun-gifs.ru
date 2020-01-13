@@ -35,7 +35,7 @@ class MainPageController extends Controller
             'tags'=>Tag::all()->toArray(),
             'colors'=>$this->tags_colors,
             'counter'=>0,
-            'tag'=>$tag['name'],
+            'tag'=>$tag,
         ]);
     }
 
