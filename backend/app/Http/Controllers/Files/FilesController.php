@@ -228,11 +228,8 @@ class FilesController extends Controller
                     $message = "Пост $post_id уже прикреплен к категории $tag_name";
                 }
             }else{
-                $post_tag = PostsTag::where('post_id',$post_id)->where('tag_id',$tag_id)->first();
-
-                var_dump($post_tag);
+                PostsTag::where('post_id',$request->input('postId'))->where('tag_id',$request->input('tagId'))->delete();
                 $message = "Пост $post_id удален из категории $tag_name";
-//                PostsTag::where('post_id',$request->input('postId'))->where('tag_id',$request->input('tagId'))->delete();
             }
 
             return response()->json([
