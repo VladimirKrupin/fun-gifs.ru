@@ -155,7 +155,7 @@ class FilesController extends Controller
     }
 
     public function getPosts(){
-        $posts = Post::where('status',1)
+        $posts = Post::where('status','>=',0)
             ->take(30)
             ->with('files')
             ->with(['postTag'=>function($query){

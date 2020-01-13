@@ -40,7 +40,7 @@
             :label-cols="0"
           >
             <b-form-checkbox-group stacked id="basicCustomCheckboxes">
-              <div class="custom-control custom-checkbox mb-2" v-for="(tag,key) in tags" :key="key">
+              <div class="custom-control custom-checkbox mb-2" v-if="tags !== []" v-for="(tag,key) in tags" :key="key">
                 <input type="checkbox"
                        class="custom-control-input"
                        v-model="tags[key].value"

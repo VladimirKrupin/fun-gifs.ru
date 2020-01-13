@@ -4,6 +4,7 @@
 @section('keyword', env('KEY_WORDS_POST').' '.env('KEY_WORDS_VK'))
 @section('header_text')
 <h1><span class="h2">{{$post['comment']}}</span></h1>
+<h2><span class="h4">Смотри видео: {{$post['comment']}} ВК <a class="text-white" style="text-decoration: underline;" onclick="yandexGoal(56860381,'HEADER_DESCRIPTION_LINK');" target="_blank" href="https://vk.com/fun_gifs_video_prikoly">GIFKAWOOD</a></span></h2>
 @stop
 @section('header_description', '')
 @section('content')
