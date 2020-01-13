@@ -130,8 +130,8 @@
                            type="checkbox"
                            class="custom-control-input"
                            v-model="tag.value"
-                           :id="'post_'+key">
-                    <label class="custom-control-label" :for="'post_'+key">{{tag.name}}</label>
+                           :id="'post_'+index+'_'+key">
+                    <label class="custom-control-label" :for="'post_'+index+'_'+key">{{tag.name}}</label>
                   </span>
                 </b-form-checkbox-group>
               </td>
@@ -405,8 +405,31 @@
             });
         },
         changePostTag: function (tag,id) {
-          console.log(tag);
-          console.log(id);
+          const options = {
+            method: 'POST',
+            headers: {
+              'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
+            },
+            data: {
+              tagId: tag.id,
+              tagValue: tag.value,
+              tagName: tag.name,
+              postId: id,
+            },
+            url: 'http://api.gifkawood.ru/api/changeTag',
+          };
+          axios(options)
+            .then(response => {
+              if (response.data.status === 'error'){
+                this.errors = response.data.data.errors;
+                return false;
+              }else if(response.data.status === 'ok'){
+                this.success = response.data.data.message[0];
+              }
+            })
+            .catch(e => {
+              console.log(e);
+            });
         }
       }
     }

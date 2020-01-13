@@ -200,4 +200,47 @@ class FilesController extends Controller
         }
     }
 
+    public function changeTag(Request $request){
+        $validator = Validator::make($request->all(), [
+            'tagId' => 'required|integer',
+            'tagValue' => 'required|boolean',
+            'postId' => 'required|integer',
+            'tagName' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'data' => ['errors' =>$validator->errors()]
+            ]);
+        }else{
+
+            $tag_id = $request->input('tagId');
+            $post_id = $request->input('postId');
+            $tag_name = $request->input('tagName');
+            if ($request->input('tagValue') === true){
+                if (!PostsTag::where('post_id',$post_id)->where('tag_id',$tag_id)->first()){
+                    PostsTag::create([
+                        'post_id' => $post_id,
+                        'tag_id' => $tag_id
+                    ]);
+                    $message = "Пост $post_id добавлен к категории $tag_name";
+                }else{
+                    $message = "Пост $post_id уже прикреплен к категории $tag_name";
+                }
+            }else{
+                $post_tag = PostsTag::where('post_id',$post_id)->where('tag_id',$tag_id)->first();
+
+                var_dump($post_tag);
+                $message = "Пост $post_id удален из категории $tag_name";
+//                PostsTag::where('post_id',$request->input('postId'))->where('tag_id',$request->input('tagId'))->delete();
+            }
+
+            return response()->json([
+                'status' => 'ok',
+                'data' => ['message' =>
+                    [$message]
+                ]
+            ]);
+        }
+    }
 }

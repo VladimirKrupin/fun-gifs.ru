@@ -20,6 +20,7 @@ Route::post('/putFiles/', 'Files\FilesController@putFiles')->middleware('auth:ap
 Route::get('/getPosts/', 'Files\FilesController@getPosts')->middleware('auth:api');
 Route::get('/createUser/', 'User\UserController@createUser');
 Route::get('/tags/', function (){return Tag::all()->toArray();});
+Route::post('/changeTag/', 'Files\FilesController@changeTag')->middleware('auth:api');
 
 Route::post('/postingPost/', 'Posting\PostingController@postingPost')->middleware('auth:api');
 Route::post('/removePost/', 'Posting\PostingController@removePost')->middleware('auth:api');
