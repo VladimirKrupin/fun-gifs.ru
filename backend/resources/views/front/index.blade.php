@@ -20,8 +20,8 @@
                 <div id="buttons" class="cd-section mb-5 ">
                     <div class="row">
                         <div class="col-md-10">
-                            @foreach ($tags as $key => $tag)
-                                <a href="/tags/{{$tag['slug']}}" class="btn btn-{{$colors[$key]}}">{{$tag['name']}}</a>
+                            @foreach ($tags as $key => $t)
+                                <a href="/tags/{{$t['slug']}}" class="btn btn-{{$colors[$key]}}">{{$t['name']}}</a>
                             @endforeach
                         </div>
                     </div>

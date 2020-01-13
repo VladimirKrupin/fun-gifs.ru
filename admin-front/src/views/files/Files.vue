@@ -126,7 +126,7 @@
                 тэги
                 <b-form-checkbox-group stacked id="basicCustomCheckboxes">
                   <span class="custom-control custom-checkbox mb-2 inline" v-for="(tag,key) in item.tags" :key="key">
-                    <input v-on:change="changePostTag(tag)"
+                    <input v-on:change="changePostTag(tag,item.id)"
                            type="checkbox"
                            class="custom-control-input"
                            v-model="tag.value"
@@ -404,8 +404,9 @@
               console.log(e);
             });
         },
-        changePostTag: function (tag) {
+        changePostTag: function (tag,id) {
           console.log(tag);
+          console.log(id);
         }
       }
     }
