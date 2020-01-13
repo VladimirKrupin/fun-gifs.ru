@@ -1,6 +1,6 @@
 @extends('layouts.layout_index')
-@section('title', env('SITE_NAME').' '.env('KEY_WORDS_POST').' '.$post['comment'] . ' ' .env('KEY_WORDS_POST_END'))
-@section('description', $post['comment'].' '.$post['slug'])
+@section('title', env('SITE_NAME') . ' ' . $post['comment'] . ' ' .env('KEY_WORDS_PAGE'))
+@section('description', $post['comment'].' '.$post['slug'] . ' ' . env('KEY_WORDS_VK'))
 @section('keyword', env('KEY_WORDS_POST').' '.env('KEY_WORDS_VK'))
 @section('header_text')
 <h1><span class="h2">{{$post['comment']}}</span></h1>

@@ -1,6 +1,6 @@
 @extends('layouts.layout_index')
-@section('title',  (isset($tag))?' категория видео '.$tag. ' ' .env('SITE_NAME'). ' ' .date('Y') : env('SITE_NAME'). ' ' .date('Y').' | '. env('KEY_WORDS'))
-@section('description',  (isset($tag))?' категория видео ' .$tag . ' ' . env('SITE_NAME'):'лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики')
+@section('title',  (isset($tag))?'Категория '.$tag. ' ' .env('SITE_NAME'). ' | '. env('KEY_WORDS') : env('SITE_NAME'). ' | '. env('KEY_WORDS'))
+@section('description',  (isset($tag))?'Категория видео ' .$tag . ' ' . env('SITE_NAME') . ' ' .env('KEY_WORDS_VK'):env('KEY_WORDS_VK'))
 @section('keyword', env('KEY_WORDS_POST').' '.env('KEY_WORDS_VK'))
 @section('header_text')
 <h1>{{isset($tag)?'Категория '.$tag:'GIFKAWOOD'}}</h1>
