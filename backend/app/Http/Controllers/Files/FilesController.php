@@ -161,7 +161,7 @@ class FilesController extends Controller
             ->with(['postTag'=>function($query){
                 $query->with('tag');
             }])
-            ->orderBy('id', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get()->toArray();
 
         $tags = Tag::where('id','>=',1)->get()->toArray();
