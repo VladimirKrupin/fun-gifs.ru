@@ -155,14 +155,25 @@ class FilesController extends Controller
     }
 
     public function getPosts(){
-        $posts = Post::where('status','>=',0)
+        $posts_not_poster = Post::where('status','=',0)
+            ->with('files')
+            ->with(['postTag'=>function($query){
+                $query->with('tag');
+            }])
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
+
+
+        $posts_active = Post::where('status','=',1)
             ->take(30)
             ->with('files')
             ->with(['postTag'=>function($query){
                 $query->with('tag');
             }])
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->get()->toArray();
+
+        $posts = array_merge($posts_not_poster,$posts_active);
 
         $tags = Tag::where('id','>=',1)->get()->toArray();
 
