@@ -390,8 +390,8 @@ class PostingController extends Controller
 
     public function postingPost(Request $request){
         $post = $request->input('item');
-//        $result = $this->wallAllPosting($post['id']);
-        $result = $this->wallAllPosting(225);
+        $result = $this->wallAllPosting($post['id']);
+//        $result = $this->wallAllPosting(225);
         return response()->json([
             'status' => 'ok',
             'data' => ['message' =>
