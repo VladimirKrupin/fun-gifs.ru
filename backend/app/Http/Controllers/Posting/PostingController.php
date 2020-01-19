@@ -937,7 +937,10 @@ class PostingController extends Controller
         // Идентификатор для загрузки фото
         $video_id = intval($step1['video_id']);
 
-        $video_real_path = realpath('/backend/storage/app/files-store/'.$file['path']);
+//        $video_real_path = realpath('/backend/storage/app/files-store/'.$file['path']);
+        $video_real_path = storage_path().'/app/files-store/'.$file['path'];
+
+
         $curl_file = curl_file_create($video_real_path,'video/mp4',$post['comment'].' Fun Gifs.mp4');
 
         // Предполагается, что картинка располагается в каталоге со скриптом
