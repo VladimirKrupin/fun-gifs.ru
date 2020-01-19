@@ -13,6 +13,7 @@ use App;
 use getjump\Vk\Core;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 
@@ -338,19 +339,21 @@ class PostingController extends Controller
         if ($post) {
             $post = $post->toArray();
             $posting_status .= "id: {$post['id']} \r\nuser_id: {$post['user_id']} \r\ncomment: {$post['comment']} \r\nstatus: {$post['status']} \r\nfiles: {$post['files'][0]['path']} \r\n";
-            $status_vk = $this->wallPosting($post);
-            if ($status_vk['status'] === 'error'){
-                Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
-                $posting_status .= "Error posting VK\r\n".$status_vk."\r\n";
-            }else{
-                $posting_status .= "VK posting done\r\n";
-            }
+//            $status_vk = $this->wallPosting($post);
+//            if ($status_vk['status'] === 'error'){
+//                Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
+//                $posting_status .= "Error posting VK\r\n".$status_vk."\r\n";
+//            }else{
+//                $posting_status .= "VK posting done\r\n";
+//            }
             $status_ok = $this->postingOk($post);
+
             if (!$status_ok){
                 $posting_status .= "Error posting OK\r\n";
             }else{
                 $posting_status .= "Ok posting done\r\n";
             }
+
 //            $this->postingFb($post);
 //            var_dump('Fb');
 
@@ -387,7 +390,8 @@ class PostingController extends Controller
 
     public function postingPost(Request $request){
         $post = $request->input('item');
-        $result = $this->wallAllPosting($post['id']);
+//        $result = $this->wallAllPosting($post['id']);
+        $result = $this->wallAllPosting(225);
         return response()->json([
             'status' => 'ok',
             'data' => ['message' =>
@@ -584,12 +588,12 @@ class PostingController extends Controller
             }
         }
 
-        if ($video_content){
+//        if ($video_content){
 //            Post::where('id',$post['id'])->update([
 //                'status' => 1
 //            ]);
-            return false;
-        }
+//            return false;
+//        }
 
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", $post['comment']);
@@ -656,10 +660,7 @@ class PostingController extends Controller
         }
 
 // Успешно
-        echo 'OK';
-
-
-        var_dump($step3);
+        return true;
 
     }
 
@@ -961,7 +962,7 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment']." | Fun-gifs.ru",
+            "title"         => $post['comment']." | ".env('SITE_NAME'). ' '.$this->getKeyWords(),
             "tags"         => $this->getKeyWords(),
             "description"         => $this->getKeyWords(),
 //            "gid"               => $this->getOkGroupId(),
