@@ -339,13 +339,13 @@ class PostingController extends Controller
         if ($post) {
             $post = $post->toArray();
             $posting_status .= "id: {$post['id']} \r\nuser_id: {$post['user_id']} \r\ncomment: {$post['comment']} \r\nstatus: {$post['status']} \r\nfiles: {$post['files'][0]['path']} \r\n";
-//            $status_vk = $this->wallPosting($post);
-//            if ($status_vk['status'] === 'error'){
-//                Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
-//                $posting_status .= "Error posting VK\r\n".$status_vk."\r\n";
-//            }else{
-//                $posting_status .= "VK posting done\r\n";
-//            }
+            $status_vk = $this->wallPosting($post);
+            if ($status_vk['status'] === 'error'){
+                Mail::to('vladimir.krupin133@gmail.com')->send(new PostingResultError('Ошибка при постинге ВК',$post,'ВК'));
+                $posting_status .= "Error posting VK\r\n".$status_vk."\r\n";
+            }else{
+                $posting_status .= "VK posting done\r\n";
+            }
             $status_ok = $this->postingOk($post);
 
             if (!$status_ok){
