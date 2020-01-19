@@ -598,7 +598,7 @@ class PostingController extends Controller
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", $post['comment']);
 
-        $attachment['media'][] = ['type'=>'text','text'=>$message_json];
+        $attachment['media'][] = ['type'=>'text','text'=>$message_json. "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug']];
 
 //        if (isset($photos)){
         if (isset($attachments['photo'])){
@@ -965,9 +965,9 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment']." | ".env('SITE_NAME'). ' '.$this->getKeyWords(),
+            "title"         => $post['comment'].$this->getKeyWords(),
             "tags"         => $this->getKeyWords(),
-            "description"         => $this->getKeyWords(),
+            "description"         => "Cкачать: ". env('APP_URL'). '/post/' . $post['slug'],
 //            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json"
         );
