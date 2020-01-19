@@ -965,7 +965,7 @@ class PostingController extends Controller
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment'].$this->getKeyWords(),
+            "title"         => $post['comment'].' '.$this->getKeyWords(),
             "tags"         => $this->getKeyWords(),
             "description"         => "Cкачать: ". env('APP_URL'). '/post/' . $post['slug'],
 //            "gid"               => $this->getOkGroupId(),
