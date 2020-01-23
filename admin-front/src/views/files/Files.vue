@@ -102,7 +102,8 @@
             </tr>
             </thead><!---->
             <tbody
-              v-for="(item, index) in posts"
+              v-if="currentPosts"
+              v-for="(item, index) in currentPosts"
               :key="index"
               :aria-rowindex="index"
               v-bind:style="(item.status === '0')?'background: rgba(90,146,255,0.2)':''">
@@ -213,6 +214,7 @@
             postId: '',
           },
           tags: [],
+          currentPosts: [],
         };
       },
       components: {
@@ -221,10 +223,20 @@
       computed: {
         ...mapGetters('posting', {
           posts: 'posts',
+          moregirls: 'moregirls',
           postsError: 'postsError',
         })
       },
       name: 'Files',
+      updated: function (){
+        console.log('updated');
+      },
+      watch: {
+        $route(to, from) {
+          this.currentPosts = [];
+          this.setPosts();
+        }
+      },
       mounted: function () {
         axios.get( 'http://api.gifkawood.ru/api/tags',
         ).then(response => {
@@ -237,8 +249,26 @@
           .catch(e => {
             console.log(e);
           });
+        this.setPosts();
       },
       methods: {
+        setPosts: function(){
+          if (this.posts === []){
+            $this = this;
+            setTimeout(function ($this) {
+              console.log('wait 0.3 sec');
+              $this.setPosts();
+            },300);
+          }else {
+            if (this.$route.name === 'MOREGIRLS'){
+              this.currentPosts = this.moregirls;
+              console.log(this.moregirls);
+            }else if(this.$route.name === 'GIFKAWOOD'){
+              this.currentPosts = this.posts;
+              console.log(this.posts);
+            }
+          }
+        },
         count: function(){
           return 255 - this.comment.length;
         },

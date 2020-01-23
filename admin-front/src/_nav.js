@@ -1,3 +1,5 @@
+let host = window.location.host;
+console.log(host);
 export default {
   items: [
     {
@@ -8,9 +10,14 @@ export default {
       }
     },
     {
-      name: 'Постинг',
-      url: '/files',
-      icon: 'icon-docs'
+      name: 'GIFKAWOOD',
+      url: 'gifkawood',
+      icon: 'icon-star'
+    },
+    {
+      name: 'MOREGIRLS',
+      url: 'moregirls',
+      icon: 'icon-star'
     },
   ]
 }

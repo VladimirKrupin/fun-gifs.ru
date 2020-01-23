@@ -2,17 +2,20 @@ import axios from 'axios';
 
 const state = {
   posts: [],
+  moregirls: [],
   postsError: '',
 };
 
 const getters = {
   posts: state => state.posts,
+  moregirls: state => state.moregirls,
   postsError: state => state.postsError,
 };
 
 const mutations = {
   setPosts(state, payload) {
     state.posts = payload.posts;
+    state.moregirls = payload.posts;
   },
   setPostsError(state, payload) {
     state.postsError = payload.postsError;
@@ -20,7 +23,7 @@ const mutations = {
 };
 
 const actions = {
-  setPosts(context) {
+  setPosts(context,payload) {
     if (localStorage.getItem('access_token') !== null){
       const options = {
         method: 'GET',

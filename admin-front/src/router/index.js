@@ -4,6 +4,7 @@ import Router from 'vue-router'
 const DefaultContainer = () => import('@/containers/DefaultContainer');
 
 const Files = () => import('@/views/files/Files');
+const Moregirls = () => import('@/views/files/Files');
 const Profile = () => import('@/views/profile/Profile');
 const Login = () => import('@/views/login/Login');
 const MainPage = () => import('@/views/mainPage/MainPage');
@@ -17,14 +18,21 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/Files',
       name: 'Home',
       component: DefaultContainer,
       children: [
         {
-          path: 'files',
-          name: 'Files',
+          path: 'gifkawood',
+          name: 'GIFKAWOOD',
           component: Files,
+          meta: {
+            requiresAuth: true
+          },
+        },
+        {
+          path: 'moregirls',
+          name: 'MOREGIRLS',
+          component: Moregirls,
           meta: {
             requiresAuth: true
           },
@@ -41,7 +49,6 @@ export default new Router({
     },{
       path: '/main',
       name: 'MainPage',
-      redirect: '/Files',
       component: MainPage,
       meta: {
         requiresAuth: true

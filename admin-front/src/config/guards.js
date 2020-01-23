@@ -20,6 +20,6 @@ router.onReady( async (route) => {
   if ( auth && ! is_authenticated && route.name !== 'Login') {
     router.push({ name: 'Login' });
   } else if ( auth && is_authenticated && route.name === 'Login') {
-    router.push({ name: 'MainPage' });
+    router.push({ name: 'Home' });
   }
 });

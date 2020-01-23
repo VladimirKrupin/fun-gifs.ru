@@ -89,7 +89,7 @@
               }else if(response.data.status === 'ok'){
                 localStorage.setItem('access_token', response.data.data.token);
 
-                this.$router.push({ name: 'Files' });
+                this.$router.push({ name: 'Home' });
               }
             })
             .catch(e => {
