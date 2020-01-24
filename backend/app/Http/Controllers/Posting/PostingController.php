@@ -26,8 +26,7 @@ class PostingController extends Controller
 
     private $access_token;
     private $group_id;
-    private $moregirls_id;
-    private $moregirls_access_token;
+    private $group_comment;
     private $version;
     private $current_time;
 
@@ -199,8 +198,6 @@ class PostingController extends Controller
         // загрузка фото
         $this->setAccessToken(env('VK_ACCESS_TOKEN'));
         $this->setGroupId(env('VK_GROUP_ID'));
-        $this->moregirls_id = env('VK_MOREGIRLS_ID');
-        $this->moregirls_access_token = env('VK_MOREGIRLS_ACCESS_TOKEN');
         $this->setVersion(env('VK_API_V'));
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
 
@@ -222,6 +219,20 @@ class PostingController extends Controller
         $russian_hash_tags = implode(' #',$russian_hash_tags);
         $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
         $this->setHashTags($hashtags);
+    }
+
+    public function setGroupsAttributes($post){
+
+        $result = [];
+        if ($post['group'] === 1) {
+            $this->setAccessToken(env('VK_ACCESS_TOKEN'));
+            $this->setGroupId(env('VK_GROUP_ID'));
+            $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
+        }elseif ($post['group'] === 2){
+            $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
+            $this->setGroupId(env('VK_MOREGIRLS_ID'));
+            $this->group_comment = $post['comment'];
+        }
     }
 
     /**
@@ -338,10 +349,12 @@ class PostingController extends Controller
                 ->with('files')
                 ->first();
         }
+
         $posting_status = '';
 
         if ($post) {
             $post = $post->toArray();
+            $this->setGroupsAttributes($post);
             $posting_status .= "id: {$post['id']} \r\nuser_id: {$post['user_id']} \r\ncomment: {$post['comment']} \r\nstatus: {$post['status']} \r\nfiles: {$post['files'][0]['path']} \r\n";
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
@@ -350,6 +363,7 @@ class PostingController extends Controller
             }else{
                 $posting_status .= "VK posting done\r\n";
             }
+
             $status_ok = $this->postingOk($post);
 
             if (!$status_ok){
@@ -741,14 +755,12 @@ class PostingController extends Controller
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
 
-        $post_attributes = $this->getPostAttributes($post);
-
         $params_wall_post = http_build_query([
-            'owner_id' => $post_attributes['owner_id'],
-            'message' => $post_attributes['message'],
+            'owner_id' => $this->getGroupId()*-1,
+            'message' => $this->group_comment,
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
-            'access_token' => $post_attributes['access_token'],
+            'access_token' => $this->getAccessToken(),
             'v' => $this->getVersion(),
         ]);
 
@@ -772,22 +784,6 @@ class PostingController extends Controller
         // загрузка фото
     }
 
-    public function getPostAttributes($post){
-        $result = [];
-        if ($post['group'] === 1){
-            $result = [
-              'message' => $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'],
-              'owner_id' => $this->getGroupId()*-1,
-              'access_token' => $this->getAccessToken(),
-            ];
-        }elseif ($post['group'] === 2){
-            $result = [
-                'message' => $post['comment'],
-                'owner_id' => $this->getGroupId()*-1,
-                'access_token' => $this->moregirls_access_token*-1,
-            ];
-        }
-    }
 
     /**
      * @param $link
@@ -818,6 +814,7 @@ class PostingController extends Controller
      * @return string|array
      */
     private function getPhoto($file){
+
         $params_upload_photo = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
