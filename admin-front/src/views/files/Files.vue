@@ -222,7 +222,7 @@
       },
       computed: {
         ...mapGetters('posting', {
-          posts: 'posts',
+          gifkawood: 'gifkawood',
           moregirls: 'moregirls',
           postsError: 'postsError',
         })
@@ -253,7 +253,7 @@
       },
       methods: {
         setPosts: function(){
-          if (this.posts === []){
+          if (this.gifkawood === [] || this.moregirls === []){
             $this = this;
             setTimeout(function ($this) {
               console.log('wait 0.3 sec');
@@ -265,9 +265,9 @@
               this.groupId = 2;
               console.log(this.moregirls);
             }else if(this.$route.name === 'GIFKAWOOD'){
-              this.currentPosts = this.posts;
+              this.currentPosts = this.gifkawood;
               this.groupId = 1;
-              console.log(this.posts);
+              console.log(this.gifkawood);
             }
           }
         },
