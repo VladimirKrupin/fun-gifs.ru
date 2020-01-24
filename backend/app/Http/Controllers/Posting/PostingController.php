@@ -592,7 +592,7 @@ class PostingController extends Controller
      */
     public function postingOk($post)
     {
-        if ($post['group'] !== 1){
+        if ($post['group'] !== '1'){
             return ['error_code'=>'Группа не подключена к автопостингу'];
         }
         $video_content = false;
