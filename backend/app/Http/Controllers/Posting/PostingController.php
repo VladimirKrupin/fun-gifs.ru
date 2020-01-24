@@ -231,7 +231,7 @@ class PostingController extends Controller
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
-            $this->group_comment = $post['comment'];
+            $this->group_comment = '[goryachie_devushki_video_2019|MOREGIRLS]';
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
 
