@@ -62,6 +62,7 @@ class FilesController extends Controller
             'files' => 'required|max:100',
             'comment' => 'required|string|min:2|max:10000',
             'tags' => 'required|string',
+            'group' => 'required|integer',
         ]);
         if($validator->errors()->first('files')){
             return response()->json([
@@ -94,6 +95,7 @@ class FilesController extends Controller
                 'comment' => $request->input('comment'),
                 'slug' => $res,
                 'status' => 0,
+                'group' => 1,
             ]);
 
 
@@ -155,7 +157,8 @@ class FilesController extends Controller
     }
 
     public function getPosts(){
-        $posts_not_poster = Post::where('status','=',0)
+        $gifkawood_not_poster = Post::where('status','=',0)
+            ->where('')
             ->with('files')
             ->with(['postTag'=>function($query){
                 $query->with('tag');
@@ -164,7 +167,7 @@ class FilesController extends Controller
             ->get()->toArray();
 
 
-        $posts_active = Post::where('status','=',1)
+        $gifkawood_active = Post::where('status','=',1)
             ->take(30)
             ->with('files')
             ->with(['postTag'=>function($query){
@@ -173,6 +176,44 @@ class FilesController extends Controller
             ->orderBy('id', 'desc')
             ->get()->toArray();
 
+        $gifkawood_not_poster = Post::where('status','=',0)
+            ->with('files')
+            ->with(['postTag'=>function($query){
+                $query->with('tag');
+            }])
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
+
+
+        $gifkawood_active = Post::where('status','=',1)
+            ->take(30)
+            ->with('files')
+            ->with(['postTag'=>function($query){
+                $query->with('tag');
+            }])
+            ->orderBy('id', 'desc')
+            ->get()->toArray();
+
+        $posts = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
+
+
+        if (isset($posts[0])){
+            return response()->json([
+                'status' => 'ok',
+                'data' => [
+                    'gifkswood' =>$posts,
+                    'moregirls' =>$moregirls,
+                ]
+            ]);
+        }else{
+            return response()->json([
+                'status' => 'error',
+                'data' => ['error' => 'Посты закончились']
+            ]);
+        }
+    }
+
+    public function buildForJson($posts_not_poster,$posts_active){
         $posts = array_merge($posts_not_poster,$posts_active);
 
         $tags = Tag::where('id','>=',1)->get()->toArray();
@@ -184,9 +225,9 @@ class FilesController extends Controller
             foreach ($tags as $tag){
                 $tag_ids[] = $tag['id'];
                 $post_tags[$tag['id']] = [
-                  'id'=>$tag['id'],
-                  'name'=>$tag['name'],
-                  'value'=>false,
+                    'id'=>$tag['id'],
+                    'name'=>$tag['name'],
+                    'value'=>false,
                 ];
             }
             foreach ($post['post_tag'] as $post_tag){
@@ -197,18 +238,7 @@ class FilesController extends Controller
 
             $post['tags'] = $post_tags;
         }
-
-        if (isset($posts[0])){
-            return response()->json([
-                'status' => 'ok',
-                'data' => ['posts' =>$posts]
-            ]);
-        }else{
-            return response()->json([
-                'status' => 'error',
-                'data' => ['error' => 'Посты закончились']
-            ]);
-        }
+        return $posts;
     }
 
     public function changeTag(Request $request){

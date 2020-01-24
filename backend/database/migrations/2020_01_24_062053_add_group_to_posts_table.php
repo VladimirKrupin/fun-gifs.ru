@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugTags extends Migration
+class AddGroupToPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddSlugTags extends Migration
      */
     public function up()
     {
-        Schema::table('tags', function (Blueprint $table) {
-            $table->string('slug');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('group');
         });
     }
 
@@ -25,8 +25,8 @@ class AddSlugTags extends Migration
      */
     public function down()
     {
-        Schema::table('tags', function (Blueprint $table) {
-            $table->dropIfExists('slug');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropIfExists('group');
         });
     }
 }

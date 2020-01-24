@@ -262,9 +262,11 @@
           }else {
             if (this.$route.name === 'MOREGIRLS'){
               this.currentPosts = this.moregirls;
+              this.groupId = 2;
               console.log(this.moregirls);
             }else if(this.$route.name === 'GIFKAWOOD'){
               this.currentPosts = this.posts;
+              this.groupId = 1;
               console.log(this.posts);
             }
           }
@@ -298,6 +300,7 @@
             }
           });
           formData.append('tags',tagsValues);
+          formData.append('group',this.groupId);
 
           this.disabled = true;
           this.loader = true;

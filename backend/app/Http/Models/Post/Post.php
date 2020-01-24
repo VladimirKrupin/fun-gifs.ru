@@ -17,7 +17,7 @@ class Post extends Model
     protected $appends = ['link'];
 
     protected $fillable = [
-        'user_id', 'file_id', 'comment', 'status','slug'
+        'user_id', 'file_id', 'comment', 'status','slug','group'
     ];
 
 
