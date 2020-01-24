@@ -828,7 +828,7 @@ class PostingController extends Controller
 
         //составляем данные и загружаем фото на сервер по ссылке которую дали из предыдущего запроса
         $post_params = [
-            'photo' => new CURLFile('/backend/storage/app/files-store/'.$file['path'])
+            'photo' => new CURLFile('/var/www/www-root/data/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path'])
         ];
         try{
             $response = $this->getCurlResponse($link,$post_params);
@@ -837,7 +837,6 @@ class PostingController extends Controller
         }catch (\Exception $exception){
             var_dump($exception);
         }
-
 
         //сохраняем фото для стены
         $params_save_photo = http_build_query([
@@ -1050,7 +1049,7 @@ class PostingController extends Controller
         // Идентификатор для загрузки фото
         $photo_id = $step1['photo_ids'][0];
 
-        $img_real_path = realpath('/backend/storage/app/files-store/'.$file['path']);
+        $img_real_path = realpath('/var/www/www-root/data/www/fun-gifs.ru/backend/storage/app/files-store/'.$file['path']);
         $extension = explode('.',$file['path']);
         $extension = end($extension);
         $curl_file = curl_file_create($img_real_path,'image/jpeg',$post['comment'].'.'.$extension);
