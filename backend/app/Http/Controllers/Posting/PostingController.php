@@ -233,7 +233,7 @@ class PostingController extends Controller
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->group_comment = $post['comment'];
             $this->group_description = "MOREGIRLS | $month $date[0]";
-            $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные блондинка брюнетка жопа рыжая сочные пошлые голая сука");
+            $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
 
         }
     }
@@ -883,7 +883,7 @@ class PostingController extends Controller
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
             'name' => $this->getKeyWords(),
-            'description' => $hashtags_video,
+            'description' => '',
             'v' => $this->getVersion(),
         ]);
 
