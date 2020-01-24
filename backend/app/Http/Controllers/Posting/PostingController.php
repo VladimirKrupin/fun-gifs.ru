@@ -355,6 +355,8 @@ class PostingController extends Controller
         if ($post) {
             $post = $post->toArray();
             $this->setGroupsAttributes($post);
+            var_dump($this->getAccessToken());
+            var_dump($this->getGroupId());
             $posting_status .= "id: {$post['id']} \r\nuser_id: {$post['user_id']} \r\ncomment: {$post['comment']} \r\nstatus: {$post['status']} \r\nfiles: {$post['files'][0]['path']} \r\n";
             $status_vk = $this->wallPosting($post);
             if ($status_vk['status'] === 'error'){
