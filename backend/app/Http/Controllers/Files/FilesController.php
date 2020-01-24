@@ -201,20 +201,13 @@ class FilesController extends Controller
         $moregirls = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
 
 
-        if (isset($posts[0])){
-            return response()->json([
-                'status' => 'ok',
-                'data' => [
-                    'gifkswood' =>$gifkawood,
-                    'moregirls' =>$moregirls,
-                ]
-            ]);
-        }else{
-            return response()->json([
-                'status' => 'error',
-                'data' => ['error' => 'Посты закончились']
-            ]);
-        }
+        return response()->json([
+            'status' => 'ok',
+            'data' => [
+                'gifkswood' =>$gifkawood,
+                'moregirls' =>$moregirls,
+            ]
+        ]);
     }
 
     public function buildForJson($posts_not_poster,$posts_active){
