@@ -27,6 +27,7 @@ class PostingController extends Controller
     private $access_token;
     private $group_id;
     private $group_comment;
+    private $group_post_description;
     private $version;
     private $current_time;
 
@@ -226,13 +227,15 @@ class PostingController extends Controller
             $this->setGroupId(env('VK_GROUP_ID'));
             $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
             $this->group_description = "GIFKAWOOD | $month $date[0]";
-            $this->setKeyWords("{$post['comment']} | $this->group_description | лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [fun_gifs_video_prikoly|GIFKAWOOD] \r\n смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
+            $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->group_comment = '[goryachie_devushki_video_2019|MOREGIRLS]';
             $this->group_description = "MOREGIRLS | $month $date[0]";
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [goryachie_devushki_video_2019|MOREGIRLS] \r\n довочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
             $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
 
         }
@@ -875,15 +878,11 @@ class PostingController extends Controller
      */
     private function getVideo($post,$file){
         // загрузка видео
-//        $eng_comment = $this->translate('ru','en',$post['comment']);
-        $eng_comment = '';
-        $hashtags_video = "$this->group_description смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
-        $key_words = 'Лучшие видео приколы смешные свежие подборка новые новинки самые топ смотреть февраль 2019 интересно смех веселая 2018';
         $params_video_save = http_build_query([
             'group_id' => $this->getGroupId(),
             'access_token' => $this->getAccessToken(),
             'name' => $this->getKeyWords(),
-            'description' => '',
+            'description' => $this->group_post_description,
             'v' => $this->getVersion(),
         ]);
 
