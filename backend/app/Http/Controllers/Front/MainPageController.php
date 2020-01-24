@@ -13,7 +13,7 @@ class MainPageController extends Controller
     public function index()
     {
         return view('front.index',[
-            'posts'=>Post::where('status', 1)->with('files')->orderBy('created_at', 'desc')->paginate(10),
+            'posts'=>Post::where('status', 1)->where('group',1)->with('files')->orderBy('created_at', 'desc')->paginate(10),
             'tags'=>Tag::all()->toArray(),
             'colors'=>$this->tags_colors,
             'counter'=>0,
@@ -28,7 +28,7 @@ class MainPageController extends Controller
         foreach ($posts_ids as $post){
             $ids[] = $post['post_id'];
         }
-        $posts = Post::where('status', 1)->whereIn('id',$ids)->with('files')->orderBy('created_at', 'desc')->paginate(10);
+        $posts = Post::where('status', 1)->where('group',1)->whereIn('id',$ids)->with('files')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('front.index',[
             'posts'=>$posts,
@@ -45,7 +45,7 @@ class MainPageController extends Controller
     }
     public function siteMap()
     {
-        $posts = Post::where('status', 1)->with('files')->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('status', 1)->where('group',1)->with('files')->orderBy('created_at', 'desc')->get();
         $tags = Tag::where('id','>',0)->get();
         return view('sitemap')->with(compact(['posts','tags']));
     }
