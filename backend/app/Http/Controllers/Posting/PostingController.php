@@ -225,11 +225,11 @@ class PostingController extends Controller
 
         $result = [];
         var_dump($post);
-        if ($post['group'] === 1) {
+        if ($post['group'] === '1') {
             $this->setAccessToken(env('VK_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_GROUP_ID'));
             $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
-        }elseif ($post['group'] === 2){
+        }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->group_comment = $post['comment'];
