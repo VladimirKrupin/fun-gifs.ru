@@ -224,6 +224,7 @@ class PostingController extends Controller
     public function setGroupsAttributes($post){
 
         $result = [];
+        var_dump($post);
         if ($post['group'] === 1) {
             $this->setAccessToken(env('VK_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_GROUP_ID'));
@@ -357,6 +358,7 @@ class PostingController extends Controller
             $this->setGroupsAttributes($post);
             var_dump($this->getAccessToken());
             var_dump($this->getGroupId());
+            var_dump($this->group_comment);
             die;
             $posting_status .= "id: {$post['id']} \r\nuser_id: {$post['user_id']} \r\ncomment: {$post['comment']} \r\nstatus: {$post['status']} \r\nfiles: {$post['files'][0]['path']} \r\n";
             $status_vk = $this->wallPosting($post);
