@@ -204,7 +204,7 @@ class FilesController extends Controller
         return response()->json([
             'status' => 'ok',
             'data' => [
-                'gifkswood' =>$gifkawood,
+                'gifkawood' =>$gifkawood,
                 'moregirls' =>$moregirls,
             ]
         ]);

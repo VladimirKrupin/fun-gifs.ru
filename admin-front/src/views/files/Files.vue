@@ -254,7 +254,7 @@
       methods: {
         setPosts: function(){
           if (this.gifkawood === [] || this.moregirls === []){
-            $this = this;
+            let $this = this;
             setTimeout(function ($this) {
               console.log('wait 0.3 sec');
               $this.setPosts();
