@@ -823,6 +823,7 @@ class PostingController extends Controller
 
         //Получаем адрес для загрузки фото на сервер
         $file_upload_link = json_decode(file_get_contents("https://api.vk.com/method/photos.getWallUploadServer?".$params_upload_photo));
+        var_dump($file_upload_link);
         $link = $file_upload_link->response->upload_url;
 
         //составляем данные и загружаем фото на сервер по ссылке которую дали из предыдущего запроса
