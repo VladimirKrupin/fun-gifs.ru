@@ -26,6 +26,8 @@ class PostingController extends Controller
 
     private $access_token;
     private $group_id;
+    private $moregirls_id;
+    private $moregirls_access_token;
     private $version;
     private $current_time;
 
@@ -197,6 +199,8 @@ class PostingController extends Controller
         // загрузка фото
         $this->setAccessToken(env('VK_ACCESS_TOKEN'));
         $this->setGroupId(env('VK_GROUP_ID'));
+        $this->moregirls_id = env('VK_MOREGIRLS_ID');
+        $this->moregirls_access_token = env('VK_MOREGIRLS_ACCESS_TOKEN');
         $this->setVersion(env('VK_API_V'));
         $this->setCurrentTime(Carbon::now()->toDateTimeString());
 
@@ -573,6 +577,9 @@ class PostingController extends Controller
      */
     public function postingOk($post)
     {
+        if ($post['group'] !== 1){
+            return ['error_code'=>'Группа не подключена к автопостингу'];
+        }
         $video_content = false;
 
         $attachments = [];
@@ -734,12 +741,14 @@ class PostingController extends Controller
 //        $eng_comment = $this->translate('ru','en',$post['comment']);
         $eng_comment = '';
 
+        $post_attributes = $this->getPostAttributes($post);
+
         $params_wall_post = http_build_query([
-            'owner_id' => $this->getGroupId()*-1,
-            'message' => $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'],
+            'owner_id' => $post_attributes['owner_id'],
+            'message' => $post_attributes['message'],
             'from_group' => 1,
             'attachments' => implode(',',$attachments),
-            'access_token' => $this->getAccessToken(),
+            'access_token' => $post_attributes['access_token'],
             'v' => $this->getVersion(),
         ]);
 
@@ -761,6 +770,23 @@ class PostingController extends Controller
         }
 
         // загрузка фото
+    }
+
+    public function getPostAttributes($post){
+        $result = [];
+        if ($post['group'] === 1){
+            $result = [
+              'message' => $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'],
+              'owner_id' => $this->getGroupId()*-1,
+              'access_token' => $this->getAccessToken(),
+            ];
+        }elseif ($post['group'] === 2){
+            $result = [
+                'message' => $post['comment'],
+                'owner_id' => $this->getGroupId()*-1,
+                'access_token' => $this->moregirls_access_token*-1,
+            ];
+        }
     }
 
     /**

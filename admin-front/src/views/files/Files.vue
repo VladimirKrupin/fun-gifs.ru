@@ -102,7 +102,15 @@
             </tr>
             </thead><!---->
             <tbody
-              v-if="currentPosts"
+              v-if="currentPosts.length === 0">
+              <tr>
+                <td class="text-center">
+                  <div class="loader loader-post-process"></div>
+                </td>
+              </tr>
+            </tbody>
+            <tbody
+              v-if="currentPosts.length !== 0"
               v-for="(item, index) in currentPosts"
               :key="index"
               :aria-rowindex="index"
@@ -119,11 +127,12 @@
               </td>
             </tr>
             <tr >
-              <td colspan="4" aria-colindex="1" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
-                <video width="300" height="200" controls>
+              <td colspan="4" class="text-sm-center text-md-left" style="border-top: 0; border-bottom: 2px solid rgba(0,0,0,.2)">
+                <video v-if="item.files[0].path.substring(item.files[0].path.length-4) === '.mp4'" width="300" height="200" :key="item.id" controls>
                   <source :src="'https://file-store.gifkawood.ru/'+item.files[0].path" :type="getFileType(item)">
                   Your browser does not support the video tag.
                 </video>
+                <img width="300" v-if="item.files[0].path.substring(item.files[0].path.length-4) !== '.mp4'" :src="'https://file-store.gifkawood.ru/'+item.files[0].path" alt="">
               </td>
             </tr>
             <tr >
@@ -230,6 +239,9 @@
       name: 'Files',
       updated: function (){
         console.log('updated');
+        if (this.currentPosts === []){
+          this.setPosts();
+        }
       },
       watch: {
         $route(to, from) {
@@ -253,17 +265,19 @@
       },
       methods: {
         setPosts: function(){
-          if (this.gifkawood === [] || this.moregirls === []){
+          if (this.gifkawood.length === 0 || this.moregirls.length === 0){
             let $this = this;
+            var self = this;
             setTimeout(function ($this) {
               console.log('wait 0.3 sec');
-              $this.setPosts();
-            },300);
+              console.log(self);
+              self.setPosts();
+            },5000);
           }else {
             if (this.$route.name === 'MOREGIRLS'){
               this.currentPosts = this.moregirls;
               this.groupId = 2;
-              console.log(this.moregirls);
+              console.log();
             }else if(this.$route.name === 'GIFKAWOOD'){
               this.currentPosts = this.gifkawood;
               this.groupId = 1;
