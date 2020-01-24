@@ -207,10 +207,6 @@ class PostingController extends Controller
         $this->setOkPublicKey(env('OK_PUBLIC_KEY'));//Публичный ключ приложения
         $this->setOkGroupId(env('OK_GROUP_ID'));
 
-        $date = explode('-',date('Y-m-d'));
-        $month = $this->getMonthNameByDate(date('Y-m-d'));
-        $this->group_description = "GIFKAWOOD | $month $date[0]";
-        $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         $this->setFbToken(env('FB_ACCESS_TOKEN'));
         $this->setFbGroupId(env('FB_GROUP_ID'));
@@ -222,16 +218,23 @@ class PostingController extends Controller
     }
 
     public function setGroupsAttributes($post){
-
+        $date = explode('-',date('Y-m-d'));
+        $month = $this->getMonthNameByDate(date('Y-m-d'));
         $result = [];
         if ($post['group'] === '1') {
             $this->setAccessToken(env('VK_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_GROUP_ID'));
             $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
+            $this->group_description = "GIFKAWOOD | $month $date[0]";
+            $this->setKeyWords("{$post['comment']} | $this->group_description | лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
+
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->group_comment = $post['comment'];
+            $this->group_description = "MOREGIRLS | $month $date[0]";
+            $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные блондинка брюнетка жопа рыжая сочные пошлые голая сука");
+
         }
     }
 
