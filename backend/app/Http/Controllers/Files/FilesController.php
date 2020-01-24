@@ -95,7 +95,7 @@ class FilesController extends Controller
                 'comment' => $request->input('comment'),
                 'slug' => $res,
                 'status' => 0,
-                'group' => 1,
+                'group' => $request->input('group'),
             ]);
 
 
@@ -158,7 +158,7 @@ class FilesController extends Controller
 
     public function getPosts(){
         $gifkawood_not_poster = Post::where('status','=',0)
-            ->where('')
+            ->where('group',1)
             ->with('files')
             ->with(['postTag'=>function($query){
                 $query->with('tag');
@@ -168,6 +168,7 @@ class FilesController extends Controller
 
 
         $gifkawood_active = Post::where('status','=',1)
+            ->where('group',1)
             ->take(30)
             ->with('files')
             ->with(['postTag'=>function($query){
@@ -177,6 +178,7 @@ class FilesController extends Controller
             ->get()->toArray();
 
         $gifkawood_not_poster = Post::where('status','=',0)
+            ->where('group',2)
             ->with('files')
             ->with(['postTag'=>function($query){
                 $query->with('tag');
@@ -186,6 +188,7 @@ class FilesController extends Controller
 
 
         $gifkawood_active = Post::where('status','=',1)
+            ->where('group',2)
             ->take(30)
             ->with('files')
             ->with(['postTag'=>function($query){
@@ -194,14 +197,15 @@ class FilesController extends Controller
             ->orderBy('id', 'desc')
             ->get()->toArray();
 
-        $posts = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
+        $gifkawood = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
+        $moregirls = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
 
 
         if (isset($posts[0])){
             return response()->json([
                 'status' => 'ok',
                 'data' => [
-                    'gifkswood' =>$posts,
+                    'gifkswood' =>$gifkawood,
                     'moregirls' =>$moregirls,
                 ]
             ]);
