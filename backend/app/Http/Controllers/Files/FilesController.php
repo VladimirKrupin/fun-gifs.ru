@@ -177,7 +177,7 @@ class FilesController extends Controller
             ->orderBy('id', 'desc')
             ->get()->toArray();
 
-        $gifkawood_not_poster = Post::where('status','=',0)
+        $moregirls_not_poster = Post::where('status','=',0)
             ->where('group',2)
             ->with('files')
             ->with(['postTag'=>function($query){
@@ -187,7 +187,7 @@ class FilesController extends Controller
             ->get()->toArray();
 
 
-        $gifkawood_active = Post::where('status','=',1)
+        $moregirls_active = Post::where('status','=',1)
             ->where('group',2)
             ->take(30)
             ->with('files')
@@ -198,7 +198,7 @@ class FilesController extends Controller
             ->get()->toArray();
 
         $gifkawood = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
-        $moregirls = $this->buildForJson($gifkawood_not_poster,$gifkawood_active);
+        $moregirls = $this->buildForJson($moregirls_not_poster,$moregirls_active);
 
 
         return response()->json([
