@@ -227,7 +227,7 @@ class PostingController extends Controller
             $this->setGroupId(env('VK_GROUP_ID'));
             $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
             $this->group_description = "GIFKAWOOD | $month $date[0]";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [fun_gifs_video_prikoly|GIFKAWOOD] \r\n смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club176519720|@GIFKAWOOD] \r\n смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
             $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         }elseif ($post['group'] === '2'){
@@ -235,7 +235,7 @@ class PostingController extends Controller
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->group_comment = '[goryachie_devushki_video_2019|MOREGIRLS]';
             $this->group_description = "MOREGIRLS | $month $date[0]";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [goryachie_devushki_video_2019|MOREGIRLS] \r\n довочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club180558782|@MOREGIRLS] \r\n довочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
             $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
 
         }
