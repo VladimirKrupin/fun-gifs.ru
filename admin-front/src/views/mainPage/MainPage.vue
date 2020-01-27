@@ -1,35 +1,65 @@
 <template>
-  <div style="min-height: 100vh;" class="app flex-row align-items-center bg-theme">
-    <div class="container">
-      <b-row class="justify-content-center">
-        home page
-      </b-row>
+  <div class="app flex-row  bg-theme app-container">
+    <div class="row w-100 pr-md-4 pl-4 pt-2 pr-sm-0">
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mr-sm-0 mr-md-5">
+        <div class="card bg-info">
+          <router-link :to="'gifkawood'" class="text-muted card-link">
+            <div class="card-body">
+              <div class="h1 text-right mb-4 text-white">
+                <i class="icon-star"></i>
+              </div>
+              <div class="card-padding  text-center">
+                <div class="h1 mb-3 text-white">gifkawood</div>
+                <small class="text-uppercase text-white">group gifkawood</small>
+              </div>
+            </div>
+          </router-link>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mr-sm-0 mr-md-5">
+        <div class="card bg-warning">
+          <router-link :to="'moregirls'" class="text-muted card-link">
+            <div class="card-body">
+              <div class="h1 text-right mb-4 text-white">
+                <i class="icon-star"></i>
+              </div>
+              <div class="card-padding  text-center">
+                <div class="h1 mb-3 text-white">moregirls</div>
+                <small class="text-uppercase text-white">group moregirls</small>
+              </div>
+            </div>
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
-    export default {
-        name: 'MainPage'
+  export default {
+    name: 'MainPage',
+    data() {
+      return {
+      };
+    },
+    components: {
+    },
+    computed: {
+    },
+    updated: function (){
+    },
+    watch: {
+    },
+    mounted: function () {
+    },
+    methods: {
     }
+  }
 </script>
 
 <style>
-  .form__btn {
-    background-color: #007bff;
-  }
-
-  .form__forget {
-    color: #007bff;
-  }
-
-
-  .link {
-    color: #007bff;
-  }
-
-  .bg-theme {
-    background-color: #f6f7f7;
+  .card-padding {
+    padding-bottom: 40px;
   }
 </style>

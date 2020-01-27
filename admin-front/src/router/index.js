@@ -19,6 +19,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      redirect: '/main',
       component: DefaultContainer,
       children: [
         {
@@ -45,14 +46,15 @@ export default new Router({
             requiresAuth: true
           },
         },
+        {
+          path: '/main',
+          name: 'MainPage',
+          component: MainPage,
+          meta: {
+            requiresAuth: true
+          },
+        },
       ]
-    },{
-      path: '/main',
-      name: 'MainPage',
-      component: MainPage,
-      meta: {
-        requiresAuth: true
-      },
     },
     {
       path: '/login',
