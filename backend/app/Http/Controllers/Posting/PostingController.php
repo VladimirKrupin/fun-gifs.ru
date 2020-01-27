@@ -396,12 +396,12 @@ class PostingController extends Controller
                     $theme = 'Предупреждение: осталось всего 10 постов';
                 }
                 if ($theme){
-                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
-                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                    Mail::to('vladimir.krupin133@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                    Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
                 }
             }else{
                 $theme = 'Предупреждение: только что был опубликован последний пост';
-                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
+//                Mail::to('Oksbolt202@gmail.com')->send(new PostingEndedPosts(0, $theme));
             }
 
             $posting_status .= ($theme)?$theme."\r\n":'';
