@@ -21,7 +21,7 @@ Route::post('/login/', 'User\UserController@login');
 Route::post('/putFiles/', 'Files\FilesController@putFiles')->middleware('auth:api');
 Route::get('/getPosts/', 'Files\FilesController@getPosts')->middleware('auth:api');
 Route::get('/createUser/', 'User\UserController@createUser');
-Route::get('/getUserData/', function (){return User::where('id',Auth::user()['id'])->toArray();})->middleware('auth:api');
+Route::get('/getUserData/', function (){return User::where('id',Auth::user()['id'])->first()->toArray();})->middleware('auth:api');
 Route::get('/tags/', function (){return Tag::all()->toArray();});
 Route::post('/changeTag/', 'Files\FilesController@changeTag')->middleware('auth:api');
 

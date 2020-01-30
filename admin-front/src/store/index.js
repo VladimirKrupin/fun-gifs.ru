@@ -9,5 +9,6 @@ export const store = new Vuex.Store({
   strict: true,
   modules: {
     posting,
+    profile,
   }
 });
