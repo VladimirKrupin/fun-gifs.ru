@@ -237,7 +237,6 @@ class PostingController extends Controller
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club180558782|@MOREGIRLS] \r\n довочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
             $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
-
         }
     }
 
