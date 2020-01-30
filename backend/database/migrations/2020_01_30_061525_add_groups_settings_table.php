@@ -15,8 +15,9 @@ class AddGroupsSettingsTable extends Migration
     {
         Schema::create('groups_settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('group_id');
             $table->string('access_token');
-            $table->string('group_id');
+            $table->string('public_id');
             $table->string('api_v');
             $table->string('private_key');
             $table->string('name');

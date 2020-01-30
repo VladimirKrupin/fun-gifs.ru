@@ -15,8 +15,8 @@
       <div class="ml-auto">
         <div class="d-flex align-items-center col-sm-12 col-12 offset-md-1 col-md-5 col-lg-5">
           <div class="d-flex flex-column mr-1 user-info">
-            <h5 class="mb-1"><span class="badge badge-pill badge-primary font-weight-light">Андминистратор</span></h5>
-            <span class="text-md-left text-nowrap text-dark">User name</span>
+            <h5 class="mb-1"><span class="badge badge-pill badge-primary font-weight-light">{{userType}}</span></h5>
+            <span class="text-md-left text-nowrap text-dark">{{userName}}</span>
           </div>
           <b-navbar-nav class="ml-auto">
             <DefaultHeaderDropdownAccnt/>
@@ -96,6 +96,10 @@ export default {
     list () {
       return this.$route.matched.filter((route) => route.name || route.meta.label )
     },
+    ...mapGetters('profile',{
+      userName: 'userName',
+      userType: 'userType'
+    })
   },
   methods: {
     logout: function (event) {

@@ -14,7 +14,7 @@ class GroupsSettings extends Model
      */
 
     protected $fillable = [
-        'access_token', 'group_id','api_v','private_key','name','key_words','description'
+        'group_id','access_token', 'public_id','api_v','private_key','name','key_words','description'
     ];
     
 }

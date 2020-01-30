@@ -16,5 +16,8 @@ class Group extends Model
     protected $fillable = [
         'name', 'type'
     ];
-    
+
+    public function settings(){
+        return $this->hasOne('App\Http\Models\Group\GroupsSettings');
+    }
 }

@@ -1,17 +1,16 @@
 import axios from 'axios';
 
 const state = {
-  userData: [],
+  projects: [],
 };
 
 const getters = {
-  userName: state => (state.userData.name)?state.userData.name:state.userData.email,
-  userType: state => (state.userData.account_status === '0')?'Администратор':'Пользователь',
+  projects: state => state.projects,
 };
 
 const mutations = {
-  setUserData(state, payload) {
-    state.userData = payload.userData;
+  setProjects(state, payload) {
+    state.projects = payload.projects;
   },
 };
 
@@ -23,12 +22,12 @@ const actions = {
         headers: {
           'Authorization': 'Bearer ' + localStorage.getItem('access_token')
         },
-        url: 'http://api.gifkawood.ru/api/getUserData',
+        url: 'http://api.gifkawood.ru/api/getProjects',
       };
       axios(options)
         .then(response => {
           console.log(response.data);
-          context.commit('setUserData', { userData: response.data });
+          context.commit('setProjects', { projects: response.data });
         })
         .catch(e => {
           console.log(e);

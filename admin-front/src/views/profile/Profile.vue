@@ -164,13 +164,23 @@
 </template>
 
 <script>
+  import axios from 'axios';
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Profile',
+    computed: {
+      ...mapGetters('',{
+        projects: 'projects'
+      }),
+    },
     data() {
       return {
         text: '312'
       };
     },
+    mounted() {
+      console.log(projects);
+    }
   }
 </script>
 
