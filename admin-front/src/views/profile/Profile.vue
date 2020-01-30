@@ -169,7 +169,7 @@
   export default {
     name: 'Profile',
     computed: {
-      ...mapGetters('',{
+      ...mapGetters('projects',{
         projects: 'projects'
       }),
     },
@@ -179,7 +179,7 @@
       };
     },
     mounted() {
-      console.log(projects);
+      // console.log(projects);
     }
   }
 </script>

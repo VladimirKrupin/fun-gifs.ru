@@ -33,7 +33,7 @@ Route::get('/getUserData/',
 Route::get('/getProjects/',
     function ()
     {
-        return Project::with(['group',function($q){$q->with('settings');}])->get()->toArray();
+        return Project::where('id','>',0)->with(['group',function($q){$q->with('settings');}])->get()->toArray();
     }
 )->middleware('auth:api');
 

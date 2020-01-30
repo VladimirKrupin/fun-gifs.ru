@@ -15,7 +15,7 @@ const mutations = {
 };
 
 const actions = {
-  setUserData(context) {
+  setProjects(context) {
     if (localStorage.getItem('access_token') !== null){
       const options = {
         method: 'GET',
@@ -27,7 +27,7 @@ const actions = {
       axios(options)
         .then(response => {
           console.log(response.data);
-          context.commit('setProjects', { projects: response.data });
+          // context.commit('setProjects', { projects: response.data });
         })
         .catch(e => {
           console.log(e);

@@ -19,6 +19,7 @@ require('./config/guards');
 
 store.dispatch('posting/setPosts');
 store.dispatch('profile/setUserData');
+store.dispatch('projects/setProjects');
 
 new Vue({
   el: '#app',
