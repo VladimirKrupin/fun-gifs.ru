@@ -27,7 +27,7 @@ const actions = {
       axios(options)
         .then(response => {
           console.log(response.data);
-          // context.commit('setProjects', { projects: response.data });
+          context.commit('setProjects', { projects: response.data });
         })
         .catch(e => {
           console.log(e);
