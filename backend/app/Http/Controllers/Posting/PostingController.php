@@ -28,6 +28,8 @@ class PostingController extends Controller
     private $group_id;
     private $group_comment;
     private $group_post_description;
+    private $ok_post_description;
+    private $keys_description;
     private $version;
     private $current_time;
 
@@ -225,17 +227,23 @@ class PostingController extends Controller
         if ($post['group'] === '1') {
             $this->setAccessToken(env('VK_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_GROUP_ID'));
+            $this->setOkGroupId(56022813442280);
             $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
             $this->group_description = "GIFKAWOOD | $month $date[0]";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club176519720|@GIFKAWOOD] \r\n смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
+            $this->keys_description = "смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club176519720|@GIFKAWOOD] \r\n $this->keys_description";
+            $this->ok_post_description = "Подпишись на GIFKAWOOD\r\n $this->keys_description";
             $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
 
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
-            $this->group_comment = '[goryachie_devushki_video_2019|MOREGIRLS]';
+            $this->setOkGroupId(58307293806824);
+            $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
             $this->group_description = "MOREGIRLS | $month $date[0]";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club180558782|@MOREGIRLS] \r\n довочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
+            $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
+            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club180558782|@MOREGIRLS] \r\n $this->keys_description";
+            $this->ok_post_description = "Подпишись на MOREGIRLS\r\n $this->keys_description";
             $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
         }
     }
@@ -597,9 +605,6 @@ class PostingController extends Controller
      */
     public function postingOk($post)
     {
-        if ($post['group'] !== '1'){
-            return ['error_code'=>'Группа не подключена к автопостингу'];
-        }
         $video_content = false;
 
         $attachments = [];
@@ -625,7 +630,7 @@ class PostingController extends Controller
         // Заменим переносы строк, чтоб не вываливалась ошибка аттача
         $message_json = str_replace("\n", "\\n", $post['comment']);
 
-        $attachment['media'][] = ['type'=>'text','text'=>$message_json. "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug']];
+        $attachment['media'][] = ['type'=>'text','text'=>$this->group_comment];
 
 //        if (isset($photos)){
         if (isset($attachments['photo'])){
@@ -932,7 +937,7 @@ class PostingController extends Controller
         $params = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.getUploadUrl",
-            "file_name"         => $post['comment'],
+            "file_name"         => $this->getKeyWords(),
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
             "gid"               => $this->getOkGroupId(),
@@ -983,15 +988,14 @@ class PostingController extends Controller
             return false;
         }
 
-
         // 3.Загрузка видео
         $params3 = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.update",
             "vid"         => $video_id,
-            "title"         => $post['comment'].' '.$this->getKeyWords(),
-            "tags"         => $this->getKeyWords(),
-            "description"         => "Cкачать: ". env('APP_URL'). '/post/' . $post['slug'],
+            "title"         => $this->getKeyWords(),
+            "tags"         => $this->keys_description,
+            "description"         => $this->ok_post_description,
 //            "gid"               => $this->getOkGroupId(),
             "format"            =>  "json"
         );
