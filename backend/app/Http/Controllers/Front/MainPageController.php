@@ -20,6 +20,13 @@ class MainPageController extends Controller
         ]);
     }
 
+    public function moregirls()
+    {
+        return view('front.moregirls',[
+            'posts'=>Post::where('status', 1)->where('group',2)->with('files')->orderBy('created_at', 'desc')->paginate(10),
+        ]);
+    }
+
     public function tag($slug){
         $tag = Tag::where('slug',$slug)->first()->toArray();
 
@@ -47,6 +54,7 @@ class MainPageController extends Controller
     {
         $posts = Post::where('status', 1)->where('group',1)->with('files')->orderBy('created_at', 'desc')->get();
         $tags = Tag::where('id','>',0)->get();
-        return view('sitemap')->with(compact(['posts','tags']));
+        $posts_moregirls = Post::where('status', 1)->where('group',2)->with('files')->orderBy('created_at', 'desc')->get();
+        return view('sitemap')->with(compact(['posts','tags','posts_moregirls']));
     }
 }

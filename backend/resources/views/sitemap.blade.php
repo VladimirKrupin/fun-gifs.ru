@@ -8,6 +8,12 @@
         <priority>1</priority>
     </url>
 
+    <url>
+        <loc>https://gifkawood.ru/moregirls</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+
     @foreach ($tags as $tag)
         <url>
             <loc>{{ url($tag->link) }}</loc>
@@ -17,10 +23,10 @@
         </url>
     @endforeach
 
-    @foreach ($posts as $post)
+    @foreach ($posts_moregirls as $posts_moregirl)
         <url>
-            <loc>{{ url($post->link) }}</loc>
-            <lastmod>{{ $post->updated_at->tz('GMT')->toAtomString() }}</lastmod>
+            <loc>{{ url($posts_moregirl->moregirls) }}</loc>
+            <lastmod>{{ $posts_moregirl->updated_at->tz('GMT')->toAtomString() }}</lastmod>
             <changefreq>monthly</changefreq>
             <priority>1</priority>
         </url>

@@ -14,7 +14,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $appends = ['link'];
+    protected $appends = ['link','moregirls'];
 
     protected $fillable = [
         'user_id', 'file_id', 'comment', 'status','slug','group'
@@ -26,10 +26,14 @@ class Post extends Model
         return $this->hasMany('App\Http\Models\Post\File');
     }
 
-
     public function getLinkAttribute()
     {
         return route('front.post', $this->slug);
+    }
+
+    public function getMoregirlsAttribute()
+    {
+        return route('front.moregirls', $this->slug);
     }
 
     public function PostTag(){

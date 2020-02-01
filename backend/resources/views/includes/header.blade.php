@@ -13,6 +13,12 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/moregirls/" class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
+                        Горячие девушки
+                        <i style="text-decoration: none;margin-left: 4px;" class="fa fa-heart"></i>
+                    </a>
+                </li>
                 <li class="dropdown nav-item">
                     <a onclick="yandexGoal(56860381,'HEAD_DROPDOWN');" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Категории
@@ -33,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');" target="_blank" href="https://vk.com/fun_gifs_video_prikoly" class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
+                    <a onclick="yandexGoal(56860381,'HEADER_VK_LINK');" target="_blank" href="{{env('VK_LINK')}}" class="nav-link" rel="tooltip" title="" data-placement="bottom" data-original-title="Подпишись на группу">
                         <i class="fa fa-vk"></i>
                     </a>
                 </li>
