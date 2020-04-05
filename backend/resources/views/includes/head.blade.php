@@ -18,4 +18,7 @@
 
     <link href="/assets/demo/demo.css" rel="stylesheet" />
     <link href='{{ url('sitemap.xml') }}' rel='alternate' title='Sitemap' type='application/rss+xml'/>
+
+    <script data-ad-client="ca-pub-4606096152018516" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
