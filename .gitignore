@@ -2,3 +2,7 @@
 .idea/workspace.xml
 mysql
 .env
+front/dist/
+admin-front/dist/
+robots.txt
+backend/public/.well-known/
