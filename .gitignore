@@ -2,3 +2,6 @@
 .idea/workspace.xml
 mysql
 .env
+robots.txt
+backend/public/.well-known/
+.well-known/

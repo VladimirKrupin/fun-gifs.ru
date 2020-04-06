@@ -15,4 +15,11 @@ class SinglePostController extends Controller
         return view('front.post', compact(['post','tags']));
     }
 
+    public function moregirls($slug)
+    {
+        $post = Post::where('slug',$slug)->with('files')->first()->toArray();
+        $tags = Tag::all()->toArray();
+        return view('front.post-moregirls', compact(['post','tags']));
+    }
+
 }
