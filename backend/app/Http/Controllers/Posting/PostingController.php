@@ -45,7 +45,6 @@ class PostingController extends Controller
     private $hash_tags;
     public $group_description;
     public $go_to_site;
-    public $go_to_site_moregirls;
 
     /**
      * @return mixed
@@ -221,9 +220,8 @@ class PostingController extends Controller
         $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
         $this->setHashTags($hashtags);
 
-        $this->go_to_site = "Скорее заходи на наш сайт https://gifkawood.ru \n\rМы сделали удобную сортировку видео по категориям! \n\rИскать видео стало еще проще!";
-        $this->go_to_site_moregirls = "Заходи на наш сайт 🔥
-https://gifkawood.ru/moregirls 
+        $this->go_to_site = "Заходи на наш сайт 🔥
+".env('APP_URL')." 
 Самые свежие видео там 🔝
 Сортируй видео по фильтрам 
 А так же скачивай их ⬅ 
@@ -243,18 +241,18 @@ https://gifkawood.ru/moregirls
             $this->keys_description = "смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
             $this->group_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
             $this->ok_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
-            $this->setKeyWords("{$post['comment']} угары приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики лучшие видео");
+            $this->setKeyWords(env('APP_URL')." {$post['comment']} угары приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики лучшие видео");
 
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->setOkGroupId(58307293806824);
-            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site_moregirls;
+            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site;
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
-            $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
-            $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
-            $this->setKeyWords("{$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
+            $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
+            $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
+            $this->setKeyWords(env('APP_URL')." {$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
         }
     }
 
