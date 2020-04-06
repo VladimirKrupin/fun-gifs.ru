@@ -388,6 +388,8 @@ class PostingController extends Controller
 
             $status_ok = $this->postingOk($post);
 
+            $posting_status .= $status_ok;
+
             if (!$status_ok){
                 $posting_status .= "Error posting OK\r\n";
             }else{
