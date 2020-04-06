@@ -945,7 +945,7 @@ class PostingController extends Controller
         $params = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.getUploadUrl",
-            "file_name"         => substr($this->getKeyWords(),0,250),
+            "file_name"         => "123",
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
             "gid"               => $this->getOkGroupId(),
