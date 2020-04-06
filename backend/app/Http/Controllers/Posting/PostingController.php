@@ -45,6 +45,7 @@ class PostingController extends Controller
     private $hash_tags;
     public $group_description;
     public $go_to_site;
+    public $go_to_site_moregirls;
 
     /**
      * @return mixed
@@ -225,7 +226,14 @@ class PostingController extends Controller
 Самые свежие видео там 🔝
 Сортируй видео по фильтрам 
 А так же скачивай их ⬅ 
-Всем весна и MOREGIRLS!";
+Всем GIFKAWOOD!";
+
+        $this->go_to_site_moregirls = "Заходи на наш сайт 🔥
+".env('APP_URL')." 
+Самые свежие видео там 🔝
+Сортируй видео по фильтрам 
+А так же скачивай их ⬅ 
+Всем MOREGIRLS!";
     }
 
     public function setGroupsAttributes($post){
@@ -247,11 +255,11 @@ class PostingController extends Controller
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->setOkGroupId(58307293806824);
-            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site;
+            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site_moregirls;
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
-            $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
-            $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
+            $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
+            $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
             $this->setKeyWords("gifkawood.ru {$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
         }
     }
