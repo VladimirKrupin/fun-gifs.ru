@@ -7,9 +7,8 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router/index'
 import Auth from "./plugins/Auth";
-import VueRouter from 'vue-router';
-
 import { store } from './store'
+import VueRouter from 'vue-router';
 
 Vue.use(BootstrapVue);
 Vue.use(Auth);
@@ -20,6 +19,7 @@ require('./config/guards');
 store.dispatch('posting/setPosts');
 store.dispatch('profile/setUserData');
 store.dispatch('projects/setProjects');
+store.dispatch('projects/setItems');
 
 new Vue({
   el: '#app',

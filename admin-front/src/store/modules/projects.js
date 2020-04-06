@@ -2,15 +2,20 @@ import axios from 'axios';
 
 const state = {
   projects: [],
+  items: [],
 };
 
 const getters = {
   projects: state => state.projects,
+  items: state => state.items,
 };
 
 const mutations = {
   setProjects(state, payload) {
     state.projects = payload.projects;
+  },
+  setItems(state, payload) {
+    state.items = payload.items;
   },
 };
 
@@ -33,6 +38,28 @@ const actions = {
           console.log(e);
         });
     }
+  },
+  setItems(context) {
+    let items = [
+      {
+        title: true,
+        wrapper: {
+          element: '',
+          attributes: {}
+        }
+      },
+      {
+        name: 'GIFKAWOOD',
+        url: 'gifkawood',
+        icon: 'icon-star'
+      },
+      {
+        name: 'MOREGIRLS',
+        url: 'moregirls',
+        icon: 'icon-star'
+      },
+    ];
+    context.commit('setItems', { items: items });
   }
 };
 
