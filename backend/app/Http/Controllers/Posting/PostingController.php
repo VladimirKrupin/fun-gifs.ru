@@ -241,7 +241,7 @@ class PostingController extends Controller
             $this->keys_description = "смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
             $this->group_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
             $this->ok_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
-            $this->setKeyWords(env('APP_URL')." {$post['comment']} угары приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики лучшие видео");
+            $this->setKeyWords("gifkawood.ru {$post['comment']} угары приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики лучшие видео");
 
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
@@ -252,7 +252,7 @@ class PostingController extends Controller
             $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
             $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
             $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site} \r\n\r\n$this->keys_description";
-            $this->setKeyWords(env('APP_URL')." {$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
+            $this->setKeyWords("gifkawood.ru {$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
         }
     }
 
