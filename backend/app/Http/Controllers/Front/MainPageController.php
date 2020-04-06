@@ -52,9 +52,9 @@ class MainPageController extends Controller
     }
     public function siteMap()
     {
-        $posts = Post::where('status', 1)->where('group',1)->with('files')->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('group',1)->with('files')->orderBy('created_at', 'desc')->get();
         $tags = Tag::where('id','>',0)->get();
-        $posts_moregirls = Post::where('status', 1)->where('group',2)->with('files')->orderBy('created_at', 'desc')->get();
+        $posts_moregirls = Post::where('group',2)->with('files')->orderBy('created_at', 'desc')->get();
         return view('sitemap')->with(compact(['posts','tags','posts_moregirls']));
     }
 }
