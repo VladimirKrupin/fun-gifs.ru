@@ -1,7 +1,7 @@
 @extends('layouts.layout_index')
 @section('title', $post['comment'] . ' - ' . env('SITE_NAME_MOREGIRLS') )
 @section('description', $post['comment'] . ' ' . env('KEY_WORDS_MOREGIRLS_EASY'))
-@section('keyword', env('KEY_WORDS_POST') .' '. env('KEY_WORDS_POST_END'))
+@section('keyword', $post['comment'] . ' ' . env('KEY_WORDS_POST') .' '. env('KEY_WORDS_POST_END'))
 @section('header_text')
 <h1><span class="h2">{{$post['comment']}}</span></h1>
 <h2><span class="h4">Смотри видео: {{$post['comment']}} ВК <a class="text-white" style="text-decoration: underline;" target="_blank" href="{{env('VK_LINK_MOREGIRLS')}}">{{env('SITE_NAME_MOREGIRLS')}}</a></span></h2>
