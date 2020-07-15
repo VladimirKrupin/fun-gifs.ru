@@ -57,4 +57,10 @@ class MainPageController extends Controller
         $posts_moregirls = Post::where('status', 1)->where('group',2)->with('files')->orderBy('created_at', 'desc')->get();
         return view('sitemap')->with(compact(['posts','tags','posts_moregirls']));
     }
+    public function moregirlsMap()
+    {
+        return view('moregirls',[
+            'posts_moregirls' => Post::where('status', 1)->where('group',2)->with('files')->orderBy('created_at', 'desc')->get(),
+        ]);
+    }
 }

@@ -12,4 +12,5 @@ Route::get('/moregirls', 'Front\MainPageController@moregirls');
 Route::get('/moregirls/{slug}', 'Front\SinglePostController@moregirls')->name('front.moregirls');
 
 Route::get('sitemap.xml', 'Front\MainPageController@siteMap');
+Route::get('moregirls.xml', 'Front\MainPageController@moregirlsMap');
 //Route::any('{all}', function (){return 'api.fun-gifs';})->where('all', '.*');
