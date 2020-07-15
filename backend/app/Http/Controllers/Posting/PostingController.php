@@ -44,6 +44,8 @@ class PostingController extends Controller
     private $key_words;
     private $hash_tags;
     public $group_description;
+    public $go_to_site;
+    public $go_to_site_moregirls;
 
     /**
      * @return mixed
@@ -218,6 +220,20 @@ class PostingController extends Controller
         $russian_hash_tags = implode(' #',$russian_hash_tags);
         $hashtags = "#funny #video #gifs #people #movies #top #super #art #smile #girls #cat \n\r".$russian_hash_tags;
         $this->setHashTags($hashtags);
+
+        $this->go_to_site = "Заходи на наш сайт 🔥
+".env('APP_URL')." 
+Самые свежие видео там 🔝
+Сортируй видео по фильтрам 
+А так же скачивай их ⬅ 
+Всем GIFKAWOOD!";
+
+        $this->go_to_site_moregirls = "Заходи на наш сайт 🔥
+".env('APP_URL')." 
+Самые свежие видео там 🔝
+Сортируй видео по фильтрам 
+А так же скачивай их ⬅ 
+Всем MOREGIRLS!";
     }
 
     public function setGroupsAttributes($post){
@@ -228,23 +244,23 @@ class PostingController extends Controller
             $this->setAccessToken(env('VK_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_GROUP_ID'));
             $this->setOkGroupId(56022813442280);
-            $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
+            $this->group_comment = $post['comment'] . "\r\n\r\n" . $this->go_to_site;
             $this->group_description = "GIFKAWOOD | $month $date[0]";
             $this->keys_description = "смешные лучшие видео приколы гиф веселые ржачные крутые смешное угары топ веселое gif funny video ";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club176519720|@GIFKAWOOD] \r\n $this->keys_description";
-            $this->ok_post_description = "Подпишись на GIFKAWOOD\r\n $this->keys_description";
-            $this->setKeyWords("$this->group_description лучшие видео приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики");
+            $this->group_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
+            $this->ok_post_description = "{$post['comment']} \r\n{$this->go_to_site} \r\n $this->keys_description";
+            $this->setKeyWords("gifkawood.ru {$post['comment']} угары приколы смешные свежие новинки самые топ смотреть интересные веселые животные котики лучшие видео");
 
         }elseif ($post['group'] === '2'){
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->setOkGroupId(58307293806824);
-            $this->group_comment = $post['comment'] . "\r\n\r\nCкачать: ". env('APP_URL'). '/post/' . $post['slug'];
+            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site_moregirls;
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
-            $this->group_post_description = "{$post['comment']} \r\nПодпишись на [club180558782|@MOREGIRLS] \r\n $this->keys_description";
-            $this->ok_post_description = "Подпишись на MOREGIRLS\r\n $this->keys_description";
-            $this->setKeyWords("$this->group_description Красивые девушки спортивные грудь горячие эротика видео сексуальные рыжая сочные жопа пошлые голая сука");
+            $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
+            $this->ok_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
+            $this->setKeyWords("gifkawood.ru {$post['comment']} спортивные грудь горячие видео сексуальные рыжая сочные жопа пошлые голая сука эротика красивые девушка");
         }
     }
 
@@ -937,7 +953,7 @@ class PostingController extends Controller
         $params = array(
             "application_key"   =>  $this->getOkPublicKey(),
             "method"            => "video.getUploadUrl",
-            "file_name"         => $this->getKeyWords(),
+            "file_name"         => "123",
             "file_size"         => 0,
             "count"             => 1,  // количество видео для загрузки
             "gid"               => $this->getOkGroupId(),
