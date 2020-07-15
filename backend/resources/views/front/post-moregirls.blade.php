@@ -1,6 +1,6 @@
 @extends('layouts.layout_index')
 @section('title', $post['comment'] . ' - ' . env('SITE_NAME_MOREGIRLS') )
-@section('description', $post['comment'] . env('KEY_WORDS_MOREGIRLS_EASY'))
+@section('description', $post['comment'] . ' ' . env('KEY_WORDS_MOREGIRLS_EASY'))
 @section('keyword', env('KEY_WORDS_POST') .' '. env('KEY_WORDS_POST_END'))
 @section('header_text')
 <h1><span class="h2">{{$post['comment']}}</span></h1>
