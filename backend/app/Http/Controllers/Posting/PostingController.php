@@ -255,7 +255,7 @@ class PostingController extends Controller
             $this->setAccessToken(env('VK_MOREGIRLS_ACCESS_TOKEN'));
             $this->setGroupId(env('VK_MOREGIRLS_ID'));
             $this->setOkGroupId(58307293806824);
-            $this->group_comment = $post['comment'] . "\r\n\r\n". $this->go_to_site_moregirls;
+            $this->group_comment = $post['comment'];
             $this->group_description = "MOREGIRLS | $month $date[0]";
             $this->keys_description = "девочки девушки фото красивые горячие голые эротика смотреть рыжие брюнетки блондинки в белье красавица";
             $this->group_post_description = "{$post['comment']} \r\n\r\n{$this->go_to_site_moregirls} \r\n\r\n$this->keys_description";
